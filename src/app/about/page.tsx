@@ -4,10 +4,27 @@ import { SITE, VALUE_PROPS } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
 
+const ABOUT_TITLE = "About Us | The Star Auto Service | Since 1998";
+const ABOUT_DESCRIPTION =
+  "Meet the team at The Star Auto Service. Family-owned since 1998, serving Richardson TX with honest auto repair. Call (972) 231-2886.";
+
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Family-owned since 1998, The Star Auto Service is Richardson's most trusted auto repair shop. ASE-certified technicians, bilingual service, honest assessments.",
+  title: { absolute: ABOUT_TITLE },
+  description: ABOUT_DESCRIPTION,
+  alternates: { canonical: `${SITE.url}/about` },
+  openGraph: {
+    title: ABOUT_TITLE,
+    description: ABOUT_DESCRIPTION,
+    url: `${SITE.url}/about`,
+    siteName: SITE.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ABOUT_TITLE,
+    description: ABOUT_DESCRIPTION,
+  },
 };
 
 /** About page with company story and values. */

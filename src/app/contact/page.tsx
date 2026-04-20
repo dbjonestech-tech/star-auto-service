@@ -3,15 +3,33 @@ import { Phone, MapPin, Clock } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { ContactForm } from "./ContactForm";
 
+const CONTACT_TITLE = "Contact The Star Auto Service | Richardson TX Mechanic";
+const CONTACT_DESCRIPTION =
+  "Contact The Star Auto Service in Richardson, TX. Call (972) 231-2886 or visit us at 900 E Belt Line Rd. Mon-Fri 8-6:30, Sat 8-4.";
+
 export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Contact The Star Auto Service in Richardson, TX. Call (972) 231-2886 or visit us at 900 E Belt Line Rd. Walk-ins welcome.",
+  title: { absolute: CONTACT_TITLE },
+  description: CONTACT_DESCRIPTION,
+  alternates: { canonical: `${SITE.url}/contact` },
+  openGraph: {
+    title: CONTACT_TITLE,
+    description: CONTACT_DESCRIPTION,
+    url: `${SITE.url}/contact`,
+    siteName: SITE.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: CONTACT_TITLE,
+    description: CONTACT_DESCRIPTION,
+  },
 };
 
 /** Contact page with form and business information. */
 export default function ContactPage() {
   const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-96.7127265!3d32.9478494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1f06c4520ba7%3A0xbb1004d56727b314!2sThe%20Star%20Auto%20Service!5e0!3m2!1sen!2sus";
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`;
 
   return (
     <>
@@ -45,9 +63,15 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-primary">Address</p>
-                      <p className="text-text-secondary text-sm">
+                      <a
+                        href={directionsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-secondary hover:text-accent transition-colors text-sm underline-offset-2 hover:underline"
+                        aria-label={`Get directions to ${SITE.name} on Google Maps`}
+                      >
                         {SITE.address.full}
-                      </p>
+                      </a>
                     </div>
                   </div>
 

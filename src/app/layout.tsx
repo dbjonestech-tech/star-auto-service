@@ -17,9 +17,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: "%s | The Star Auto Service",
-    default: "The Star Auto Service | Auto Repair Richardson TX",
+    default: "Auto Repair Richardson TX | The Star Auto Service",
   },
-  description: SITE.description,
+  description:
+    "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
   keywords: [
     "auto repair Richardson TX",
     "mechanic Richardson",
@@ -31,9 +32,13 @@ export const metadata: Metadata = {
     "car repair near me",
     "The Star Auto Service",
   ],
+  alternates: {
+    canonical: SITE.url,
+  },
   openGraph: {
-    title: "The Star Auto Service | Auto Repair Richardson TX",
-    description: SITE.description,
+    title: "Auto Repair Richardson TX | The Star Auto Service",
+    description:
+      "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
     url: SITE.url,
     siteName: SITE.name,
     locale: "en_US",
@@ -41,9 +46,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Star Auto Service | Auto Repair Richardson TX",
-    description: SITE.description,
+    title: "Auto Repair Richardson TX | The Star Auto Service",
+    description:
+      "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/manifest.json",
   metadataBase: new URL(SITE.url),
 };
 

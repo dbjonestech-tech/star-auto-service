@@ -24,10 +24,10 @@ export function ServiceCard({ service, showLink = true }: ServiceCardProps) {
       </p>
       {showLink && (
         <Link
-          href="/services"
+          href={`/services#${service.id}`}
           className="text-accent font-medium text-sm hover:text-accent-hover transition-colors inline-flex items-center gap-1"
         >
-          Learn more<span className="sr-only"> about {service.title}</span>
+          {service.title} details
           <LucideIcons.ArrowRight size={14} />
         </Link>
       )}

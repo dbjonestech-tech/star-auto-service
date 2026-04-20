@@ -1,13 +1,30 @@
 import type { Metadata } from "next";
 import * as LucideIcons from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, SITE } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
 
+const SERVICES_TITLE = "Auto Repair Services | The Star Auto Service Richardson TX";
+const SERVICES_DESCRIPTION =
+  "Auto repair services in Richardson, TX. Brakes, oil changes, engine diagnostics, transmission, AC, tires, state inspections. Call (972) 231-2886.";
+
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Complete auto repair services in Richardson, TX. Brakes, oil changes, engine diagnostics, transmission, electrical, HVAC, tires, state inspections, and more.",
+  title: { absolute: SERVICES_TITLE },
+  description: SERVICES_DESCRIPTION,
+  alternates: { canonical: `${SITE.url}/services` },
+  openGraph: {
+    title: SERVICES_TITLE,
+    description: SERVICES_DESCRIPTION,
+    url: `${SITE.url}/services`,
+    siteName: SITE.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SERVICES_TITLE,
+    description: SERVICES_DESCRIPTION,
+  },
 };
 
 /** Services page showing all available services with feature lists. */
