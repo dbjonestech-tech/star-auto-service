@@ -1,0 +1,88 @@
+import { Phone, MapPin, Clock } from "lucide-react";
+import { SITE } from "@/lib/constants";
+
+/** Map embed and business hours section. */
+export function MapSection() {
+  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.5!2d${SITE.coordinates.lng}!3d${SITE.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s${encodeURIComponent(SITE.address.full)}!5e0!3m2!1sen!2sus!4v1`;
+
+  return (
+    <section className="py-16 md:py-24 bg-surface">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-border-light h-80 lg:h-full min-h-[320px]">
+            <iframe
+              src={mapSrc}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={`Map showing ${SITE.name} location`}
+            />
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+              Visit Us
+            </h2>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
+                  <MapPin className="text-accent" size={20} />
+                </div>
+                <div>
+                  <p className="font-semibold text-primary">Address</p>
+                  <p className="text-text-secondary text-sm">
+                    {SITE.address.full}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
+                  <Phone className="text-accent" size={20} />
+                </div>
+                <div>
+                  <p className="font-semibold text-primary">Phone</p>
+                  <a
+                    href={`tel:${SITE.phoneRaw}`}
+                    className="text-accent hover:text-accent-hover transition-colors text-sm"
+                  >
+                    {SITE.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
+                  <Clock className="text-accent" size={20} />
+                </div>
+                <div>
+                  <p className="font-semibold text-primary mb-2">Hours</p>
+                  <table className="text-sm text-text-secondary">
+                    <tbody>
+                      <tr>
+                        <td className="pr-4 py-0.5 font-medium">Mon – Fri</td>
+                        <td>{SITE.hours.weekday}</td>
+                      </tr>
+                      <tr>
+                        <td className="pr-4 py-0.5 font-medium">Saturday</td>
+                        <td>{SITE.hours.saturday}</td>
+                      </tr>
+                      <tr>
+                        <td className="pr-4 py-0.5 font-medium">Sunday</td>
+                        <td>{SITE.hours.sunday}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

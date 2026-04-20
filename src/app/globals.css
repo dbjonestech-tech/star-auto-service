@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #1B3A5C;
+  --color-primary-dark: #132B44;
+  --color-primary-light: #2A5580;
+  --color-accent: #E8792B;
+  --color-accent-hover: #D06820;
+  --color-accent-light: #FFF3EB;
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #4A4A68;
+  --color-text-muted: #8A8AA3;
+  --color-success: #2D8F4E;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-light: var(--color-accent-light);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-success: var(--color-success);
+  --color-border: var(--color-border);
+  --color-border-light: var(--color-border-light);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
