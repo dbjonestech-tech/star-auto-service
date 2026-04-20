@@ -1,17 +1,23 @@
+import Image from "next/image";
 import { Phone, ArrowRight, Award, Calendar, Star } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
-/** Homepage hero section with gradient background and CTAs. */
+/** Homepage hero section with background photo and CTAs. */
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary to-primary-light overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-primary-light rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-      </div>
+    <section className="relative overflow-hidden">
+      <Image
+        src="/assets/mission-banner.jpg"
+        fill={true}
+        style={{ objectFit: "cover" }}
+        priority={true}
+        alt=""
+        className="absolute inset-0 z-0"
+      />
+      <div className="absolute inset-0 bg-black/60 z-[1]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
+      <div className="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             {SITE.tagline}

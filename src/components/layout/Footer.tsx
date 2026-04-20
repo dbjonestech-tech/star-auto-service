@@ -22,9 +22,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
+            <p className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
               Quick Links
-            </h3>
+            </p>
             <ul className="space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -40,9 +40,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
+            <p className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
               Services
-            </h3>
+            </p>
             <ul className="space-y-2">
               {SERVICES.slice(0, 6).map((service) => (
                 <li key={service.id}>
@@ -58,9 +58,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
+            <p className="font-semibold text-sm uppercase tracking-wider mb-4 text-gray-300">
               Contact
-            </h3>
+            </p>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>{SITE.address.full}</li>
               <li>
