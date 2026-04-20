@@ -49,6 +49,7 @@ export function Header() {
             <a
               href={`tel:${SITE.phoneRaw}`}
               className="inline-flex items-center gap-2 bg-accent text-white font-semibold px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors text-sm"
+              aria-label={`Call The Star Auto Service at ${SITE.phone}`}
             >
               <Phone size={16} />
               <span className="hidden sm:inline">{SITE.phone}</span>

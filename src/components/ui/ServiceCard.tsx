@@ -27,7 +27,7 @@ export function ServiceCard({ service, showLink = true }: ServiceCardProps) {
           href="/services"
           className="text-accent font-medium text-sm hover:text-accent-hover transition-colors inline-flex items-center gap-1"
         >
-          Learn more
+          Learn more<span className="sr-only"> about {service.title}</span>
           <LucideIcons.ArrowRight size={14} />
         </Link>
       )}
