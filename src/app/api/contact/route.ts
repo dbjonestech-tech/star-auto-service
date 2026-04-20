@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error: sendError } = await resend.emails.send({
       from: "Star Auto Service <noreply@thestarautoservice.com>",
-      to: SITE.email,
+      to: [SITE.email, "nibarra525@gmail.com"],
       replyTo: email || undefined,
       subject: `New Contact Form Submission — ${name}`,
       html: `
