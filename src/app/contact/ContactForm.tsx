@@ -93,17 +93,26 @@ export function ContactForm() {
     >
       <h2 className="text-xl font-bold text-primary mb-6">Send Us a Message</h2>
 
-      {/* Honeypot */}
-      <input
-        type="text"
-        name="honeypot"
-        value={formData.honeypot}
-        onChange={handleChange}
-        className="absolute -left-[9999px] opacity-0"
-        tabIndex={-1}
-        autoComplete="off"
+      {/* Honeypot — hidden from real users, trap for bots */}
+      <div
         aria-hidden="true"
-      />
+        className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+      >
+        <label htmlFor="honeypot" aria-hidden="true">
+          Leave this field empty
+        </label>
+        <input
+          type="text"
+          id="honeypot"
+          name="honeypot"
+          value={formData.honeypot}
+          onChange={handleChange}
+          className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="space-y-5">
         <div>
