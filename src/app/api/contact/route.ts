@@ -66,15 +66,17 @@ export async function POST(request: Request) {
   });
 
   if (!process.env.RESEND_API_KEY) {
-    console.warn("RESEND_API_KEY not configured — email not sent");
-    console.log("Contact form submission:", JSON.stringify({ name, phone, email, service, message, timestamp, ip }));
-    return NextResponse.json({ success: true, message: "Message received" });
+    console.error("RESEND_API_KEY not configured — email not sent");
+    return NextResponse.json(
+      { error: "Email service is not configured. Please call us directly." },
+      { status: 500 }
+    );
   }
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
-      from: "Star Auto Website <onboarding@resend.dev>",
+    const { error: sendError } = await resend.emails.send({
+      from: "Star Auto Service <onboarding@resend.dev>",
       to: SITE.email,
       replyTo: email || undefined,
       subject: `New Contact Form Submission — ${name}`,
@@ -90,9 +92,20 @@ export async function POST(request: Request) {
         </table>
       `,
     });
+
+    if (sendError) {
+      console.error("Resend returned error:", sendError);
+      return NextResponse.json(
+        { error: "Failed to send message. Please try again or call us directly." },
+        { status: 500 }
+      );
+    }
   } catch (err) {
     console.error("Resend email failed:", err);
-    console.log("Contact form submission (email failed):", JSON.stringify({ name, phone, email, service, message, timestamp, ip }));
+    return NextResponse.json(
+      { error: "Failed to send message. Please try again or call us directly." },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ success: true, message: "Message received" });
