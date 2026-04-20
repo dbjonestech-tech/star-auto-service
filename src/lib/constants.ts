@@ -13,7 +13,7 @@ export const SITE = {
   phone: "(972) 231-2886",
   phoneRaw: "9722312886",
   email: "thestarautoservice1@gmail.com",
-  url: "https://thestarautoservice.com",
+  url: "https://www.thestarautoservice.com",
   established: 1998,
   coordinates: { lat: 32.9478494, lng: -96.7127265 },
   googlePlaceId: "ChIJpwtSxgYfTIYRsxQnZ9UEELs",

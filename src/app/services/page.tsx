@@ -42,7 +42,8 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.id}
-                  className="bg-surface rounded-xl p-6 md:p-8 shadow-sm border border-border-light"
+                  id={service.id}
+                  className="bg-surface rounded-xl p-6 md:p-8 shadow-sm border border-border-light scroll-mt-24"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center shrink-0">

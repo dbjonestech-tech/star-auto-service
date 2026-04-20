@@ -5,25 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE.url,
-      lastModified: new Date("2025-01-01"),
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1.0,
     },
     {
       url: `${SITE.url}/services`,
-      lastModified: new Date("2025-01-01"),
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${SITE.url}/about`,
-      lastModified: new Date("2025-01-01"),
+      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.7,
     },
     {
       url: `${SITE.url}/contact`,
-      lastModified: new Date("2025-01-01"),
+      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
