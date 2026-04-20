@@ -1,9 +1,12 @@
 import { SITE } from "./constants";
 
 export function generateJsonLd() {
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=The%20Star%20Auto%20Service&query_place_id=${SITE.googlePlaceId}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
+    "@id": `${SITE.url}/#business`,
     name: SITE.name,
     description: SITE.description,
     url: SITE.url,
@@ -37,7 +40,8 @@ export function generateJsonLd() {
         closes: "16:00",
       },
     ],
-    sameAs: [SITE.social.instagram],
+    hasMap: mapsUrl,
+    sameAs: [SITE.social.instagram, mapsUrl],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.8",

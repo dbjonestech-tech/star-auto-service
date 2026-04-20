@@ -15,7 +15,8 @@ export const SITE = {
   email: "info@thestarautoservice.com",
   url: "https://thestarautoservice.com",
   established: 1998,
-  coordinates: { lat: 32.9537, lng: -96.7297 },
+  coordinates: { lat: 32.9478494, lng: -96.7127265 },
+  googlePlaceId: "ChIJpwtSxgYfTIYRsxQnZ9UEELs",
   hours: {
     weekday: "8:00 AM – 6:30 PM",
     saturday: "8:00 AM – 4:00 PM",
