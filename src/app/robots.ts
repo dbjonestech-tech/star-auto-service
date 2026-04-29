@@ -7,6 +7,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/admin/",
+          "/api/",
+          "/track/", // unguessable per-repair links — keep out of search index
+        ],
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
