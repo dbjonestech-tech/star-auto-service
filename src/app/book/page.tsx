@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Phone, Clock, MapPin } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
+import { BookForm } from "./BookForm";
 
 const BOOK_TITLE = "Book a Service | The Star Auto Service";
 const BOOK_DESCRIPTION =
-  "Schedule auto repair at The Star Auto Service in Richardson, TX. Online booking is on the way. For now, call (972) 231-2886 to book in.";
+  "Schedule auto repair at The Star Auto Service in Richardson, TX. Fill out the booking form or call (972) 231-2886. ASE-Certified, NAPA Auto Care, bilingual service.";
 
 export const metadata: Metadata = {
   title: { absolute: BOOK_TITLE },
@@ -19,69 +21,124 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: BOOK_TITLE,
+    description: BOOK_DESCRIPTION,
+  },
 };
 
-/** Booking page placeholder. Real time-slot picker lands in Phase 2 alongside the portal. */
 export default function BookPage() {
   return (
-    <section className="bg-cream py-24 md:py-36">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Eyebrow>Book a service</Eyebrow>
-        <h1 className="mt-6 font-display text-display-2 text-ink leading-[1.02] tracking-tight">
-          Online booking is on the way.
-        </h1>
-        <p className="mt-8 text-base md:text-lg text-graphite leading-relaxed max-w-xl mx-auto">
-          The new scheduling system is being built right now and will be live soon. In the
-          meantime, the fastest way to book is by phone. We&apos;ll pick up, hear what your
-          car is doing, and get you slotted in.
-        </p>
-
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={`tel:${SITE.phoneRaw}`}
-            className="inline-flex items-center justify-center bg-ink text-cream hover:bg-ink-soft px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-colors"
-          >
-            Call {SITE.phone}
-          </a>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-transparent text-ink border border-ink hover:bg-ink hover:text-cream px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-colors"
-          >
-            Send a message
-          </Link>
-        </div>
-
-        <div className="mt-16 hairline" />
-
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-stone mb-2">Shop hours</p>
-            <p className="text-sm text-ink">
-              <span className="text-graphite">Mon&ndash;Fri</span> {SITE.hours.weekday}
-            </p>
-            <p className="text-sm text-ink">
-              <span className="text-graphite">Saturday</span> {SITE.hours.saturday}
-            </p>
-            <p className="text-sm text-ink">
-              <span className="text-graphite">Sunday</span> Closed
-            </p>
-          </div>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-stone mb-2">Walk-ins</p>
-            <p className="text-sm text-graphite leading-relaxed">
-              Always welcome. Coffee&apos;s on, the bays are open, and we&apos;ll do our
-              best to get you looked at the same day.
-            </p>
-          </div>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-stone mb-2">Visit</p>
-            <p className="text-sm text-ink">{SITE.address.street}</p>
-            <p className="text-sm text-ink">
-              {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-            </p>
+    <>
+      {/* Intro band */}
+      <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <Reveal>
+                <Eyebrow>Book a service</Eyebrow>
+                <h1 className="mt-5 font-sans font-black text-display-1 text-ink tracking-[-0.025em] leading-[0.98]">
+                  Tell us about
+                  <br />
+                  <span className="text-royal">the car.</span>
+                </h1>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-5">
+              <Reveal delay={0.08}>
+                <p className="text-lg md:text-xl text-graphite leading-relaxed font-medium">
+                  Fill out the form and we&apos;ll call you back within one business day. Or call the shop now — fastest way to get on the schedule.
+                </p>
+              </Reveal>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="bg-cream py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+            <div className="lg:col-span-7">
+              <Reveal>
+                <BookForm />
+              </Reveal>
+            </div>
+
+            <div className="lg:col-span-5">
+              <Reveal delay={0.08}>
+                <div className="space-y-8">
+                  <a
+                    href={`tel:${SITE.phoneRaw}`}
+                    className="block relative bg-ink text-cream p-7 md:p-8 shadow-card-lg hover:bg-royal-deep transition-colors group"
+                  >
+                    <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
+                    <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-gold mb-3">
+                      Or call now
+                    </p>
+                    <p className="font-sans font-black text-3xl md:text-4xl tracking-tight leading-none tabular-nums">
+                      {SITE.phone}
+                    </p>
+                    <p className="mt-3 text-sm text-cream/75 font-medium leading-relaxed">
+                      We&apos;ll pick up, hear what&apos;s going on, and get you slotted in.
+                    </p>
+                  </a>
+
+                  <div className="flex items-start gap-5">
+                    <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
+                      <Clock className="text-royal" size={22} strokeWidth={2} aria-hidden="true" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-2.5">
+                        Shop hours
+                      </p>
+                      <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 text-base">
+                        <dt className="text-graphite font-medium">Mon&ndash;Fri</dt>
+                        <dd className="text-ink font-semibold tabular-nums">{SITE.hours.weekday}</dd>
+                        <dt className="text-graphite font-medium">Saturday</dt>
+                        <dd className="text-ink font-semibold tabular-nums">{SITE.hours.saturday}</dd>
+                        <dt className="text-graphite font-medium">Sunday</dt>
+                        <dd className="text-ink font-semibold">Closed</dd>
+                      </dl>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-5">
+                    <div className="w-12 h-12 bg-gold-tint flex items-center justify-center shrink-0">
+                      <Phone className="text-royal" size={22} strokeWidth={2} aria-hidden="true" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-2">
+                        Walk-ins
+                      </p>
+                      <p className="text-base text-graphite leading-relaxed font-medium">
+                        Always welcome. The bays are open, the coffee&apos;s on, and we&apos;ll do our best to get you looked at the same day.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-5">
+                    <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
+                      <MapPin className="text-royal" size={22} strokeWidth={2} aria-hidden="true" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
+                        Visit
+                      </p>
+                      <p className="text-base text-ink font-semibold leading-snug">
+                        {SITE.address.street}
+                      </p>
+                      <p className="text-base text-ink font-semibold leading-snug">
+                        {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
