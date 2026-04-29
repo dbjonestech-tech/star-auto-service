@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 
 const ABOUT_TITLE = "About Us | The Star Auto Service | Since 1998";
@@ -33,8 +35,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE.url },
+    { name: "About", url: `${SITE.url}/about` },
+  ]);
+
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,14 +1,53 @@
-import { SITE } from "./constants";
+import { SITE, SERVICES, TESTIMONIALS } from "./constants";
 
-export function generateJsonLd() {
+const BUSINESS_ID = `${SITE.url}/#business`;
+const ORG_ID = `${SITE.url}/#organization`;
+
+const FAQS = [
+  {
+    q: "Do you do Texas state inspections?",
+    a: "Yes — we're a state-authorized inspection station. Walk-ins are welcome Mon–Fri 8:00 AM – 6:30 PM and Saturday 8:00 AM – 4:00 PM.",
+  },
+  {
+    q: "Do you offer same-day brake service?",
+    a: "Most brake jobs the same day, provided the parts are in stock. Give us a call with your year, make, and model and we'll confirm before you come in.",
+  },
+  {
+    q: "Is your warranty honored at other NAPA shops?",
+    a: "Yes. As a NAPA Auto Care Center, our work is backed by a nationwide 24-month / 24,000-mile peace-of-mind warranty honored at over 17,000 NAPA Auto Care Centers across the country.",
+  },
+  {
+    q: "Do you serve Garland, Plano, Allen, and Dallas drivers?",
+    a: "Yes. We're on E Belt Line Road in Richardson and regularly serve drivers from Garland, Plano, Allen, Murphy, and across north Dallas.",
+  },
+  {
+    q: "Do you work on hybrid vehicles?",
+    a: "Yes — our ASE-Certified technicians service hybrid vehicles alongside conventional gas, both domestic and import.",
+  },
+  {
+    q: "Do you give free estimates?",
+    a: "Honest assessments and upfront quotes are how we work. Call us, describe what's going on, and we'll talk through what it likely costs before any wrench turns.",
+  },
+  {
+    q: "Do you speak Spanish?",
+    a: "Yes — bilingual service in English and Spanish. Hablamos español.",
+  },
+  {
+    q: "Are walk-ins welcome?",
+    a: "Always. Mon–Fri 8:00 AM – 6:30 PM, Saturday 8:00 AM – 4:00 PM. The coffee is on.",
+  },
+];
+
+function autoRepairEntity() {
   return {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "@id": `${SITE.url}/#business`,
+    "@type": ["AutoRepair", "LocalBusiness"],
+    "@id": BUSINESS_ID,
     name: SITE.name,
     image: `${SITE.url}/opengraph-image`,
+    logo: `${SITE.url}/icon-512.png`,
     url: SITE.url,
     telephone: "+19722312886",
+    email: SITE.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.address.street,
@@ -22,6 +61,7 @@ export function generateJsonLd() {
       latitude: SITE.coordinates.lat,
       longitude: SITE.coordinates.lng,
     },
+    hasMap: `https://www.google.com/maps/place/?q=place_id:${SITE.googlePlaceId}`,
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -51,100 +91,43 @@ export function generateJsonLd() {
       { "@type": "City", name: "Allen" },
       { "@type": "City", name: "Murphy" },
     ],
-    founder: {
-      "@type": "Person",
-      name: "Miguel Ibarra",
-    },
+    founder: { "@type": "Person", name: "Miguel Ibarra" },
     foundingDate: "1998",
+    parentOrganization: { "@id": ORG_ID },
     description:
-      "Family-owned auto repair shop in Richardson, TX serving the community since 1998. ASE-certified technicians specializing in brake repair, engine diagnostics, oil changes, transmission service, AC repair, and state inspections for all domestic and import vehicles. Bilingual service in English and Spanish.",
+      "Family-owned auto repair shop in Richardson, TX serving the community since 1998. ASE-Certified technicians, NAPA Auto Care Center with nationwide warranty, bilingual service in English and Spanish, every common make and model.",
     knowsLanguage: ["en", "es"],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "136",
+      reviewCount: "136",
+    },
+    review: TESTIMONIALS.map((t) => ({
+      "@type": "Review",
+      itemReviewed: { "@id": BUSINESS_ID },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+      author: { "@type": "Person", name: t.author },
+      reviewBody: t.quote,
+    })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Auto Repair Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Oil Change",
-            description: "Full-service oil changes using premium oils and filters",
-          },
+      itemListElement: SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+          provider: { "@id": BUSINESS_ID },
         },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Brake Repair",
-            description: "Complete brake system diagnosis, repair, and replacement",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Engine Diagnostics",
-            description: "Advanced diagnostic equipment to identify engine issues",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Transmission Service",
-            description: "Transmission repair, rebuild, and maintenance",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "AC Repair",
-            description:
-              "Complete HVAC system service including AC repair and refrigerant recharge",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "State Inspection",
-            description: "Texas state vehicle inspection and emissions testing",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Battery Service",
-            description: "Battery testing, replacement, and maintenance",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Tire Rotation",
-            description: "Tire rotation, pressure check, and visual inspection",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Electrical Diagnostics",
-            description: "Advanced diagnostic equipment for electrical system issues",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Engine Replacement",
-            description: "Complete engine replacement with warranty-backed parts",
-          },
-        },
-      ],
+      })),
     },
     sameAs: [
       "https://www.yelp.com/biz/the-star-auto-service-richardson",
@@ -155,3 +138,57 @@ export function generateJsonLd() {
     ],
   };
 }
+
+function organizationEntity() {
+  return {
+    "@type": "Organization",
+    "@id": ORG_ID,
+    name: SITE.name,
+    url: SITE.url,
+    logo: `${SITE.url}/icon-512.png`,
+    foundingDate: "1998",
+    founder: { "@type": "Person", name: "Miguel Ibarra" },
+    sameAs: [
+      "https://www.instagram.com/thestarautoservice/",
+    ],
+  };
+}
+
+function faqEntity() {
+  return {
+    "@type": "FAQPage",
+    "@id": `${SITE.url}/#faq`,
+    mainEntity: FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+}
+
+/** Sitewide JSON-LD graph: AutoRepair + Organization + FAQPage. Rendered once in the root layout. */
+export function generateJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [autoRepairEntity(), organizationEntity(), faqEntity()],
+  };
+}
+
+export type BreadcrumbItem = { name: string; url: string };
+
+/** Per-page BreadcrumbList JSON-LD. Caller renders this inside the page component. */
+export function generateBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+/** Public so /faq-style pages or callers can render the FAQ data themselves if needed. */
+export const FAQ_ITEMS = FAQS;

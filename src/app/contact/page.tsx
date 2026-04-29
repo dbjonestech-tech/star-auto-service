@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { MapEmbed } from "@/components/ui/MapEmbed";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { ContactForm } from "./ContactForm";
 
 const CONTACT_TITLE = "Contact The Star Auto Service | Richardson TX Mechanic";
@@ -34,8 +36,14 @@ export default function ContactPage() {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-96.7127265!3d32.9478494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1f06c4520ba7%3A0xbb1004d56727b314!2sThe%20Star%20Auto%20Service!5e0!3m2!1sen!2sus";
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`;
 
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE.url },
+    { name: "Contact", url: `${SITE.url}/contact` },
+  ]);
+
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

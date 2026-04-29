@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Phone, Clock, MapPin } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { BookForm } from "./BookForm";
 
 const BOOK_TITLE = "Book a Service | The Star Auto Service";
@@ -29,8 +31,14 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE.url },
+    { name: "Book a Service", url: `${SITE.url}/book` },
+  ]);
+
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

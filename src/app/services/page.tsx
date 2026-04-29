@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import * as LucideIcons from "lucide-react";
 import { SERVICES, SITE } from "@/lib/constants";
+import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { CTASection } from "@/components/sections/CTASection";
 
 const SERVICES_TITLE = "Auto Repair Services | The Star Auto Service Richardson TX";
@@ -29,8 +31,14 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE.url },
+    { name: "Services", url: `${SITE.url}/services` },
+  ]);
+
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
