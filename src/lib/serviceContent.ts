@@ -28,7 +28,7 @@ export type ServiceContent = {
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   brakes: {
     eyebrow: "Brakes",
-    headline: "Brake repair, done right.",
+    headline: "Brake repair in Richardson, done right.",
     subhead:
       "Pads, rotors, calipers, fluid, ABS, full brake system service for every common make and model.",
     heroImage: "/assets/service-brakes.avif",
@@ -71,7 +71,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "oil-change": {
     eyebrow: "Oil change & lube",
-    headline: "Oil change, done in under an hour.",
+    headline: "Oil change in Richardson, under an hour.",
     subhead:
       "Conventional, blend, or full synthetic, we use the right oil and quality filter for your specific vehicle.",
     heroImage: "/assets/service-oil-change.avif",
@@ -113,7 +113,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "engine-diagnostics": {
     eyebrow: "Engine diagnostics",
-    headline: "Check engine light? We read it right.",
+    headline: "Engine diagnostics in Richardson, read right.",
     subhead:
       "Advanced OBD-II computer diagnostics, manufacturer-specific scan tools, and 28 years of pattern recognition.",
     heroImage:
@@ -156,7 +156,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "engine-repair": {
     eyebrow: "Engine repair & replacement",
-    headline: "From timing belts to full rebuilds.",
+    headline: "Engine repair in Richardson, timing belts to full rebuilds.",
     subhead:
       "ASE-Certified engine work, head gaskets, timing chains, mounts, replacements. Every common make and model, domestic and import.",
     heroImage: "/assets/service-engine-repair.avif",
@@ -198,7 +198,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   transmission: {
     eyebrow: "Transmission service",
-    headline: "Fluid, repair, rebuild, done right.",
+    headline: "Transmission repair in Richardson, done right.",
     subhead:
       "Automatic and manual. From a drain-and-fill to full rebuild. We diagnose what's actually wrong before quoting work.",
     heroImage: "/assets/service-transmission.avif",
@@ -240,7 +240,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   electrical: {
     eyebrow: "Electrical systems",
-    headline: "Starters, alternators, batteries, wiring.",
+    headline: "Auto electrical repair in Richardson, TX.",
     subhead:
       "Modern vehicles are computers on wheels. We diagnose and repair every electrical system, sensors, modules, wiring, and the basics.",
     heroImage: "/assets/service-electrical.avif",
@@ -282,7 +282,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "state-inspections": {
     eyebrow: "Texas state inspections",
-    headline: "State inspections, walk-in.",
+    headline: "Texas state inspections in Richardson, walk-in.",
     subhead:
       "Authorized Texas state inspection station. Annual safety and emissions inspections, failed-inspection diagnosis, and compliance repairs, all under one roof.",
     heroImage: "/assets/service-state-inspections.avif",
@@ -327,7 +327,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   hvac: {
     eyebrow: "HVAC / AC repair",
-    headline: "Cold air, year-round.",
+    headline: "AC repair in Richardson, cold air year-round.",
     subhead:
       "Full HVAC service, recharge, compressor, condenser, heater core, refrigerant leak detection. R-134a and R-1234yf systems, every make and model.",
     heroImage: "/assets/service-hvac.avif",
@@ -370,7 +370,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   tires: {
     eyebrow: "Tire service",
-    headline: "Rotation, balance, repair, replacement.",
+    headline: "Tire repair in Richardson, TX.",
     subhead:
       "Tire rotation, wheel balancing, flat repair, tire replacement, TPMS service. We mount and balance every common size on cars, trucks, and SUVs.",
     heroImage: "/assets/service-tires.avif",
@@ -413,7 +413,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "cooling-system": {
     eyebrow: "Cooling system",
-    headline: "Radiator, coolant, water pump.",
+    headline: "Cooling system repair in Richardson, TX.",
     subhead:
       "Cooling-system service for the brutal Texas summer, coolant flush, radiator repair, thermostat, water pump, hoses. All major makes, all coolant types.",
     heroImage: "/assets/service-cooling.avif",
@@ -456,7 +456,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   "fuel-injection": {
     eyebrow: "Fuel injection",
-    headline: "Cleaner fuel, smoother engine.",
+    headline: "Fuel injection service in Richardson, TX.",
     subhead:
       "Fuel injector cleaning, fuel filter replacement, fuel pump service, throttle-body cleaning. Restore performance and fuel economy on every common make and model.",
     heroImage: "/assets/service-fuel-injection.avif",
@@ -499,7 +499,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   battery: {
     eyebrow: "Battery service",
-    headline: "Tested, replaced, charged.",
+    headline: "Battery service in Richardson, TX.",
     subhead:
       "Battery testing, replacement, charging-system diagnostics, terminal cleaning. Texas heat eats batteries. We install the right battery for your vehicle and verify the charging system is healthy first.",
     heroImage: "/assets/service-battery.avif",

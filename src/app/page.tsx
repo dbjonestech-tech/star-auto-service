@@ -6,6 +6,8 @@ import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { ShopStory } from "@/components/sections/ShopStory";
 import { ShopGallery } from "@/components/sections/ShopGallery";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { AreasServed } from "@/components/sections/AreasServed";
+import { HomeFAQ } from "@/components/sections/HomeFAQ";
 import { MapSection } from "@/components/sections/MapSection";
 import { CTASection } from "@/components/sections/CTASection";
 
@@ -23,6 +25,8 @@ export default function HomePage() {
       <ShopStory />
       <ShopGallery />
       <Testimonials />
+      <AreasServed />
+      <HomeFAQ />
       <MapSection />
       <CTASection />
     </>

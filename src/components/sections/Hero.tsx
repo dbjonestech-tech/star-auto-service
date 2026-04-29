@@ -56,7 +56,7 @@ export function Hero() {
           </div>
 
           <h1 className="font-sans font-black text-cream text-display-1 tracking-[-0.025em]">
-            <span className="hero-line-1">Expert auto repair,</span>
+            <span className="hero-line-1">Auto repair in Richardson,</span>
             <br />
             <span className="hero-line-2 text-gold">
               done right.
@@ -65,7 +65,7 @@ export function Hero() {
           </h1>
 
           <p className="hero-subhead mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-cream leading-relaxed max-w-2xl font-medium">
-            ASE-Certified technicians, NAPA Auto Care Center, bilingual service. {yearsInBusiness} years of straight answers, fair pricing, and quality work on every common make and model.
+            ASE-Certified mechanics in Richardson, TX. NAPA Auto Care Center, bilingual service in English and Spanish. {yearsInBusiness} years of straight answers, fair pricing, and quality work on every common make and model.
           </p>
 
           {/* Mobile: Call first (flex-col-reverse). Desktop: Book first (flex-row). */}

@@ -43,6 +43,8 @@ function autoRepairEntity() {
     "@type": ["AutoRepair", "LocalBusiness"],
     "@id": BUSINESS_ID,
     name: SITE.name,
+    alternateName: ["Star Auto Service", "Star Auto", "Star Auto Service Richardson"],
+    slogan: "Expert auto repair, done right.",
     image: [
       `${SITE.url}/assets/shop-day-1.jpg`,
       `${SITE.url}/assets/shop-day-2.jpg`,
@@ -158,6 +160,18 @@ function organizationEntity() {
   };
 }
 
+function webSiteEntity() {
+  return {
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    inLanguage: ["en", "es"],
+    publisher: { "@id": ORG_ID },
+    about: { "@id": BUSINESS_ID },
+  };
+}
+
 function faqEntity() {
   return {
     "@type": "FAQPage",
@@ -170,11 +184,16 @@ function faqEntity() {
   };
 }
 
-/** Sitewide JSON-LD graph: AutoRepair + Organization + FAQPage. Rendered once in the root layout. */
+/** Sitewide JSON-LD graph: AutoRepair + Organization + WebSite + FAQPage. Rendered once in the root layout. */
 export function generateJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@graph": [autoRepairEntity(), organizationEntity(), faqEntity()],
+    "@graph": [
+      autoRepairEntity(),
+      organizationEntity(),
+      webSiteEntity(),
+      faqEntity(),
+    ],
   };
 }
 

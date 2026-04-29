@@ -19,28 +19,36 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: "%s | The Star Auto Service",
-    default: "Auto Repair Richardson TX | The Star Auto Service",
+    default:
+      "Auto Repair in Richardson, TX | The Star Auto Service | 4.8★ · Since 1998",
   },
   description:
-    "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
+    "ASE-Certified family-owned auto repair in Richardson, TX since 1998. 4.8★ across 136 reviews. NAPA Auto Care nationwide warranty, bilingual service, honest pricing. Brakes, oil changes, engine diagnostics, AC, state inspections. Call (972) 231-2886.",
   keywords: [
     "auto repair Richardson TX",
-    "mechanic Richardson",
-    "brake repair",
-    "oil change",
-    "engine diagnostics",
-    "transmission repair",
-    "ASE certified mechanic",
-    "car repair near me",
+    "mechanic Richardson TX",
+    "auto repair shop Richardson",
+    "car repair Richardson",
+    "ASE certified mechanic Richardson",
+    "NAPA Auto Care Richardson",
+    "brake repair Richardson",
+    "oil change Richardson TX",
+    "engine diagnostics Richardson",
+    "transmission repair Richardson",
+    "Texas state inspection Richardson",
+    "AC repair Richardson TX",
+    "Spanish speaking mechanic Richardson",
+    "auto repair near me",
+    "best mechanic Richardson",
     "The Star Auto Service",
   ],
   alternates: {
     canonical: SITE.url,
   },
   openGraph: {
-    title: "Auto Repair Richardson TX | The Star Auto Service",
+    title: "Auto Repair in Richardson, TX | The Star Auto Service",
     description:
-      "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
+      "Family-owned auto repair shop in Richardson, TX since 1998. 4.8★ across 136 Google reviews. ASE-Certified, NAPA Auto Care, bilingual. Call (972) 231-2886.",
     url: SITE.url,
     siteName: SITE.name,
     locale: "en_US",
@@ -48,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auto Repair Richardson TX | The Star Auto Service",
+    title: "Auto Repair in Richardson, TX | The Star Auto Service",
     description:
-      "Family-owned auto repair in Richardson, TX since 1998. ASE-certified mechanics, honest pricing, bilingual service. Call (972) 231-2886 for an appointment.",
+      "Family-owned auto repair shop in Richardson, TX since 1998. 4.8★ across 136 reviews. ASE-Certified, NAPA Auto Care, bilingual. Call (972) 231-2886.",
   },
   icons: {
     icon: [
