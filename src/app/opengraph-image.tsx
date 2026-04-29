@@ -10,7 +10,25 @@ export const contentType = "image/png";
  * Cream/ink ground, royal headline, gold accent + star, ASE / NAPA / Bilingual /
  * Family-Owned trust pills. Used by Facebook, LinkedIn, Slack, iMessage previews,
  * and Twitter when the page-level twitter:image is not set.
+ *
+ * Stars are rendered as inline SVG (not the ★ glyph) because Satori's default
+ * font has no star glyph and unicode stars come out as tofu in unfurled SMS
+ * link previews and other ImageResponse consumers.
  */
+function GoldStar({ size }: { size: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="#F4B400"
+    >
+      <path d="M12 2 L14.85 8.63 L22 9.27 L16.5 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7.5 14.14 L2 9.27 L9.15 8.63 Z" />
+    </svg>
+  );
+}
+
 export default function OGImage() {
   return new ImageResponse(
     (
@@ -61,15 +79,8 @@ export default function OGImage() {
             textTransform: "uppercase",
           }}
         >
-          <span
-            style={{
-              display: "flex",
-              fontSize: 30,
-              color: "#F4B400",
-              lineHeight: 1,
-            }}
-          >
-            ★
+          <span style={{ display: "flex" }}>
+            <GoldStar size={30} />
           </span>
           <span style={{ display: "flex" }}>
             Richardson, TX · Family-Owned Since 1998
@@ -133,12 +144,21 @@ export default function OGImage() {
               color: "#0F0F12",
             }}
           >
-            {[
-              "4.8 ★ · 136 Reviews",
-              "ASE-Certified",
-              "NAPA Auto Care",
-              "28 Years",
-            ].map((t) => (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                background: "#FEF6DD",
+                border: "2px solid #F4B400",
+                padding: "10px 18px",
+              }}
+            >
+              <span style={{ display: "flex" }}>4.8</span>
+              <GoldStar size={20} />
+              <span style={{ display: "flex" }}>· 136 Reviews</span>
+            </div>
+            {["ASE-Certified", "NAPA Auto Care", "28 Years"].map((t) => (
               <div
                 key={t}
                 style={{
