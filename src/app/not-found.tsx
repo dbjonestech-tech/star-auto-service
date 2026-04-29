@@ -1,28 +1,38 @@
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
+import { SITE } from "@/lib/constants";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
-/** Custom 404 page. */
+/** Custom 404 page. Editorial typography, on-brand. */
 export default function NotFound() {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary to-primary-light min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <span className="absolute inset-0 flex items-center justify-center text-[10rem] font-extrabold text-white opacity-20 select-none pointer-events-none">
-        404
-      </span>
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-4xl font-bold text-white">Page Not Found</h1>
-        <p className="mt-4 text-lg text-white/70 max-w-md mx-auto">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+    <section className="bg-cream py-32 md:py-44 min-h-[70vh] flex items-center">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="font-sans font-black text-[8rem] md:text-[12rem] text-royal tracking-tight leading-none tabular-nums">
+          404
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" size="lg" href="/">
-            Go Home
-          </Button>
-          <Button
-            variant="secondary"
-            size="lg"
-            href="/contact"
+        <Eyebrow>Page not found</Eyebrow>
+        <h1 className="mt-4 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
+          That one&apos;s not in the bays.
+        </h1>
+        <p className="mt-6 text-base md:text-lg text-graphite leading-relaxed max-w-xl mx-auto font-medium">
+          The page you were looking for doesn&apos;t exist or has moved. Head back to the homepage, or give the shop a call and we&apos;ll point you the right way.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2.5 bg-ink text-cream hover:bg-royal px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
           >
-            Contact Us
-          </Button>
+            Back to homepage
+            <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
+          </Link>
+          <a
+            href={`tel:${SITE.phoneRaw}`}
+            className="inline-flex items-center gap-2.5 border-2 border-ink text-ink hover:bg-ink hover:text-cream px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
+          >
+            <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
+            Call {SITE.phone}
+          </a>
         </div>
       </div>
     </section>

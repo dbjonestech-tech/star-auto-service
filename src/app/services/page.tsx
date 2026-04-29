@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import * as LucideIcons from "lucide-react";
 import { SERVICES, SITE } from "@/lib/constants";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
 import { CTASection } from "@/components/sections/CTASection";
 
 const SERVICES_TITLE = "Auto Repair Services | The Star Auto Service Richardson TX";
@@ -27,69 +28,87 @@ export const metadata: Metadata = {
   },
 };
 
-/** Services page showing all available services with feature lists. */
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary to-primary-light py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white">
-            Our Services
-          </h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            From routine maintenance to major repairs, our ASE-certified
-            technicians handle it all with quality parts and honest service.
-          </p>
+      {/* Intro band */}
+      <section className="bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <Reveal>
+                <Eyebrow>What we work on</Eyebrow>
+                <h1 className="mt-5 font-sans font-black text-display-1 text-ink tracking-[-0.025em] leading-[0.98]">
+                  Twelve service
+                  <br />
+                  <span className="text-royal">categories.</span>
+                </h1>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-5">
+              <Reveal delay={0.08}>
+                <p className="text-lg md:text-xl text-graphite leading-relaxed font-medium">
+                  Domestic and import, gas and hybrid, every common make and model. ASE-Certified technicians. NAPA Auto Care nationwide warranty. Texas state inspections walk-in.
+                </p>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* Service cards */}
+      <section className="bg-paper py-24 md:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            heading="Comprehensive Auto Repair"
-            description="We service all makes and models. Domestic and import."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {SERVICES.map((service) => {
-              const IconComponent =
-                (LucideIcons[service.icon as keyof typeof LucideIcons] as React.ComponentType<{ className?: string; size?: number }>) ||
-                LucideIcons.Wrench;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
+            {SERVICES.map((service, i) => {
+              const Icon =
+                (LucideIcons[service.icon as keyof typeof LucideIcons] as React.ComponentType<{
+                  className?: string;
+                  size?: number;
+                  strokeWidth?: number;
+                }>) || LucideIcons.Wrench;
 
               return (
-                <div
-                  key={service.id}
-                  id={service.id}
-                  className="bg-surface rounded-xl p-6 md:p-8 shadow-sm border border-border-light scroll-mt-24"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
-                      <IconComponent className="text-accent" size={24} />
+                <Reveal key={service.id} delay={i * 0.04} margin="-10%">
+                  <article
+                    id={service.id}
+                    className="relative bg-surface border border-line p-7 md:p-9 h-full shadow-card scroll-mt-24"
+                  >
+                    <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
+                    <div className="flex items-start gap-5">
+                      <div
+                        className="bg-gold-tint flex items-center justify-center shrink-0"
+                        style={{ width: "56px", height: "56px" }}
+                      >
+                        <Icon className="text-royal" size={28} strokeWidth={1.75} aria-hidden="true" />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="font-sans font-black text-2xl md:text-[1.625rem] text-ink tracking-tight leading-tight">
+                          {service.title}
+                        </h2>
+                        <p className="mt-3 text-base text-graphite leading-relaxed font-medium">
+                          {service.description}
+                        </p>
+                        <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                          {service.features.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-2 text-sm text-graphite font-medium"
+                            >
+                              <LucideIcons.Check
+                                size={15}
+                                strokeWidth={2.5}
+                                className="text-emerald shrink-0 mt-0.5"
+                                aria-hidden="true"
+                              />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-primary mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {service.features.map((feature) => (
-                          <li
-                            key={feature}
-                            className="flex items-center gap-2 text-sm text-text-secondary"
-                          >
-                            <LucideIcons.Check
-                              size={14}
-                              className="text-success shrink-0"
-                            />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                  </article>
+                </Reveal>
               );
             })}
           </div>

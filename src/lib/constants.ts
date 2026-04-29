@@ -248,51 +248,6 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-export type ValueProp = {
-  title: string;
-  description: string;
-  icon: string;
-};
-
-export const VALUE_PROPS: ValueProp[] = [
-  {
-    title: "Family-Owned Since 1998",
-    description:
-      "Over 25 years of trusted service in Richardson. We're not a chain. We're your neighbors.",
-    icon: "Heart",
-  },
-  {
-    title: "ASE Certified Technicians",
-    description:
-      "Our mechanics hold ASE certifications with decades of combined experience on domestic and import vehicles.",
-    icon: "Award",
-  },
-  {
-    title: "Fair & Transparent Pricing",
-    description:
-      "Honest assessments and upfront quotes. No surprises, no unnecessary repairs. Just straight talk.",
-    icon: "DollarSign",
-  },
-  {
-    title: "Bilingual Service",
-    description:
-      "Fluent English and Spanish speaking staff. Communication without barriers.",
-    icon: "Languages",
-  },
-  {
-    title: "We Treat Every Car Like Our Own",
-    description:
-      "From courtesy rides to going the extra mile, we genuinely care about you and your vehicle.",
-    icon: "ShieldCheck",
-  },
-  {
-    title: "Community Roots",
-    description:
-      "Deep roots in Richardson with a long-standing commitment to our community. Your neighborhood mechanics.",
-    icon: "MapPin",
-  },
-];
-
 export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "The Shop", href: "/about" },
