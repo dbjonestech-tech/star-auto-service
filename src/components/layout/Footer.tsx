@@ -143,17 +143,27 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} The Star Auto Service. All rights reserved.
           </p>
-          <p>
-            Site by{" "}
-            <a
-              href="https://dbjtechnologies.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cream/75 hover:text-gold transition-colors underline-offset-4 hover:underline font-medium"
-            >
-              DBJ Technologies
-            </a>
-          </p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="hover:text-gold transition-colors font-medium">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-gold transition-colors font-medium">
+              Terms
+            </Link>
+            <span className="text-cream/30" aria-hidden="true">/</span>
+            <p>
+              Site by{" "}
+              <a
+                href="https://dbjtechnologies.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DBJ Technologies website, opens in a new tab"
+                className="text-cream/75 hover:text-gold transition-colors underline-offset-4 hover:underline font-medium"
+              >
+                DBJ Technologies
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
