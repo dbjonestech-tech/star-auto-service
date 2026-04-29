@@ -93,8 +93,8 @@ export function ShopGallery() {
             <Reveal margin="-10%" delay={0.16}>
               <figure className="relative aspect-[4/3] sm:aspect-square lg:aspect-[5/4] overflow-hidden bg-ink shadow-card-lg group">
                 <Image
-                  src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=70&auto=format&fit=crop"
-                  alt="Texas residential neighborhood at golden hour"
+                  src="/assets/home-neighborhood.avif"
+                  alt="Richardson neighborhood home with palms"
                   fill
                   sizes="(min-width: 1024px) 35vw, (min-width: 640px) 45vw, 100vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
