@@ -1,22 +1,23 @@
 import Image from "next/image";
 import { SITE } from "@/lib/constants";
+import { CountUp } from "@/components/ui/CountUp";
 
-/** Royal-blue trust band. Three metric cards + featured NAPA Auto Care Center logo. */
+/** Royal-blue trust band. Three metric cards + featured NAPA Auto Care Center logo. Animated count-ups on scroll-in. */
 export function CredentialsBar() {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
   return (
     <section className="relative bg-royal text-cream">
-      <div className="absolute inset-x-0 top-0 h-px bg-gold/40" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gold/40" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gold/40" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gold/40" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-6 md:gap-x-10">
               <div className="text-center md:text-left">
-                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none tabular-nums">
-                  {yearsInBusiness}
+                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
+                  <CountUp to={yearsInBusiness} duration={1.6} />
                 </p>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
                   Years in Richardson
@@ -28,14 +29,14 @@ export function CredentialsBar() {
 
               <div className="text-center md:text-left">
                 <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
-                  4.8
-                  <span className="ml-1 text-gold">★</span>
+                  <CountUp to={4.8} duration={1.6} decimals={1} />
+                  <span className="ml-1 text-gold" aria-hidden="true">★</span>
                 </p>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
-                  Average Rating
+                  Average rating
                 </p>
                 <p className="mt-1.5 text-sm text-cream/70 font-medium">
-                  Across hundreds of reviews
+                  Across <CountUp to={136} duration={1.6} className="font-semibold" /> Google reviews
                 </p>
               </div>
 
@@ -44,7 +45,7 @@ export function CredentialsBar() {
                   ASE
                 </p>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
-                  Certified Technicians
+                  Certified technicians
                 </p>
                 <p className="mt-1.5 text-sm text-cream/70 font-medium">
                   The industry standard

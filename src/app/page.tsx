@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { CredentialsBar } from "@/components/sections/CredentialsBar";
+import { BrandMarquee } from "@/components/sections/BrandMarquee";
 import { Pillars } from "@/components/sections/Pillars";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { ShopStory } from "@/components/sections/ShopStory";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Hero />
         <CredentialsBar />
       </div>
+      <BrandMarquee />
       <Pillars />
       <ServicesOverview />
       <ShopStory />

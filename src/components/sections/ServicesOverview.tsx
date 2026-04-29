@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import * as LucideIcons from "lucide-react";
 import { ArrowRight } from "lucide-react";
@@ -5,13 +6,29 @@ import { SERVICES } from "@/lib/constants";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Substantial 3-column service card grid. Premium materials, gold accents, hover lift. */
+/** Substantial 3-column service card grid. Premium materials, gold accents, hover gold-rule slide, deep-link to /services/[slug]. */
 export function ServicesOverview() {
   const featured = SERVICES.slice(0, 6);
+  const featuredSlugs = new Set([
+    "brakes",
+    "oil-change",
+    "engine-diagnostics",
+    "engine-repair",
+    "transmission",
+    "electrical",
+  ]);
 
   return (
-    <section className="bg-paper py-24 md:py-32 border-y border-line-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-paper py-24 md:py-32 border-y border-line-subtle overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1800&q=60&auto=format&fit=crop"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.04] pointer-events-none mix-blend-multiply"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-16 md:mb-20">
           <div className="md:col-span-5">
             <Reveal>
@@ -41,12 +58,20 @@ export function ServicesOverview() {
                 strokeWidth?: number;
               }>) || LucideIcons.Wrench;
 
+            const href = featuredSlugs.has(service.id)
+              ? `/services/${service.id}`
+              : `/services#${service.id}`;
+
             return (
               <Reveal key={service.id} delay={i * 0.06} margin="-15%">
                 <Link
-                  href={`/services#${service.id}`}
-                  className="group block bg-surface border border-line p-7 md:p-8 h-full shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300"
+                  href={href}
+                  className="group relative block bg-surface border border-line p-7 md:p-8 h-full shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300"
                 >
+                  <div
+                    className="absolute top-0 left-7 right-7 h-0.5 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
+                    aria-hidden="true"
+                  />
                   <div className="flex items-center justify-between mb-6">
                     <div className="bg-gold-tint flex items-center justify-center shrink-0" style={{ width: "52px", height: "52px" }}>
                       <Icon

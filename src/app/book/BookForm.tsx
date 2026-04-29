@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Calendar } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { SERVICES } from "@/lib/constants";
 
@@ -52,8 +53,9 @@ const selectStyle = {
     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c5550' d='M6 8.5 1.5 4h9z'/%3E%3C/svg%3E\")",
 };
 
-/** Booking intake form. Vehicle + service + window, posts to /api/contact with formType="booking". */
+/** Booking intake form. Vehicle + service + window, posts to /api/contact with formType="booking", redirects to /book/confirmation on success. */
 export function BookForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>(INITIAL);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -82,29 +84,11 @@ export function BookForm() {
       }
 
       track("form_submit", { form: "booking" });
-      setStatus("success");
-      setFormData(INITIAL);
+      router.push("/book/confirmation");
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "Something went wrong");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="relative bg-surface border border-line p-8 md:p-12 shadow-card text-center">
-        <div className="absolute top-0 left-8 right-8 h-0.5 bg-emerald" aria-hidden="true" />
-        <div className="w-14 h-14 bg-emerald/15 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="text-emerald" size={28} strokeWidth={2} aria-hidden="true" />
-        </div>
-        <h2 className="font-sans font-black text-2xl md:text-3xl text-ink tracking-tight">
-          Booking request received.
-        </h2>
-        <p className="mt-4 text-base text-graphite leading-relaxed font-medium max-w-md mx-auto">
-          Thanks — we&apos;ve got it. We&apos;ll call you back within one business day to confirm a time. For anything urgent, please call the shop now.
-        </p>
-      </div>
-    );
   }
 
   return (

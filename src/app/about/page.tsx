@@ -7,6 +7,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CountUp } from "@/components/ui/CountUp";
 import { CTASection } from "@/components/sections/CTASection";
 
 const ABOUT_TITLE = "About Us | The Star Auto Service | Since 1998";
@@ -69,14 +70,38 @@ export default function AboutPage() {
           {/* Stat tiles */}
           <div className="mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
             {[
-              { value: yearsInBusiness, label: "Years in Richardson", note: `Family-owned since ${SITE.established}` },
-              { value: "4.8★", label: "Average Rating", note: "Across 136 Google reviews" },
-              { value: "12", label: "Service categories", note: "Domestic and import" },
+              {
+                key: "years",
+                value: <CountUp to={yearsInBusiness} duration={1.6} />,
+                label: "Years in Richardson",
+                note: `Family-owned since ${SITE.established}`,
+              },
+              {
+                key: "rating",
+                value: (
+                  <>
+                    <CountUp to={4.8} duration={1.6} decimals={1} />
+                    <span className="text-gold" aria-hidden="true">★</span>
+                  </>
+                ),
+                label: "Average rating",
+                note: (
+                  <>
+                    Across <CountUp to={136} duration={1.6} /> Google reviews
+                  </>
+                ),
+              },
+              {
+                key: "services",
+                value: <CountUp to={12} duration={1.6} />,
+                label: "Service categories",
+                note: "Domestic and import",
+              },
             ].map((stat, i) => (
-              <Reveal key={stat.label} delay={i * 0.06}>
+              <Reveal key={stat.key} delay={i * 0.06}>
                 <article className="relative bg-surface border border-line p-7 md:p-8 h-full shadow-card">
                   <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
-                  <p className="font-sans font-black text-4xl md:text-5xl text-ink tracking-tight tabular-nums leading-none">
+                  <p className="font-sans font-black text-4xl md:text-5xl text-ink tracking-tight leading-none">
                     {stat.value}
                   </p>
                   <p className="mt-4 text-[11px] uppercase tracking-[0.18em] font-bold text-royal">

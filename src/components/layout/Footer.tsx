@@ -107,13 +107,33 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/reviews" className="hover:text-gold transition-colors font-medium">
+                  Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="hover:text-gold transition-colors font-medium">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-gold transition-colors font-medium">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/warranty" className="hover:text-gold transition-colors font-medium">
+                  Warranty
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-gold transition-colors font-medium">
                   Contact
                 </Link>
               </li>
               <li>
                 <Link href="/book" className="hover:text-gold transition-colors font-medium">
-                  Book service
+                  Book a service
                 </Link>
               </li>
             </ul>
@@ -124,18 +144,74 @@ export function Footer() {
               Services
             </p>
             <ul className="space-y-2.5 text-sm text-cream/85">
-              {SERVICES.slice(0, 6).map((service) => (
-                <li key={service.id}>
-                  <Link
-                    href={`/services#${service.id}`}
-                    className="hover:text-gold transition-colors font-medium"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/services/brakes" className="hover:text-gold transition-colors font-medium">
+                  Brake repair
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/oil-change" className="hover:text-gold transition-colors font-medium">
+                  Oil change &amp; lube
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/engine-diagnostics" className="hover:text-gold transition-colors font-medium">
+                  Engine diagnostics
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/engine-repair" className="hover:text-gold transition-colors font-medium">
+                  Engine repair
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/transmission" className="hover:text-gold transition-colors font-medium">
+                  Transmission service
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/electrical" className="hover:text-gold transition-colors font-medium">
+                  Electrical systems
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/state-inspections" className="hover:text-gold transition-colors font-medium">
+                  Texas state inspections
+                </Link>
+              </li>
+              <li className="pt-1">
+                <Link href="/services" className="text-gold hover:text-gold-soft transition-colors font-bold uppercase tracking-[0.12em] text-[11px]">
+                  See all 12 →
+                </Link>
+              </li>
             </ul>
           </div>
+        </div>
+
+        <div className="hairline bg-cream/15 my-10" />
+
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-xs text-cream/70">
+          <p className="col-span-2 md:col-span-1 text-[11px] uppercase tracking-[0.2em] font-bold text-gold">
+            Areas served
+          </p>
+          <Link href="/areas/richardson-tx" className="hover:text-gold transition-colors font-medium">
+            Richardson
+          </Link>
+          <Link href="/areas/garland-tx" className="hover:text-gold transition-colors font-medium">
+            Garland
+          </Link>
+          <Link href="/areas/plano-tx" className="hover:text-gold transition-colors font-medium">
+            Plano
+          </Link>
+          <Link href="/areas/dallas-tx" className="hover:text-gold transition-colors font-medium">
+            Dallas
+          </Link>
+          <Link href="/areas/allen-tx" className="hover:text-gold transition-colors font-medium">
+            Allen
+          </Link>
+          <Link href="/areas/murphy-tx" className="hover:text-gold transition-colors font-medium">
+            Murphy
+          </Link>
         </div>
 
         <div className="hairline bg-cream/15 my-12" />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, Wrench, HeartHandshake } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -23,11 +24,20 @@ const PILLARS = [
   },
 ] as const;
 
-/** Three substantial pillars. Icon + number + heavy headline + body, premium card treatment. */
+/** Three substantial pillars. Icon + number + heavy headline + body, premium card treatment with gold-rule slide on hover. */
 export function Pillars() {
   return (
-    <section className="bg-cream py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-cream py-24 md:py-32 overflow-hidden">
+      {/* Subtle Unsplash watermark backdrop */}
+      <Image
+        src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1800&q=60&auto=format&fit=crop"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.05] pointer-events-none mix-blend-multiply"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-16 md:mb-20">
           <Reveal>
             <Eyebrow>What we stand for</Eyebrow>
@@ -46,8 +56,12 @@ export function Pillars() {
             const Icon = pillar.icon;
             return (
               <Reveal key={pillar.number} delay={i * 0.08}>
-                <article className="relative bg-surface border border-line p-8 md:p-10 h-full shadow-card hover:shadow-card-lg transition-shadow duration-300">
-                  <div className="absolute top-0 left-8 right-8 h-1 bg-royal" />
+                <article className="group relative bg-surface border border-line p-8 md:p-10 h-full shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300">
+                  <div className="absolute top-0 left-8 right-8 h-1 bg-royal" aria-hidden="true" />
+                  <div
+                    className="absolute top-0 left-8 right-8 h-1 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
+                    aria-hidden="true"
+                  />
                   <div className="flex items-center justify-between mb-7">
                     <div className="w-14 h-14 bg-royal-tint flex items-center justify-center">
                       <Icon

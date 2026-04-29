@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, Phone, Calendar } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { ScrollCue } from "@/components/ui/ScrollCue";
 import heroPhoto from "../../../public/assets/shop-day-1.jpg";
 
 /** Cinematic hero. Bright shop photo, deep left+bottom-right scrim, NAPA badge, gold CTA. */
@@ -86,6 +87,8 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <ScrollCue />
 
       {/* Bottom trust strip */}
       <div className="relative border-t border-cream/15 bg-ink/85 backdrop-blur-md">
