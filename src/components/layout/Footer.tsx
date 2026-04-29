@@ -15,10 +15,10 @@ export function Footer() {
             <Link
               href="/"
               aria-label={`${SITE.name} home`}
-              className="inline-flex items-center gap-2.5 mb-5 group"
+              className="brand-star-link inline-flex items-center gap-2.5 mb-5 group"
             >
               <Star
-                className="text-gold transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300"
+                className="brand-star text-gold transition-transform group-hover:scale-110 duration-300"
                 size={26}
                 fill="currentColor"
                 strokeWidth={1.5}

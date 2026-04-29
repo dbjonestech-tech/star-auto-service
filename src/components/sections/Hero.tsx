@@ -42,10 +42,10 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-12 lg:py-16 w-full md:flex-1 md:flex md:items-center">
         <div className="max-w-5xl w-full">
           {/* Eyebrow with star */}
-          <div className="inline-flex items-center gap-2.5 mb-7">
+          <div className="hero-eyebrow inline-flex items-center gap-2.5 mb-7">
             <Star
               size={18}
-              className="text-gold drop-shadow-[0_2px_8px_rgba(244,180,0,0.5)]"
+              className="brand-star text-gold drop-shadow-[0_2px_8px_rgba(244,180,0,0.5)]"
               fill="currentColor"
               strokeWidth={1.5}
               aria-hidden="true"
@@ -56,12 +56,15 @@ export function Hero() {
           </div>
 
           <h1 className="font-sans font-black text-cream text-display-1 tracking-[-0.025em]">
-            Expert auto repair,
+            <span className="hero-line-1">Expert auto repair,</span>
             <br />
-            <span className="text-gold">done right.</span>
+            <span className="hero-line-2 text-gold">
+              done right.
+              <span className="hero-streak" aria-hidden="true" />
+            </span>
           </h1>
 
-          <p className="mt-8 text-lg md:text-xl text-cream leading-relaxed max-w-2xl font-medium">
+          <p className="hero-subhead mt-8 text-lg md:text-xl text-cream leading-relaxed max-w-2xl font-medium">
             ASE-Certified technicians, NAPA Auto Care Center, bilingual service. {yearsInBusiness} years of straight answers, fair pricing, and quality work on every common make and model.
           </p>
 
@@ -69,7 +72,7 @@ export function Hero() {
           <div className="mt-12 flex flex-col-reverse sm:flex-row gap-4">
             <Link
               href="/book"
-              className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
+              className="hero-cta-1 group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
             >
               <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
               Book a Service
@@ -77,7 +80,7 @@ export function Hero() {
             <a
               href={`tel:${SITE.phoneRaw}`}
               data-analytics="hero-call"
-              className="group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
+              className="hero-cta-2 group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
             >
               <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
               Call {SITE.phone}
@@ -89,7 +92,7 @@ export function Hero() {
       <ScrollCue />
 
       {/* Bottom trust strip */}
-      <div className="relative border-t border-cream/15 bg-ink/85 backdrop-blur-md">
+      <div className="hero-trust relative border-t border-cream/15 bg-ink/85 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/90">
             <span className="inline-flex items-center gap-2">

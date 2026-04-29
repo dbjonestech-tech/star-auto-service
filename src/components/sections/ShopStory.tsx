@@ -43,7 +43,7 @@ export function ShopStory() {
             {/* Established badge top-left */}
             <Reveal delay={0.1}>
               <div className="hidden md:flex absolute top-6 left-6 bg-gold text-ink px-4 py-3 shadow-gold flex-col items-center">
-                <Star size={18} fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
+                <Star size={18} className="brand-star" fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
                 <p className="mt-1 text-[10px] uppercase tracking-[0.2em] font-extrabold leading-none">
                   Est.
                 </p>

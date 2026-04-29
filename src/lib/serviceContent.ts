@@ -31,9 +31,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "Brake repair, done right.",
     subhead:
       "Pads, rotors, calipers, fluid, ABS, full brake system service for every common make and model.",
-    heroImage:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Close-up of brake rotor and caliper service",
+    heroImage: "/assets/service-brakes.avif",
+    heroAlt: "Brake rotor and caliper service close up",
     priceCue: "Most brake jobs same-day, parts in stock",
     symptoms: [
       "Squealing, grinding, or scraping when you brake",
@@ -75,9 +74,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "Oil change, done in under an hour.",
     subhead:
       "Conventional, blend, or full synthetic, we use the right oil and quality filter for your specific vehicle.",
-    heroImage:
-      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine bay during oil change service",
+    heroImage: "/assets/service-oil-change.avif",
+    heroAlt: "Fresh motor oil being poured into the engine",
     priceCue: "Walk-ins welcome, most done in under an hour",
     symptoms: [
       "Sticker on the windshield says you're due (or overdue)",
@@ -161,9 +159,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "From timing belts to full rebuilds.",
     subhead:
       "ASE-Certified engine work, head gaskets, timing chains, mounts, replacements. Every common make and model, domestic and import.",
-    heroImage:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine bay during major repair",
+    heroImage: "/assets/service-engine-repair.avif",
+    heroAlt: "Late-model performance car under shop lighting",
     priceCue: "Quotes within 24 hours of inspection",
     symptoms: [
       "Engine knock, tick, or unusual mechanical noise",

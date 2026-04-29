@@ -47,7 +47,7 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="relative bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line overflow-hidden">
-        <SectionWatermark src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
+        <SectionWatermark src="/assets/shop-side.jpg" opacity={0.06} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
@@ -135,7 +135,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <div className="hidden md:flex absolute top-6 left-6 bg-gold text-ink px-4 py-3 shadow-gold flex-col items-center">
-                  <Star size={18} fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
+                  <Star size={18} className="brand-star" fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
                   <p className="mt-1 text-xs uppercase tracking-[0.2em] font-extrabold leading-none">
                     Est.
                   </p>

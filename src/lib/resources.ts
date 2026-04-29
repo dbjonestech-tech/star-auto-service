@@ -40,8 +40,8 @@ export const RESOURCES: Resource[] = [
     publishedDate: "2026-04-15",
     readMinutes: 6,
     heroImage:
-      "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine cooling and diagnostic components under the hood",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Mechanic working on an engine bay diagnostic",
     eyebrow: "Diagnostics",
     lede: "Your check engine light just came on. Before you panic, or ignore it for the next six months, here is what it actually means, what to do in the next hour, and how a real shop diagnoses it.",
     sections: [
@@ -133,8 +133,8 @@ export const RESOURCES: Resource[] = [
     publishedDate: "2026-03-22",
     readMinutes: 5,
     heroImage:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Brake inspection paperwork on a clipboard",
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Brake disc and caliper close up",
     eyebrow: "Brakes",
     lede: "Brakes are the part of the car most likely to silently degrade until they fail at exactly the wrong moment. Here are the five signs to watch for, plus realistic cost expectations.",
     sections: [
@@ -206,8 +206,8 @@ export const RESOURCES: Resource[] = [
     publishedDate: "2026-02-14",
     readMinutes: 4,
     heroImage:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Auto shop bay during routine oil service",
+      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Engine bay during routine oil service",
     eyebrow: "Maintenance",
     lede: "The 3,000-mile oil change is a marketing artifact from the 1970s. Modern oils, modern engines, and modern oil-life monitors all push the real interval much further, but not as far as some people want to believe.",
     sections: [

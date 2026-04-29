@@ -93,11 +93,11 @@ export function Header() {
         <div className="flex items-center justify-between gap-x-4 lg:gap-x-6 h-16 md:h-18 lg:h-20">
           <Link
             href="/"
-            className="flex items-center gap-2.5 group shrink-0"
+            className="brand-star-link flex items-center gap-2.5 group shrink-0"
             aria-label={`${SITE.name} home`}
           >
             <Star
-              className="text-gold transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300 shrink-0"
+              className="brand-star text-gold transition-transform group-hover:scale-110 duration-300 shrink-0"
               size={24}
               fill="currentColor"
               strokeWidth={1.5}

@@ -29,7 +29,7 @@ export function CTASection() {
             <div className="inline-flex items-center gap-2.5 mb-7">
               <Star
                 size={18}
-                className="text-gold"
+                className="brand-star text-gold"
                 fill="currentColor"
                 strokeWidth={1.5}
                 aria-hidden="true"

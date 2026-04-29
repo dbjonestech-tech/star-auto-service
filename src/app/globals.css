@@ -144,6 +144,207 @@ body {
   }
 }
 
+/* ============================================================
+ * Hero entrance animations: cinematic, mechanic-shop branded.
+ * Eyebrow slides in from left. Headline line 1 lifts up with
+ * blur-to-clear. Headline line 2 races in from right (the "car"
+ * arriving) trailing a gold streak (the "exhaust"). Subhead
+ * fades up. CTAs slide up with a tiny spring overshoot.
+ * ============================================================ */
+
+@keyframes heroEyebrowIn {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroLineUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+    filter: blur(10px);
+  }
+  60% {
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroLineRace {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+    filter: blur(10px);
+  }
+  60% {
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* The gold "exhaust streak" sweeps in behind the racing line. */
+@keyframes heroStreak {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+  35% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+  61% {
+    transform-origin: left center;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBtnIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-eyebrow {
+  opacity: 0;
+  animation: heroEyebrowIn 700ms var(--ease-out-expo) 120ms forwards;
+}
+
+.hero-line-1 {
+  display: inline-block;
+  opacity: 0;
+  animation: heroLineUp 950ms var(--ease-out-expo) 280ms forwards;
+}
+
+.hero-line-2 {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  animation: heroLineRace 1000ms var(--ease-out-expo) 560ms forwards;
+}
+
+.hero-streak {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: 0.18em;
+  height: 0.14em;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 180, 0, 0.0) 8%,
+    rgba(244, 180, 0, 0.7) 35%,
+    rgba(251, 204, 58, 1) 60%,
+    rgba(244, 180, 0, 0.7) 80%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 14px rgba(244, 180, 0, 0.55));
+  pointer-events: none;
+  opacity: 0;
+  animation: heroStreak 1100ms var(--ease-out-expo) 480ms forwards;
+}
+
+.hero-subhead {
+  opacity: 0;
+  animation: heroFadeUp 800ms var(--ease-out-expo) 1100ms forwards;
+}
+
+.hero-cta-1 {
+  opacity: 0;
+  animation: heroBtnIn 800ms var(--ease-out-expo) 1280ms forwards;
+}
+
+.hero-cta-2 {
+  opacity: 0;
+  animation: heroBtnIn 800ms var(--ease-out-expo) 1400ms forwards;
+}
+
+.hero-trust {
+  opacity: 0;
+  animation: heroFadeUp 800ms var(--ease-out-expo) 1550ms forwards;
+}
+
+/* Header gold star: gentle pulse + twinkle on mount, faster on hover. */
+@keyframes starTwinkle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(244, 180, 0, 0));
+  }
+  20% {
+    transform: rotate(-8deg) scale(1.12);
+    filter: drop-shadow(0 0 10px rgba(244, 180, 0, 0.65));
+  }
+  40% {
+    transform: rotate(6deg) scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(244, 180, 0, 0.4));
+  }
+  60% {
+    transform: rotate(-3deg) scale(1.02);
+    filter: drop-shadow(0 0 3px rgba(244, 180, 0, 0.25));
+  }
+}
+
+@keyframes starPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(244, 180, 0, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(244, 180, 0, 0.55));
+  }
+}
+
+.brand-star {
+  animation: starTwinkle 1400ms var(--ease-out-expo) 200ms 1 both,
+    starPulse 3.6s ease-in-out 1700ms infinite;
+  transform-origin: center center;
+}
+.brand-star-link:hover .brand-star {
+  animation: starTwinkle 700ms var(--ease-out-expo) 0ms 1 both;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
