@@ -55,7 +55,7 @@ export function CredentialsBar() {
             </div>
           </div>
 
-          {/* NAPA card — horizontal */}
+          {/* NAPA card, horizontal */}
           <div className="lg:col-span-5">
             <div className="bg-cream px-4 py-3 md:px-5 md:py-3.5 shadow-card flex items-center gap-4">
               <Image

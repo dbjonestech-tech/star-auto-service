@@ -30,19 +30,19 @@ export const metadata: Metadata = {
 const EXTRA_FAQS = [
   {
     q: "Are you a NAPA Auto Care Center?",
-    a: "Yes — The Star Auto Service is an official NAPA Auto Care Center, which means qualifying repairs are backed by a nationwide 24-month / 24,000-mile warranty honored at over 17,000 NAPA Auto Care Centers across the country.",
+    a: "Yes. The Star Auto Service is an official NAPA Auto Care Center, which means qualifying repairs are backed by a nationwide 24-month / 24,000-mile warranty honored at over 17,000 NAPA Auto Care Centers across the country.",
   },
   {
     q: "What makes and models do you work on?",
-    a: "Every common make and model — domestic and import, gas and hybrid. Toyota, Honda, Ford, Chevrolet, GMC, Ram, Nissan, Hyundai, Kia, Mazda, Subaru, BMW, Mercedes-Benz, Audi, Volkswagen, Lexus, Acura, Infiniti, and many more.",
+    a: "Every common make and model, domestic and import, gas and hybrid. Toyota, Honda, Ford, Chevrolet, GMC, Ram, Nissan, Hyundai, Kia, Mazda, Subaru, BMW, Mercedes-Benz, Audi, Volkswagen, Lexus, Acura, Infiniti, and many more.",
   },
   {
     q: "Do I need an appointment, or can I walk in?",
-    a: "Walk-ins are always welcome — Mon-Fri 8:00 AM – 6:30 PM and Saturday 8:00 AM – 4:00 PM. For larger jobs we appreciate a heads-up so we can have parts on hand and get you in faster.",
+    a: "Walk-ins are always welcome, Mon-Fri 8:00 AM – 6:30 PM and Saturday 8:00 AM – 4:00 PM. For larger jobs we appreciate a heads-up so we can have parts on hand and get you in faster.",
   },
   {
     q: "Where are you located?",
-    a: `We're at ${SITE.address.full} — on E Belt Line Road in Richardson, easy access from US-75 and the Dallas North Tollway.`,
+    a: `We're at ${SITE.address.full}, on E Belt Line Road in Richardson, easy access from US-75 and the Dallas North Tollway.`,
   },
   {
     q: "Do you offer financing?",
@@ -50,7 +50,7 @@ const EXTRA_FAQS = [
   },
   {
     q: "How long have you been in business?",
-    a: "Since 1998. Miguel Ibarra opened the shop with one rule — never recommend a repair the car doesn't need — and twenty-eight years later the rule and the family ownership both stand.",
+    a: "Since 1998. Miguel Ibarra opened the shop with one rule, never recommend a repair the car doesn't need, and twenty-eight years later the rule and the family ownership both stand.",
   },
   {
     q: "Do you offer free quotes?",
@@ -62,11 +62,11 @@ const EXTRA_FAQS = [
   },
   {
     q: "Do you offer courtesy rides or loaners?",
-    a: "We offer courtesy rides within Richardson when our schedule allows — call ahead and we'll let you know.",
+    a: "We offer courtesy rides within Richardson when our schedule allows, call ahead and we'll let you know.",
   },
   {
     q: "Can I drop my car off after hours?",
-    a: "Yes — we have an after-hours drop box. Park in the lot, fill out the envelope, drop your keys, and we'll call you in the morning before any work starts.",
+    a: "Yes. we have an after-hours drop box. Park in the lot, fill out the envelope, drop your keys, and we'll call you in the morning before any work starts.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function FAQPage() {
             <span className="text-gold">in writing.</span>
           </h1>
           <p className="mt-7 text-lg md:text-xl text-cream/90 leading-relaxed font-medium max-w-2xl">
-            {all.length} of the questions we hear most. Still don&apos;t see yours? Call the shop or send a note — we&apos;ll write back.
+            {all.length} of the questions we hear most. Still don&apos;t see yours? Call the shop or send a note, we&apos;ll write back.
           </p>
         </div>
       </section>

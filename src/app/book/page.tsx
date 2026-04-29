@@ -58,7 +58,7 @@ export default function BookPage() {
             <div className="lg:col-span-5">
               <Reveal delay={0.08}>
                 <p className="text-lg md:text-xl text-graphite leading-relaxed font-medium">
-                  Fill out the form and we&apos;ll call you back within one business day. Or call the shop now — fastest way to get on the schedule.
+                  Fill out the form and we&apos;ll call you back within one business day. Or call the shop now, fastest way to get on the schedule.
                 </p>
               </Reveal>
             </div>
@@ -139,7 +139,7 @@ export default function BookPage() {
                     </div>
                     <div className="flex-1">
                       <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
-                        Visit — open in Maps
+                        Visit, open in Maps
                       </p>
                       <p className="text-base text-ink font-semibold leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.street}

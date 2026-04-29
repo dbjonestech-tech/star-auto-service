@@ -44,7 +44,7 @@ export default function ServicesPage() {
       <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="relative bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line overflow-hidden">
-        <SectionWatermark src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
+        <SectionWatermark src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">

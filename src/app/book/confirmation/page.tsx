@@ -94,7 +94,7 @@ export default function BookConfirmationPage() {
             </span>
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                Visit — open in Maps
+                Visit, open in Maps
               </p>
               <p className="mt-2 text-sm text-ink font-medium leading-snug group-hover:text-royal transition-colors">
                 {SITE.address.street}

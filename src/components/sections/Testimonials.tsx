@@ -11,7 +11,7 @@ export function Testimonials() {
     <section className="relative bg-paper py-24 md:py-32 border-y border-line-subtle overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image
-          src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1800&q=60&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=1800&q=60&auto=format&fit=crop"
           alt=""
           fill
           sizes="100vw"

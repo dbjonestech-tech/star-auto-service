@@ -47,7 +47,7 @@ export default function ContactPage() {
       <JsonLd data={breadcrumbs} />
       {/* Intro band */}
       <section className="relative bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line overflow-hidden">
-        <SectionWatermark src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
+        <SectionWatermark src="/assets/contact-hero.avif" opacity={0.05} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
@@ -63,7 +63,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5">
               <Reveal delay={0.08}>
                 <p className="text-lg md:text-xl text-graphite leading-relaxed font-medium">
-                  Calling is fastest — we&apos;ll pick up, hear what your car is doing, and get you slotted in. The form below works just as well.
+                  Calling is fastest. We&apos;ll pick up, hear what your car is doing, and get you slotted in. The form below works just as well.
                 </p>
               </Reveal>
             </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1">
                       <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
-                        Address — open in Maps
+                        Address
                       </p>
                       <p className="font-sans font-bold text-lg text-ink leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.street}

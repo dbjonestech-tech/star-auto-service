@@ -15,7 +15,7 @@ export type Resource = {
   category: string;
   title: string;
   description: string;
-  /** Short readable date — also used in Article schema. */
+  /** Short readable date, also used in Article schema. */
   publishedDate: string; // ISO yyyy-mm-dd
   readMinutes: number;
   heroImage: string;
@@ -36,23 +36,23 @@ export const RESOURCES: Resource[] = [
     category: "Diagnostics",
     title: "Check engine light: what it means and what to do next",
     description:
-      "A plain-English guide to what triggers your check engine light, how serious it is, and what to do before you panic — from a Richardson, TX shop that diagnoses these every day.",
+      "A plain-English guide to what triggers your check engine light, how serious it is, and what to do before you panic, from a Richardson, TX shop that diagnoses these every day.",
     publishedDate: "2026-04-15",
     readMinutes: 6,
     heroImage:
-      "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Mechanic running diagnostic scanner on vehicle",
+      "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Engine cooling and diagnostic components under the hood",
     eyebrow: "Diagnostics",
-    lede: "Your check engine light just came on. Before you panic — or ignore it for the next six months — here is what it actually means, what to do in the next hour, and how a real shop diagnoses it.",
+    lede: "Your check engine light just came on. Before you panic, or ignore it for the next six months, here is what it actually means, what to do in the next hour, and how a real shop diagnoses it.",
     sections: [
-      { type: "h2", text: "Solid vs. flashing — there's a big difference" },
+      { type: "h2", text: "Solid vs. flashing: there's a big difference" },
       {
         type: "p",
         text: "A solid (steady) check engine light means the car's computer detected something out of spec, but it's not actively damaging the engine right now. It's a 'come see a shop in the next week or two' situation.",
       },
       {
         type: "p",
-        text: "A flashing check engine light is different. Flashing means the engine is actively misfiring badly enough to potentially destroy your catalytic converter. Catalytic converters are expensive — sometimes $1,500 to $3,000 — and a sustained misfire can cook one in minutes.",
+        text: "A flashing check engine light is different. Flashing means the engine is actively misfiring badly enough to potentially destroy your catalytic converter. Catalytic converters are expensive, sometimes $1,500 to $3,000, and a sustained misfire can cook one in minutes.",
       },
       {
         type: "callout",
@@ -79,7 +79,7 @@ export const RESOURCES: Resource[] = [
       },
       {
         type: "p",
-        text: "Some of these are $20 fixes. Some are $2,000 fixes. The code itself only narrows the possibilities — real diagnosis distinguishes between them.",
+        text: "Some of these are $20 fixes. Some are $2,000 fixes. The code itself only narrows the possibilities. Real diagnosis distinguishes between them.",
       },
 
       { type: "h2", text: "Why a free code-read at a parts store is not a diagnosis" },
@@ -111,14 +111,14 @@ export const RESOURCES: Resource[] = [
         items: [
           "If the light is flashing: stop driving and call a shop or tow.",
           "If the light is solid and the car drives normally: tighten your gas cap (it's been the cause for hundreds of customers over the years). Wait for two or three drive cycles to see if the light clears on its own.",
-          "If the light stays on after a few days: schedule a real diagnostic appointment. Don't wait six months hoping it goes away — codes can compound.",
+          "If the light stays on after a few days: schedule a real diagnostic appointment. Don't wait six months hoping it goes away. Codes can compound.",
         ],
       },
 
       { type: "h2", text: "What we do at The Star Auto Service" },
       {
         type: "p",
-        text: "Diagnostics here is a real process — not a code-and-guess. We pull the codes, capture freeze-frame data showing engine state at the moment the code triggered, log live sensor data on a road test, and rule out cheap causes before recommending expensive ones. The diagnostic fee is credited toward the repair if you authorize the work, so when we find it, you only pay once.",
+        text: "Diagnostics here is a real process, not a code-and-guess. We pull the codes, capture freeze-frame data showing engine state at the moment the code triggered, log live sensor data on a road test, and rule out cheap causes before recommending expensive ones. The diagnostic fee is credited toward the repair if you authorize the work, so when we find it, you only pay once.",
       },
     ],
     related: ["when-to-replace-brakes", "texas-state-inspection-guide"],
@@ -129,12 +129,12 @@ export const RESOURCES: Resource[] = [
     category: "Brakes",
     title: "When to replace your brakes: 5 signs (and what they cost)",
     description:
-      "Brake pads, rotors, fluid, calipers — when each is due, what failure looks like, and what realistic costs run at an honest, family-owned shop in Richardson, TX.",
+      "Brake pads, rotors, fluid, calipers, when each is due, what failure looks like, and what realistic costs run at an honest, family-owned shop in Richardson, TX.",
     publishedDate: "2026-03-22",
     readMinutes: 5,
     heroImage:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Brake disc and caliper close-up",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Brake inspection paperwork on a clipboard",
     eyebrow: "Brakes",
     lede: "Brakes are the part of the car most likely to silently degrade until they fail at exactly the wrong moment. Here are the five signs to watch for, plus realistic cost expectations.",
     sections: [
@@ -145,7 +145,7 @@ export const RESOURCES: Resource[] = [
       },
       {
         type: "p",
-        text: "Grinding or metal-on-metal scraping means the pad is worn through and you're now scoring the rotor. This is a 'come in this week' situation — keep driving and you'll need rotors instead of just pads, doubling the repair cost.",
+        text: "Grinding or metal-on-metal scraping means the pad is worn through and you're now scoring the rotor. This is a 'come in this week' situation. Keep driving and you'll need rotors instead of just pads, doubling the repair cost.",
       },
 
       { type: "h2", text: "2. Pulsation through the pedal" },
@@ -157,7 +157,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "3. Soft pedal, sinking pedal, or pedal that goes to the floor" },
       {
         type: "p",
-        text: "This is a brake fluid problem — air in the line, a leak in the system, or a failing master cylinder. Don't drive it. Call us, get it towed if you have to. Brake fluid is the difference between you stopping and you not stopping.",
+        text: "This is a brake fluid problem, air in the line, a leak in the system, or a failing master cylinder. Don't drive it. Call us, get it towed if you have to. Brake fluid is the difference between you stopping and you not stopping.",
       },
 
       { type: "h2", text: "4. Pulling to one side under braking" },
@@ -166,7 +166,7 @@ export const RESOURCES: Resource[] = [
         text: "If the car drifts left or right when you brake, one side is doing more work than the other. Common causes: a stuck caliper, a collapsed brake hose, or unevenly worn pads. All of those need attention before they get worse.",
       },
 
-      { type: "h2", text: "5. The clock — or rather, the mileage" },
+      { type: "h2", text: "5. The clock, or rather, the mileage" },
       {
         type: "p",
         text: "Brake pads on most modern cars last 30,000 to 70,000 miles depending on driving conditions. Stop-and-go driving (looking at you, Dallas commuters) is harder on brakes than steady highway. If you can't remember the last time you had brakes done and you're past 40,000 miles, get them inspected.",
@@ -191,7 +191,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "callout",
         title: "Free brake check anytime",
-        body: "We're happy to put your car up on the lift and tell you honestly where you're at — pad thickness, rotor condition, fluid color. No appointment needed, walk-ins welcome.",
+        body: "We're happy to put your car up on the lift and tell you honestly where you're at, pad thickness, rotor condition, fluid color. No appointment needed, walk-ins welcome.",
       },
     ],
     related: ["check-engine-light-guide", "seasonal-car-care-texas"],
@@ -202,14 +202,14 @@ export const RESOURCES: Resource[] = [
     category: "Maintenance",
     title: "How often should you change your oil? (The honest answer)",
     description:
-      "3,000 miles is dead. So is 5,000. Modern oil-change intervals depend on the oil type, the engine, and your real driving conditions — here's the straight answer for Texas drivers.",
+      "3,000 miles is dead. So is 5,000. Modern oil-change intervals depend on the oil type, the engine, and your real driving conditions, here's the straight answer for Texas drivers.",
     publishedDate: "2026-02-14",
     readMinutes: 4,
     heroImage:
-      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine bay during routine maintenance",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Auto shop bay during routine oil service",
     eyebrow: "Maintenance",
-    lede: "The 3,000-mile oil change is a marketing artifact from the 1970s. Modern oils, modern engines, and modern oil-life monitors all push the real interval much further — but not as far as some people want to believe.",
+    lede: "The 3,000-mile oil change is a marketing artifact from the 1970s. Modern oils, modern engines, and modern oil-life monitors all push the real interval much further, but not as far as some people want to believe.",
     sections: [
       { type: "h2", text: "The short answer" },
       {
@@ -219,14 +219,14 @@ export const RESOURCES: Resource[] = [
           "Synthetic blend: 5,000 to 7,500 miles",
           "Full synthetic: 7,500 to 10,000 miles, sometimes 15,000 in newer European cars",
           "Trust your manufacturer's recommendation in the owner's manual",
-          "Trust your oil-life monitor if your car has one — they're surprisingly accurate",
+          "Trust your oil-life monitor if your car has one, they're surprisingly accurate",
         ],
       },
 
       { type: "h2", text: "Why intervals got longer" },
       {
         type: "p",
-        text: "Two reasons. First, modern synthetics resist breakdown at high temperatures far better than old conventional oils. Second, modern engines are tighter — fewer contaminants get into the oil in the first place. Combined, that means a synthetic oil can do its job for two to three times longer than a conventional oil from the 1970s.",
+        text: "Two reasons. First, modern synthetics resist breakdown at high temperatures far better than old conventional oils. Second, modern engines are tighter, fewer contaminants get into the oil in the first place. Combined, that means a synthetic oil can do its job for two to three times longer than a conventional oil from the 1970s.",
       },
 
       { type: "h2", text: "When you should go shorter than the manual says" },
@@ -237,7 +237,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "ul",
         items: [
-          "Short trips under 10 minutes (engine never fully warms up — water and fuel build up in the oil)",
+          "Short trips under 10 minutes (engine never fully warms up, water and fuel build up in the oil)",
           "Stop-and-go traffic in Dallas-area heat",
           "Towing or hauling heavy loads regularly",
           "Dusty conditions or unpaved roads",
@@ -246,7 +246,7 @@ export const RESOURCES: Resource[] = [
       },
       {
         type: "p",
-        text: "...then run the conservative side of the recommended range. That doesn't mean 3,000 miles for synthetic — but if your manual says '7,500 to 10,000,' do 7,500.",
+        text: "...then run the conservative side of the recommended range. That doesn't mean 3,000 miles for synthetic, but if your manual says '7,500 to 10,000,' do 7,500.",
       },
 
       { type: "h2", text: "Texas-specific notes" },
@@ -258,7 +258,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "What to do if you can't remember the last change" },
       {
         type: "p",
-        text: "Change it. Then start tracking. Most modern cars track oil life in the dashboard menu — learn how to read it. If yours doesn't, just write the mileage on a sticker (we'll do that for you) and check it monthly.",
+        text: "Change it. Then start tracking. Most modern cars track oil life in the dashboard menu, learn how to read it. If yours doesn't, just write the mileage on a sticker (we'll do that for you) and check it monthly.",
       },
 
       {
@@ -275,26 +275,25 @@ export const RESOURCES: Resource[] = [
     category: "Inspections",
     title: "Texas state inspection: complete guide for 2026",
     description:
-      "What gets checked, what fails most often, what it costs, and what to do if you don't pass — from a state-authorized inspection station in Richardson.",
+      "What gets checked, what fails most often, what it costs, and what to do if you don't pass, from a state-authorized inspection station in Richardson.",
     publishedDate: "2026-01-30",
     readMinutes: 5,
-    heroImage:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "State inspection paperwork on clipboard",
+    heroImage: "/assets/resource-state-inspection.webp",
+    heroAlt: "Vehicle inspection report and tools at the shop",
     eyebrow: "Inspections",
-    lede: "Every Texas vehicle needs an annual inspection to register. Here's what gets checked, what trips most people up, and what to do if your car fails — from a state-authorized inspection station that does this hundreds of times a year.",
+    lede: "Every Texas vehicle needs an annual inspection to register. Here's what gets checked, what trips most people up, and what to do if your car fails, from a state-authorized inspection station that does this hundreds of times a year.",
     sections: [
       { type: "h2", text: "Two parts: safety and emissions" },
       {
         type: "p",
-        text: "Texas requires an annual safety inspection for nearly all vehicles. If you live in the Dallas-Fort Worth metro (Dallas, Tarrant, Collin, Denton, Ellis, Johnson, Kaufman, Parker, or Rockwall County), you also need an emissions inspection. We do both — most cars in 30 to 45 minutes, walk-in.",
+        text: "Texas requires an annual safety inspection for nearly all vehicles. If you live in the Dallas-Fort Worth metro (Dallas, Tarrant, Collin, Denton, Ellis, Johnson, Kaufman, Parker, or Rockwall County), you also need an emissions inspection. We do both, most cars in 30 to 45 minutes, walk-in.",
       },
 
       { type: "h2", text: "What the safety inspection checks" },
       {
         type: "ul",
         items: [
-          "Brakes — including the parking brake",
+          "Brakes, including the parking brake",
           "Headlights, brake lights, turn signals, and tail lights",
           "Horn",
           "Windshield wipers (both blades, working)",
@@ -360,9 +359,8 @@ export const RESOURCES: Resource[] = [
       "Heat is the enemy. Dust is the second enemy. Rare ice is the third. Here's a season-by-season checklist for keeping your car running through North Texas weather.",
     publishedDate: "2026-01-12",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Auto shop interior with vehicles",
+    heroImage: "/assets/resource-seasonal-care.avif",
+    heroAlt: "Sunset over a Texas highway, seasonal driving conditions",
     eyebrow: "Maintenance",
     lede: "Cars in North Texas don't fail the same way they do in Minnesota. Our climate stresses different systems. Here's a season-by-season checklist for the things that actually matter for your car here.",
     sections: [
@@ -391,7 +389,7 @@ export const RESOURCES: Resource[] = [
         items: [
           "Watch your temperature gauge daily. Any creep above normal is a warning.",
           "Check tire pressure monthly. Heat raises pressure; under-inflated tires fail sooner in heat.",
-          "Don't ignore squealing belts — that's the AC compressor or alternator pulley telling you something.",
+          "Don't ignore squealing belts, that's the AC compressor or alternator pulley telling you something.",
           "If your car has stop-start technology, the battery is working overtime in heat. Watch for slow cranks.",
         ],
       },
@@ -404,7 +402,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "ul",
         items: [
-          "Annual inspection if it's due — the lines are shorter than spring or summer.",
+          "Annual inspection if it's due, the lines are shorter than spring or summer.",
           "Brake check. Heat fade and stop-and-go summer driving wears pads faster than people realize.",
           "Wiper blade replacement before fall thunderstorms.",
           "Check headlight aim and brightness for shorter daylight.",
@@ -420,8 +418,8 @@ export const RESOURCES: Resource[] = [
         type: "ul",
         items: [
           "Check antifreeze concentration before any forecasted hard freeze.",
-          "Tire condition — cold tires lose pressure and grip; ice and sleet are unforgiving.",
-          "Battery test again — cold cranking is the second-hardest thing on a battery after sustained heat.",
+          "Tire condition, cold tires lose pressure and grip; ice and sleet are unforgiving.",
+          "Battery test again, cold cranking is the second-hardest thing on a battery after sustained heat.",
           "Don't ignore a 'low coolant' warning. A frozen coolant line cracks blocks.",
         ],
       },
@@ -430,10 +428,10 @@ export const RESOURCES: Resource[] = [
       {
         type: "ul",
         items: [
-          "Skipped oil changes during summer — hot oil breaks down faster",
-          "Skipped AC service — when the compressor goes, it's $1,500+",
-          "Ignored battery warnings in heat — sudden no-starts in August parking lots",
-          "Letting tires go bald — heat plus bald tires plus rain equals hydroplaning",
+          "Skipped oil changes during summer, hot oil breaks down faster",
+          "Skipped AC service, when the compressor goes, it's $1,500+",
+          "Ignored battery warnings in heat, sudden no-starts in August parking lots",
+          "Letting tires go bald, heat plus bald tires plus rain equals hydroplaning",
         ],
       },
 

@@ -12,7 +12,7 @@ import { CTASection } from "@/components/sections/CTASection";
 
 const TITLE = "Customer Reviews | The Star Auto Service Richardson TX";
 const DESCRIPTION =
-  "Read 136+ Google reviews — 4.8★ average — from Richardson, Plano, Garland, and Dallas drivers who trust The Star Auto Service since 1998.";
+  "Read 136+ Google reviews, 4.8★ average, from Richardson, Plano, Garland, and Dallas drivers who trust The Star Auto Service since 1998.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

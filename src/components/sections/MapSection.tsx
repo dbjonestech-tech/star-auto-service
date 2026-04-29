@@ -39,7 +39,7 @@ export function MapSection() {
                   </div>
                   <div className="flex-1">
                     <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
-                      Address — open in Maps
+                      Address
                     </p>
                     <p className="font-sans font-bold text-lg text-ink leading-snug group-hover:text-royal transition-colors">
                       {SITE.address.street}

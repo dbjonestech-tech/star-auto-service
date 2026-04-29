@@ -39,7 +39,7 @@ export function Pillars() {
     <section className="relative bg-cream py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image
-          src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1800&q=60&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1800&q=60&auto=format&fit=crop"
           alt=""
           fill
           sizes="100vw"

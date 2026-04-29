@@ -36,19 +36,27 @@ export function MapEmbed({ src, title, address, className = "" }: MapEmbedProps)
     return () => observer.disconnect();
   }, [loaded]);
 
+  // Caller can pass `absolute inset-0` to fill an aspect-ratio parent. Default to relative so the
+  // placeholder's absolute children have a positioning context. Position is set via inline style so
+  // a className containing `absolute` always wins (className utilities can't reliably override
+  // each other in Tailwind's source order for position properties).
+  const isAbsolute = /\babsolute\b/.test(className);
+  const positionStyle = isAbsolute ? "absolute" as const : "relative" as const;
+
   return (
-    <div ref={ref} className={`relative bg-paper border border-line ${className}`}>
+    <div
+      ref={ref}
+      style={{ position: positionStyle }}
+      className={`bg-paper border border-line ${className}`}
+    >
       {loaded ? (
         <iframe
           src={src}
           title={title}
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
+          style={{ border: 0, position: "absolute", inset: 0, width: "100%", height: "100%" }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="block w-full h-full"
         />
       ) : (
         <div

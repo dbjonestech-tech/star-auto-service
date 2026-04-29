@@ -10,7 +10,7 @@ export function CTASection() {
     <section className="relative bg-royal-deep text-cream overflow-hidden">
       {/* Photographic backdrop, dimmed for legibility */}
       <Image
-        src="/assets/shop-day-2.jpg"
+        src="/assets/shop-front.jpg"
         alt=""
         fill
         sizes="100vw"

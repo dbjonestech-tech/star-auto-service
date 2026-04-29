@@ -21,14 +21,14 @@ export function Hero() {
         className="object-cover"
       />
 
-      {/* Deep left-fade scrim — strong enough that headline reads without text-shadow. */}
+      {/* Deep left-fade scrim, strong enough that headline reads without text-shadow. */}
       <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/55 to-ink/15" />
       {/* Bottom-to-top scrim for trust strip + obscures bottom-right reader board. */}
       <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
       {/* Bottom-right vignette specifically darkens the LED reader board area. */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_60%,rgba(15,15,18,0.5),transparent_55%)]" />
 
-      {/* Floating NAPA AutoCare badge — top-right, native logo, no frame */}
+      {/* Floating NAPA AutoCare badge, top-right, native logo, no frame */}
       <div className="hidden md:block absolute top-6 right-6 lg:top-10 lg:right-10 z-10">
         <Image
           src="/assets/napa-autocare.png"

@@ -37,7 +37,7 @@ const PILLARS = [
   {
     icon: Wrench,
     headline: "24,000 miles",
-    body: "Or 24,000 miles of driving — whichever comes first. Both parts and qualifying labor.",
+    body: "Or 24,000 miles of driving, whichever comes first. Both parts and qualifying labor.",
   },
   {
     icon: MapPin,
@@ -69,19 +69,19 @@ export default function WarrantyPage() {
                   <span className="text-royal">backed nationwide.</span>
                 </h1>
                 <p className="mt-7 text-lg md:text-xl text-graphite leading-relaxed font-medium max-w-2xl">
-                  As an official NAPA Auto Care Center, the work we do at The Star Auto Service is covered by NAPA&apos;s nationwide warranty — 24 months, 24,000 miles, honored at over 17,000 NAPA Auto Care Centers across the country.
+                  As an official NAPA Auto Care Center, the work we do at The Star Auto Service is covered by NAPA&apos;s nationwide warranty, 24 months, 24,000 miles, honored at over 17,000 NAPA Auto Care Centers across the country.
                 </p>
               </Reveal>
             </div>
             <div className="lg:col-span-5">
               <Reveal delay={0.08}>
-                <div className="relative bg-surface p-7 md:p-9 shadow-card-lg flex items-center justify-center">
+                <div className="relative aspect-[4/3] overflow-hidden bg-ink shadow-card-lg">
                   <Image
-                    src="/assets/napa-autocare.png"
-                    alt="NAPA Auto Care Center"
-                    width={400}
-                    height={130}
-                    className="h-24 md:h-28 w-auto object-contain"
+                    src="/assets/warranty-hero.jpg"
+                    alt="NAPA AutoCare Center sign on the storefront"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </Reveal>
@@ -125,10 +125,10 @@ export default function WarrantyPage() {
             </h2>
             <div className="mt-8 space-y-5 text-base md:text-lg text-graphite leading-relaxed font-medium">
               <p>
-                When you have a qualifying repair done at The Star Auto Service, the parts and labor are warrantied for 24 months from the date of repair, or 24,000 miles of driving — whichever comes first.
+                When you have a qualifying repair done at The Star Auto Service, the parts and labor are warrantied for 24 months from the date of repair, or 24,000 miles of driving, whichever comes first.
               </p>
               <p>
-                If something goes wrong with that specific repair within the warranty period, the work is covered. You can bring it back to us. You can also bring it to any of the 17,000+ NAPA Auto Care Centers nationwide — meaning if you move to Phoenix, road-trip to Maine, or break down in a small town in Oklahoma on a Tuesday, the warranty travels with you.
+                If something goes wrong with that specific repair within the warranty period, the work is covered. You can bring it back to us. You can also bring it to any of the 17,000+ NAPA Auto Care Centers nationwide, meaning if you move to Phoenix, road-trip to Maine, or break down in a small town in Oklahoma on a Tuesday, the warranty travels with you.
               </p>
               <p className="text-ink font-semibold">
                 Keep your invoice. That&apos;s the proof. We also keep it on file at the shop, so if you misplace yours, give us a call.
@@ -148,7 +148,7 @@ export default function WarrantyPage() {
                     What&apos;s covered
                   </h3>
                   <p className="mt-3 text-sm md:text-base text-graphite leading-relaxed font-medium">
-                    Most repairs you&apos;d typically have done at a shop — brakes, engine work, transmission, electrical, cooling, AC, fuel, suspension, and more. The specific eligible categories are governed by NAPA. We&apos;ll walk you through what applies to your repair before any work starts.
+                    Most repairs you&apos;d typically have done at a shop, brakes, engine work, transmission, electrical, cooling, AC, fuel, suspension, and more. The specific eligible categories are governed by NAPA. We&apos;ll walk you through what applies to your repair before any work starts.
                   </p>
                 </div>
               </div>

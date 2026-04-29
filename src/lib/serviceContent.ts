@@ -30,7 +30,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Brakes",
     headline: "Brake repair, done right.",
     subhead:
-      "Pads, rotors, calipers, fluid, ABS — full brake system service for every common make and model.",
+      "Pads, rotors, calipers, fluid, ABS, full brake system service for every common make and model.",
     heroImage:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600&q=75&auto=format&fit=crop",
     heroAlt: "Close-up of brake rotor and caliper service",
@@ -45,7 +45,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     whyUs: [
       "ASE-Certified technicians inspect the entire system, not just the squeak",
-      "Honest assessments — we tell you what your brakes need and what they don't",
+      "Honest assessments, we tell you what your brakes need and what they don't",
       "NAPA Auto Care nationwide warranty: 24 months / 24,000 miles, honored at 17,000+ shops",
       "Most repairs same-day, original-quality parts in stock",
     ],
@@ -56,15 +56,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do I need rotors every time, or can I just replace pads?",
-        a: "Depends on rotor condition. If they're within spec and not warped, we resurface or keep them. We won't push rotors you don't need — that's been the rule since 1998.",
+        a: "Depends on rotor condition. If they're within spec and not warped, we resurface or keep them. We won't push rotors you don't need, that's been the rule since 1998.",
       },
       {
         q: "How much does brake service cost?",
-        a: "Pad replacement on a typical sedan runs $150–$300 per axle including labor. Rotors add to that. We quote upfront after inspection — no surprises.",
+        a: "Pad replacement on a typical sedan runs $150–$300 per axle including labor. Rotors add to that. We quote upfront after inspection, no surprises.",
       },
       {
         q: "Are my brakes covered by the NAPA warranty?",
-        a: "Yes — qualifying brake parts and labor are covered nationwide for 24 months / 24,000 miles at any of 17,000+ NAPA Auto Care Centers.",
+        a: "Yes. qualifying brake parts and labor are covered nationwide for 24 months / 24,000 miles at any of 17,000+ NAPA Auto Care Centers.",
       },
     ],
     featuredTestimonialIndex: 0,
@@ -74,7 +74,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Oil change & lube",
     headline: "Oil change, done in under an hour.",
     subhead:
-      "Conventional, blend, or full synthetic — we use the right oil and quality filter for your specific vehicle.",
+      "Conventional, blend, or full synthetic, we use the right oil and quality filter for your specific vehicle.",
     heroImage:
       "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
     heroAlt: "Engine bay during oil change service",
@@ -87,10 +87,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "You can't remember the last time it was done",
     ],
     whyUs: [
-      "We use the right oil grade and filter spec for your vehicle — not whatever's on sale",
+      "We use the right oil grade and filter spec for your vehicle, not whatever's on sale",
       "Top-off all critical fluids (coolant, washer, brake) at no extra charge",
       "Visual inspection of belts, hoses, tires, and brakes while you're up on the lift",
-      "Honest reminder for anything that genuinely needs attention — never an upsell",
+      "Honest reminder for anything that genuinely needs attention, never an upsell",
     ],
     faqs: [
       {
@@ -99,7 +99,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you do European cars?",
-        a: "Yes — we stock the appropriate weights and filters for BMW, Mercedes-Benz, Audi, Volkswagen, Volvo, and most European makes.",
+        a: "Yes. we stock the appropriate weights and filters for BMW, Mercedes-Benz, Audi, Volkswagen, Volvo, and most European makes.",
       },
       {
         q: "Synthetic or conventional?",
@@ -132,7 +132,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     whyUs: [
       "We read codes AND interpret what they mean for your specific vehicle",
       "Manufacturer-specific scan tools, not just generic OBD-II readers",
-      "We don't guess — we test. Sensor data, fuel trims, freeze-frame analysis",
+      "We don't guess, we test. Sensor data, fuel trims, freeze-frame analysis",
       "Diagnostic fee credited toward repair if you have us fix it",
     ],
     faqs: [
@@ -142,15 +142,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Why does diagnostics cost money?",
-        a: "Real diagnosis takes time, manufacturer-specific tools, and decades of experience. We credit the diagnostic fee toward the repair if you authorize the work — so when we find it, you only pay once.",
+        a: "Real diagnosis takes time, manufacturer-specific tools, and decades of experience. We credit the diagnostic fee toward the repair if you authorize the work, so when we find it, you only pay once.",
       },
       {
-        q: "My check engine light is flashing — should I keep driving?",
+        q: "My check engine light is flashing, should I keep driving?",
         a: "No. A flashing CEL means an active misfire that can damage the catalytic converter. Pull over, get it towed, and call us at (972) 231-2886.",
       },
       {
         q: "Can you help if I failed Texas state inspection?",
-        a: "Yes — emissions diagnostics is one of our specialties. Bring the failure paperwork, we'll diagnose, repair, and re-test.",
+        a: "Yes. emissions diagnostics is one of our specialties. Bring the failure paperwork, we'll diagnose, repair, and re-test.",
       },
     ],
     featuredTestimonialIndex: 0,
@@ -160,7 +160,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Engine repair & replacement",
     headline: "From timing belts to full rebuilds.",
     subhead:
-      "ASE-Certified engine work — head gaskets, timing chains, mounts, replacements. Every common make and model, domestic and import.",
+      "ASE-Certified engine work, head gaskets, timing chains, mounts, replacements. Every common make and model, domestic and import.",
     heroImage:
       "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
     heroAlt: "Engine bay during major repair",
@@ -174,7 +174,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     whyUs: [
       "Honest call on rebuild vs. replacement based on the long-term math",
-      "Original-quality and OEM parts on engine internals — never bargain-bin",
+      "Original-quality and OEM parts on engine internals, never bargain-bin",
       "Full ASE certification and decades of combined engine experience",
       "We handle the warranty paperwork on NAPA-covered engine work",
     ],
@@ -185,7 +185,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you replace timing belts and chains?",
-        a: "Yes — including water pump, tensioners, and idlers as part of the same job when it's the right call. Timing belt failure is catastrophic; we're not the shop that lets you skip the maintenance.",
+        a: "Yes. including water pump, tensioners, and idlers as part of the same job when it's the right call. Timing belt failure is catastrophic; we're not the shop that lets you skip the maintenance.",
       },
       {
         q: "How long does an engine replacement take?",
@@ -193,7 +193,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Is engine work covered by the NAPA warranty?",
-        a: "Qualifying engine repairs and parts are covered for 24 months / 24,000 miles nationwide. Major engine assemblies sometimes carry extended manufacturer warranties — we'll walk you through what applies.",
+        a: "Qualifying engine repairs and parts are covered for 24 months / 24,000 miles nationwide. Major engine assemblies sometimes carry extended manufacturer warranties, we'll walk you through what applies.",
       },
     ],
     featuredTestimonialIndex: 2,
@@ -201,12 +201,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
   transmission: {
     eyebrow: "Transmission service",
-    headline: "Fluid, repair, rebuild — done right.",
+    headline: "Fluid, repair, rebuild, done right.",
     subhead:
       "Automatic and manual. From a drain-and-fill to full rebuild. We diagnose what's actually wrong before quoting work.",
-    heroImage:
-      "https://images.unsplash.com/photo-1523983254932-c7e6571c9d60?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Underside of a vehicle on a lift, transmission visible",
+    heroImage: "/assets/service-transmission.avif",
+    heroAlt: "Manual transmission gear stack and clutch components",
     priceCue: "Honest diagnosis, no replace-first mentality",
     symptoms: [
       "Slipping or harsh shifts, especially under load",
@@ -216,7 +215,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "It's been 60,000+ miles since the last transmission service",
     ],
     whyUs: [
-      "We diagnose before we replace — most transmission issues aren't full failures",
+      "We diagnose before we replace, most transmission issues aren't full failures",
       "Right fluid for your specific transmission (Dexron VI, ATF+4, CVT, DSG, etc.)",
       "Rebuilds when rebuilds make sense; replacements when they don't",
       "NAPA Auto Care warranty backs qualifying transmission work",
@@ -224,7 +223,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     faqs: [
       {
         q: "How often should I change my transmission fluid?",
-        a: "Manufacturer recommendations vary widely — anywhere from 30,000 to 100,000 miles. We'll check your specific spec and the fluid condition, then recommend honestly.",
+        a: "Manufacturer recommendations vary widely, anywhere from 30,000 to 100,000 miles. We'll check your specific spec and the fluid condition, then recommend honestly.",
       },
       {
         q: "Should I rebuild or replace?",
@@ -232,11 +231,11 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you work on CVT transmissions?",
-        a: "Yes — we service CVTs from Nissan, Honda, Subaru, Toyota, and others. They require specific fluid and procedures we follow exactly.",
+        a: "Yes. we service CVTs from Nissan, Honda, Subaru, Toyota, and others. They require specific fluid and procedures we follow exactly.",
       },
       {
         q: "Is a transmission flush risky on a high-mileage car?",
-        a: "Sometimes. On a vehicle that's never had service and has 150K+ miles, an aggressive flush can dislodge debris and cause issues. We do a careful drain-and-fill in those cases — the conservative play.",
+        a: "Sometimes. On a vehicle that's never had service and has 150K+ miles, an aggressive flush can dislodge debris and cause issues. We do a careful drain-and-fill in those cases, the conservative play.",
       },
     ],
     featuredTestimonialIndex: 1,
@@ -246,10 +245,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Electrical systems",
     headline: "Starters, alternators, batteries, wiring.",
     subhead:
-      "Modern vehicles are computers on wheels. We diagnose and repair every electrical system — sensors, modules, wiring, and the basics.",
-    heroImage:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine compartment with electrical components visible",
+      "Modern vehicles are computers on wheels. We diagnose and repair every electrical system, sensors, modules, wiring, and the basics.",
+    heroImage: "/assets/service-electrical.avif",
+    heroAlt: "Vehicle electrical control module and wiring harness",
     priceCue: "Diagnostic fee credited toward repair",
     symptoms: [
       "Vehicle won't start, cranks slow, or clicks repeatedly",
@@ -259,19 +257,19 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Burning electrical smell or visible wiring damage",
     ],
     whyUs: [
-      "Tested charging system before we sell you a battery — most batteries die because of charging issues",
+      "Tested charging system before we sell you a battery, most batteries die because of charging issues",
       "Modern scan tools that read every module on the bus, not just the engine",
-      "Real diagnostic time on intermittent issues — not parts-cannon guessing",
+      "Real diagnostic time on intermittent issues, not parts-cannon guessing",
       "Wiring repairs done properly: solder + heat shrink, not crimps",
     ],
     faqs: [
       {
-        q: "My battery is dead — do I need a new one?",
+        q: "My battery is dead, do I need a new one?",
         a: "Maybe. We'll load-test the battery AND test the alternator and starter draw. About a third of \"dead battery\" calls are actually charging-system or parasitic-draw problems. New battery without diagnosing the real cause = same problem in two months.",
       },
       {
         q: "How long does a battery last?",
-        a: "Texas heat is brutal on batteries. Typical life here is 3–5 years vs. 5–7 in cooler climates. Group-size and CCA matter — we install what your vehicle actually requires.",
+        a: "Texas heat is brutal on batteries. Typical life here is 3–5 years vs. 5–7 in cooler climates. Group-size and CCA matter. We install what your vehicle actually requires.",
       },
       {
         q: "Why do you charge for electrical diagnostics?",
@@ -279,7 +277,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Can you handle aftermarket electrical work?",
-        a: "Stereo systems, lighting upgrades, dash cams, etc. — yes, when they're installed properly. We won't touch obvious hack jobs from other shops, but we'll quote a clean re-wire.",
+        a: "Stereo systems, lighting upgrades, dash cams, etc., yes, when they're installed properly. We won't touch obvious hack jobs from other shops, but we'll quote a clean re-wire.",
       },
     ],
     featuredTestimonialIndex: 5,
@@ -289,10 +287,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Texas state inspections",
     headline: "State inspections, walk-in.",
     subhead:
-      "Authorized Texas state inspection station. Annual safety and emissions inspections, failed-inspection diagnosis, and compliance repairs — all under one roof.",
-    heroImage:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Inspection paperwork on clipboard at auto shop",
+      "Authorized Texas state inspection station. Annual safety and emissions inspections, failed-inspection diagnosis, and compliance repairs, all under one roof.",
+    heroImage: "/assets/service-state-inspections.avif",
+    heroAlt: "Texas state inspection station sign at the shop",
     priceCue: "$7 safety / $25.50 emissions, walk-in welcome",
     symptoms: [
       "Your inspection is due (registration sticker shows the month)",
@@ -301,10 +298,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Out-of-state move-in vehicle needs Texas inspection",
     ],
     whyUs: [
-      "Authorized Texas inspection station — the official sticker is real",
-      "Failed inspection? We diagnose AND repair, then re-inspect — no shuttle between shops",
+      "Authorized Texas inspection station, the official sticker is real",
+      "Failed inspection? We diagnose AND repair, then re-inspect, no shuttle between shops",
       "Walk-ins welcome any weekday or Saturday morning",
-      "Bilingual staff — paperwork explained in English or Spanish",
+      "Bilingual staff, paperwork explained in English or Spanish",
     ],
     faqs: [
       {
@@ -325,7 +322,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you do out-of-state vehicle inspections for Texas registration?",
-        a: "Yes — VIN verification + safety + emissions all done in one visit. Bring your title and proof of insurance.",
+        a: "Yes. VIN verification + safety + emissions all done in one visit. Bring your title and proof of insurance.",
       },
     ],
     featuredTestimonialIndex: 3,
@@ -335,10 +332,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "HVAC / AC repair",
     headline: "Cold air, year-round.",
     subhead:
-      "Full HVAC service — recharge, compressor, condenser, heater core, refrigerant leak detection. R-134a and R-1234yf systems, every make and model.",
-    heroImage:
-      "https://images.unsplash.com/photo-1534093607318-f025413f49cb?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine bay AC compressor and lines",
+      "Full HVAC service, recharge, compressor, condenser, heater core, refrigerant leak detection. R-134a and R-1234yf systems, every make and model.",
+    heroImage: "/assets/service-hvac.avif",
+    heroAlt: "Vehicle HVAC and air conditioning system close up",
     priceCue: "Book in March, beat the August rush",
     symptoms: [
       "AC blows warm or only mildly cool",
@@ -349,7 +345,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Dashboard climate controls intermittent",
     ],
     whyUs: [
-      "We diagnose before recharging — sealing the leak first, not just topping off the refrigerant",
+      "We diagnose before recharging, sealing the leak first, not just topping off the refrigerant",
       "Modern systems including R-1234yf with proper EPA-compliant equipment",
       "Heater-core replacement, blend-door actuators, full HVAC repairs in-house",
       "We schedule AC work proactively so you're cold by April, not still waiting in July",
@@ -380,20 +376,19 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "Rotation, balance, repair, replacement.",
     subhead:
       "Tire rotation, wheel balancing, flat repair, tire replacement, TPMS service. We mount and balance every common size on cars, trucks, and SUVs.",
-    heroImage:
-      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Tires and wheels at the shop",
+    heroImage: "/assets/service-tires.avif",
+    heroAlt: "Tire tread close up on a wheel",
     priceCue: "Walk-in flat repair · Most rotations under 30 minutes",
     symptoms: [
       "Vibration through the steering wheel at highway speed",
       "Visible tread wear, uneven wear patterns, or low tread depth",
       "TPMS warning light on (low pressure or sensor fault)",
-      "Slow leak — losing pressure over a few days",
+      "Slow leak, losing pressure over a few days",
       "Pulling to one side on a flat road",
       "Last rotation was more than 7,500 miles ago",
     ],
     whyUs: [
-      "Honest tread inspection — we'll measure and show you, not just sell",
+      "Honest tread inspection, we'll measure and show you, not just sell",
       "Rotation pattern matched to your vehicle (FWD, AWD, directional tires all handled correctly)",
       "Flat repair done properly: plug-and-patch from the inside, not just an outside plug",
       "TPMS sensor service and replacement, programming for every make",
@@ -401,7 +396,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     faqs: [
       {
         q: "How often should I rotate my tires?",
-        a: "Every 5,000–7,500 miles, or with every other oil change. Front and rear wear at different rates — rotation evens it out and extends tire life.",
+        a: "Every 5,000–7,500 miles, or with every other oil change. Front and rear wear at different rates, rotation evens it out and extends tire life.",
       },
       {
         q: "When should I replace tires?",
@@ -409,7 +404,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Can you fix a flat or do I need a new tire?",
-        a: "Punctures in the tread can usually be repaired with a proper inside plug-and-patch. Sidewall damage can't be safely repaired — we'll show you the damage and let you decide.",
+        a: "Punctures in the tread can usually be repaired with a proper inside plug-and-patch. Sidewall damage can't be safely repaired, we'll show you the damage and let you decide.",
       },
       {
         q: "Do you sell tires?",
@@ -423,11 +418,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Cooling system",
     headline: "Radiator, coolant, water pump.",
     subhead:
-      "Cooling-system service for the brutal Texas summer — coolant flush, radiator repair, thermostat, water pump, hoses. All major makes, all coolant types.",
-    heroImage:
-      "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine cooling system components",
-    priceCue: "Don't wait for August — service it in spring",
+      "Cooling-system service for the brutal Texas summer, coolant flush, radiator repair, thermostat, water pump, hoses. All major makes, all coolant types.",
+    heroImage: "/assets/service-cooling.avif",
+    heroAlt: "Engine cooling system radiator and hoses",
+    priceCue: "Don't wait for August, service it in spring",
     symptoms: [
       "Engine temperature gauge running hotter than normal",
       "Coolant smell, sweet syrupy odor, or visible green/orange/pink leak",
@@ -437,10 +431,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "It's been more than 60,000 miles since a coolant flush",
     ],
     whyUs: [
-      "We use the correct coolant spec for your vehicle — Dexcool, HOAT, OAT, etc. Mixing the wrong types causes gel buildup that ruins systems",
+      "We use the correct coolant spec for your vehicle, Dexcool, HOAT, OAT, etc. Mixing the wrong types causes gel buildup that ruins systems",
       "Pressure testing to find leaks before they strand you",
       "Water pump and timing belt done together when it's the smart call (saves a second labor charge)",
-      "Texas heat is the #1 killer of cooling systems — we know what to look for",
+      "Texas heat is the #1 killer of cooling systems, we know what to look for",
     ],
     faqs: [
       {
@@ -448,7 +442,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         a: "Most modern long-life coolants run 60,000–100,000 miles. We'll check your fluid condition and your manufacturer's spec, then recommend honestly.",
       },
       {
-        q: "My car is overheating — what should I do right now?",
+        q: "My car is overheating, what should I do right now?",
         a: "Pull over safely, turn off the engine, don't open a hot radiator cap. Call us at (972) 231-2886 or have it towed. Driving an overheating engine costs head gaskets in minutes.",
       },
       {
@@ -457,7 +451,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Is a coolant flush necessary, or just a marketing upsell?",
-        a: "Genuinely necessary on schedule — old coolant becomes acidic and eats radiator fins and water-pump seals. We're not a flush-everything shop, but we'll tell you straight if yours is overdue.",
+        a: "Genuinely necessary on schedule, old coolant becomes acidic and eats radiator fins and water-pump seals. We're not a flush-everything shop, but we'll tell you straight if yours is overdue.",
       },
     ],
     featuredTestimonialIndex: 1,
@@ -468,10 +462,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "Cleaner fuel, smoother engine.",
     subhead:
       "Fuel injector cleaning, fuel filter replacement, fuel pump service, throttle-body cleaning. Restore performance and fuel economy on every common make and model.",
-    heroImage:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Fuel injection components on engine",
-    priceCue: "Diagnostics first — we don't clean what doesn't need cleaning",
+    heroImage: "/assets/service-fuel-injection.avif",
+    heroAlt: "Fuel injector rail mounted on engine",
+    priceCue: "Diagnostics first, we don't clean what doesn't need cleaning",
     symptoms: [
       "Rough idle, hesitation, or stumble on acceleration",
       "Drop in fuel economy without a clear reason",
@@ -481,7 +474,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Failed Texas state inspection on emissions",
     ],
     whyUs: [
-      "We diagnose with fuel-pressure tests and live-data scans — not parts-cannon guessing",
+      "We diagnose with fuel-pressure tests and live-data scans, not parts-cannon guessing",
       "Professional injector cleaning service, not the over-the-counter additives that don't really work",
       "Fuel pump replacement done with OEM-quality parts that last",
       "Throttle-body cleaning included with most fuel-system service",
@@ -501,7 +494,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you handle direct-injection (GDI) cleaning?",
-        a: "Yes — GDI engines (most modern Toyota, Hyundai, Kia, VW, GM) build carbon on intake valves that bottle additives can't reach. We do walnut-blast cleaning when needed.",
+        a: "Yes. GDI engines (most modern Toyota, Hyundai, Kia, VW, GM) build carbon on intake valves that bottle additives can't reach. We do walnut-blast cleaning when needed.",
       },
     ],
     featuredTestimonialIndex: 3,
@@ -511,10 +504,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     eyebrow: "Battery service",
     headline: "Tested, replaced, charged.",
     subhead:
-      "Battery testing, replacement, charging-system diagnostics, terminal cleaning. Texas heat eats batteries — we install the right battery for your vehicle and verify the charging system is healthy first.",
-    heroImage:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Battery and electrical work in engine bay",
+      "Battery testing, replacement, charging-system diagnostics, terminal cleaning. Texas heat eats batteries. We install the right battery for your vehicle and verify the charging system is healthy first.",
+    heroImage: "/assets/service-battery.avif",
+    heroAlt: "Vehicle battery installed under the hood",
     priceCue: "Free battery test · Most replacements under an hour",
     symptoms: [
       "Slow crank when starting the engine",
@@ -525,9 +517,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "Battery is more than 3 years old in Texas",
     ],
     whyUs: [
-      "We test the charging system FIRST — most \"dead battery\" cases are actually alternator or parasitic-draw issues, and a new battery alone won't fix them",
+      "We test the charging system FIRST, most \"dead battery\" cases are actually alternator or parasitic-draw issues, and a new battery alone won't fix them",
       "Right group-size and CCA rating for your specific vehicle (not whatever's on sale)",
-      "Texas heat kills batteries faster than cold — we know real-world life expectancy here",
+      "Texas heat kills batteries faster than cold, we know real-world life expectancy here",
       "Free battery test anytime, walk-in, no purchase required",
     ],
     faqs: [

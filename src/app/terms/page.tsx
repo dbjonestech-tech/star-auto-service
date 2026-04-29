@@ -63,7 +63,7 @@ export default function TermsPage() {
 
               <h2>Accuracy</h2>
               <p>
-                We try to keep the information on this site current and correct. If something looks off — hours, services offered, or anything else — please let us know.
+                We try to keep the information on this site current and correct. If something looks off, hours, services offered, or anything else, please let us know.
               </p>
 
               <h2>Trademarks</h2>

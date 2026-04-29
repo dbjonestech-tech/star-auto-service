@@ -23,7 +23,7 @@ export function ServicesOverview() {
     <section className="relative bg-paper py-24 md:py-32 border-y border-line-subtle overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image
-          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1800&q=60&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1800&q=60&auto=format&fit=crop"
           alt=""
           fill
           sizes="100vw"

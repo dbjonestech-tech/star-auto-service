@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   const title = `${service.title} in Richardson, TX | The Star Auto Service`;
-  const description = `${content.subhead} Call (972) 231-2886 or book online — ASE-Certified, NAPA Auto Care nationwide warranty.`;
+  const description = `${content.subhead} Call (972) 231-2886 or book online, ASE-Certified, NAPA Auto Care nationwide warranty.`;
 
   return {
     title: { absolute: title },
@@ -245,7 +245,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
                   Signs to come in.
                 </h2>
                 <p className="mt-6 text-base md:text-lg text-graphite leading-relaxed font-medium">
-                  Any of these sound familiar? Give us a call — we&apos;ll talk through what&apos;s likely going on before you make the trip.
+                  Any of these sound familiar? Give us a call, we&apos;ll talk through what&apos;s likely going on before you make the trip.
                 </p>
               </Reveal>
             </div>

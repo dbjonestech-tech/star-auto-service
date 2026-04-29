@@ -62,7 +62,7 @@ export function Header() {
         scrolled ? "shadow-[0_1px_0_var(--color-line),0_8px_24px_rgba(15,15,18,0.04)]" : ""
       }`}
     >
-      {/* Utility bar — xl+ only, slim */}
+      {/* Utility bar, xl+ only, slim */}
       <div className="hidden xl:block border-b border-line/60 bg-paper/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-end gap-5 text-[10px] uppercase tracking-[0.18em] font-bold text-graphite">
           <OpenNowChip />

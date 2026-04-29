@@ -63,7 +63,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <Reveal delay={0.08}>
                 <p className="text-lg md:text-xl text-graphite leading-relaxed font-medium">
-                  Family-owned auto repair in Richardson, Texas — by the same family, on the same corner, under the same rule.
+                  Family-owned auto repair in Richardson, Texas, by the same family, on the same corner, under the same rule.
                 </p>
               </Reveal>
             </div>
@@ -125,8 +125,8 @@ export default function AboutPage() {
               <Reveal>
                 <div className="relative aspect-[4/3] overflow-hidden bg-ink shadow-card-lg">
                   <Image
-                    src="/assets/shop-side.jpg"
-                    alt={`Side view of ${SITE.name} on Belt Line Road`}
+                    src="/assets/about-28-years.jpg"
+                    alt={`${SITE.name} on Belt Line Road, twenty-eight years on the corner`}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
@@ -160,7 +160,7 @@ export default function AboutPage() {
                     Twenty-eight years later, the rule has outlasted every shortcut, every chain shop down the road, and every easy excuse to cut corners. It&apos;s why customers come back. It&apos;s why their kids come back.
                   </p>
                   <p>
-                    What started as a small family-owned bay has grown into one of Richardson&apos;s most trusted auto repair facilities — but the shop is still family-run, the front desk still speaks both English and Spanish, and the answer to &ldquo;do I really need this?&rdquo; is still given straight.
+                    What started as a small family-owned bay has grown into one of Richardson&apos;s most trusted auto repair facilities, but the shop is still family-run, the front desk still speaks both English and Spanish, and the answer to &ldquo;do I really need this?&rdquo; is still given straight.
                   </p>
                 </div>
               </Reveal>
@@ -188,7 +188,7 @@ export default function AboutPage() {
                     ASE-Certified technicians. NAPA Auto Care Center with a nationwide 24-month / 24,000-mile warranty honored at over 17,000 NAPA shops. Bilingual service in English and Spanish.
                   </p>
                   <p>
-                    Domestic and import. Gas and hybrid. From a routine oil change to a complete engine replacement, twelve service categories cover almost everything that goes through the bays — and Texas state inspections are walk-in.
+                    Domestic and import. Gas and hybrid. From a routine oil change to a complete engine replacement, twelve service categories cover almost everything that goes through the bays, and Texas state inspections are walk-in.
                   </p>
                 </div>
                 <div className="mt-10">

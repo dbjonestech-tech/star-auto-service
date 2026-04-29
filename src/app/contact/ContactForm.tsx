@@ -80,7 +80,7 @@ export function ContactForm() {
           Message sent.
         </h2>
         <p className="mt-4 text-base text-graphite leading-relaxed font-medium max-w-md mx-auto">
-          Thanks for reaching out — we&apos;ll write back as soon as we can. For anything urgent, please call the shop.
+          Thanks for reaching out, we&apos;ll write back as soon as we can. For anything urgent, please call the shop.
         </p>
       </div>
     );
@@ -101,7 +101,7 @@ export function ContactForm() {
         <span className="text-gold-deep font-bold">*</span>.
       </p>
 
-      {/* Honeypot — hidden from real users, trap for bots. */}
+      {/* Honeypot, hidden from real users, trap for bots. */}
       <div aria-hidden="true" className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none">
         <label htmlFor="honeypot">Leave this field empty</label>
         <input

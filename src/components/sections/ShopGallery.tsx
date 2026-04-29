@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 
 /**
- * "On Belt Line, in Richardson" — replaces the previous shop-only gallery.
+ * "On Belt Line, in Richardson", replaces the previous shop-only gallery.
  * Anchors the shop's geographic location with a real map, pairs it with one
  * actual storefront photo + community/neighborhood imagery, and tells the
  * story of being a fixture on the corner since 1998.
@@ -32,7 +32,7 @@ export function ShopGallery() {
           <div className="md:col-span-5 flex md:items-end">
             <Reveal delay={0.1}>
               <p className="text-lg text-graphite leading-relaxed font-medium">
-                E Belt Line Road runs east-to-west across Richardson — and we&apos;ve been on the same corner since &apos;98. Across from the Coin Laundry, between Plano Road and Jupiter. Easy in, easy out.
+                E Belt Line Road runs east-to-west across Richardson, and we&apos;ve been on the same corner since &apos;98. Across from the Coin Laundry, between Plano Road and Jupiter. Easy in, easy out.
               </p>
             </Reveal>
           </div>
@@ -116,8 +116,8 @@ export function ShopGallery() {
         <Reveal delay={0.12} margin="-10%">
           <figure className="relative mt-3 md:mt-4 aspect-[16/6] overflow-hidden bg-ink shadow-card-lg group">
             <Image
-              src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=2000&q=70&auto=format&fit=crop"
-              alt="Texas suburban road at golden hour, the kind of street Belt Line runs through Richardson"
+              src="/assets/home-richardson-fixture.avif"
+              alt="Aerial view of Richardson, Texas at golden hour"
               fill
               sizes="100vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
@@ -132,7 +132,7 @@ export function ShopGallery() {
                   Richardson commuters. Plano second-opinions. Garland fleet trucks. Allen carpools.
                 </p>
                 <p className="mt-4 text-sm md:text-base text-cream/85 font-medium leading-relaxed">
-                  Twenty-eight years on the corner means a lot of cars and a lot of drivers — and most of them came back.
+                  Twenty-eight years on the corner means a lot of cars and a lot of drivers, and most of them came back.
                 </p>
               </div>
             </figcaption>

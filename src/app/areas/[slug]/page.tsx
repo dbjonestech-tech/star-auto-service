@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!area) return { title: "Area Not Found" };
 
   const title = `Auto Repair in ${area.name}, ${area.state} | The Star Auto Service`;
-  const description = `Trusted auto repair shop serving ${area.name}, ${area.state} drivers — ${area.driveTime} from our shop on E Belt Line Rd in Richardson. ASE-Certified, NAPA Auto Care. Call (972) 231-2886.`;
+  const description = `Trusted auto repair shop serving ${area.name}, ${area.state} drivers, ${area.driveTime} from our shop on E Belt Line Rd in Richardson. ASE-Certified, NAPA Auto Care. Call (972) 231-2886.`;
 
   return {
     title: { absolute: title },
