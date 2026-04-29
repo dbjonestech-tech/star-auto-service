@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SITE } from "@/lib/constants";
 import { CountUp } from "@/components/ui/CountUp";
 
-/** Royal-blue trust band. Three metric cards + featured NAPA Auto Care Center logo. Animated count-ups on scroll-in. */
+/** Compact royal-blue trust band. Three metric tiles + horizontal NAPA card, sized to fit inside the hero-fold viewport. */
 export function CredentialsBar() {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
@@ -11,66 +11,68 @@ export function CredentialsBar() {
       <div className="absolute inset-x-0 top-0 h-px bg-gold/40" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gold/40" aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-6 md:gap-x-10">
-              <div className="text-center md:text-left">
-                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-5 gap-x-8 lg:gap-x-12 items-center">
+          {/* Three metric tiles */}
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-3 gap-x-4 md:gap-x-8">
+              <div className="text-center lg:text-left">
+                <p className="font-sans font-black text-2xl md:text-3xl lg:text-4xl tracking-tight leading-none">
                   <CountUp to={yearsInBusiness} duration={1.6} />
                 </p>
-                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
+                <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
                   Years in Richardson
                 </p>
-                <p className="mt-1.5 text-sm text-cream/70 font-medium">
-                  Family-owned since {SITE.established}
+                <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight tabular-nums">
+                  Since {SITE.established}
                 </p>
               </div>
 
-              <div className="text-center md:text-left">
-                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
+              <div className="text-center lg:text-left">
+                <p className="font-sans font-black text-2xl md:text-3xl lg:text-4xl tracking-tight leading-none">
                   <CountUp to={4.8} duration={1.6} decimals={1} />
-                  <span className="ml-1 text-gold" aria-hidden="true">★</span>
+                  <span className="ml-0.5 text-gold" aria-hidden="true">★</span>
                 </p>
-                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
+                <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
                   Average rating
                 </p>
-                <p className="mt-1.5 text-sm text-cream/70 font-medium">
-                  Across <CountUp to={136} duration={1.6} className="font-semibold" /> Google reviews
+                <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight">
+                  <CountUp to={136} duration={1.6} className="font-semibold" /> Google reviews
                 </p>
               </div>
 
-              <div className="text-center md:text-left">
-                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
+              <div className="text-center lg:text-left">
+                <p className="font-sans font-black text-2xl md:text-3xl lg:text-4xl tracking-tight leading-none">
                   ASE
                 </p>
-                <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
+                <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
                   Certified technicians
                 </p>
-                <p className="mt-1.5 text-sm text-cream/70 font-medium">
+                <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight">
                   The industry standard
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Featured NAPA Auto Care Center block */}
-          <div className="lg:col-span-4">
-            <div className="bg-cream p-6 md:p-7 shadow-card-lg flex flex-col items-center text-center">
+          {/* NAPA card — horizontal */}
+          <div className="lg:col-span-5">
+            <div className="bg-cream px-4 py-3 md:px-5 md:py-3.5 shadow-card flex items-center gap-4">
               <Image
                 src="/assets/napa-autocare.png"
                 alt="NAPA Auto Care Center"
-                width={300}
-                height={100}
-                className="h-16 md:h-20 w-auto object-contain"
+                width={160}
+                height={54}
+                className="h-10 md:h-12 w-auto object-contain shrink-0"
               />
-              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] font-bold text-royal">
-                Official NAPA Auto Care Center
-              </p>
-              <p className="mt-1.5 text-sm text-graphite font-medium leading-relaxed">
-                24-month / 24,000-mile peace of mind warranty, honored at over 17,000
-                NAPA shops nationwide.
-              </p>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] uppercase tracking-[0.16em] font-bold text-royal leading-tight">
+                  Official NAPA Auto Care Center
+                </p>
+                <p className="mt-1 text-[11px] md:text-xs text-graphite font-medium leading-snug">
+                  24-month / 24,000-mile warranty · 17,000+ shops nationwide
+                </p>
+              </div>
             </div>
           </div>
         </div>
