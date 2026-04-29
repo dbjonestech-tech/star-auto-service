@@ -130,7 +130,25 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <Link
+              href="/reviews"
+              aria-label={`${SITE.rating.value} stars across ${SITE.rating.count} Google reviews. See reviews.`}
+              className="brand-star-link group inline-flex items-center gap-1.5 bg-gold-tint hover:bg-gold-soft border border-gold/40 px-2 sm:px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-ink transition-colors whitespace-nowrap"
+            >
+              <Star
+                className="brand-star text-gold shrink-0"
+                size={13}
+                fill="currentColor"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              <span className="tabular-nums">{SITE.rating.value}</span>
+              <span className="hidden md:inline text-graphite/70">·</span>
+              <span className="hidden md:inline tabular-nums">
+                {SITE.rating.count} Reviews
+              </span>
+            </Link>
             <Link
               href="/book"
               className="hidden md:inline-flex items-center justify-center bg-gold text-ink hover:bg-gold-deep px-4 lg:px-5 py-2.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors shadow-gold whitespace-nowrap"

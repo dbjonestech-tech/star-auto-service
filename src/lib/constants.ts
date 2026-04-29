@@ -22,6 +22,10 @@ export const SITE = {
     saturday: "8:00 AM – 4:00 PM",
     sunday: "Closed",
   },
+  rating: {
+    value: 4.8,
+    count: 136,
+  },
   social: {
     instagram: "https://www.instagram.com/thestarautoservice/",
   },
