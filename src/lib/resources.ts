@@ -39,9 +39,8 @@ export const RESOURCES: Resource[] = [
       "A plain-English guide to what triggers your check engine light, how serious it is, and what to do before you panic, from a Richardson, TX shop that diagnoses these every day.",
     publishedDate: "2026-04-15",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Mechanic working on an engine bay diagnostic",
+    heroImage: "/assets/service-electrical.avif",
+    heroAlt: "Vehicle electrical control module and wiring",
     eyebrow: "Diagnostics",
     lede: "Your check engine light just came on. Before you panic, or ignore it for the next six months, here is what it actually means, what to do in the next hour, and how a real shop diagnoses it.",
     sections: [
@@ -132,9 +131,8 @@ export const RESOURCES: Resource[] = [
       "Brake pads, rotors, fluid, calipers, when each is due, what failure looks like, and what realistic costs run at an honest, family-owned shop in Richardson, TX.",
     publishedDate: "2026-03-22",
     readMinutes: 5,
-    heroImage:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Brake disc and caliper close up",
+    heroImage: "/assets/service-brakes.avif",
+    heroAlt: "Brake rotor and caliper close up",
     eyebrow: "Brakes",
     lede: "Brakes are the part of the car most likely to silently degrade until they fail at exactly the wrong moment. Here are the five signs to watch for, plus realistic cost expectations.",
     sections: [
@@ -205,9 +203,8 @@ export const RESOURCES: Resource[] = [
       "3,000 miles is dead. So is 5,000. Modern oil-change intervals depend on the oil type, the engine, and your real driving conditions, here's the straight answer for Texas drivers.",
     publishedDate: "2026-02-14",
     readMinutes: 4,
-    heroImage:
-      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Engine bay during routine oil service",
+    heroImage: "/assets/service-oil-change.avif",
+    heroAlt: "Fresh motor oil being poured during service",
     eyebrow: "Maintenance",
     lede: "The 3,000-mile oil change is a marketing artifact from the 1970s. Modern oils, modern engines, and modern oil-life monitors all push the real interval much further, but not as far as some people want to believe.",
     sections: [
@@ -452,9 +449,8 @@ export const RESOURCES: Resource[] = [
       "Real cost ranges for AC compressor replacement in North Texas, why our climate burns them out faster, and the symptoms to watch for before yours fails.",
     publishedDate: "2026-05-04",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1534093607318-f025413f49cb?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Vehicle AC compressor and serpentine belt under the hood",
+    heroImage: "/assets/service-hvac.avif",
+    heroAlt: "Vehicle AC and HVAC system close up",
     eyebrow: "AC & HVAC",
     lede: "AC compressors die faster in North Texas than almost anywhere else in the country. Here is what you can expect to pay, why it costs what it does, and the symptoms that show up before the system gives up entirely.",
     sections: [
@@ -517,9 +513,8 @@ export const RESOURCES: Resource[] = [
       "How to tell whether your car's no-start, slow-crank, or dim-lights problem is the battery or the charging system, and why a free parts-store test misses it half the time.",
     publishedDate: "2026-04-21",
     readMinutes: 5,
-    heroImage:
-      "https://images.unsplash.com/photo-1581094288338-2244c4b50ad2?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Multimeter probes on a car battery during a charging system test",
+    heroImage: "/assets/service-battery.avif",
+    heroAlt: "Vehicle battery installed in the engine bay",
     eyebrow: "Electrical",
     lede: "About a third of the cars we see for a 'dead battery' actually have a charging-system problem. Replacing the battery without diagnosing the alternator means you are back in the parking lot in two months with the same problem. Here is how to tell the difference.",
     sections: [
@@ -583,9 +578,8 @@ export const RESOURCES: Resource[] = [
       "Everything you need to know about timing belt service: belt vs chain, manufacturer intervals, what happens if it snaps, realistic cost ranges, and why we replace the water pump at the same time.",
     publishedDate: "2026-04-09",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Mechanic working under the hood on a timing system",
+    heroImage: "/assets/service-engine-repair.avif",
+    heroAlt: "Late-model performance car under shop lighting",
     eyebrow: "Engine Repair",
     lede: "A timing belt is the single piece of maintenance with the highest catastrophic-failure cost relative to its replacement cost. Skip it past its interval and a $700 job becomes a $4,000 job overnight. Here is everything you actually need to know.",
     sections: [
@@ -648,9 +642,8 @@ export const RESOURCES: Resource[] = [
       "The honest answer on synthetic, blend, and conventional motor oil. Cost, intervals, and which one is worth it for your specific vehicle and Texas driving.",
     publishedDate: "2026-03-15",
     readMinutes: 5,
-    heroImage:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Fresh motor oil being poured during routine service",
+    heroImage: "/assets/mission-banner.jpg",
+    heroAlt: "The Star Auto Service shop scene, oil and lube workshop",
     eyebrow: "Maintenance",
     lede: "Synthetic oil costs about twice as much as conventional and lasts about two and a half times longer. So is it worth it? Depends entirely on your vehicle, your driving, and what your owner's manual specifies.",
     sections: [
@@ -716,9 +709,8 @@ export const RESOURCES: Resource[] = [
       "The seven most common causes of engine overheating, what to do roadside, what each repair costs, and why Texas summer is the season this happens to most drivers.",
     publishedDate: "2026-05-22",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Vehicle dashboard temperature gauge approaching the red zone",
+    heroImage: "/assets/service-cooling.avif",
+    heroAlt: "Engine cooling system radiator and hoses",
     eyebrow: "Cooling System",
     lede: "Engine overheating is the kind of problem where the wrong reaction makes a $400 repair into a $4,000 repair. Pull over the second the gauge climbs. Here are the seven most common causes, what to do in the moment, and what each one costs.",
     sections: [
@@ -795,9 +787,8 @@ export const RESOURCES: Resource[] = [
       "When the dealer is the right call, when an independent shop wins, and what the real labor-rate and quality differences look like for Richardson and DFW drivers.",
     publishedDate: "2026-03-29",
     readMinutes: 5,
-    heroImage:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Inside an independent auto repair shop with vehicles on lifts",
+    heroImage: "/assets/shop-snow.jpg",
+    heroAlt: "The Star Auto Service shop on Belt Line Road, the kind of independent corner shop that has stood for 28 years",
     eyebrow: "Buying & Maintenance",
     lede: "Whether to take your car to the dealer or an independent shop is one of the most common questions we get. The honest answer: about 90 percent of the time, an independent shop is the right call. Here is the other 10 percent, and the math behind both.",
     sections: [
@@ -860,9 +851,8 @@ export const RESOURCES: Resource[] = [
       "What a catalytic converter actually does, the symptoms of failure, real cost ranges, OEM vs. aftermarket trade-offs, and the cat theft epidemic in DFW.",
     publishedDate: "2026-04-02",
     readMinutes: 6,
-    heroImage:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Underside view of an exhaust system with the catalytic converter visible",
+    heroImage: "/assets/service-state-inspections.avif",
+    heroAlt: "Texas state inspection and emissions checkpoint at the shop",
     eyebrow: "Emissions & Inspections",
     lede: "Catalytic converter replacement is one of the most expensive maintenance items most drivers will face, and one of the most commonly misdiagnosed. Here is what it actually does, when it actually fails, and what you should expect to pay.",
     sections: [
@@ -942,8 +932,8 @@ export const RESOURCES: Resource[] = [
     publishedDate: "2026-04-26",
     readMinutes: 4,
     heroImage:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Vehicle dashboard with TPMS tire pressure warning indicator",
+      "/assets/service-tires.avif",
+    heroAlt: "Tire tread close up at the shop",
     eyebrow: "Tires",
     lede: "The horseshoe-shaped TPMS warning light is one of the most ignored dashboard indicators on the road. Here is what it actually means, why it sometimes lies, and when you should treat it as urgent.",
     sections: [
@@ -1007,8 +997,8 @@ export const RESOURCES: Resource[] = [
     publishedDate: "2026-03-08",
     readMinutes: 6,
     heroImage:
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Used cars in a residential neighborhood ready for buyer inspection",
+      "/assets/shop-bays-1.jpg",
+    heroAlt: "Inside the bays where used-car pre-purchase inspections are performed",
     eyebrow: "Buying & Maintenance",
     lede: "A pre-purchase inspection costs $150 and takes about an hour. The most expensive used car you can buy is the one you did not have inspected first. Here is what we check, why we check it, and what you should walk away from.",
     sections: [
@@ -1113,9 +1103,8 @@ export const RESOURCES: Resource[] = [
       "The two services that get confused with each other constantly. What each one actually does, the symptoms of each, and why you usually need both after new tires.",
     publishedDate: "2026-02-28",
     readMinutes: 4,
-    heroImage:
-      "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Wheel and tire mounted at the shop during alignment service",
+    heroImage: "/assets/service-transmission.avif",
+    heroAlt: "Mechanical components, the kind of precision work that aligns wheels",
     eyebrow: "Tires",
     lede: "Alignment and balancing are two different services that solve two different problems. Half the customers who ask for one need the other. Here is the plain-English difference.",
     sections: [

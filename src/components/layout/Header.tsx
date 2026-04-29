@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Star, Phone, Globe, ChevronDown } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { SITE } from "@/lib/constants";
+import { AREAS } from "@/lib/areas";
 import { OpenNowChip } from "@/components/ui/OpenNowChip";
 import { NavDropdown, type NavDropdownItem } from "@/components/layout/NavDropdown";
 
@@ -18,14 +19,12 @@ const SERVICES_DROPDOWN: NavDropdownItem[] = [
   { label: "Texas State Inspections", href: "/services/state-inspections" },
 ];
 
-const AREAS_DROPDOWN: NavDropdownItem[] = [
-  { label: "Richardson, TX", href: "/areas/richardson-tx", sub: "Home base" },
-  { label: "Garland, TX", href: "/areas/garland-tx", sub: "5 miles" },
-  { label: "Plano, TX", href: "/areas/plano-tx", sub: "6 miles" },
-  { label: "Dallas, TX", href: "/areas/dallas-tx", sub: "10–14 miles" },
-  { label: "Allen, TX", href: "/areas/allen-tx", sub: "12 miles" },
-  { label: "Murphy, TX", href: "/areas/murphy-tx", sub: "7 miles" },
-];
+/** Auto-populates from AREAS so adding a new city to the data also adds it here. */
+const AREAS_DROPDOWN: NavDropdownItem[] = AREAS.map((a) => ({
+  label: `${a.name}, ${a.state}`,
+  href: `/areas/${a.slug}`,
+  sub: a.distance === "Home base" ? "Home base" : a.distance,
+}));
 
 const RESOURCES_DROPDOWN: NavDropdownItem[] = [
   { label: "Reviews", href: "/reviews" },
