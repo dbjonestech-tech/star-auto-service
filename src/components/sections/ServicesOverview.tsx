@@ -53,12 +53,14 @@ export function ServicesOverview() {
                         className="text-royal"
                         size={26}
                         strokeWidth={1.75}
+                        aria-hidden="true"
                       />
                     </div>
                     <ArrowRight
                       size={18}
                       strokeWidth={2.25}
                       className="text-stone group-hover:text-royal group-hover:translate-x-1 transition-all"
+                      aria-hidden="true"
                     />
                   </div>
                   <h3 className="font-sans font-black text-xl md:text-2xl text-ink tracking-tight leading-tight">
@@ -82,7 +84,7 @@ export function ServicesOverview() {
             className="inline-flex items-center gap-2.5 bg-ink text-cream hover:bg-royal px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
           >
             See all {SERVICES.length} services
-            <ArrowRight size={14} strokeWidth={2.5} />
+            <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
           </Link>
         </div>
       </div>

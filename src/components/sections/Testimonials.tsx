@@ -55,9 +55,10 @@ export function Testimonials() {
             <Reveal key={t.author} delay={i * 0.05} margin="-10%">
               <article className="relative bg-surface border border-line p-7 md:p-8 h-full shadow-card hover:shadow-card-lg transition-shadow duration-300">
                 <Quote
-                  className="absolute top-7 right-7 text-gold/35"
+                  className="absolute top-7 right-7 text-gold/55"
                   size={32}
                   strokeWidth={1.5}
+                  aria-hidden="true"
                 />
                 <div className="flex gap-0.5 mb-5">
                   {Array.from({ length: 5 }).map((_, j) => (
@@ -92,7 +93,7 @@ export function Testimonials() {
             className="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.16em] font-extrabold text-ink hover:text-royal transition-colors border-b-2 border-ink hover:border-royal pb-1"
           >
             Read more reviews on Google
-            <ArrowRight size={13} strokeWidth={2.5} />
+            <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
           </Link>
         </div>
       </div>

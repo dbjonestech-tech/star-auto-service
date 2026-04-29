@@ -18,6 +18,7 @@ export function Footer() {
                 size={26}
                 fill="currentColor"
                 strokeWidth={1.5}
+                aria-hidden="true"
               />
               <p className="font-sans font-extrabold text-lg tracking-tight uppercase">
                 The Star Auto Service
@@ -39,7 +40,7 @@ export function Footer() {
             </div>
 
             <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2 text-[10px] uppercase tracking-[0.18em] font-bold text-cream/65">
-              <span>ASE Certified</span>
+              <span>ASE-Certified</span>
               <span className="text-cream/30">/</span>
               <span>Bilingual Service</span>
               <span className="text-cream/30">/</span>
@@ -53,7 +54,7 @@ export function Footer() {
             </p>
             <ul className="space-y-2 text-sm text-cream/85">
               <li className="flex items-start gap-2.5">
-                <MapPin size={15} strokeWidth={2} className="mt-0.5 text-cream/55 shrink-0" />
+                <MapPin size={15} strokeWidth={2} className="mt-0.5 text-cream/55 shrink-0" aria-hidden="true" />
                 <span>
                   {SITE.address.street}
                   <br />
@@ -61,7 +62,7 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-2.5 pt-2">
-                <Phone size={15} strokeWidth={2} className="text-cream/55 shrink-0" />
+                <Phone size={15} strokeWidth={2} className="text-cream/55 shrink-0" aria-hidden="true" />
                 <a
                   href={`tel:${SITE.phoneRaw}`}
                   className="hover:text-gold transition-colors font-semibold"

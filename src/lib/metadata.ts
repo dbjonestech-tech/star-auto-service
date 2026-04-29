@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: "Are walk-ins welcome?",
-    a: "Always. Mon–Fri 8:00 AM – 6:30 PM, Saturday 8:00 AM – 4:00 PM. The coffee is on.",
+    a: "Always. Mon–Fri 8:00 AM – 6:30 PM, Saturday 8:00 AM – 4:00 PM.",
   },
 ];
 

@@ -13,7 +13,7 @@ const PILLARS = [
     number: "02",
     icon: Wrench,
     title: "Skilled",
-    body: "ASE-certified technicians with decades of combined experience. Every make, every model, every system. Domestic, import, gas, hybrid.",
+    body: "ASE-Certified technicians with decades of combined experience. Every make, every model, every system. Domestic, import, gas, hybrid.",
   },
   {
     number: "03",
@@ -54,6 +54,7 @@ export function Pillars() {
                         className="text-royal"
                         size={26}
                         strokeWidth={2}
+                        aria-hidden="true"
                       />
                     </div>
                     <span className="font-sans font-black text-2xl text-gold tabular-nums">

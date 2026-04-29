@@ -15,8 +15,8 @@ export function CredentialsBar() {
           <div className="lg:col-span-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-6 md:gap-x-10">
               <div className="text-center md:text-left">
-                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none">
-                  {yearsInBusiness}+
+                <p className="font-sans font-black text-4xl md:text-5xl tracking-tight text-cream leading-none tabular-nums">
+                  {yearsInBusiness}
                 </p>
                 <p className="mt-3 text-[11px] uppercase tracking-[0.18em] font-bold text-gold">
                   Years in Richardson

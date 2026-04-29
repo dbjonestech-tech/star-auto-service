@@ -43,7 +43,7 @@ export function ShopStory() {
             {/* Established badge top-left */}
             <Reveal delay={0.1}>
               <div className="hidden md:flex absolute top-6 left-6 bg-gold text-ink px-4 py-3 shadow-gold flex-col items-center">
-                <Star size={18} fill="currentColor" strokeWidth={1.5} />
+                <Star size={18} fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
                 <p className="mt-1 text-[10px] uppercase tracking-[0.2em] font-extrabold leading-none">
                   Est.
                 </p>
@@ -71,7 +71,7 @@ export function ShopStory() {
                 <p>
                   What started as a small family-owned bay on Belt Line Road has grown
                   into one of Richardson&apos;s most trusted auto repair facilities.
-                  ASE-certified technicians. NAPA Auto Care nationwide warranty. Service
+                  ASE-Certified technicians. NAPA Auto Care nationwide warranty. Service
                   in English or Spanish, whichever you&apos;re more comfortable with.
                 </p>
                 <p className="text-ink font-semibold">
@@ -85,7 +85,7 @@ export function ShopStory() {
                   className="inline-flex items-center gap-3 bg-ink text-cream hover:bg-royal px-7 py-3.5 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
                 >
                   Read our story
-                  <ArrowRight size={14} strokeWidth={2.5} />
+                  <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
                 </Link>
               </div>
             </Reveal>

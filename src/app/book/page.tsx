@@ -120,7 +120,7 @@ export default function BookPage() {
                         Walk-ins
                       </p>
                       <p className="text-base text-graphite leading-relaxed font-medium">
-                        Always welcome. The bays are open, the coffee&apos;s on, and we&apos;ll do our best to get you looked at the same day.
+                        Always welcome. The bays are open and we&apos;ll do our best to get you looked at the same day.
                       </p>
                     </div>
                   </div>

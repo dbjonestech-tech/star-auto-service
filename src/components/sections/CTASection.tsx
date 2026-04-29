@@ -32,6 +32,7 @@ export function CTASection() {
                 className="text-gold"
                 fill="currentColor"
                 strokeWidth={1.5}
+                aria-hidden="true"
               />
               <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-cream/85">
                 Schedule a service
@@ -55,14 +56,14 @@ export function CTASection() {
                 href="/book"
                 className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-9 py-4.5 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
               >
-                <Calendar size={17} strokeWidth={2.5} />
+                <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
                 Book a Service
               </Link>
               <a
                 href={`tel:${SITE.phoneRaw}`}
                 className="group inline-flex items-center justify-center gap-2.5 bg-transparent text-cream border-2 border-cream/70 hover:bg-cream hover:text-ink px-9 py-4.5 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
               >
-                <Phone size={17} strokeWidth={2.5} />
+                <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
                 Call {SITE.phone}
               </a>
             </div>

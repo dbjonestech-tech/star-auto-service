@@ -21,6 +21,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={`sticky top-0 z-50 bg-cream/95 backdrop-blur-md transition-shadow duration-200 ${
@@ -39,6 +48,7 @@ export function Header() {
               size={26}
               fill="currentColor"
               strokeWidth={1.5}
+              aria-hidden="true"
             />
             <span className="font-sans text-base md:text-lg font-extrabold tracking-tight text-ink uppercase">
               The Star Auto Service
@@ -80,19 +90,27 @@ export function Header() {
             </Link>
 
             <button
+              type="button"
               onClick={() => setOpen(!open)}
               className="md:hidden p-2 text-ink"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
+              aria-controls="mobile-menu"
             >
-              {open ? <X size={22} /> : <Menu size={22} />}
+              {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
             </button>
           </div>
         </div>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-line bg-cream">
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          className="md:hidden border-t border-line bg-cream"
+        >
           <nav className="px-4 py-6 flex flex-col" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <Link
@@ -113,10 +131,13 @@ export function Header() {
             </Link>
             <a
               href={`tel:${SITE.phoneRaw}`}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                track("call_click", { source: "mobile_menu" });
+                setOpen(false);
+              }}
               className="mt-3 inline-flex items-center justify-center gap-2 border-2 border-ink text-ink hover:bg-ink hover:text-cream px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors"
             >
-              <Phone size={14} strokeWidth={2.5} />
+              <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
               {SITE.phone}
             </a>
           </nav>

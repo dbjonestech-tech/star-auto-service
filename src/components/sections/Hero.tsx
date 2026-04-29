@@ -94,7 +94,7 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/90">
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              ASE Certified
+              ASE-Certified
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
