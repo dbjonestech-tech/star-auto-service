@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Star, Phone } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { SITE, NAV_LINKS } from "@/lib/constants";
+import { OpenNowChip } from "@/components/ui/OpenNowChip";
 
 /** Sticky brand header. Yellow star + bold wordmark + nav + phone + gold Book CTA. */
 export function Header() {
@@ -56,14 +58,19 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={`tel:${SITE.phoneRaw}`}
-              className="hidden lg:inline-flex items-center gap-2 text-sm font-bold text-ink hover:text-royal transition-colors"
-              aria-label={`Call ${SITE.phone}`}
-            >
-              <Phone size={15} strokeWidth={2.5} />
-              {SITE.phone}
-            </a>
+            <div className="hidden lg:flex items-center gap-3">
+              <OpenNowChip />
+              <span className="w-px h-4 bg-line" aria-hidden="true" />
+              <a
+                href={`tel:${SITE.phoneRaw}`}
+                onClick={() => track("call_click", { source: "header" })}
+                className="inline-flex items-center gap-2 text-sm font-bold text-ink hover:text-royal transition-colors"
+                aria-label={`Call ${SITE.phone}`}
+              >
+                <Phone size={15} strokeWidth={2.5} aria-hidden="true" />
+                {SITE.phone}
+              </a>
+            </div>
 
             <Link
               href="/book"

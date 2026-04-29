@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CallFAB } from "@/components/ui/CallFAB";
+import { ScrollCallBar } from "@/components/ui/ScrollCallBar";
 import { SITE } from "@/lib/constants";
 import { generateJsonLd } from "@/lib/metadata";
 import "./globals.css";
@@ -86,6 +88,8 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <CallFAB />
+        <ScrollCallBar />
         <Analytics />
       </body>
     </html>
