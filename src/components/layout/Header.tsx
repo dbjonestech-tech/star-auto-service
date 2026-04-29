@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Star, Phone } from "lucide-react";
+import { Menu, X, Star, Phone, Globe } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 import { OpenNowChip } from "@/components/ui/OpenNowChip";
@@ -70,6 +70,14 @@ export function Header() {
           <div className="flex items-center gap-3">
             <div className="hidden lg:flex items-center gap-3">
               <OpenNowChip />
+              <span className="w-px h-4 bg-line" aria-hidden="true" />
+              <span
+                lang="es"
+                className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-graphite"
+              >
+                <Globe size={11} strokeWidth={2.5} aria-hidden="true" />
+                Hablamos Español
+              </span>
               <span className="w-px h-4 bg-line" aria-hidden="true" />
               <a
                 href={`tel:${SITE.phoneRaw}`}
