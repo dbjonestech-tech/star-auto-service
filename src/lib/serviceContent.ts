@@ -63,7 +63,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Are my brakes covered by the NAPA warranty?",
-        a: "Yes. qualifying brake parts and labor are covered nationwide for 24 months / 24,000 miles at any of 17,000+ NAPA Auto Care Centers.",
+        a: "Yes. Qualifying brake parts and labor are covered nationwide for 24 months / 24,000 miles at any of 17,000+ NAPA Auto Care Centers.",
       },
     ],
     featuredTestimonialIndex: 0,
@@ -97,7 +97,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you do European cars?",
-        a: "Yes. we stock the appropriate weights and filters for BMW, Mercedes-Benz, Audi, Volkswagen, Volvo, and most European makes.",
+        a: "Yes. We stock the appropriate weights and filters for BMW, Mercedes-Benz, Audi, Volkswagen, Volvo, and most European makes.",
       },
       {
         q: "Synthetic or conventional?",
@@ -148,7 +148,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Can you help if I failed Texas state inspection?",
-        a: "Yes. emissions diagnostics is one of our specialties. Bring the failure paperwork, we'll diagnose, repair, and re-test.",
+        a: "Yes. Emissions diagnostics is one of our specialties. Bring the failure paperwork, we'll diagnose, repair, and re-test.",
       },
     ],
     featuredTestimonialIndex: 0,
@@ -182,7 +182,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you replace timing belts and chains?",
-        a: "Yes. including water pump, tensioners, and idlers as part of the same job when it's the right call. Timing belt failure is catastrophic; we're not the shop that lets you skip the maintenance.",
+        a: "Yes, including water pump, tensioners, and idlers as part of the same job when it's the right call. Timing belt failure is catastrophic; we're not the shop that lets you skip the maintenance.",
       },
       {
         q: "How long does an engine replacement take?",
@@ -228,7 +228,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       },
       {
         q: "Do you work on CVT transmissions?",
-        a: "Yes. we service CVTs from Nissan, Honda, Subaru, Toyota, and others. They require specific fluid and procedures we follow exactly.",
+        a: "Yes. We service CVTs from Nissan, Honda, Subaru, Toyota, and others. They require specific fluid and procedures we follow exactly.",
       },
       {
         q: "Is a transmission flush risky on a high-mileage car?",

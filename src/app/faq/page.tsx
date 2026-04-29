@@ -66,7 +66,7 @@ const EXTRA_FAQS = [
   },
   {
     q: "Can I drop my car off after hours?",
-    a: "Yes. we have an after-hours drop box. Park in the lot, fill out the envelope, drop your keys, and we'll call you in the morning before any work starts.",
+    a: "Yes. We have an after-hours drop box. Park in the lot, fill out the envelope, drop your keys, and we'll call you in the morning before any work starts.",
   },
 ];
 

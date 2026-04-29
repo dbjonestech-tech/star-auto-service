@@ -1,11 +1,14 @@
 {
   "name": "The Star Auto Service",
   "short_name": "Star Auto",
+  "description": "Family-owned auto repair in Richardson, TX since 1998. ASE-Certified, NAPA Auto Care Center, bilingual service.",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ],
-  "theme_color": "#E8792B",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#0B3D91",
+  "background_color": "#F7F4ED",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }

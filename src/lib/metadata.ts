@@ -6,7 +6,7 @@ const ORG_ID = `${SITE.url}/#organization`;
 const FAQS = [
   {
     q: "Do you do Texas state inspections?",
-    a: "Yes. we're a state-authorized inspection station. Walk-ins are welcome Mon–Fri 8:00 AM – 6:30 PM and Saturday 8:00 AM – 4:00 PM.",
+    a: "Yes. We're a state-authorized inspection station. Walk-ins are welcome Mon–Fri 8:00 AM – 6:30 PM and Saturday 8:00 AM – 4:00 PM.",
   },
   {
     q: "Do you offer same-day brake service?",
@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: "Do you work on hybrid vehicles?",
-    a: "Yes. our ASE-Certified technicians service hybrid vehicles alongside conventional gas, both domestic and import.",
+    a: "Yes. Our ASE-Certified technicians service hybrid vehicles alongside conventional gas, both domestic and import.",
   },
   {
     q: "Do you give free estimates?",
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: "Do you speak Spanish?",
-    a: "Yes. bilingual service in English and Spanish. Hablamos español.",
+    a: "Yes. Bilingual service in English and Spanish. Hablamos español.",
   },
   {
     q: "Are walk-ins welcome?",
@@ -43,7 +43,11 @@ function autoRepairEntity() {
     "@type": ["AutoRepair", "LocalBusiness"],
     "@id": BUSINESS_ID,
     name: SITE.name,
-    image: `${SITE.url}/opengraph-image`,
+    image: [
+      `${SITE.url}/assets/shop-day-1.jpg`,
+      `${SITE.url}/assets/shop-day-2.jpg`,
+      `${SITE.url}/assets/shop-front.jpg`,
+    ],
     logo: `${SITE.url}/icon-512.png`,
     url: SITE.url,
     telephone: "+19722312886",
