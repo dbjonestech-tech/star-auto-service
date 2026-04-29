@@ -8,12 +8,14 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { MapSection } from "@/components/sections/MapSection";
 import { CTASection } from "@/components/sections/CTASection";
 
-/** Homepage. Hero, brand credentials, pillars, services, shop story, gallery, reviews, visit, closing CTA. */
+/** Homepage. Hero + trust strip + CredentialsBar share the first viewport on md+, then story/services/etc. */
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <CredentialsBar />
+      <div className="md:flex md:flex-col md:min-h-[calc(100svh-5rem)]">
+        <Hero />
+        <CredentialsBar />
+      </div>
       <Pillars />
       <ServicesOverview />
       <ShopStory />

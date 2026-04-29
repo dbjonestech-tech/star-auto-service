@@ -9,7 +9,7 @@ export function Hero() {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
   return (
-    <section className="relative bg-ink overflow-hidden">
+    <section className="relative bg-ink overflow-hidden md:flex md:flex-col md:flex-1">
       <Image
         src={heroPhoto}
         alt=""
@@ -40,8 +40,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-44 lg:py-52">
-        <div className="max-w-5xl">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-12 lg:py-16 w-full md:flex-1 md:flex md:items-center">
+        <div className="max-w-5xl w-full">
           {/* Eyebrow with star */}
           <div className="inline-flex items-center gap-2.5 mb-7">
             <Star
