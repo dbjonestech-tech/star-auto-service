@@ -443,6 +443,349 @@ export const RESOURCES: Resource[] = [
     ],
     related: ["oil-change-frequency", "when-to-replace-brakes"],
   },
+
+  {
+    slug: "ac-compressor-replacement-cost",
+    category: "AC & HVAC",
+    title: "AC compressor replacement cost: what Texas drivers actually pay",
+    description:
+      "Real cost ranges for AC compressor replacement in North Texas, why our climate burns them out faster, and the symptoms to watch for before yours fails.",
+    publishedDate: "2026-05-04",
+    readMinutes: 6,
+    heroImage:
+      "https://images.unsplash.com/photo-1534093607318-f025413f49cb?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Vehicle AC compressor and serpentine belt under the hood",
+    eyebrow: "AC & HVAC",
+    lede: "AC compressors die faster in North Texas than almost anywhere else in the country. Here is what you can expect to pay, why it costs what it does, and the symptoms that show up before the system gives up entirely.",
+    sections: [
+      { type: "h2", text: "Why AC compressors fail faster here" },
+      {
+        type: "p",
+        text: "Compressors are mechanical pumps that run nonstop in summer. The combination of 100°F+ days, refrigerant pressure cycling, and bumper-to-bumper traffic on 75 means a Dallas-area AC compressor lives a much harder life than one in San Diego. Most fail somewhere between 100,000 and 150,000 miles in this climate.",
+      },
+      { type: "h2", text: "The realistic price range" },
+      {
+        type: "ul",
+        items: [
+          "Sedan with R-134a refrigerant: $900 to $1,400 parts and labor",
+          "Truck or SUV with R-134a: $1,100 to $1,600",
+          "Newer vehicle with R-1234yf refrigerant: $1,400 to $2,200",
+          "European luxury (BMW, Mercedes, Audi): $1,800 to $2,800",
+          "Full system replacement (compressor + condenser + dryer + lines): $2,500 to $4,500",
+        ],
+      },
+      {
+        type: "p",
+        text: "The biggest swing is the refrigerant. R-1234yf is what every car built since roughly 2017 uses, and it costs four to six times more than the older R-134a. A compressor replacement on a 2020 truck involves recovering, evacuating, and recharging four to six pounds of an $80-per-pound refrigerant. That is the math.",
+      },
+      { type: "h2", text: "Symptoms that mean compressor, not recharge" },
+      {
+        type: "ul",
+        items: [
+          "Air blows warm even after a recharge",
+          "AC clutch makes a clicking, grinding, or squealing noise when it engages",
+          "Visible refrigerant or oil residue around the compressor",
+          "Belt squeals only when AC is on",
+          "AC works for the first few minutes, then quits",
+          "Cabin smells faintly oily",
+        ],
+      },
+      {
+        type: "callout",
+        title: "What we never do at this shop",
+        body: "Top-and-pray. If your refrigerant is low, there is a leak. We find the leak, seal it, and then recharge. Otherwise the same thing happens again in three months and you have paid twice.",
+      },
+      { type: "h2", text: "Why we book AC work in March, not August" },
+      {
+        type: "p",
+        text: "By June, every shop in DFW has a one to two week wait for AC work, and the shops that overbook are the ones who skip the leak detection step. Get yours checked in March or April, and if anything is off, we have time to do it right.",
+      },
+      { type: "h2", text: "What we actually do at the shop" },
+      {
+        type: "p",
+        text: "Performance test the system, electronic leak detection with UV dye if needed, evacuate and weigh refrigerant, replace the failed component with an OEM-quality part, refill to factory spec, and verify cabin temperature drop. Every step documented on the invoice. NAPA Auto Care nationwide warranty applies on qualifying AC work.",
+      },
+    ],
+    related: ["seasonal-car-care-texas", "why-is-my-car-overheating"],
+  },
+
+  {
+    slug: "alternator-vs-battery-symptoms",
+    category: "Electrical",
+    title: "Is it the alternator or the battery? A 30-second decision tree",
+    description:
+      "How to tell whether your car's no-start, slow-crank, or dim-lights problem is the battery or the charging system, and why a free parts-store test misses it half the time.",
+    publishedDate: "2026-04-21",
+    readMinutes: 5,
+    heroImage:
+      "https://images.unsplash.com/photo-1581094288338-2244c4b50ad2?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Multimeter probes on a car battery during a charging system test",
+    eyebrow: "Electrical",
+    lede: "About a third of the cars we see for a 'dead battery' actually have a charging-system problem. Replacing the battery without diagnosing the alternator means you are back in the parking lot in two months with the same problem. Here is how to tell the difference.",
+    sections: [
+      { type: "h2", text: "The 30-second decision tree" },
+      {
+        type: "ol",
+        items: [
+          "Try to start the car. Does it crank slowly, click without cranking, or do nothing at all?",
+          "If it cranks slowly: probably battery. Maybe alternator if the battery is recent.",
+          "If it clicks but does not crank: weak battery, bad starter, or corroded terminal.",
+          "If a jump start works and the car runs fine for hours: battery is the suspect.",
+          "If a jump start works but the car dies again within a day: alternator (it is not recharging the battery).",
+        ],
+      },
+      { type: "h2", text: "Five alternator-fail symptoms" },
+      {
+        type: "ul",
+        items: [
+          "Battery warning light on the dash while driving",
+          "Headlights dim at idle and brighten when you rev the engine",
+          "Battery dies within hours of being jumped",
+          "Burning rubber smell from the engine bay (slipping serpentine belt)",
+          "Stereo cuts out, gauges flicker, or windows roll up slowly",
+        ],
+      },
+      { type: "h2", text: "Five battery-fail symptoms" },
+      {
+        type: "ul",
+        items: [
+          "Slow crank that has gotten worse over a few weeks",
+          "Battery is more than 3 years old in Texas (4 to 5 elsewhere)",
+          "White or blue corrosion on the battery terminals",
+          "Battery case is swollen or leaking",
+          "Several short trips in cold weather without a long drive in between",
+        ],
+      },
+      { type: "h2", text: "Why the parts-store free test misses things" },
+      {
+        type: "p",
+        text: "A standalone battery test under load tells you if the battery still holds charge. It cannot tell you whether the alternator is properly recharging the battery while you drive. About a third of the time, a battery that fails the parts-store test is failing because the alternator quit weeks ago and the customer has been running the battery flat over and over.",
+      },
+      {
+        type: "callout",
+        title: "Free charging system test, walk-in",
+        body: "We test the battery AND the charging system together, no purchase required. Five minutes, no appointment. Bring your car in any weekday or Saturday morning.",
+      },
+      { type: "h2", text: "Texas heat is the real killer" },
+      {
+        type: "p",
+        text: "Sustained 100°F+ summers cook batteries from the inside. Three to five years is normal lifespan here, versus five to seven in cooler climates. If your battery is over 3 years old and you have a road trip coming up, replace it preventively. The roadside cost of a midnight tow is a lot more than the cost of a battery.",
+      },
+    ],
+    related: ["seasonal-car-care-texas", "check-engine-light-guide"],
+  },
+
+  {
+    slug: "timing-belt-replacement-guide",
+    category: "Engine Repair",
+    title: "Timing belt replacement: when, how much, and why it cannot wait",
+    description:
+      "Everything you need to know about timing belt service: belt vs chain, manufacturer intervals, what happens if it snaps, realistic cost ranges, and why we replace the water pump at the same time.",
+    publishedDate: "2026-04-09",
+    readMinutes: 6,
+    heroImage:
+      "https://images.unsplash.com/photo-1605152276897-4f618f831968?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Mechanic working under the hood on a timing system",
+    eyebrow: "Engine Repair",
+    lede: "A timing belt is the single piece of maintenance with the highest catastrophic-failure cost relative to its replacement cost. Skip it past its interval and a $700 job becomes a $4,000 job overnight. Here is everything you actually need to know.",
+    sections: [
+      { type: "h2", text: "Belt or chain — how to know what you have" },
+      {
+        type: "p",
+        text: "Some engines use a rubber timing belt that needs replacement on a schedule. Some use a metal timing chain that is supposed to last the life of the engine (although chains stretch and tensioners fail too, especially on certain VW, BMW, and Hyundai engines). Your owner's manual will tell you which one you have. If you do not have the manual, we can look it up by VIN in 30 seconds.",
+      },
+      { type: "h2", text: "Manufacturer intervals (typical)" },
+      {
+        type: "ul",
+        items: [
+          "Honda timing belt: 100,000 to 105,000 miles or 7 years",
+          "Toyota timing belt (older models): 90,000 miles",
+          "Subaru timing belt: 100,000 miles",
+          "Volkswagen timing belt: 80,000 to 100,000 miles",
+          "Hyundai / Kia: 60,000 to 90,000 miles depending on engine",
+          "Most newer Toyota / Honda / Mazda: timing chain, no scheduled replacement",
+        ],
+      },
+      {
+        type: "p",
+        text: "Always check your specific year, make, and model. Manufacturers update intervals across model years, and the interval listed on a forum from 2010 may not apply to your 2018.",
+      },
+      { type: "h2", text: "What happens when one snaps" },
+      {
+        type: "p",
+        text: "On an interference engine (which most modern engines are), the valves and pistons share space. The timing belt is what keeps them out of each other's way. When it snaps, the pistons hit the valves at full speed. Bent valves, damaged piston tops, sometimes a cracked head. The repair goes from a $700 belt replacement to a $3,500 to $4,500 head rebuild or full engine replacement.",
+      },
+      {
+        type: "callout",
+        title: "If your car is at or near the interval",
+        body: "Do not gamble. The cost difference between scheduled replacement and post-failure repair is the difference between a long weekend project and a major financial decision. Call us with your year, make, model, and mileage. We will tell you straight whether you should book it now or have a few thousand miles to spare.",
+      },
+      { type: "h2", text: "Realistic cost ranges" },
+      {
+        type: "ul",
+        items: [
+          "Timing belt only, sedan with easy access (Honda, Toyota): $400 to $700",
+          "Timing belt + water pump + tensioners + idlers: $700 to $1,400",
+          "Timing belt + water pump on European or harder-access engine: $1,200 to $2,000",
+          "Post-failure head rebuild on an interference engine: $3,500 to $4,500",
+          "Post-failure engine replacement (used): $3,500 to $6,500",
+        ],
+      },
+      { type: "h2", text: "Why we always replace the water pump at the same time" },
+      {
+        type: "p",
+        text: "On most engines, the water pump is driven by the timing belt, and reaching it requires removing everything we have already removed to get to the belt. Replacing it with the belt costs an extra hour of labor. Replacing it later costs the same hours of labor we already charged you for once. Doing it together is the smart financial call almost every time, and we recommend it as a matter of policy.",
+      },
+    ],
+    related: ["check-engine-light-guide", "when-to-replace-brakes"],
+  },
+
+  {
+    slug: "synthetic-vs-conventional-oil",
+    category: "Maintenance",
+    title: "Synthetic vs. conventional oil: which one does your car actually need?",
+    description:
+      "The honest answer on synthetic, blend, and conventional motor oil. Cost, intervals, and which one is worth it for your specific vehicle and Texas driving.",
+    publishedDate: "2026-03-15",
+    readMinutes: 5,
+    heroImage:
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Fresh motor oil being poured during routine service",
+    eyebrow: "Maintenance",
+    lede: "Synthetic oil costs about twice as much as conventional and lasts about two and a half times longer. So is it worth it? Depends entirely on your vehicle, your driving, and what your owner's manual specifies.",
+    sections: [
+      { type: "h2", text: "The chemistry, in plain English" },
+      {
+        type: "p",
+        text: "Conventional oil is refined crude oil with additives. Synthetic oil starts with a base stock that has been chemically engineered to behave more consistently across temperatures. The result: synthetic resists thermal breakdown at high temperatures and stays flowing better at low temperatures. In a 100°F Texas August, that matters.",
+      },
+      { type: "h2", text: "When synthetic is required" },
+      {
+        type: "p",
+        text: "Most vehicles built since roughly 2010 specify synthetic from the factory. European luxury cars (BMW, Mercedes, Audi, Volvo, Volkswagen) require very specific synthetic oils with manufacturer approvals printed on the bottle. Using conventional oil in a car that requires synthetic will void the powertrain warranty and can cause early engine wear.",
+      },
+      { type: "h2", text: "When conventional is still fine" },
+      {
+        type: "ul",
+        items: [
+          "Older vehicles, pre-2008 or so, that have always run conventional",
+          "Higher-mileage cars with already-good oil pressure where switching brings risk of leaks",
+          "Daily-driver fleet vehicles where short intervals and lower up-front cost make sense",
+          "Any vehicle whose owner's manual specifies conventional",
+        ],
+      },
+      { type: "h2", text: "Synthetic blend: the in-between" },
+      {
+        type: "p",
+        text: "A blend mixes synthetic and conventional. It runs longer than pure conventional but does not last as long as full synthetic. Realistic use case: a higher-mileage vehicle where the owner wants better thermal protection without the full synthetic price tag.",
+      },
+      { type: "h2", text: "What it actually costs" },
+      {
+        type: "ul",
+        items: [
+          "Conventional oil change: $35 to $55",
+          "Synthetic blend: $50 to $75",
+          "Full synthetic: $70 to $110",
+          "European synthetic with manufacturer approval (BMW, MB, VW, Volvo): $95 to $145",
+        ],
+      },
+      { type: "h2", text: "How long each lasts in Texas conditions" },
+      {
+        type: "ul",
+        items: [
+          "Conventional: 3,000 to 5,000 miles, lean toward shorter in summer",
+          "Synthetic blend: 5,000 to 7,500 miles",
+          "Full synthetic: 7,500 to 10,000 miles, sometimes 15,000 in newer European cars",
+          "Trust your manufacturer's recommendation and your oil-life monitor — both are calibrated for the real world",
+        ],
+      },
+      {
+        type: "callout",
+        title: "We use the right oil for your car",
+        body: "Not whatever's on sale, not the cheapest available. The correct viscosity grade and certification standard for your specific year, make, and model. If your manual says 0W-20 with API SP and dexos1 Gen 3, that is what goes in.",
+      },
+    ],
+    related: ["oil-change-frequency", "seasonal-car-care-texas"],
+  },
+
+  {
+    slug: "why-is-my-car-overheating",
+    category: "Cooling System",
+    title: "Why is my car overheating? Seven causes and what they cost to fix",
+    description:
+      "The seven most common causes of engine overheating, what to do roadside, what each repair costs, and why Texas summer is the season this happens to most drivers.",
+    publishedDate: "2026-05-22",
+    readMinutes: 6,
+    heroImage:
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Vehicle dashboard temperature gauge approaching the red zone",
+    eyebrow: "Cooling System",
+    lede: "Engine overheating is the kind of problem where the wrong reaction makes a $400 repair into a $4,000 repair. Pull over the second the gauge climbs. Here are the seven most common causes, what to do in the moment, and what each one costs.",
+    sections: [
+      { type: "h2", text: "First, do this immediately" },
+      {
+        type: "ol",
+        items: [
+          "Pull over safely. Get off the highway, find a parking lot.",
+          "Turn the engine OFF. Do not idle it 'just to keep the AC on.'",
+          "Pop the hood from inside the car. Do not approach the engine yet.",
+          "Wait at least 20 minutes before opening anything. The radiator is under high pressure when hot, and a hot radiator cap removed early can cause severe burns.",
+          "Call us at (972) 231-2886 or call for a tow. Driving an overheating engine costs head gaskets in minutes.",
+        ],
+      },
+      { type: "h2", text: "The seven most common causes, by frequency" },
+      {
+        type: "p",
+        text: "These are the causes we see in our Richardson bays, ordered roughly by how often they show up.",
+      },
+      { type: "h2", text: "1. Low coolant" },
+      {
+        type: "p",
+        text: "Coolant has leaked out, evaporated, or was never properly refilled after the last service. The system runs out of fluid to carry heat away. Cost to refill: $20 to $60 if there is no underlying leak. Cost to find and fix the leak: $100 to $400 depending on the source.",
+      },
+      { type: "h2", text: "2. Failed thermostat" },
+      {
+        type: "p",
+        text: "The thermostat regulates coolant flow based on temperature. When it fails closed, coolant cannot circulate and the engine overheats fast. Replacement: $220 to $500 depending on access.",
+      },
+      { type: "h2", text: "3. Water pump failure" },
+      {
+        type: "p",
+        text: "The pump drives coolant through the engine. When the impeller breaks or the bearing seizes, coolant stops flowing. Replacement: $450 to $1,200 depending on whether it is timing-belt driven.",
+      },
+      { type: "h2", text: "4. Cooling fan or fan relay" },
+      {
+        type: "p",
+        text: "At low speeds, the electric fan pulls air through the radiator. If the fan motor or its relay has failed, the engine overheats in stop-and-go traffic but cools down on the highway. Cost: $250 to $700.",
+      },
+      { type: "h2", text: "5. Clogged or failing radiator" },
+      {
+        type: "p",
+        text: "Internal corrosion or external damage. Replacement runs $500 to $1,200 including labor and a fresh coolant fill.",
+      },
+      { type: "h2", text: "6. Burst or split hose" },
+      {
+        type: "p",
+        text: "Rubber cooling hoses get brittle in Texas heat over years. A burst hose dumps coolant in seconds. Hose replacement: $150 to $400.",
+      },
+      { type: "h2", text: "7. Head gasket failure" },
+      {
+        type: "p",
+        text: "The serious one, usually the result of overheating that was driven through. Combustion gases enter the cooling system, coolant enters the cylinders. Repair: $1,800 to $3,500. This is why we say pull over.",
+      },
+      {
+        type: "callout",
+        title: "If your gauge is climbing right now",
+        body: "Pull over. Engine off. Do not open the radiator cap until the engine has cooled for at least 20 minutes. Call (972) 231-2886 or arrange a tow. Driving an overheating engine to make it home is the most expensive decision you will make this year.",
+      },
+      { type: "h2", text: "Why summer is the season this happens" },
+      {
+        type: "p",
+        text: "100°F+ ambient temperatures, AC running constantly, and stop-and-go traffic on 75 are the perfect storm for cooling systems. Marginal hoses fail, marginal thermostats stick, marginal water pumps quit. If your system is over 60,000 miles since the last flush, get it checked in spring before August has the final word.",
+      },
+    ],
+    related: ["seasonal-car-care-texas", "oil-change-frequency"],
+  },
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);
