@@ -61,7 +61,7 @@ export default async function AdminRepairsListPage() {
                   and the public /track/[id] pages will go live.
                 </p>
                 <p className="mt-3 text-sm text-ink font-medium">
-                  No customer-facing page is broken in the meantime — /track
+                  No customer-facing page is broken in the meantime, /track
                   shows the request-update form and /track/[id] shows a
                   graceful fallback.
                 </p>

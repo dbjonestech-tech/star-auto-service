@@ -199,8 +199,8 @@ export const AREAS: Area[] = [
       "Pre-purchase inspections for used cars from Wylie-area lots",
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "North Texas suburban road and rooftops at golden hour",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Stone-and-brick suburban home with two-car garage, the kind we see on Wylie family fleets",
   },
   {
     slug: "sachse-tx",
@@ -225,8 +225,8 @@ export const AREAS: Area[] = [
       "Pre-purchase inspections for used cars from Sachse-area lots",
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Quiet Texas residential street with mature trees",
+      "https://images.unsplash.com/photo-1592595896616-c37162298647?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "White brick North Texas suburban home, the kind that lines Sachse residential streets",
   },
   {
     slug: "lake-highlands-dallas",
@@ -251,8 +251,8 @@ export const AREAS: Area[] = [
       "Maintenance for late-model imports without dealer markup",
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1518306727298-4c17e1bf6943?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "North Dallas neighborhood with mature trees and homes",
+      "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Brick home with mature landscaping, the established Lake Highlands and North Dallas character",
   },
 ];
 

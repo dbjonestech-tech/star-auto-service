@@ -165,7 +165,7 @@ export default function CredentialsPage() {
                   Qualifying repairs are warrantied for 24 months / 24,000
                   miles, honored at over 17,000 NAPA Auto Care Centers across
                   the country. Move, road-trip, break down on a Tuesday in
-                  Oklahoma — the warranty travels with you.
+                  Oklahoma, the warranty travels with you.
                 </p>
                 <Link
                   href="/warranty"

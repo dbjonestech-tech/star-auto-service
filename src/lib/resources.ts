@@ -583,7 +583,7 @@ export const RESOURCES: Resource[] = [
     eyebrow: "Engine Repair",
     lede: "A timing belt is the single piece of maintenance with the highest catastrophic-failure cost relative to its replacement cost. Skip it past its interval and a $700 job becomes a $4,000 job overnight. Here is everything you actually need to know.",
     sections: [
-      { type: "h2", text: "Belt or chain — how to know what you have" },
+      { type: "h2", text: "Belt or chain, how to know what you have" },
       {
         type: "p",
         text: "Some engines use a rubber timing belt that needs replacement on a schedule. Some use a metal timing chain that is supposed to last the life of the engine (although chains stretch and tensioners fail too, especially on certain VW, BMW, and Hyundai engines). Your owner's manual will tell you which one you have. If you do not have the manual, we can look it up by VIN in 30 seconds.",
@@ -689,7 +689,7 @@ export const RESOURCES: Resource[] = [
           "Conventional: 3,000 to 5,000 miles, lean toward shorter in summer",
           "Synthetic blend: 5,000 to 7,500 miles",
           "Full synthetic: 7,500 to 10,000 miles, sometimes 15,000 in newer European cars",
-          "Trust your manufacturer's recommendation and your oil-life monitor — both are calibrated for the real world",
+          "Trust your manufacturer's recommendation and your oil-life monitor, both are calibrated for the real world",
         ],
       },
       {
@@ -796,9 +796,9 @@ export const RESOURCES: Resource[] = [
       {
         type: "ul",
         items: [
-          "Active manufacturer recall — recalls are free at the dealer regardless of mileage",
-          "Warranty work — anything still covered under powertrain or bumper-to-bumper",
-          "Factory software updates — some are dealer-only",
+          "Active manufacturer recall, recalls are free at the dealer regardless of mileage",
+          "Warranty work, anything still covered under powertrain or bumper-to-bumper",
+          "Factory software updates, some are dealer-only",
           "Brand-new model years where parts are scarce in the aftermarket",
           "Specific software-only diagnostics on certain European brands (some BMW, MB, Porsche modules)",
         ],
@@ -809,8 +809,8 @@ export const RESOURCES: Resource[] = [
         items: [
           "Out-of-warranty maintenance and repair (90% of cars on the road)",
           "Anything where the dealer quote feels like a number out of a hat",
-          "Brake jobs, oil changes, tires, AC service — every routine repair",
-          "Engine and transmission work — same quality, half the labor cost",
+          "Brake jobs, oil changes, tires, AC service, every routine repair",
+          "Engine and transmission work, same quality, half the labor cost",
           "When you want the same technician working on your car every time",
         ],
       },
@@ -827,7 +827,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "What you give up at an independent shop" },
       {
         type: "p",
-        text: "Loaner cars (sometimes), waiting-room espresso machines (definitely), and proximity to the dealership new-car showroom (which we will not pretend is a meaningful loss). Loaners are the real one — most independents do not provide them, though we can usually arrange a ride or recommend a nearby spot.",
+        text: "Loaner cars (sometimes), waiting-room espresso machines (definitely), and proximity to the dealership new-car showroom (which we will not pretend is a meaningful loss). Loaners are the real one, most independents do not provide them, though we can usually arrange a ride or recommend a nearby spot.",
       },
       {
         type: "callout",
@@ -889,7 +889,7 @@ export const RESOURCES: Resource[] = [
           "Just the upstream O2 sensor (when that's actually the cause): $150 to $400",
         ],
       },
-      { type: "h2", text: "OEM vs aftermarket — the honest trade-off" },
+      { type: "h2", text: "OEM vs aftermarket, the honest trade-off" },
       {
         type: "p",
         text: "OEM cats use more precious metal and last longer (often the life of the car). California-compliant aftermarket cats are quality parts and meet emissions, typically lasting 5 to 7 years. Cheap, federally-compliant aftermarket cats can fail within a year or two and are illegal to sell in California (Texas allows them but does not require them). We use California-compliant aftermarket as a default, OEM on request.",
@@ -945,7 +945,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "Steady vs. flashing" },
       {
         type: "p",
-        text: "A steady light means at least one tire is genuinely under-pressure. A flashing light (typically flashes for 60 seconds at startup, then stays solid) means the system itself has a fault — usually a dead sensor or a sensor that has not been programmed after a tire change.",
+        text: "A steady light means at least one tire is genuinely under-pressure. A flashing light (typically flashes for 60 seconds at startup, then stays solid) means the system itself has a fault, usually a dead sensor or a sensor that has not been programmed after a tire change.",
       },
       { type: "h2", text: "The cold-morning false alarm" },
       {
@@ -956,7 +956,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "ul",
         items: [
-          "Slow leak from a nail or screw (most common — find it before it gets worse)",
+          "Slow leak from a nail or screw (most common, find it before it gets worse)",
           "Valve stem leak (rare on modern wheels but possible)",
           "TPMS sensor battery has died (sensors typically last 7 to 10 years)",
           "Sensor was damaged during a tire change at a different shop",
@@ -967,7 +967,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "ol",
         items: [
-          "Check all four tires with a gauge (do not trust the dashboard reading alone — it can lag).",
+          "Check all four tires with a gauge (do not trust the dashboard reading alone, it can lag).",
           "Inflate any low tires to the placard pressure (usually printed on the door jamb sticker).",
           "Drive 10 to 15 miles. The light should clear on its own once pressures stabilize.",
           "If the light comes back within a few days: you have a slow leak. Schedule us.",
@@ -982,7 +982,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "Why we do not recommend turning the light off and ignoring it" },
       {
         type: "p",
-        text: "There are kits and methods online that disable TPMS. We do not recommend any of them. The light exists to warn you about a real safety condition. Underinflated tires generate excess heat, wear unevenly, reduce fuel economy, and increase your risk of a blowout — especially in Texas summer heat. Find the cause, fix the cause, leave the system on.",
+        text: "There are kits and methods online that disable TPMS. We do not recommend any of them. The light exists to warn you about a real safety condition. Underinflated tires generate excess heat, wear unevenly, reduce fuel economy, and increase your risk of a blowout, especially in Texas summer heat. Find the cause, fix the cause, leave the system on.",
       },
     ],
     related: ["seasonal-car-care-texas", "when-to-replace-brakes"],
@@ -1089,7 +1089,7 @@ export const RESOURCES: Resource[] = [
       {
         type: "callout",
         title: "Bring the car. We will write up the report.",
-        body: "Schedule a PPI by phone — about an hour, $150. We give you a written report you can use to negotiate, walk away, or buy with confidence. We do not have any relationship with any seller, dealer, or auction.",
+        body: "Schedule a PPI by phone, about an hour, $150. We give you a written report you can use to negotiate, walk away, or buy with confidence. We do not have any relationship with any seller, dealer, or auction.",
       },
     ],
     related: ["check-engine-light-guide", "texas-state-inspection-guide"],
@@ -1144,7 +1144,7 @@ export const RESOURCES: Resource[] = [
       { type: "h2", text: "Why both after new tires" },
       {
         type: "p",
-        text: "When you buy new tires, the shop balances them as part of the install. But the alignment is unaffected by tire change — if your car was misaligned with the old tires, it is still misaligned with the new ones, and the new tires will start wearing unevenly within a few thousand miles. Spending an extra $100 to $140 on an alignment after new tires often pays for itself in tire life alone.",
+        text: "When you buy new tires, the shop balances them as part of the install. But the alignment is unaffected by tire change, if your car was misaligned with the old tires, it is still misaligned with the new ones, and the new tires will start wearing unevenly within a few thousand miles. Spending an extra $100 to $140 on an alignment after new tires often pays for itself in tire life alone.",
       },
       { type: "h2", text: "DFW pothole season" },
       {

@@ -206,7 +206,7 @@ const GROUPS: SymptomGroup[] = [
   {
     icon: Activity,
     title: "How the car feels",
-    intro: "Vibration, pulling, soft pedals — the way the car drives tells the truth.",
+    intro: "Vibration, pulling, soft pedals, the way the car drives tells the truth.",
     items: [
       {
         name: "Vibration through steering at highway speed",
@@ -249,7 +249,7 @@ const GROUPS: SymptomGroup[] = [
   {
     icon: Zap,
     title: "How the car behaves",
-    intro: "Starting, idling, stalling — the car's behavior is data.",
+    intro: "Starting, idling, stalling, the car's behavior is data.",
     items: [
       {
         name: "Slow crank in the morning",

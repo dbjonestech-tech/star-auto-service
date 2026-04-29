@@ -43,7 +43,7 @@ export default function ReviewsPage() {
       <section className="relative bg-ink overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=1800&q=70&auto=format&fit=crop"
-          alt=""
+          alt="Happy Richardson driver leaving The Star Auto Service after a five-star experience"
           fill
           priority
           sizes="100vw"

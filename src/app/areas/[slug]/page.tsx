@@ -57,9 +57,45 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
     { name: area.name, url: `${SITE.url}/areas/${slug}` },
   ]);
 
+  // Per-area Service schema with explicit areaServed. This signals to Google that
+  // The Star Auto Service offers auto repair specifically in this city, which is
+  // the strongest single ranking signal for "{service} {city}" queries.
+  const areaServiceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE.url}/areas/${slug}#service`,
+    name: `Auto Repair in ${area.name}, ${area.state}`,
+    serviceType: "Auto Repair",
+    description: `ASE-Certified family-owned auto repair serving ${area.name}, ${area.state} drivers from our Belt Line shop in Richardson. ${area.driveTime} away. NAPA Auto Care nationwide warranty, bilingual service.`,
+    provider: { "@id": `${SITE.url}/#business` },
+    areaServed: {
+      "@type": "City",
+      name: area.name,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: area.name,
+        addressRegion: area.state,
+        addressCountry: "US",
+      },
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: `${area.name}, ${area.state} drivers and families`,
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Top auto repair services for ${area.name} drivers`,
+      itemListElement: area.topServices.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s },
+      })),
+    },
+  };
+
   return (
     <>
       <JsonLd data={breadcrumbs} />
+      <JsonLd data={areaServiceJsonLd} />
 
       {/* Hero */}
       <section className="relative bg-ink overflow-hidden">

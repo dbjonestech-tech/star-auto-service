@@ -11,7 +11,7 @@ export function CTASection() {
       {/* Photographic backdrop, dimmed for legibility */}
       <Image
         src="/assets/shop-front.jpg"
-        alt=""
+        alt="Front view of The Star Auto Service shop in Richardson, TX"
         fill
         sizes="100vw"
         className="object-cover opacity-25"

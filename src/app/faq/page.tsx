@@ -98,7 +98,7 @@ export default function FAQPage() {
       <section className="relative bg-ink overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=1800&q=70&auto=format&fit=crop"
-          alt=""
+          alt="Mechanic working under the hood at The Star Auto Service in Richardson, TX"
           fill
           priority
           sizes="100vw"

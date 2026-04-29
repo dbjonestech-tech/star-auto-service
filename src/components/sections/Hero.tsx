@@ -13,7 +13,7 @@ export function Hero() {
     <section className="relative bg-ink overflow-hidden md:flex md:flex-col md:flex-1">
       <Image
         src={heroPhoto}
-        alt=""
+        alt="The Star Auto Service shop on East Belt Line Road in Richardson, Texas, family-owned auto repair since 1998"
         fill
         priority
         sizes="100vw"

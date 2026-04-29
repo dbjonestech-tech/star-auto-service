@@ -119,18 +119,52 @@ export default async function ResourceArticlePage({ params }: { params: Params }
     { name: r.title, url: `${SITE.url}/resources/${slug}` },
   ]);
 
+  // Compose an articleBody string from the section content so Google can read the full article
+  // text inside the schema (boosts rich-result eligibility and topical authority signals).
+  const articleBody = [
+    r.lede,
+    ...r.sections.flatMap((s) => {
+      if (s.type === "p") return [s.text];
+      if (s.type === "h2") return [s.text];
+      if (s.type === "ul" || s.type === "ol") return s.items;
+      if (s.type === "callout") return [`${s.title}. ${s.body}`];
+      return [];
+    }),
+  ].join(" ");
+
+  const wordCount = articleBody.trim().split(/\s+/).length;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${SITE.url}/resources/${slug}#article`,
     headline: r.title,
     description: r.description,
-    image: r.heroImage,
+    image: r.heroImage.startsWith("/") ? `${SITE.url}${r.heroImage}` : r.heroImage,
     datePublished: r.publishedDate,
     dateModified: r.publishedDate,
+    articleSection: r.category,
+    keywords: Array.from(
+      new Set([
+        r.category,
+        r.eyebrow,
+        "auto repair Richardson TX",
+        "The Star Auto Service",
+      ]),
+    ).join(", "),
+    wordCount,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
     publisher: { "@id": `${SITE.url}/#business` },
-    author: { "@id": `${SITE.url}/#organization` },
-    mainEntityOfPage: `${SITE.url}/resources/${slug}`,
+    author: {
+      "@type": "Person",
+      name: "Miguel Ibarra",
+      jobTitle: "Founder, ASE-Certified Master Technician",
+      worksFor: { "@id": `${SITE.url}/#business` },
+      url: `${SITE.url}/about`,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE.url}/resources/${slug}` },
+    about: { "@id": `${SITE.url}/#business` },
   };
 
   return (

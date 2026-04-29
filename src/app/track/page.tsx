@@ -47,7 +47,7 @@ const STAGES = [
   {
     icon: Clock,
     title: "In diagnosis",
-    body: "Real diagnostic work — codes, freeze-frame data, road test if the symptom is intermittent.",
+    body: "Real diagnostic work, codes, freeze-frame data, road test if the symptom is intermittent.",
   },
   {
     icon: Phone,
