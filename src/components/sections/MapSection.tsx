@@ -2,6 +2,7 @@ import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { MapEmbed } from "@/components/ui/MapEmbed";
 
 /** Visit section. Premium typography, larger map, icon-anchored info blocks, gold directions CTA. */
 export function MapSection() {
@@ -95,18 +96,12 @@ export function MapSection() {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.1}>
-              <div className="aspect-[4/3] lg:aspect-[16/12] overflow-hidden border border-line bg-paper shadow-card-lg">
-                <iframe
-                  src={mapSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map showing ${SITE.name} location`}
-                />
-              </div>
+              <MapEmbed
+                src={mapSrc}
+                title={`Map showing ${SITE.name} location`}
+                address={`${SITE.address.street} · ${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}`}
+                className="aspect-[4/3] lg:aspect-[16/12] overflow-hidden shadow-card-lg"
+              />
             </Reveal>
           </div>
         </div>

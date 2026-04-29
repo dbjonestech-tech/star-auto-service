@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { MapEmbed } from "@/components/ui/MapEmbed";
 import { ContactForm } from "./ContactForm";
 
 const CONTACT_TITLE = "Contact The Star Auto Service | Richardson TX Mechanic";
@@ -121,18 +122,12 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden shadow-sm border border-border-light h-64">
-                <iframe
-                  src={mapSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Map showing ${SITE.name} location`}
-                />
-              </div>
+              <MapEmbed
+                src={mapSrc}
+                title={`Map showing ${SITE.name} location`}
+                address={`${SITE.address.street} · ${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}`}
+                className="rounded-xl overflow-hidden shadow-sm h-64"
+              />
             </div>
           </div>
         </div>
