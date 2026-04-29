@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CallFAB } from "@/components/ui/CallFAB";
 import { ScrollCallBar } from "@/components/ui/ScrollCallBar";
+import { PhoneCallEnhancer } from "@/components/ui/PhoneCallEnhancer";
 import { SITE } from "@/lib/constants";
 import { generateJsonLd } from "@/lib/metadata";
 import "./globals.css";
@@ -90,6 +91,7 @@ export default function RootLayout({
         <Footer />
         <CallFAB />
         <ScrollCallBar />
+        <PhoneCallEnhancer />
         <Analytics />
       </body>
     </html>

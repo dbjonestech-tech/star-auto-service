@@ -134,6 +134,16 @@ body {
   }
 }
 
+/* Phone modal fade-in */
+@keyframes phoneFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
