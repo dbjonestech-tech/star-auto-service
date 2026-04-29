@@ -18,8 +18,8 @@ export function ShopStory() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden bg-ink shadow-card-lg">
                 <Image
-                  src="/assets/shop-front.jpg"
-                  alt={`${SITE.name} storefront in Richardson, Texas`}
+                  src="/assets/shop-bays-2.jpg"
+                  alt={`Inside the bays at ${SITE.name} in Richardson, Texas`}
                   fill
                   sizes="(min-width: 1024px) 60vw, 100vw"
                   className="object-cover"
