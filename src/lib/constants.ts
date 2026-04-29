@@ -237,7 +237,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Star Auto service is fantastic. Great job — very prompt and courteous.",
+      "Star Auto service is fantastic. Great job. Very prompt and courteous.",
     author: "Michael T.",
     vehicle: "2016 Chevrolet Traverse",
   },
@@ -258,7 +258,7 @@ export const VALUE_PROPS: ValueProp[] = [
   {
     title: "Family-Owned Since 1998",
     description:
-      "Over 25 years of trusted service in Richardson. We're not a chain — we're your neighbors.",
+      "Over 25 years of trusted service in Richardson. We're not a chain. We're your neighbors.",
     icon: "Heart",
   },
   {
@@ -270,7 +270,7 @@ export const VALUE_PROPS: ValueProp[] = [
   {
     title: "Fair & Transparent Pricing",
     description:
-      "Honest assessments and upfront quotes. No surprises, no unnecessary repairs — just straight talk.",
+      "Honest assessments and upfront quotes. No surprises, no unnecessary repairs. Just straight talk.",
     icon: "DollarSign",
   },
   {
@@ -294,8 +294,7 @@ export const VALUE_PROPS: ValueProp[] = [
 ];
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
+  { label: "The Shop", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;

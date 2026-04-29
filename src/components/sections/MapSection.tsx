@@ -1,85 +1,113 @@
-import { Phone, MapPin, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
 
-/** Map embed and business hours section. */
+/** Visit section. Premium typography, larger map, icon-anchored info blocks, gold directions CTA. */
 export function MapSection() {
-  const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-96.7127265!3d32.9478494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1f06c4520ba7%3A0xbb1004d56727b314!2sThe%20Star%20Auto%20Service!5e0!3m2!1sen!2sus";
+  const mapSrc =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5!2d-96.7127265!3d32.9478494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1f06c4520ba7%3A0xbb1004d56727b314!2sThe%20Star%20Auto%20Service!5e0!3m2!1sen!2sus";
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`;
 
   return (
-    <section className="py-16 md:py-24 bg-surface">
+    <section className="bg-cream py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="rounded-xl overflow-hidden shadow-sm border border-border-light h-80 lg:h-full min-h-[320px]">
-            <iframe
-              src={mapSrc}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={`Map showing ${SITE.name} location`}
-            />
+        <div className="max-w-2xl mb-14 md:mb-16">
+          <Reveal>
+            <Eyebrow>Visit the shop</Eyebrow>
+            <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
+              Belt Line Road, Richardson.
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          <div className="lg:col-span-5">
+            <Reveal>
+              <div className="space-y-8">
+                {/* Address */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
+                    <MapPin className="text-royal" size={22} strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
+                      Address
+                    </p>
+                    <p className="font-sans font-bold text-lg text-ink leading-snug">
+                      {SITE.address.street}
+                    </p>
+                    <p className="font-sans font-bold text-lg text-ink leading-snug">
+                      {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
+                    </p>
+                    <a
+                      href={directionsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-extrabold text-royal hover:text-royal-deep transition-colors"
+                    >
+                      Get directions
+                      <ArrowRight size={13} strokeWidth={2.5} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 bg-gold-tint flex items-center justify-center shrink-0">
+                    <Phone className="text-royal" size={22} strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
+                      Call the shop
+                    </p>
+                    <a
+                      href={`tel:${SITE.phoneRaw}`}
+                      className="font-sans font-black text-3xl md:text-4xl text-ink hover:text-royal transition-colors tracking-tight leading-none"
+                    >
+                      {SITE.phone}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Hours */}
+                <div className="flex items-start gap-5">
+                  <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
+                    <Clock className="text-royal" size={22} strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-2.5">
+                      Hours
+                    </p>
+                    <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 text-base">
+                      <dt className="text-graphite font-medium">Mon&ndash;Fri</dt>
+                      <dd className="text-ink font-semibold">{SITE.hours.weekday}</dd>
+                      <dt className="text-graphite font-medium">Saturday</dt>
+                      <dd className="text-ink font-semibold">{SITE.hours.saturday}</dd>
+                      <dt className="text-graphite font-medium">Sunday</dt>
+                      <dd className="text-ink font-semibold">Closed</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
 
-          <div className="flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
-              Visit Us
-            </h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
-                  <MapPin className="text-accent" size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary">Address</p>
-                  <p className="text-text-secondary text-sm">
-                    {SITE.address.full}
-                  </p>
-                </div>
+          <div className="lg:col-span-7">
+            <Reveal delay={0.1}>
+              <div className="aspect-[4/3] lg:aspect-[16/12] overflow-hidden border border-line bg-paper shadow-card-lg">
+                <iframe
+                  src={mapSrc}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map showing ${SITE.name} location`}
+                />
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
-                  <Phone className="text-accent" size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary">Phone</p>
-                  <a
-                    href={`tel:${SITE.phoneRaw}`}
-                    className="text-accent hover:text-accent-hover transition-colors text-sm"
-                  >
-                    {SITE.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
-                  <Clock className="text-accent" size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary mb-2">Hours</p>
-                  <table className="text-sm text-text-secondary">
-                    <tbody>
-                      <tr>
-                        <td className="pr-4 py-0.5 font-medium">Mon – Fri</td>
-                        <td>{SITE.hours.weekday}</td>
-                      </tr>
-                      <tr>
-                        <td className="pr-4 py-0.5 font-medium">Saturday</td>
-                        <td>{SITE.hours.saturday}</td>
-                      </tr>
-                      <tr>
-                        <td className="pr-4 py-0.5 font-medium">Sunday</td>
-                        <td>{SITE.hours.sunday}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

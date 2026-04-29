@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             heading="Comprehensive Auto Repair"
-            description="We service all makes and models — domestic and import."
+            description="We service all makes and models. Domestic and import."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

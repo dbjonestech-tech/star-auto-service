@@ -93,7 +93,7 @@ export function ContactForm() {
     >
       <h2 className="text-xl font-bold text-primary mb-6">Send Us a Message</h2>
 
-      {/* Honeypot — hidden from real users, trap for bots */}
+      {/* Honeypot. Hidden from real users, trap for bots. */}
       <div
         aria-hidden="true"
         className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"

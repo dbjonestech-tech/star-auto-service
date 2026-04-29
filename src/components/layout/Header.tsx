@@ -2,43 +2,53 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Star, Phone, Menu, X } from "lucide-react";
+import { Menu, X, Star, Phone } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 
-/** Site header with navigation, phone CTA, and mobile menu. */
+/** Sticky brand header. Yellow star + bold wordmark + nav + phone + gold Book CTA. */
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    function handleScroll() {
-      setScrolled(window.scrollY > 10);
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
     }
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-surface transition-shadow duration-200 ${
-        scrolled ? "shadow-md" : ""
+      className={`sticky top-0 z-50 bg-cream/95 backdrop-blur-md transition-shadow duration-200 ${
+        scrolled ? "shadow-[0_1px_0_var(--color-line),0_8px_24px_rgba(15,15,18,0.04)]" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <Star className="text-accent" size={28} fill="currentColor" />
-            <span className="text-lg md:text-xl font-bold text-primary uppercase tracking-tight">
-              {SITE.name}
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group"
+            aria-label={`${SITE.name} home`}
+          >
+            <Star
+              className="text-gold transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300"
+              size={26}
+              fill="currentColor"
+              strokeWidth={1.5}
+            />
+            <span className="font-sans text-base md:text-lg font-extrabold tracking-tight text-ink uppercase">
+              The Star Auto Service
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-9" aria-label="Primary">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-text-secondary font-medium hover:text-primary transition-colors"
+                className="text-xs uppercase tracking-[0.16em] font-bold text-ink/80 hover:text-royal transition-colors"
               >
                 {link.label}
               </Link>
@@ -48,37 +58,60 @@ export function Header() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${SITE.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-accent text-white font-semibold px-4 py-2 rounded-lg hover:bg-accent-hover transition-colors text-sm"
-              aria-label={`Call The Star Auto Service at ${SITE.phone}`}
+              className="hidden lg:inline-flex items-center gap-2 text-sm font-bold text-ink hover:text-royal transition-colors"
+              aria-label={`Call ${SITE.phone}`}
             >
-              <Phone size={16} />
-              <span className="hidden sm:inline">{SITE.phone}</span>
+              <Phone size={15} strokeWidth={2.5} />
+              {SITE.phone}
             </a>
 
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-primary"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            <Link
+              href="/book"
+              className="hidden md:inline-flex items-center justify-center bg-gold text-ink hover:bg-gold-deep px-5 py-2.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors shadow-gold"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              Book Service
+            </Link>
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden p-2 text-ink"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-surface">
-          <nav className="px-4 py-4 flex flex-col gap-3">
+      {open && (
+        <div className="md:hidden border-t border-line bg-cream">
+          <nav className="px-4 py-6 flex flex-col" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-text-secondary font-medium py-2 hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+                className="py-3 text-sm uppercase tracking-[0.16em] font-bold text-ink hover:text-royal transition-colors"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/book"
+              onClick={() => setOpen(false)}
+              className="mt-5 inline-flex items-center justify-center bg-gold text-ink hover:bg-gold-deep px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors"
+            >
+              Book Service
+            </Link>
+            <a
+              href={`tel:${SITE.phoneRaw}`}
+              onClick={() => setOpen(false)}
+              className="mt-3 inline-flex items-center justify-center gap-2 border-2 border-ink text-ink hover:bg-ink hover:text-cream px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors"
+            >
+              <Phone size={14} strokeWidth={2.5} />
+              {SITE.phone}
+            </a>
           </nav>
         </div>
       )}

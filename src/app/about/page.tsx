@@ -71,7 +71,7 @@ export default function AboutPage() {
               We&apos;re proud to serve Richardson&apos;s diverse population with
               bilingual service in English and Spanish. We believe communication
               is the foundation of trust, and we want every customer to fully
-              understand what their vehicle needs — and what it doesn&apos;t.
+              understand what their vehicle needs, and what it doesn&apos;t.
             </p>
             <p>
               We don&apos;t upsell. We don&apos;t recommend unnecessary repairs.

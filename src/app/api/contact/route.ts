@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
-import { SITE } from "@/lib/constants";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
@@ -66,7 +65,7 @@ export async function POST(request: Request) {
   });
 
   if (!process.env.RESEND_API_KEY) {
-    console.error("RESEND_API_KEY not configured — email not sent");
+    console.error("RESEND_API_KEY not configured. Email not sent.");
     return NextResponse.json(
       { error: "Email service is not configured. Please call us directly." },
       { status: 500 }
@@ -79,7 +78,7 @@ export async function POST(request: Request) {
       from: "Star Auto Service <noreply@thestarautoservice.com>",
       to: "nibarra525@gmail.com",
       replyTo: email || undefined,
-      subject: `New Contact Form Submission — ${name}`,
+      subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
