@@ -164,11 +164,22 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
                     <p className="mt-3 text-sm text-graphite leading-relaxed font-medium">
                       {area.localDetail}
                     </p>
-                    <p className="mt-4 font-sans font-bold text-base text-ink leading-snug">
-                      {SITE.address.street}
-                      <br />
-                      {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-                    </p>
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${SITE.address.full} in Google Maps`}
+                      className="group mt-4 block hover:text-royal transition-colors"
+                    >
+                      <p className="font-sans font-bold text-base text-ink leading-snug group-hover:text-royal transition-colors">
+                        {SITE.address.street}
+                        <br />
+                        {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
+                      </p>
+                      <span className="mt-2 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] font-extrabold text-royal group-hover:text-royal-deep">
+                        Open in Maps →
+                      </span>
+                    </a>
                   </div>
                 </div>
               </Reveal>

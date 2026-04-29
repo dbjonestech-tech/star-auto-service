@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapPin } from "lucide-react";
 
 type MapEmbedProps = {
@@ -12,12 +12,32 @@ type MapEmbedProps = {
   className?: string;
 };
 
-/** Click-to-load Google Maps iframe. Renders a styled placeholder until activated, eliminating ~250-350KB of map JS on initial paint. */
+/** Google Maps iframe with an IntersectionObserver-triggered auto-load. Renders a styled placeholder until the user scrolls near it (200px rootMargin), then mounts the real iframe. Saves the ~250-350KB initial-load cost without requiring an explicit click. */
 export function MapEmbed({ src, title, address, className = "" }: MapEmbedProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || loaded) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setLoaded(true);
+            observer.disconnect();
+          }
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [loaded]);
+
   return (
-    <div className={`relative bg-paper border border-line ${className}`}>
+    <div ref={ref} className={`relative bg-paper border border-line ${className}`}>
       {loaded ? (
         <iframe
           src={src}
@@ -31,22 +51,25 @@ export function MapEmbed({ src, title, address, className = "" }: MapEmbedProps)
           className="block w-full h-full"
         />
       ) : (
-        <button
-          type="button"
-          onClick={() => setLoaded(true)}
-          aria-label={`${title}. Activate to load interactive map.`}
-          className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-paper hover:bg-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-inset transition-colors group"
+        <div
+          className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-paper"
+          aria-label={`${title}. Loading map…`}
         >
-          <div className="w-16 h-16 bg-royal-tint flex items-center justify-center group-hover:bg-royal group-hover:text-cream transition-colors">
-            <MapPin className="text-royal group-hover:text-cream transition-colors" size={28} strokeWidth={2} aria-hidden="true" />
+          <div className="w-16 h-16 bg-royal-tint flex items-center justify-center">
+            <MapPin
+              className="text-royal motion-safe:animate-pulse"
+              size={28}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
           </div>
           <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite text-center px-6">
             {address}
           </p>
-          <span className="text-xs uppercase tracking-[0.16em] font-extrabold text-royal group-hover:text-royal-deep border-b-2 border-royal pb-1">
-            Show interactive map
-          </span>
-        </button>
+          <p className="text-xs uppercase tracking-[0.16em] font-bold text-royal/80">
+            Loading map…
+          </p>
+        </div>
       )}
     </div>
   );

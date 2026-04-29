@@ -28,17 +28,15 @@ export function Hero() {
       {/* Bottom-right vignette specifically darkens the LED reader board area. */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_60%,rgba(15,15,18,0.5),transparent_55%)]" />
 
-      {/* Floating NAPA AutoCare badge — top-right */}
-      <div className="hidden md:block absolute top-8 right-8 z-10">
-        <div className="bg-cream/95 backdrop-blur-sm shadow-card-lg p-3 border border-cream/40">
-          <Image
-            src="/assets/napa-autocare.png"
-            alt="NAPA Auto Care Center"
-            width={180}
-            height={60}
-            className="h-10 w-auto object-contain"
-          />
-        </div>
+      {/* Floating NAPA AutoCare badge — top-right, native logo, no frame */}
+      <div className="hidden md:block absolute top-6 right-6 lg:top-10 lg:right-10 z-10">
+        <Image
+          src="/assets/napa-autocare.png"
+          alt="NAPA Auto Care Center"
+          width={320}
+          height={107}
+          className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.45)]"
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-12 lg:py-16 w-full md:flex-1 md:flex md:items-center">

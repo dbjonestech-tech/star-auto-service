@@ -83,31 +83,32 @@ export default function ContactPage() {
             <div className="lg:col-span-5">
               <Reveal delay={0.08}>
                 <div className="space-y-7">
-                  <div className="flex items-start gap-5">
+                  <a
+                    href={directionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${SITE.address.full} in Google Maps`}
+                    className="group flex items-start gap-5 -m-3 p-3 hover:bg-paper transition-colors"
+                  >
                     <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
                       <MapPin className="text-royal" size={22} strokeWidth={2} aria-hidden="true" />
                     </div>
                     <div className="flex-1">
                       <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
-                        Address
+                        Address — open in Maps
                       </p>
-                      <p className="font-sans font-bold text-lg text-ink leading-snug">
+                      <p className="font-sans font-bold text-lg text-ink leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.street}
                       </p>
-                      <p className="font-sans font-bold text-lg text-ink leading-snug">
+                      <p className="font-sans font-bold text-lg text-ink leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
                       </p>
-                      <a
-                        href={directionsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-extrabold text-royal hover:text-royal-deep transition-colors"
-                      >
+                      <span className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-extrabold text-royal group-hover:text-royal-deep">
                         Get directions
-                        <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
-                      </a>
+                        <ArrowRight size={13} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                      </span>
                     </div>
-                  </div>
+                  </a>
 
                   <div className="flex items-start gap-5">
                     <div className="w-12 h-12 bg-gold-tint flex items-center justify-center shrink-0">

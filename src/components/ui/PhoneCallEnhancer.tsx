@@ -25,6 +25,9 @@ export function PhoneCallEnhancer() {
       const link = target.closest('a[href^="tel:"]') as HTMLAnchorElement | null;
       if (!link) return;
 
+      // Inside-the-modal "Call now" should pass through directly
+      if (link.dataset.directDial === "true") return;
+
       // Allow normal behavior on touch / mobile devices
       const isCoarse =
         typeof window !== "undefined" &&
@@ -132,9 +135,17 @@ export function PhoneCallEnhancer() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full">
             <a
               href={`tel:${SITE.phoneRaw}`}
+              data-direct-dial="true"
               onClick={() => {
                 track("call_click", { source: `${sourceRef.current}_modal` });
-                setOpen(false);
+                // Belt-and-suspenders: also fire the dial via window.location
+                // for environments where the click bubbles oddly.
+                setTimeout(() => {
+                  try {
+                    window.location.href = `tel:${SITE.phoneRaw}`;
+                  } catch {}
+                  setOpen(false);
+                }, 50);
               }}
               className="flex-1 inline-flex items-center justify-center gap-2 bg-gold text-ink hover:bg-gold-soft px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors shadow-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >

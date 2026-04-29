@@ -8,15 +8,6 @@ import { SERVICES } from "@/lib/constants";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
-const FEATURED_SLUGS = new Set([
-  "brakes",
-  "oil-change",
-  "engine-diagnostics",
-  "engine-repair",
-  "transmission",
-  "electrical",
-]);
-
 function trackPointer(e: React.MouseEvent<HTMLElement>) {
   const el = e.currentTarget;
   const rect = el.getBoundingClientRect();
@@ -70,9 +61,7 @@ export function ServicesOverview() {
                 "aria-hidden"?: string | boolean;
               }>) || LucideIcons.Wrench;
 
-            const href = FEATURED_SLUGS.has(service.id)
-              ? `/services/${service.id}`
-              : `/services#${service.id}`;
+            const href = `/services/${service.id}`;
 
             return (
               <Reveal key={service.id} delay={i * 0.06} margin="-15%">

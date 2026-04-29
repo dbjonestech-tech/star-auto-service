@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Star, Phone, MapPin } from "lucide-react";
-import { SITE, SERVICES } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 /** Footer. Ink ground, gold star + bold wordmark, royal/gold accents, substantial visit + nav blocks. */
 export function Footer() {
@@ -12,18 +12,22 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2.5 mb-5">
+            <Link
+              href="/"
+              aria-label={`${SITE.name} home`}
+              className="inline-flex items-center gap-2.5 mb-5 group"
+            >
               <Star
-                className="text-gold"
+                className="text-gold transition-transform group-hover:scale-110 group-hover:rotate-12 duration-300"
                 size={26}
                 fill="currentColor"
                 strokeWidth={1.5}
                 aria-hidden="true"
               />
-              <p className="font-sans font-extrabold text-lg tracking-tight uppercase">
+              <p className="font-sans font-extrabold text-lg tracking-tight uppercase group-hover:text-gold transition-colors">
                 The Star Auto Service
               </p>
-            </div>
+            </Link>
             <p className="text-sm text-cream/65 leading-relaxed max-w-xs font-medium">
               Family-owned auto repair in Richardson, Texas. Honest assessments, quality
               repairs, and a commitment to your safety. Since 1998.
@@ -55,11 +59,17 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-cream/85">
               <li className="flex items-start gap-2.5">
                 <MapPin size={15} strokeWidth={2} className="mt-0.5 text-cream/55 shrink-0" aria-hidden="true" />
-                <span>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold transition-colors"
+                  aria-label={`Open ${SITE.address.full} in Google Maps`}
+                >
                   {SITE.address.street}
                   <br />
                   {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-2.5 pt-2">
                 <Phone size={15} strokeWidth={2} className="text-cream/55 shrink-0" aria-hidden="true" />
@@ -190,26 +200,26 @@ export function Footer() {
 
         <div className="hairline bg-cream/15 my-10" />
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-xs text-cream/70">
-          <p className="col-span-2 md:col-span-1 text-[11px] uppercase tracking-[0.2em] font-bold text-gold">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-cream/70">
+          <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold whitespace-nowrap">
             Areas served
           </p>
-          <Link href="/areas/richardson-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/richardson-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Richardson
           </Link>
-          <Link href="/areas/garland-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/garland-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Garland
           </Link>
-          <Link href="/areas/plano-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/plano-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Plano
           </Link>
-          <Link href="/areas/dallas-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/dallas-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Dallas
           </Link>
-          <Link href="/areas/allen-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/allen-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Allen
           </Link>
-          <Link href="/areas/murphy-tx" className="hover:text-gold transition-colors font-medium">
+          <Link href="/areas/murphy-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
             Murphy
           </Link>
         </div>

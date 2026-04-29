@@ -82,22 +82,28 @@ export default function BookConfirmationPage() {
               </p>
             </div>
           </div>
-          <div className="flex items-start gap-4">
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${SITE.address.full} in Google Maps`}
+            className="group flex items-start gap-4 -m-2 p-2 hover:bg-paper transition-colors"
+          >
             <span className="w-11 h-11 bg-royal-tint flex items-center justify-center shrink-0">
               <MapPin className="text-royal" size={20} strokeWidth={2} aria-hidden="true" />
             </span>
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                Visit
+                Visit — open in Maps
               </p>
-              <p className="mt-2 text-sm text-ink font-medium leading-snug">
+              <p className="mt-2 text-sm text-ink font-medium leading-snug group-hover:text-royal transition-colors">
                 {SITE.address.street}
               </p>
-              <p className="text-sm text-ink font-medium leading-snug">
+              <p className="text-sm text-ink font-medium leading-snug group-hover:text-royal transition-colors">
                 {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
               </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

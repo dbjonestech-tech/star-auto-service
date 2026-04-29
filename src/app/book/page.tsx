@@ -127,22 +127,28 @@ export default function BookPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5">
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${SITE.address.full} in Google Maps`}
+                    className="group flex items-start gap-5 -m-3 p-3 hover:bg-paper transition-colors"
+                  >
                     <div className="w-12 h-12 bg-royal-tint flex items-center justify-center shrink-0">
                       <MapPin className="text-royal" size={22} strokeWidth={2} aria-hidden="true" />
                     </div>
                     <div className="flex-1">
                       <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-1.5">
-                        Visit
+                        Visit — open in Maps
                       </p>
-                      <p className="text-base text-ink font-semibold leading-snug">
+                      <p className="text-base text-ink font-semibold leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.street}
                       </p>
-                      <p className="text-base text-ink font-semibold leading-snug">
+                      <p className="text-base text-ink font-semibold leading-snug group-hover:text-royal transition-colors">
                         {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </Reveal>
             </div>
