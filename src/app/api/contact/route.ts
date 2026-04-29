@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
+import { SITE } from "@/lib/constants";
 
 const contactSchema = z.object({
   formType: z.enum(["contact", "booking"]).optional().default("contact"),
@@ -125,7 +126,7 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error: sendError } = await resend.emails.send({
       from: "Star Auto Service <noreply@thestarautoservice.com>",
-      to: "nibarra525@gmail.com",
+      to: ["nibarra525@gmail.com", SITE.email],
       replyTo: email || undefined,
       subject,
       html,

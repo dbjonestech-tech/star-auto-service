@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Star, Phone, MapPin } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { SITE, SERVICES } from "@/lib/constants";
 import { AREAS } from "@/lib/areas";
 
 /** Footer. Ink ground, gold star + bold wordmark, royal/gold accents, substantial visit + nav blocks. */
@@ -154,45 +154,23 @@ export function Footer() {
             <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold mb-5">
               Services
             </p>
-            <ul className="space-y-2.5 text-sm text-cream/85">
-              <li>
-                <Link href="/services/brakes" className="hover:text-gold transition-colors font-medium">
-                  Brake repair
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/oil-change" className="hover:text-gold transition-colors font-medium">
-                  Oil change &amp; lube
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/engine-diagnostics" className="hover:text-gold transition-colors font-medium">
-                  Engine diagnostics
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/engine-repair" className="hover:text-gold transition-colors font-medium">
-                  Engine repair
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/transmission" className="hover:text-gold transition-colors font-medium">
-                  Transmission service
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/electrical" className="hover:text-gold transition-colors font-medium">
-                  Electrical systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/state-inspections" className="hover:text-gold transition-colors font-medium">
-                  Texas state inspections
-                </Link>
-              </li>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2.5 text-sm text-cream/85">
+              {SERVICES.map((s) => (
+                <li key={s.id}>
+                  <Link
+                    href={`/services/${s.id}`}
+                    className="hover:text-gold transition-colors font-medium"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
               <li className="pt-1">
-                <Link href="/services" className="text-gold hover:text-gold-soft transition-colors font-bold uppercase tracking-[0.12em] text-[11px]">
-                  See all 12 →
+                <Link
+                  href="/services"
+                  className="text-gold hover:text-gold-soft transition-colors font-bold uppercase tracking-[0.12em] text-[11px]"
+                >
+                  All services overview →
                 </Link>
               </li>
             </ul>
