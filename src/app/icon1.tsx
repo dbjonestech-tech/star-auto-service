@@ -15,13 +15,17 @@ export default function Icon192() {
           alignItems: "center",
           justifyContent: "center",
           background: "#0B3D91",
-          color: "#F4B400",
-          fontSize: 150,
-          fontWeight: 900,
-          lineHeight: 1,
         }}
       >
-        ★
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="140"
+          height="140"
+          viewBox="0 0 24 24"
+          fill="#F4B400"
+        >
+          <path d="M12 2 L14.85 8.63 L22 9.27 L16.5 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7.5 14.14 L2 9.27 L9.15 8.63 Z" />
+        </svg>
       </div>
     ),
     { ...size },
