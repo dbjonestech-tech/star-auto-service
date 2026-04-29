@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function BookConfirmationPage() {
   return (
-    <section className="bg-cream py-24 md:py-32 min-h-[70vh]">
+    <section className="bg-cream py-16 md:py-24 lg:py-32 min-h-[70vh]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="relative bg-surface border border-line p-10 md:p-14 shadow-card-lg">
           <div className="absolute top-0 left-10 right-10 h-0.5 bg-emerald" aria-hidden="true" />

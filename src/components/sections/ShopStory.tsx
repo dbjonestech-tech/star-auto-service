@@ -10,9 +10,9 @@ export function ShopStory() {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-center">
           {/* Photo composition */}
           <div className="lg:col-span-7 relative">
             <Reveal>

@@ -106,7 +106,7 @@ export default function FAQPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/75 to-ink/40" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/90 to-transparent" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-36">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
           <Eyebrow light>Frequently asked questions</Eyebrow>
           <h1 className="mt-5 font-sans font-black text-display-1 text-cream tracking-[-0.025em] leading-[0.98]">
             The straight answers,

@@ -131,7 +131,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/40" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/85 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
           <div className="max-w-4xl">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
@@ -169,7 +169,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
               {content.headline}
             </h1>
 
-            <p className="mt-7 text-lg md:text-xl text-cream/90 leading-relaxed max-w-2xl font-medium">
+            <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-cream/90 leading-relaxed max-w-2xl font-medium">
               {content.subhead}
             </p>
 
@@ -178,17 +178,17 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
               {content.priceCue}
             </p>
 
-            <div className="mt-10 flex flex-col-reverse sm:flex-row gap-4">
+            <div className="mt-8 md:mt-10 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/book"
-                className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
               >
                 <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
                 Book this service
               </Link>
               <a
                 href={`tel:${SITE.phoneRaw}`}
-                className="group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
+                className="group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
               >
                 <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
                 Call {SITE.phone}
@@ -199,9 +199,9 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* What's included */}
-      <section className="bg-cream py-24 md:py-32 border-b border-line-subtle">
+      <section className="bg-cream py-16 md:py-24 lg:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <Reveal>
                 <Eyebrow>What&apos;s included</Eyebrow>
@@ -235,9 +235,9 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* When to book */}
-      <section className="bg-paper py-24 md:py-32 border-b border-line-subtle">
+      <section className="bg-paper py-16 md:py-24 lg:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <Reveal>
                 <Eyebrow>When to book</Eyebrow>
@@ -279,9 +279,9 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* Why us */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14 md:mb-16">
+          <div className="max-w-3xl mb-10 md:mb-14 lg:mb-16">
             <Reveal>
               <Eyebrow>Why bring it here</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
@@ -309,7 +309,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* Featured testimonial */}
-      <section className="bg-paper py-24 md:py-28 border-y border-line-subtle">
+      <section className="bg-paper py-16 md:py-24 lg:py-28 border-y border-line-subtle">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
@@ -337,7 +337,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Eyebrow>Common questions</Eyebrow>

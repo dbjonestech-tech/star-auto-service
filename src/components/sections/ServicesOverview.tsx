@@ -20,7 +20,7 @@ export function ServicesOverview() {
   const featured = SERVICES.slice(0, 6);
 
   return (
-    <section className="relative bg-paper py-24 md:py-32 border-y border-line-subtle overflow-hidden">
+    <section className="relative bg-paper py-16 md:py-24 lg:py-32 border-y border-line-subtle overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image
           src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1800&q=60&auto=format&fit=crop"
@@ -31,7 +31,7 @@ export function ServicesOverview() {
         />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-16 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-10 md:mb-16 lg:mb-20">
           <div className="md:col-span-5">
             <Reveal>
               <Eyebrow>What we work on</Eyebrow>

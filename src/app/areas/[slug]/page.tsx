@@ -74,7 +74,7 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
         <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/40" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/85 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
           <div className="max-w-4xl">
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/70">
@@ -97,11 +97,11 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
               <span className="text-gold">{area.state}.</span>
             </h1>
 
-            <p className="mt-7 text-lg md:text-xl text-cream/90 leading-relaxed max-w-2xl font-medium">
+            <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-cream/90 leading-relaxed max-w-2xl font-medium">
               {area.positioning}
             </p>
 
-            <div className="mt-7 inline-flex items-center gap-6 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/85">
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/85">
               <span className="inline-flex items-center gap-2">
                 <Clock size={13} strokeWidth={2.5} className="text-gold" aria-hidden="true" />
                 {area.driveTime}
@@ -113,17 +113,17 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
               </span>
             </div>
 
-            <div className="mt-10 flex flex-col-reverse sm:flex-row gap-4">
+            <div className="mt-8 md:mt-10 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/book"
-                className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
               >
                 <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
                 Book a service
               </Link>
               <a
                 href={`tel:${SITE.phoneRaw}`}
-                className="group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
+                className="group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
               >
                 <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
                 Call {SITE.phone}
@@ -134,9 +134,9 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
       </section>
 
       {/* Intro + drivers */}
-      <section className="bg-cream py-24 md:py-32 border-b border-line-subtle">
+      <section className="bg-cream py-16 md:py-24 lg:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
             <div className="lg:col-span-7">
               <Reveal>
                 <Eyebrow>How we serve {area.name}</Eyebrow>
@@ -189,9 +189,9 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
       </section>
 
       {/* Top services for this area */}
-      <section className="bg-paper py-24 md:py-32 border-b border-line-subtle">
+      <section className="bg-paper py-16 md:py-24 lg:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14 md:mb-16">
+          <div className="max-w-3xl mb-10 md:mb-14 lg:mb-16">
             <Reveal>
               <Eyebrow>What {area.name} drivers book most</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
@@ -229,9 +229,9 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
       </section>
 
       {/* Map + visit info */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14 md:mb-16">
+          <div className="max-w-2xl mb-10 md:mb-14 lg:mb-16">
             <Reveal>
               <Eyebrow>Find us</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
@@ -245,7 +245,7 @@ export default async function AreaDetailPage({ params }: { params: Params }) {
               src={mapSrc}
               title={`Map showing ${SITE.name} location relative to ${area.name}, ${area.state}`}
               address={`${SITE.address.street} · ${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}`}
-              className="aspect-[16/8] overflow-hidden shadow-card-lg"
+              className="aspect-[4/3] md:aspect-[16/8] overflow-hidden shadow-card-lg"
             />
           </Reveal>
         </div>

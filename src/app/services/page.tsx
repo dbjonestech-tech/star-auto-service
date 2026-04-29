@@ -43,7 +43,7 @@ export default function ServicesPage() {
     <>
       <JsonLd data={breadcrumbs} />
       {/* Intro band */}
-      <section className="relative bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line overflow-hidden">
+      <section className="relative bg-cream pt-20 md:pt-28 lg:pt-32 pb-14 md:pb-20 lg:pb-24 border-b border-line overflow-hidden">
         <SectionWatermark src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
@@ -69,7 +69,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Service cards */}
-      <section className="bg-paper py-24 md:py-32 border-b border-line-subtle">
+      <section className="bg-paper py-16 md:py-24 lg:py-32 border-b border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
             {SERVICES.map((service, i) => {

@@ -23,7 +23,7 @@ export function CTASection() {
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gold/60" />
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gold/60" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32">
         <Reveal>
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2.5 mb-7">

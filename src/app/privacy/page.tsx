@@ -28,7 +28,7 @@ export default function PrivacyPage() {
   return (
     <>
       <JsonLd data={breadcrumbs} />
-      <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
+      <section className="bg-cream pt-20 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20 border-b border-line">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Eyebrow>Privacy</Eyebrow>

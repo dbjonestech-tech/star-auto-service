@@ -6,9 +6,9 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 /** Custom 404 page. Editorial typography, on-brand. */
 export default function NotFound() {
   return (
-    <section className="bg-cream py-32 md:py-44 min-h-[70vh] flex items-center">
+    <section className="bg-cream py-20 md:py-32 lg:py-44 min-h-[60vh] md:min-h-[70vh] flex items-center">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="font-sans font-black text-[8rem] md:text-[12rem] text-royal tracking-tight leading-none tabular-nums">
+        <p className="font-sans font-black text-[5rem] md:text-[9rem] lg:text-[12rem] text-royal tracking-tight leading-none tabular-nums">
           404
         </p>
         <Eyebrow>Page not found</Eyebrow>

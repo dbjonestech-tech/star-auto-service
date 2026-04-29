@@ -11,9 +11,9 @@ export function MapSection() {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`;
 
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-14 md:mb-16">
+        <div className="max-w-2xl mb-10 md:mb-14 lg:mb-16">
           <Reveal>
             <Eyebrow>Visit the shop</Eyebrow>
             <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">

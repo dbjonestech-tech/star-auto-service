@@ -36,7 +36,7 @@ function trackPointer(e: React.MouseEvent<HTMLElement>) {
 /** Three substantial pillars. Cursor-tracking gold spotlight + gold-rule slide + lift on hover. */
 export function Pillars() {
   return (
-    <section className="relative bg-cream py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-cream py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image
           src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1800&q=60&auto=format&fit=crop"
@@ -47,7 +47,7 @@ export function Pillars() {
         />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-16 md:mb-20">
+        <div className="max-w-2xl mb-10 md:mb-16 lg:mb-20">
           <Reveal>
             <Eyebrow>What we stand for</Eyebrow>
             <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">

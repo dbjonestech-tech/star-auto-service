@@ -46,7 +46,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={breadcrumbs} />
       {/* Intro band */}
-      <section className="relative bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line overflow-hidden">
+      <section className="relative bg-cream pt-20 md:pt-28 lg:pt-32 pb-14 md:pb-20 lg:pb-24 border-b border-line overflow-hidden">
         <SectionWatermark src="/assets/shop-side.jpg" opacity={0.06} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
@@ -118,9 +118,9 @@ export default function AboutPage() {
       </section>
 
       {/* Founder block */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 relative">
               <Reveal>
                 <div className="relative aspect-[4/3] overflow-hidden bg-ink shadow-card-lg">
@@ -170,9 +170,9 @@ export default function AboutPage() {
       </section>
 
       {/* The work */}
-      <section className="bg-paper py-24 md:py-32 border-y border-line-subtle">
+      <section className="bg-paper py-16 md:py-24 lg:py-32 border-y border-line-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <Reveal>
                 <Eyebrow>The work</Eyebrow>
