@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
@@ -93,19 +94,28 @@ export default function FAQPage() {
       <JsonLd data={breadcrumbs} />
       <JsonLd data={faqJsonLd} />
 
-      <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <Eyebrow>Frequently asked questions</Eyebrow>
-            <h1 className="mt-5 font-sans font-black text-display-1 text-ink tracking-[-0.025em] leading-[0.98]">
-              The straight answers,
-              <br />
-              <span className="text-royal">in writing.</span>
-            </h1>
-            <p className="mt-7 text-lg md:text-xl text-graphite leading-relaxed font-medium max-w-2xl">
-              {all.length} of the questions we hear most. Still don&apos;t see yours? Call the shop or send a note — we&apos;ll write back.
-            </p>
-          </Reveal>
+      {/* Photo hero */}
+      <section className="relative bg-ink overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=1800&q=70&auto=format&fit=crop"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/75 to-ink/40" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/90 to-transparent" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-36">
+          <Eyebrow light>Frequently asked questions</Eyebrow>
+          <h1 className="mt-5 font-sans font-black text-display-1 text-cream tracking-[-0.025em] leading-[0.98]">
+            The straight answers,
+            <br />
+            <span className="text-gold">in writing.</span>
+          </h1>
+          <p className="mt-7 text-lg md:text-xl text-cream/90 leading-relaxed font-medium max-w-2xl">
+            {all.length} of the questions we hear most. Still don&apos;t see yours? Call the shop or send a note — we&apos;ll write back.
+          </p>
         </div>
       </section>
 

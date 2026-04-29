@@ -1,14 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Star, Quote, ArrowRight } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Substantial reviews. Six cards, gold five-star ratings, premium materials feel. */
+/** Substantial reviews. Six cards, gold five-star ratings, premium materials feel, subtle Unsplash watermark. */
 export function Testimonials() {
   return (
-    <section className="bg-paper py-24 md:py-32 border-y border-line-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-paper py-24 md:py-32 border-y border-line-subtle overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+        <Image
+          src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1800&q=60&auto=format&fit=crop"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.04] mix-blend-multiply"
+        />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-20">
           <div className="md:col-span-7">
             <Reveal>

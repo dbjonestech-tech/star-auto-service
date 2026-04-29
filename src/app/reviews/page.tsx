@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Star, Quote, ArrowRight } from "lucide-react";
 import { SITE, TESTIMONIALS } from "@/lib/constants";
@@ -6,6 +7,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CountUp } from "@/components/ui/CountUp";
 import { CTASection } from "@/components/sections/CTASection";
 
 const TITLE = "Customer Reviews | The Star Auto Service Richardson TX";
@@ -37,45 +39,62 @@ export default function ReviewsPage() {
     <>
       <JsonLd data={breadcrumbs} />
 
-      <section className="bg-cream pt-24 md:pt-32 pb-20 md:pb-24 border-b border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Photo hero */}
+      <section className="relative bg-ink overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=1800&q=70&auto=format&fit=crop"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/75 to-ink/40" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/90 to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-36">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
-              <Reveal>
-                <Eyebrow>Customer reviews</Eyebrow>
-                <h1 className="mt-5 font-sans font-black text-display-1 text-ink tracking-[-0.025em] leading-[0.98]">
-                  136 reviews,
-                  <br />
-                  <span className="text-royal">4.8 stars,</span> 28 years.
-                </h1>
-              </Reveal>
+              <Eyebrow light>Customer reviews</Eyebrow>
+              <h1 className="mt-5 font-sans font-black text-display-1 text-cream tracking-[-0.025em] leading-[0.98]">
+                <CountUp to={136} duration={1.6} /> reviews,
+                <br />
+                <span className="text-gold">
+                  <CountUp to={4.8} duration={1.6} decimals={1} /> stars,
+                </span>{" "}
+                <CountUp to={28} duration={1.6} /> years.
+              </h1>
             </div>
             <div className="lg:col-span-5">
-              <Reveal delay={0.08}>
-                <div className="relative bg-surface border border-line p-7 md:p-8 shadow-card">
-                  <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
-                  <div className="flex items-center gap-5">
-                    <div className="flex flex-col items-center">
-                      <p className="font-sans font-black text-5xl text-ink leading-none tabular-nums">
-                        4.8
-                      </p>
-                      <div className="flex gap-0.5 mt-2">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star key={i} size={14} className="text-gold" fill="currentColor" strokeWidth={1} aria-hidden="true" />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="border-l border-line pl-5 flex-1">
-                      <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                        Across 136 Google reviews
-                      </p>
-                      <p className="mt-1 text-sm text-ink font-semibold leading-snug">
-                        Richardson, Plano, Garland, Dallas, Allen, Murphy
-                      </p>
+              <div className="relative bg-cream/95 backdrop-blur-sm border border-cream/40 p-7 md:p-8 shadow-card-lg">
+                <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
+                <div className="flex items-center gap-5">
+                  <div className="flex flex-col items-center">
+                    <p className="font-sans font-black text-5xl text-ink leading-none tabular-nums">
+                      4.8
+                    </p>
+                    <div className="flex gap-0.5 mt-2">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          size={14}
+                          className="text-gold"
+                          fill="currentColor"
+                          strokeWidth={1}
+                          aria-hidden="true"
+                        />
+                      ))}
                     </div>
                   </div>
+                  <div className="border-l border-line pl-5 flex-1">
+                    <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
+                      Across 136 Google reviews
+                    </p>
+                    <p className="mt-1 text-sm text-ink font-semibold leading-snug">
+                      Richardson, Plano, Garland, Dallas, Allen, Murphy
+                    </p>
+                  </div>
                 </div>
-              </Reveal>
+              </div>
             </div>
           </div>
         </div>

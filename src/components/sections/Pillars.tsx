@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ShieldCheck, Wrench, HeartHandshake } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -24,20 +26,27 @@ const PILLARS = [
   },
 ] as const;
 
-/** Three substantial pillars. Icon + number + heavy headline + body, premium card treatment with gold-rule slide on hover. */
+function trackPointer(e: React.MouseEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+}
+
+/** Three substantial pillars. Cursor-tracking gold spotlight + gold-rule slide + lift on hover. */
 export function Pillars() {
   return (
     <section className="relative bg-cream py-24 md:py-32 overflow-hidden">
-      {/* Subtle Unsplash watermark backdrop */}
-      <Image
-        src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1800&q=60&auto=format&fit=crop"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover opacity-[0.05] pointer-events-none mix-blend-multiply"
-        aria-hidden="true"
-      />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+        <Image
+          src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1800&q=60&auto=format&fit=crop"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.05] mix-blend-multiply"
+        />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-16 md:mb-20">
           <Reveal>
             <Eyebrow>What we stand for</Eyebrow>
@@ -45,8 +54,7 @@ export function Pillars() {
               Three things, every time.
             </h2>
             <p className="mt-6 text-lg text-graphite leading-relaxed font-medium max-w-xl">
-              The reasons Richardson keeps coming back. Same as they were the day we
-              opened.
+              The reasons Richardson keeps coming back. Same as they were the day we opened.
             </p>
           </Reveal>
         </div>
@@ -56,31 +64,42 @@ export function Pillars() {
             const Icon = pillar.icon;
             return (
               <Reveal key={pillar.number} delay={i * 0.08}>
-                <article className="group relative bg-surface border border-line p-8 md:p-10 h-full shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300">
-                  <div className="absolute top-0 left-8 right-8 h-1 bg-royal" aria-hidden="true" />
+                <article
+                  onMouseMove={trackPointer}
+                  className="group relative bg-surface border border-line p-8 md:p-10 h-full shadow-card hover:shadow-card-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Gold rule (static base) */}
+                  <div className="absolute top-0 left-8 right-8 h-1 bg-royal z-20" aria-hidden="true" />
+                  {/* Gold rule slide (overlay on hover) */}
                   <div
-                    className="absolute top-0 left-8 right-8 h-1 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
+                    className="absolute top-0 left-8 right-8 h-1 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-20"
                     aria-hidden="true"
                   />
-                  <div className="flex items-center justify-between mb-7">
-                    <div className="w-14 h-14 bg-royal-tint flex items-center justify-center">
-                      <Icon
-                        className="text-royal"
-                        size={26}
-                        strokeWidth={2}
-                        aria-hidden="true"
-                      />
+                  {/* Cursor spotlight */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
+                    style={{
+                      background:
+                        "radial-gradient(circle 360px at var(--mx, 50%) var(--my, 50%), rgba(244,180,0,0.18), transparent 55%)",
+                    }}
+                    aria-hidden="true"
+                  />
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-7">
+                      <div className="w-14 h-14 bg-royal-tint flex items-center justify-center">
+                        <Icon className="text-royal" size={26} strokeWidth={2} aria-hidden="true" />
+                      </div>
+                      <span className="font-sans font-black text-2xl text-gold tabular-nums">
+                        {pillar.number}
+                      </span>
                     </div>
-                    <span className="font-sans font-black text-2xl text-gold tabular-nums">
-                      {pillar.number}
-                    </span>
+                    <h3 className="font-sans font-black text-3xl md:text-4xl text-ink tracking-tight leading-none">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-5 text-base text-graphite leading-relaxed font-medium">
+                      {pillar.body}
+                    </p>
                   </div>
-                  <h3 className="font-sans font-black text-3xl md:text-4xl text-ink tracking-tight leading-none">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-5 text-base text-graphite leading-relaxed font-medium">
-                    {pillar.body}
-                  </p>
                 </article>
               </Reveal>
             );

@@ -8,6 +8,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { SectionWatermark } from "@/components/ui/SectionWatermark";
 
 const TITLE = "Auto Repair Resources & Guides | The Star Auto Service";
 const DESCRIPTION =
@@ -37,8 +38,9 @@ export default function ResourcesIndex() {
     <>
       <JsonLd data={breadcrumbs} />
 
-      <section className="bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-cream pt-24 md:pt-32 pb-16 md:pb-20 border-b border-line overflow-hidden">
+        <SectionWatermark src="https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1800&q=60&auto=format&fit=crop" opacity={0.05} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
               <Reveal>

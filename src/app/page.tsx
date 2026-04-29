@@ -13,7 +13,7 @@ import { CTASection } from "@/components/sections/CTASection";
 export default function HomePage() {
   return (
     <>
-      <div className="md:flex md:flex-col md:min-h-[calc(100svh-5rem)]">
+      <div className="md:flex md:flex-col md:min-h-[calc(100svh-5rem)] xl:min-h-[calc(100svh-7.25rem)]">
         <Hero />
         <CredentialsBar />
       </div>
