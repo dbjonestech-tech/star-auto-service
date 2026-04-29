@@ -4,20 +4,16 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Star, Phone, Globe, ChevronDown } from "lucide-react";
 import { track } from "@vercel/analytics";
-import { SITE } from "@/lib/constants";
+import { SITE, SERVICES } from "@/lib/constants";
 import { AREAS } from "@/lib/areas";
 import { OpenNowChip } from "@/components/ui/OpenNowChip";
 import { NavDropdown, type NavDropdownItem } from "@/components/layout/NavDropdown";
 
-const SERVICES_DROPDOWN: NavDropdownItem[] = [
-  { label: "Brakes", href: "/services/brakes" },
-  { label: "Oil Change & Lube", href: "/services/oil-change" },
-  { label: "Engine Diagnostics", href: "/services/engine-diagnostics" },
-  { label: "Engine Repair & Replacement", href: "/services/engine-repair" },
-  { label: "Transmission Service", href: "/services/transmission" },
-  { label: "Electrical Systems", href: "/services/electrical" },
-  { label: "Texas State Inspections", href: "/services/state-inspections" },
-];
+/** Auto-populates from SERVICES so the dropdown always lists every service. */
+const SERVICES_DROPDOWN: NavDropdownItem[] = SERVICES.map((s) => ({
+  label: s.title,
+  href: `/services/${s.id}`,
+}));
 
 /** Auto-populates from AREAS so adding a new city to the data also adds it here. */
 const AREAS_DROPDOWN: NavDropdownItem[] = AREAS.map((a) => ({
@@ -111,7 +107,7 @@ export function Header() {
             <NavDropdown
               label="Services"
               items={SERVICES_DROPDOWN}
-              footer={{ label: "See all 12 services →", href: "/services" }}
+              footer={{ label: "All services overview →", href: "/services" }}
             />
             <NavDropdown label="Areas served" items={AREAS_DROPDOWN} />
             <Link
@@ -178,7 +174,7 @@ export function Header() {
           className="md:hidden border-t border-line bg-cream max-h-[calc(100svh-4rem)] overflow-y-auto"
         >
           <nav className="px-4 py-5" aria-label="Mobile">
-            <MobileSection title="Services" items={SERVICES_DROPDOWN} onClose={() => setOpen(false)} footerLabel="See all 12 services" footerHref="/services" />
+            <MobileSection title="Services" items={SERVICES_DROPDOWN} onClose={() => setOpen(false)} footerLabel="All services overview" footerHref="/services" />
             <MobileSection title="Areas served" items={AREAS_DROPDOWN} onClose={() => setOpen(false)} />
             <MobileSection title="More" items={RESOURCES_DROPDOWN} onClose={() => setOpen(false)} />
             <Link

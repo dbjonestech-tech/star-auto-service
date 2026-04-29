@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, Phone, MapPin } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { AREAS } from "@/lib/areas";
 
 /** Footer. Ink ground, gold star + bold wordmark, royal/gold accents, substantial visit + nav blocks. */
 export function Footer() {
@@ -200,28 +201,19 @@ export function Footer() {
 
         <div className="hairline bg-cream/15 my-10" />
 
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-cream/70">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-cream/70">
           <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold whitespace-nowrap">
             Areas served
           </p>
-          <Link href="/areas/richardson-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Richardson
-          </Link>
-          <Link href="/areas/garland-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Garland
-          </Link>
-          <Link href="/areas/plano-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Plano
-          </Link>
-          <Link href="/areas/dallas-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Dallas
-          </Link>
-          <Link href="/areas/allen-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Allen
-          </Link>
-          <Link href="/areas/murphy-tx" className="hover:text-gold transition-colors font-medium whitespace-nowrap">
-            Murphy
-          </Link>
+          {AREAS.map((area) => (
+            <Link
+              key={area.slug}
+              href={`/areas/${area.slug}`}
+              className="hover:text-gold transition-colors font-medium whitespace-nowrap"
+            >
+              {area.name}
+            </Link>
+          ))}
         </div>
 
         <div className="hairline bg-cream/15 my-12" />

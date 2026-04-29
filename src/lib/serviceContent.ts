@@ -116,9 +116,9 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     headline: "Engine diagnostics in Richardson, read right.",
     subhead:
       "Advanced OBD-II computer diagnostics, manufacturer-specific scan tools, and 28 years of pattern recognition.",
-    heroImage:
-      "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Mechanic running OBD-II diagnostic scanner",
+    heroImage: "/assets/service-engine-diagnostics.avif",
+    heroAlt:
+      "Technician connecting an OBD-II diagnostic scan tool under the dashboard during engine code analysis",
     priceCue: "Diagnostics typically $100–$150",
     symptoms: [
       "Check engine light is on (solid or flashing)",

@@ -198,9 +198,9 @@ export const AREAS: Area[] = [
       "Engine diagnostics, second opinions on dealer quotes",
       "Pre-purchase inspections for used cars from Wylie-area lots",
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Stone-and-brick suburban home with two-car garage, the kind we see on Wylie family fleets",
+    heroImage: "/assets/area-wylie.jpeg",
+    heroAlt:
+      "Crowd lining classic cars on a sunny day along historic downtown Wylie, Texas during a community car show",
   },
   {
     slug: "sachse-tx",
@@ -224,9 +224,9 @@ export const AREAS: Area[] = [
       "Oil changes you can wait for",
       "Pre-purchase inspections for used cars from Sachse-area lots",
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1592595896616-c37162298647?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "White brick North Texas suburban home, the kind that lines Sachse residential streets",
+    heroImage: "/assets/area-sachse.jpeg",
+    heroAlt:
+      "Sachse, Texas City Hall stone-clad civic building with U.S., Texas, and city flags flying out front",
   },
   {
     slug: "lake-highlands-dallas",
@@ -250,9 +250,9 @@ export const AREAS: Area[] = [
       "Engine diagnostics on intermittent issues",
       "Maintenance for late-model imports without dealer markup",
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=1600&q=75&auto=format&fit=crop",
-    heroAlt: "Brick home with mature landscaping, the established Lake Highlands and North Dallas character",
+    heroImage: "/assets/area-lake-highlands.webp",
+    heroAlt:
+      "Aerial view of White Rock Lake with the downtown Dallas skyline behind, the Lake Highlands neighborhood we serve in north Dallas",
   },
 ];
 

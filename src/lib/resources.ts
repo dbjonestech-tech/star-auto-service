@@ -39,8 +39,9 @@ export const RESOURCES: Resource[] = [
       "A plain-English guide to what triggers your check engine light, how serious it is, and what to do before you panic, from a Richardson, TX shop that diagnoses these every day.",
     publishedDate: "2026-04-15",
     readMinutes: 6,
-    heroImage: "/assets/service-electrical.avif",
-    heroAlt: "Vehicle electrical control module and wiring",
+    heroImage: "/assets/resource-check-engine.avif",
+    heroAlt:
+      "Illuminated check engine warning light glowing amber on a vehicle instrument cluster",
     eyebrow: "Diagnostics",
     lede: "Your check engine light just came on. Before you panic, or ignore it for the next six months, here is what it actually means, what to do in the next hour, and how a real shop diagnoses it.",
     sections: [
@@ -513,8 +514,9 @@ export const RESOURCES: Resource[] = [
       "How to tell whether your car's no-start, slow-crank, or dim-lights problem is the battery or the charging system, and why a free parts-store test misses it half the time.",
     publishedDate: "2026-04-21",
     readMinutes: 5,
-    heroImage: "/assets/service-battery.avif",
-    heroAlt: "Vehicle battery installed in the engine bay",
+    heroImage: "/assets/resource-alternator.avif",
+    heroAlt:
+      "Close-up of an automotive alternator with serpentine belt and pulley, the charging system component diagnosed alongside the battery",
     eyebrow: "Electrical",
     lede: "About a third of the cars we see for a 'dead battery' actually have a charging-system problem. Replacing the battery without diagnosing the alternator means you are back in the parking lot in two months with the same problem. Here is how to tell the difference.",
     sections: [
@@ -642,8 +644,9 @@ export const RESOURCES: Resource[] = [
       "The honest answer on synthetic, blend, and conventional motor oil. Cost, intervals, and which one is worth it for your specific vehicle and Texas driving.",
     publishedDate: "2026-03-15",
     readMinutes: 5,
-    heroImage: "/assets/mission-banner.jpg",
-    heroAlt: "The Star Auto Service shop scene, oil and lube workshop",
+    heroImage: "/assets/resource-synthetic-vs-conventional.avif",
+    heroAlt:
+      "Two motor oil bottles side by side comparing synthetic and conventional engine oil for an oil change",
     eyebrow: "Maintenance",
     lede: "Synthetic oil costs about twice as much as conventional and lasts about two and a half times longer. So is it worth it? Depends entirely on your vehicle, your driving, and what your owner's manual specifies.",
     sections: [
@@ -709,8 +712,9 @@ export const RESOURCES: Resource[] = [
       "The seven most common causes of engine overheating, what to do roadside, what each repair costs, and why Texas summer is the season this happens to most drivers.",
     publishedDate: "2026-05-22",
     readMinutes: 6,
-    heroImage: "/assets/service-cooling.avif",
-    heroAlt: "Engine cooling system radiator and hoses",
+    heroImage: "/assets/resource-overheating.avif",
+    heroAlt:
+      "Steam rising from under the hood of an overheating car pulled over on the side of the road",
     eyebrow: "Cooling System",
     lede: "Engine overheating is the kind of problem where the wrong reaction makes a $400 repair into a $4,000 repair. Pull over the second the gauge climbs. Here are the seven most common causes, what to do in the moment, and what each one costs.",
     sections: [
@@ -787,8 +791,9 @@ export const RESOURCES: Resource[] = [
       "When the dealer is the right call, when an independent shop wins, and what the real labor-rate and quality differences look like for Richardson and DFW drivers.",
     publishedDate: "2026-03-29",
     readMinutes: 5,
-    heroImage: "/assets/shop-snow.jpg",
-    heroAlt: "The Star Auto Service shop on Belt Line Road, the kind of independent corner shop that has stood for 28 years",
+    heroImage: "/assets/resource-dealer-vs-independent.avif",
+    heroAlt:
+      "Independent neighborhood auto repair shop bay with a vehicle on the lift, the kind of family-owned mechanic an alternative to the dealer",
     eyebrow: "Buying & Maintenance",
     lede: "Whether to take your car to the dealer or an independent shop is one of the most common questions we get. The honest answer: about 90 percent of the time, an independent shop is the right call. Here is the other 10 percent, and the math behind both.",
     sections: [
@@ -851,8 +856,9 @@ export const RESOURCES: Resource[] = [
       "What a catalytic converter actually does, the symptoms of failure, real cost ranges, OEM vs. aftermarket trade-offs, and the cat theft epidemic in DFW.",
     publishedDate: "2026-04-02",
     readMinutes: 6,
-    heroImage: "/assets/service-state-inspections.avif",
-    heroAlt: "Texas state inspection and emissions checkpoint at the shop",
+    heroImage: "/assets/resource-catalytic-converter.avif",
+    heroAlt:
+      "Underside view of a catalytic converter mounted in a vehicle exhaust system, the emissions component vulnerable to theft and failure",
     eyebrow: "Emissions & Inspections",
     lede: "Catalytic converter replacement is one of the most expensive maintenance items most drivers will face, and one of the most commonly misdiagnosed. Here is what it actually does, when it actually fails, and what you should expect to pay.",
     sections: [
@@ -931,9 +937,9 @@ export const RESOURCES: Resource[] = [
       "A practical guide to your tire pressure warning light: what triggers it, why cold mornings cause false alarms, when sensors die, and when to call the shop.",
     publishedDate: "2026-04-26",
     readMinutes: 4,
-    heroImage:
-      "/assets/service-tires.avif",
-    heroAlt: "Tire tread close up at the shop",
+    heroImage: "/assets/resource-tpms.png",
+    heroAlt:
+      "Amber TPMS tire pressure warning light symbol illuminated on a vehicle dashboard gauge cluster",
     eyebrow: "Tires",
     lede: "The horseshoe-shaped TPMS warning light is one of the most ignored dashboard indicators on the road. Here is what it actually means, why it sometimes lies, and when you should treat it as urgent.",
     sections: [
@@ -996,9 +1002,9 @@ export const RESOURCES: Resource[] = [
       "The 30-point inspection we run on used cars before our customers buy them, the red flags we watch for, and why a $150 PPI saves thousands.",
     publishedDate: "2026-03-08",
     readMinutes: 6,
-    heroImage:
-      "/assets/shop-bays-1.jpg",
-    heroAlt: "Inside the bays where used-car pre-purchase inspections are performed",
+    heroImage: "/assets/resource-pre-purchase-inspection.avif",
+    heroAlt:
+      "Mechanic inspecting a used vehicle on a shop lift, performing a pre-purchase inspection before a buyer signs the title",
     eyebrow: "Buying & Maintenance",
     lede: "A pre-purchase inspection costs $150 and takes about an hour. The most expensive used car you can buy is the one you did not have inspected first. Here is what we check, why we check it, and what you should walk away from.",
     sections: [
@@ -1103,8 +1109,9 @@ export const RESOURCES: Resource[] = [
       "The two services that get confused with each other constantly. What each one actually does, the symptoms of each, and why you usually need both after new tires.",
     publishedDate: "2026-02-28",
     readMinutes: 4,
-    heroImage: "/assets/service-transmission.avif",
-    heroAlt: "Mechanical components, the kind of precision work that aligns wheels",
+    heroImage: "/assets/resource-wheel-alignment.avif",
+    heroAlt:
+      "Vehicle on an alignment rack with sensors mounted to each wheel during a four-wheel alignment service",
     eyebrow: "Tires",
     lede: "Alignment and balancing are two different services that solve two different problems. Half the customers who ask for one need the other. Here is the plain-English difference.",
     sections: [
