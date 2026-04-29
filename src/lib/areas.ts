@@ -176,6 +176,84 @@ export const AREAS: Area[] = [
     heroImage: "/assets/area-murphy.jpeg",
     heroAlt: "Murphy, Texas residential neighborhood at sunset",
   },
+  {
+    slug: "wylie-tx",
+    name: "Wylie",
+    state: "TX",
+    driveTime: "About 18–22 minutes",
+    distance: "10 miles",
+    positioning: "A quick run down 78, and worth every mile.",
+    intro: [
+      "Wylie drivers come down 78 to E Belt Line because the math works. Twenty minutes door-to-door, honest diagnostics, and a NAPA Auto Care nationwide warranty that travels with you. That is the whole pitch, and it has worked for a steady stream of Wylie families since the city started growing.",
+      "Whether you live near downtown Wylie, out by Lake Lavon, in Birmingham Farms, or anywhere along the 78 corridor, the trip over to Richardson is a straight shot. Easier than wrestling chain-shop pricing in Wylie or driving up to a dealership in Plano.",
+    ],
+    drivers:
+      "Wylie families with multi-vehicle households, daily commuters into Richardson and Plano, growing-city residents who got tired of generic chain-shop service, and a lot of word-of-mouth referrals from neighbors who already trust us.",
+    localDetail:
+      "Ten miles via 78 West, then south on Plano Road to Belt Line. Twenty minutes off-peak, easier than fighting the dealer service drives.",
+    topServices: [
+      "Brake service for Wylie-to-Richardson and Wylie-to-Plano commutes",
+      "Texas state inspections, walk-in",
+      "AC service before August (book in March)",
+      "Engine diagnostics, second opinions on dealer quotes",
+      "Pre-purchase inspections for used cars from Wylie-area lots",
+    ],
+    heroImage:
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "North Texas suburban road and rooftops at golden hour",
+  },
+  {
+    slug: "sachse-tx",
+    name: "Sachse",
+    state: "TX",
+    driveTime: "About 12–15 minutes",
+    distance: "7 miles",
+    positioning: "Just over the line, the shop you'd want a neighbor to recommend.",
+    intro: [
+      "Sachse drivers find us through neighbors and through the kind of word-of-mouth that does not happen unless a shop has earned it. Twelve minutes via the President George Bush Tollway and Belt Line, and the difference in honesty is the part you keep coming back for.",
+      "We service Sachse families from Heritage Park, Bunker Hill, and the neighborhoods east of Murphy Road. Same-day brake jobs, walk-in oil changes, and Texas state inspections without a wait when other shops have you booked out two weeks.",
+    ],
+    drivers:
+      "Sachse multi-car families, daily commuters into Plano and Richardson via the Bush Tollway, retirees who do not want a dealer service lane ever again, and folks who have heard about us from a neighbor over a fence.",
+    localDetail:
+      "Seven miles via the Bush Tollway south to Plano Road, then west on Belt Line. About a fifteen-minute drive even on a busy weekday.",
+    topServices: [
+      "Texas state safety + emissions inspections, walk-in",
+      "Brake repair for Bush Tollway commuters",
+      "AC service for the Texas summer",
+      "Oil changes you can wait for",
+      "Pre-purchase inspections for used cars from Sachse-area lots",
+    ],
+    heroImage:
+      "https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Quiet Texas residential street with mature trees",
+  },
+  {
+    slug: "lake-highlands-dallas",
+    name: "Lake Highlands",
+    state: "TX",
+    driveTime: "About 15–18 minutes",
+    distance: "9 miles",
+    positioning: "The shop North Dallas drivers come up to find.",
+    intro: [
+      "Lake Highlands drivers come up Audelia or Skillman, hang east on Belt Line, and find a shop that treats them the way the chains down on Forest never quite did. ASE-Certified technicians, NAPA Auto Care warranty, and the kind of family-owned consistency you used to be able to find in Lake Highlands itself.",
+      "We see a steady stream of Lake Highlands families, professionals on the 75 corridor, and word-of-mouth referrals from White Rock area drivers who got tired of paying dealer rates for the same work we do at independent prices.",
+    ],
+    drivers:
+      "Lake Highlands and White Rock families, professionals who commute into the M-Streets and downtown, multi-car households who want one trusted shop for all of them, and a lot of customers we have served for years through quiet referrals.",
+    localDetail:
+      "Nine miles via Audelia north to Belt Line, then east. About fifteen minutes off-peak, less on a Saturday morning when the inspection-station lines up here are still short.",
+    topServices: [
+      "Pre-purchase inspections for cars from Park Cities and Lakewood lots",
+      "Brake and rotor replacement (downtown Dallas commute eats brakes)",
+      "AC repair, the year-round Texas necessity",
+      "Engine diagnostics on intermittent issues",
+      "Maintenance for late-model imports without dealer markup",
+    ],
+    heroImage:
+      "https://images.unsplash.com/photo-1518306727298-4c17e1bf6943?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "North Dallas neighborhood with mature trees and homes",
+  },
 ];
 
 export const AREA_SLUGS = AREAS.map((a) => a.slug);
