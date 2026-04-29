@@ -786,6 +786,400 @@ export const RESOURCES: Resource[] = [
     ],
     related: ["seasonal-car-care-texas", "oil-change-frequency"],
   },
+
+  {
+    slug: "dealer-vs-independent-mechanic",
+    category: "Buying & Maintenance",
+    title: "Dealer vs. independent mechanic: when each one makes sense",
+    description:
+      "When the dealer is the right call, when an independent shop wins, and what the real labor-rate and quality differences look like for Richardson and DFW drivers.",
+    publishedDate: "2026-03-29",
+    readMinutes: 5,
+    heroImage:
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Inside an independent auto repair shop with vehicles on lifts",
+    eyebrow: "Buying & Maintenance",
+    lede: "Whether to take your car to the dealer or an independent shop is one of the most common questions we get. The honest answer: about 90 percent of the time, an independent shop is the right call. Here is the other 10 percent, and the math behind both.",
+    sections: [
+      { type: "h2", text: "When the dealer is genuinely the right call" },
+      {
+        type: "ul",
+        items: [
+          "Active manufacturer recall — recalls are free at the dealer regardless of mileage",
+          "Warranty work — anything still covered under powertrain or bumper-to-bumper",
+          "Factory software updates — some are dealer-only",
+          "Brand-new model years where parts are scarce in the aftermarket",
+          "Specific software-only diagnostics on certain European brands (some BMW, MB, Porsche modules)",
+        ],
+      },
+      { type: "h2", text: "When an independent shop wins" },
+      {
+        type: "ul",
+        items: [
+          "Out-of-warranty maintenance and repair (90% of cars on the road)",
+          "Anything where the dealer quote feels like a number out of a hat",
+          "Brake jobs, oil changes, tires, AC service — every routine repair",
+          "Engine and transmission work — same quality, half the labor cost",
+          "When you want the same technician working on your car every time",
+        ],
+      },
+      { type: "h2", text: "The labor-rate math" },
+      {
+        type: "p",
+        text: "DFW dealer labor rates run $150 to $200 per hour. Independent shops in the same area run $90 to $130 per hour. On a five-hour repair, that is a $300 to $500 difference before parts. Multiply that across a year of family-fleet maintenance and the numbers add up.",
+      },
+      { type: "h2", text: "The quality myth" },
+      {
+        type: "p",
+        text: "There is a story that dealer technicians are better-trained than independent technicians. That is not generally true. Both are typically ASE-Certified. Both train on the same systems. The actual difference is that dealers tend to be Toyota specialists or Honda specialists or BMW specialists, while a good independent shop sees every brand every day. For unusual or cross-brand problems, that breadth often wins.",
+      },
+      { type: "h2", text: "What you give up at an independent shop" },
+      {
+        type: "p",
+        text: "Loaner cars (sometimes), waiting-room espresso machines (definitely), and proximity to the dealership new-car showroom (which we will not pretend is a meaningful loss). Loaners are the real one — most independents do not provide them, though we can usually arrange a ride or recommend a nearby spot.",
+      },
+      {
+        type: "callout",
+        title: "Got a dealer quote you want a second opinion on?",
+        body: "Bring it in. We will inspect your car, give you our honest assessment, and tell you straight whether the dealer's recommended work is necessary. The diagnostic fee is credited toward repair if you have us do the work.",
+      },
+      { type: "h2", text: "The NAPA Auto Care tiebreaker" },
+      {
+        type: "p",
+        text: "Our NAPA nationwide warranty travels. If you move to Phoenix, road-trip to Maine, or break down in a small town in Oklahoma on a Tuesday, the warranty applies at any of 17,000+ NAPA Auto Care Centers. Dealer warranty work is more rigid and brand-specific.",
+      },
+    ],
+    related: ["check-engine-light-guide", "oil-change-frequency"],
+  },
+
+  {
+    slug: "catalytic-converter-replacement-cost",
+    category: "Emissions & Inspections",
+    title: "Catalytic converter replacement: signs, cost, and the theft problem",
+    description:
+      "What a catalytic converter actually does, the symptoms of failure, real cost ranges, OEM vs. aftermarket trade-offs, and the cat theft epidemic in DFW.",
+    publishedDate: "2026-04-02",
+    readMinutes: 6,
+    heroImage:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Underside view of an exhaust system with the catalytic converter visible",
+    eyebrow: "Emissions & Inspections",
+    lede: "Catalytic converter replacement is one of the most expensive maintenance items most drivers will face, and one of the most commonly misdiagnosed. Here is what it actually does, when it actually fails, and what you should expect to pay.",
+    sections: [
+      { type: "h2", text: "What a catalytic converter actually does" },
+      {
+        type: "p",
+        text: "Your engine produces exhaust that contains carbon monoxide, hydrocarbons, and nitrogen oxides. The catalytic converter is a chamber in the exhaust system filled with precious-metal coating (platinum, palladium, rhodium) that converts those harmful gases into less harmful ones before they leave the tailpipe. Without it, your car would fail every emissions inspection and produce far more pollution.",
+      },
+      { type: "h2", text: "Symptoms of a failing cat" },
+      {
+        type: "ul",
+        items: [
+          "Check engine light with code P0420 or P0430 (catalyst efficiency below threshold)",
+          "Sulfur or rotten-egg smell from the exhaust",
+          "Sluggish acceleration, especially up hills",
+          "Failed Texas state emissions inspection",
+          "Rattling sound from underneath when idling (broken substrate)",
+          "Dramatic drop in fuel economy",
+        ],
+      },
+      { type: "h2", text: "Why P0420 does not always mean the cat" },
+      {
+        type: "p",
+        text: "P0420 reports that the catalyst is reading inefficient. The cause might be the cat itself. Or it might be a failing oxygen sensor giving a bad reading, an exhaust leak before the cat, or an upstream fuel-mixture problem causing the cat to read inefficient. A real diagnostic process rules out the cheap fixes ($150 to $400) before recommending the expensive one ($1,500+).",
+      },
+      { type: "h2", text: "Realistic cost ranges" },
+      {
+        type: "ul",
+        items: [
+          "Aftermarket cat replacement, sedan: $800 to $1,500",
+          "OEM cat replacement, sedan: $1,500 to $2,500",
+          "Truck or SUV (larger system): $1,500 to $3,500",
+          "European luxury or hybrid: $2,500 to $5,000+",
+          "Just the upstream O2 sensor (when that's actually the cause): $150 to $400",
+        ],
+      },
+      { type: "h2", text: "OEM vs aftermarket — the honest trade-off" },
+      {
+        type: "p",
+        text: "OEM cats use more precious metal and last longer (often the life of the car). California-compliant aftermarket cats are quality parts and meet emissions, typically lasting 5 to 7 years. Cheap, federally-compliant aftermarket cats can fail within a year or two and are illegal to sell in California (Texas allows them but does not require them). We use California-compliant aftermarket as a default, OEM on request.",
+      },
+      { type: "h2", text: "Texas state inspection: the cat is required" },
+      {
+        type: "p",
+        text: "If your check engine light is on for a catalyst code, you will fail emissions. No exceptions. We diagnose, repair, and re-inspect within 15 days at the same shop with no additional inspection fee.",
+      },
+      { type: "h2", text: "Catalytic converter theft in DFW" },
+      {
+        type: "p",
+        text: "Cat theft has been a serious issue across the metroplex for several years. The precious metals inside are valuable to scrap yards, and a thief with a battery-powered saw can steal one in under two minutes. Trucks (high ground clearance, easy access) and Toyota Priuses (high precious-metal content) are the most-targeted vehicles.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Park in a garage when possible",
+          "Etch your license plate number on the cat (most insurance recovery requires it)",
+          "Add a steel cat shield ($200 to $400 installed)",
+          "Park nose-in against a wall, light up the parking area",
+          "If your insurance covers it, theft replacement may be more affordable than you think",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Suspect your cat is gone?",
+        body: "Telltale sign: dramatic loud roar from the exhaust the moment you start the car. Do not drive far. Bring it to us, we will confirm and quote the replacement.",
+      },
+    ],
+    related: ["check-engine-light-guide", "texas-state-inspection-guide"],
+  },
+
+  {
+    slug: "tpms-warning-light-guide",
+    category: "Tires",
+    title: "TPMS light on? What it means and what to do (and not do)",
+    description:
+      "A practical guide to your tire pressure warning light: what triggers it, why cold mornings cause false alarms, when sensors die, and when to call the shop.",
+    publishedDate: "2026-04-26",
+    readMinutes: 4,
+    heroImage:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Vehicle dashboard with TPMS tire pressure warning indicator",
+    eyebrow: "Tires",
+    lede: "The horseshoe-shaped TPMS warning light is one of the most ignored dashboard indicators on the road. Here is what it actually means, why it sometimes lies, and when you should treat it as urgent.",
+    sections: [
+      { type: "h2", text: "What TPMS is and why your car has it" },
+      {
+        type: "p",
+        text: "TPMS stands for Tire Pressure Monitoring System. Federal law has required it on all new passenger vehicles sold in the U.S. since September 2007. Each tire has a small sensor inside that reports its pressure to the car's computer. When pressure drops 25 percent below the placard recommendation, the light turns on.",
+      },
+      { type: "h2", text: "Steady vs. flashing" },
+      {
+        type: "p",
+        text: "A steady light means at least one tire is genuinely under-pressure. A flashing light (typically flashes for 60 seconds at startup, then stays solid) means the system itself has a fault — usually a dead sensor or a sensor that has not been programmed after a tire change.",
+      },
+      { type: "h2", text: "The cold-morning false alarm" },
+      {
+        type: "p",
+        text: "Air pressure drops about 1 PSI for every 10°F drop in temperature. After a sudden cold front in DFW (typical in November and February), tires that were properly inflated yesterday afternoon can be 4 to 5 PSI low this morning. Solution: top off your tires once it warms up, drive a few miles, and the light usually clears on its own. If it does not, you have a slow leak.",
+      },
+      { type: "h2", text: "Real causes worth knowing" },
+      {
+        type: "ul",
+        items: [
+          "Slow leak from a nail or screw (most common — find it before it gets worse)",
+          "Valve stem leak (rare on modern wheels but possible)",
+          "TPMS sensor battery has died (sensors typically last 7 to 10 years)",
+          "Sensor was damaged during a tire change at a different shop",
+          "Aftermarket wheels installed without TPMS sensors transferred or replaced",
+        ],
+      },
+      { type: "h2", text: "What to do, in order" },
+      {
+        type: "ol",
+        items: [
+          "Check all four tires with a gauge (do not trust the dashboard reading alone — it can lag).",
+          "Inflate any low tires to the placard pressure (usually printed on the door jamb sticker).",
+          "Drive 10 to 15 miles. The light should clear on its own once pressures stabilize.",
+          "If the light comes back within a few days: you have a slow leak. Schedule us.",
+          "If the light flashes at startup: you need a sensor diagnostic. Schedule us.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Free TPMS diagnostic with any tire service",
+        body: "Bring it in any weekday or Saturday morning. We will scan each sensor, check the relearn status, and diagnose any sensor faults. If a sensor needs replacement, we quote upfront before any work starts.",
+      },
+      { type: "h2", text: "Why we do not recommend turning the light off and ignoring it" },
+      {
+        type: "p",
+        text: "There are kits and methods online that disable TPMS. We do not recommend any of them. The light exists to warn you about a real safety condition. Underinflated tires generate excess heat, wear unevenly, reduce fuel economy, and increase your risk of a blowout — especially in Texas summer heat. Find the cause, fix the cause, leave the system on.",
+      },
+    ],
+    related: ["seasonal-car-care-texas", "when-to-replace-brakes"],
+  },
+
+  {
+    slug: "pre-purchase-inspection-checklist",
+    category: "Buying & Maintenance",
+    title: "Pre-purchase inspection: what we check on a used car (and what to ask)",
+    description:
+      "The 30-point inspection we run on used cars before our customers buy them, the red flags we watch for, and why a $150 PPI saves thousands.",
+    publishedDate: "2026-03-08",
+    readMinutes: 6,
+    heroImage:
+      "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Used cars in a residential neighborhood ready for buyer inspection",
+    eyebrow: "Buying & Maintenance",
+    lede: "A pre-purchase inspection costs $150 and takes about an hour. The most expensive used car you can buy is the one you did not have inspected first. Here is what we check, why we check it, and what you should walk away from.",
+    sections: [
+      { type: "h2", text: "Why a $150 PPI saves thousands" },
+      {
+        type: "p",
+        text: "Once you sign the title, every problem is yours. A pre-purchase inspection is the cheapest insurance available against buying someone else's deferred maintenance, hidden accident damage, or impending major repair. The customer who skipped the PPI on a 2015 luxury SUV last year and called us the following week with a $4,200 transmission quote is the customer who taught us to write this article.",
+      },
+      { type: "h2", text: "The 30-point inspection we run" },
+      { type: "h2", text: "Engine and drivetrain" },
+      {
+        type: "ul",
+        items: [
+          "Cold start observation (smoke, knock, rough idle)",
+          "Visual inspection of hoses, belts, gaskets",
+          "Oil condition and level (sludge, water contamination)",
+          "Coolant condition (oil contamination indicates head gasket issues)",
+          "Transmission fluid color and smell (dark or burnt = trouble)",
+          "Compression test on suspect engines",
+          "Live data scan of all modules",
+        ],
+      },
+      { type: "h2", text: "Brakes and suspension" },
+      {
+        type: "ul",
+        items: [
+          "Pad thickness, rotor wear, fluid condition",
+          "Caliper, hose, line inspection",
+          "Strut, shock, bushing condition",
+          "Steering rack play, tie rod ends, ball joints",
+          "Wheel bearing noise on a road test",
+        ],
+      },
+      { type: "h2", text: "Body, frame, and structural" },
+      {
+        type: "ul",
+        items: [
+          "Frame and unibody inspection for collision repair signs",
+          "Paint thickness gauge readings on body panels",
+          "Door, hood, trunk gap consistency (mismatched panels = repaired collision)",
+          "Underbody rust, especially on older trucks",
+          "Flood-vehicle check (waterlines on interior, sand in unusual places)",
+        ],
+      },
+      { type: "h2", text: "Tires, electrical, and HVAC" },
+      {
+        type: "ul",
+        items: [
+          "Tire tread depth, age (DOT date), wear pattern",
+          "Battery age and charging system test",
+          "Every interior and exterior light",
+          "AC performance test (cold air on max, both vent positions)",
+          "Heater function",
+        ],
+      },
+      { type: "h2", text: "Documentation review" },
+      {
+        type: "ul",
+        items: [
+          "Carfax / AutoCheck history",
+          "Service records, if available",
+          "VIN match across plate, engine bay, dashboard",
+          "Odometer plausibility (cluster discrepancy is a major red flag)",
+          "Title check for prior salvage or rebuilt status",
+        ],
+      },
+      { type: "h2", text: "Red flags that mean walk away" },
+      {
+        type: "ul",
+        items: [
+          "Cluster discrepancy (odometer reading does not match wear and service records)",
+          "Frame straightening evidence (poorly aligned welds, paint mismatch under hood)",
+          "Flood damage (corrosion under carpets, sand in obscure places, bad smell)",
+          "Multiple major fluids contaminated (oil in coolant, coolant in oil)",
+          "Major modules throwing codes the seller refuses to address",
+        ],
+      },
+      { type: "h2", text: "DFW-specific things we look for" },
+      {
+        type: "ul",
+        items: [
+          "Hail damage repair (Texas hail seasons are severe)",
+          "Flood vehicles after Houston-area storms (flood cars often migrate up I-45)",
+          "Heat-cooked rubber and plastics (hoses brittle past their interval)",
+          "AC system that has been topped off repeatedly (refrigerant residue on connections)",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Bring the car. We will write up the report.",
+        body: "Schedule a PPI by phone — about an hour, $150. We give you a written report you can use to negotiate, walk away, or buy with confidence. We do not have any relationship with any seller, dealer, or auction.",
+      },
+    ],
+    related: ["check-engine-light-guide", "texas-state-inspection-guide"],
+  },
+
+  {
+    slug: "wheel-alignment-vs-balancing",
+    category: "Tires",
+    title: "Wheel alignment vs. tire balancing: what's the difference?",
+    description:
+      "The two services that get confused with each other constantly. What each one actually does, the symptoms of each, and why you usually need both after new tires.",
+    publishedDate: "2026-02-28",
+    readMinutes: 4,
+    heroImage:
+      "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?w=1600&q=75&auto=format&fit=crop",
+    heroAlt: "Wheel and tire mounted at the shop during alignment service",
+    eyebrow: "Tires",
+    lede: "Alignment and balancing are two different services that solve two different problems. Half the customers who ask for one need the other. Here is the plain-English difference.",
+    sections: [
+      { type: "h2", text: "Alignment, in one sentence" },
+      {
+        type: "p",
+        text: "Alignment adjusts the angles at which your tires meet the road. When the angles are off, the car pulls to one side, the steering wheel sits crooked when going straight, and the tires wear unevenly across their tread.",
+      },
+      { type: "h2", text: "Balancing, in one sentence" },
+      {
+        type: "p",
+        text: "Balancing distributes weight evenly around each wheel and tire. When the weight is uneven, the wheel wobbles as it spins. You feel that wobble as a vibration, almost always at highway speed.",
+      },
+      { type: "h2", text: "Symptoms that need alignment" },
+      {
+        type: "ul",
+        items: [
+          "Car pulls to one side on a flat road with hands light on the wheel",
+          "Steering wheel sits crooked when driving straight",
+          "Tires wearing unevenly (more on inside or outside edge)",
+          "After a hard pothole hit or curb impact",
+          "After replacing a tie rod, control arm, or other suspension part",
+          "After a collision repair",
+        ],
+      },
+      { type: "h2", text: "Symptoms that need balancing" },
+      {
+        type: "ul",
+        items: [
+          "Steering wheel vibrates at highway speeds (typically 55 to 70 mph)",
+          "Vibration in the seat or floor (rear tires unbalanced)",
+          "Vibration disappears below 50 mph",
+          "After a wheel weight has fallen off (you can sometimes see the marks)",
+          "After a tire patch repair",
+        ],
+      },
+      { type: "h2", text: "Why both after new tires" },
+      {
+        type: "p",
+        text: "When you buy new tires, the shop balances them as part of the install. But the alignment is unaffected by tire change — if your car was misaligned with the old tires, it is still misaligned with the new ones, and the new tires will start wearing unevenly within a few thousand miles. Spending an extra $100 to $140 on an alignment after new tires often pays for itself in tire life alone.",
+      },
+      { type: "h2", text: "DFW pothole season" },
+      {
+        type: "p",
+        text: "After every Texas freeze-thaw cycle and every heavy rainstorm, the metro's roads gain a new generation of potholes. Hitting one hard enough to bend a control arm or knock the alignment is a real possibility on Belt Line, on 75, on Coit, on the Bush Tollway. If your steering does not feel quite right after a hard hit, get the alignment checked.",
+      },
+      {
+        type: "callout",
+        title: "Alignment + balance combo",
+        body: "Most cars need a four-wheel alignment and a balance. We quote them separately so you can decide what your car needs. After new tires, we recommend both as a package.",
+      },
+      { type: "h2", text: "What the numbers actually look like" },
+      {
+        type: "ul",
+        items: [
+          "Tire balance, all four wheels: $50 to $80",
+          "Wheel alignment, four-wheel: $100 to $140",
+          "Both together with new tires: $150 to $220",
+          "Tire-life savings from a proper alignment: roughly 25 percent of tire life",
+        ],
+      },
+    ],
+    related: ["seasonal-car-care-texas", "tpms-warning-light-guide"],
+  },
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);
