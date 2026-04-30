@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { SITE } from "@/lib/constants";
 import { CountUp } from "@/components/ui/CountUp";
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/translations/ui";
+
+type Props = { locale?: Locale };
 
 /** Compact royal-blue trust band. Three metric tiles + horizontal NAPA card, sized to fit inside the hero-fold viewport. */
-export function CredentialsBar() {
+export function CredentialsBar({ locale = "en" }: Props) {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
   return (
@@ -21,10 +25,10 @@ export function CredentialsBar() {
                   <CountUp to={yearsInBusiness} duration={1.6} />
                 </p>
                 <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
-                  Years in Richardson
+                  {t(locale, "credentialsBar.yearsInRichardson")}
                 </p>
                 <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight tabular-nums">
-                  Since {SITE.established}
+                  {t(locale, "credentialsBar.sincePrefix", { year: SITE.established })}
                 </p>
               </div>
 
@@ -34,22 +38,24 @@ export function CredentialsBar() {
                   <span className="ml-0.5 text-gold" aria-hidden="true">★</span>
                 </p>
                 <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
-                  Average rating
+                  {t(locale, "credentialsBar.averageRating")}
                 </p>
                 <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight">
-                  <CountUp to={136} duration={1.6} className="font-semibold" /> Google reviews
+                  {t(locale, "credentialsBar.googleReviews", {
+                    count: SITE.rating.count,
+                  })}
                 </p>
               </div>
 
               <div className="text-center lg:text-left">
                 <p className="font-sans font-black text-2xl md:text-3xl lg:text-4xl tracking-tight leading-none">
-                  ASE
+                  {t(locale, "credentialsBar.aseBig")}
                 </p>
                 <p className="mt-1.5 text-[10px] uppercase tracking-[0.16em] font-bold text-gold leading-tight">
-                  Certified technicians
+                  {t(locale, "credentialsBar.certifiedTechnicians")}
                 </p>
                 <p className="mt-0.5 text-[10px] text-cream/65 font-medium leading-tight">
-                  The industry standard
+                  {t(locale, "credentialsBar.industryStandard")}
                 </p>
               </div>
             </div>
@@ -67,10 +73,10 @@ export function CredentialsBar() {
               />
               <div className="min-w-0 flex-1">
                 <p className="text-[10px] uppercase tracking-[0.16em] font-bold text-royal leading-tight">
-                  Official NAPA Auto Care Center
+                  {t(locale, "credentialsBar.napaOfficial")}
                 </p>
                 <p className="mt-1 text-[11px] md:text-xs text-graphite font-medium leading-snug">
-                  24-month / 24,000-mile warranty · 17,000+ shops nationwide
+                  {t(locale, "credentialsBar.napaWarrantyTagline")}
                 </p>
               </div>
             </div>

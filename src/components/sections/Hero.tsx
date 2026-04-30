@@ -3,17 +3,26 @@ import Link from "next/link";
 import { Star, Phone, Calendar } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { ScrollCue } from "@/components/ui/ScrollCue";
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/translations/ui";
 import heroPhoto from "../../../public/assets/shop-day-1.jpg";
 
+type Props = { locale?: Locale };
+
+function L(path: string, locale: Locale): string {
+  if (locale === "en") return path;
+  return path === "/" ? "/es" : `/es${path}`;
+}
+
 /** Cinematic hero. Bright shop photo, deep left+bottom-right scrim, NAPA badge, gold CTA. */
-export function Hero() {
+export function Hero({ locale = "en" }: Props) {
   const yearsInBusiness = new Date().getFullYear() - SITE.established;
 
   return (
     <section className="relative bg-ink overflow-hidden md:flex md:flex-col md:flex-1">
       <Image
         src={heroPhoto}
-        alt="The Star Auto Service shop on East Belt Line Road in Richardson, Texas, family-owned auto repair since 1998"
+        alt={t(locale, "hero.altShop")}
         fill
         priority
         sizes="100vw"
@@ -51,31 +60,31 @@ export function Hero() {
               aria-hidden="true"
             />
             <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-cream">
-              Richardson, Texas &middot; Family-Owned Since {SITE.established}
+              {t(locale, "hero.eyebrow", { year: SITE.established })}
             </span>
           </div>
 
           <h1 className="font-sans font-black text-cream text-display-1 tracking-[-0.025em]">
-            <span className="hero-line-1">Auto repair in Richardson,</span>
+            <span className="hero-line-1">{t(locale, "hero.headlineLine1")}</span>
             <br />
             <span className="hero-line-2 text-gold">
-              done right.
+              {t(locale, "hero.headlineLine2")}
               <span className="hero-streak" aria-hidden="true" />
             </span>
           </h1>
 
           <p className="hero-subhead mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-cream leading-relaxed max-w-2xl font-medium">
-            ASE-Certified mechanics in Richardson, TX. NAPA Auto Care Center, bilingual service in English and Spanish. {yearsInBusiness} years of straight answers, fair pricing, and quality work on every common make and model.
+            {t(locale, "hero.subhead", { years: yearsInBusiness })}
           </p>
 
           {/* Mobile: Call first (flex-col-reverse). Desktop: Book first (flex-row). */}
           <div className="mt-10 md:mt-12 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
             <Link
-              href="/book"
+              href={L("/book", locale)}
               className="hero-cta-1 group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
             >
               <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
-              Book a Service
+              {t(locale, "hero.bookCTA")}
             </Link>
             <a
               href={`tel:${SITE.phoneRaw}`}
@@ -83,7 +92,7 @@ export function Hero() {
               className="hero-cta-2 group inline-flex items-center justify-center gap-2.5 bg-cream/10 backdrop-blur-sm text-cream border-2 border-cream hover:bg-cream hover:text-ink px-7 sm:px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
             >
               <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
-              Call {SITE.phone}
+              {t(locale, "hero.callPrefix")} {SITE.phone}
             </a>
           </div>
         </div>
@@ -97,23 +106,23 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-5 sm:gap-x-7 md:gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-bold text-cream/90">
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              ASE-Certified
+              {t(locale, "hero.trustAse")}
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              NAPA Auto Care
+              {t(locale, "hero.trustNapa")}
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              Bilingual Service
+              {t(locale, "hero.trustBilingual")}
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              Family-Owned
+              {t(locale, "hero.trustFamily")}
             </span>
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true" />
-              {yearsInBusiness} Years in Richardson
+              {t(locale, "hero.trustYearsLabel", { years: yearsInBusiness })}
             </span>
           </div>
         </div>
