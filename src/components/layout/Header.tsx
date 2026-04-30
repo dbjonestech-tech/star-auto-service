@@ -250,7 +250,7 @@ export function Header({ locale: propLocale }: Props = {}) {
           role="dialog"
           aria-modal="true"
           aria-label={t(locale, "header.mobileNav")}
-          className="md:hidden border-t border-line bg-cream h-[calc(100svh-4rem)] overflow-y-auto"
+          className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 border-t border-line bg-cream overflow-y-auto overscroll-contain"
         >
           <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
             <MobileSection
