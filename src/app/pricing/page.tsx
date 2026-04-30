@@ -15,6 +15,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionWatermark } from "@/components/ui/SectionWatermark";
 import { CTASection } from "@/components/sections/CTASection";
+import { SPANISH_ENABLED } from "@/lib/i18n";
 
 const TITLE =
   "Auto Repair Pricing | Honest Cost Ranges | The Star Auto Service Richardson TX";
@@ -24,7 +25,16 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/pricing` },
+  alternates: {
+    canonical: `${SITE.url}/pricing`,
+    languages: SPANISH_ENABLED
+      ? {
+          "en-US": `${SITE.url}/pricing`,
+          "es-US": `${SITE.url}/es/pricing`,
+          "x-default": `${SITE.url}/pricing`,
+        }
+      : undefined,
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
