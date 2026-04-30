@@ -1,6 +1,13 @@
 /**
  * Areas-served data for /areas/[slug] landing pages.
+ *
+ * The Spanish twin lives in `./areas.es.ts` and is keyed by the same slugs.
+ * Use `getAreas(locale)` / `getArea(slug, locale)` from this file when a
+ * caller may render either locale.
  */
+
+import type { Locale } from "./i18n";
+import { AREAS_ES } from "./areas.es";
 
 export type Area = {
   slug: string;
@@ -257,3 +264,16 @@ export const AREAS: Area[] = [
 ];
 
 export const AREA_SLUGS = AREAS.map((a) => a.slug);
+
+/**
+ * Locale-aware areas list. URLs and slugs stay the same in both locales
+ * (e.g., `/areas/richardson-tx` and `/es/areas/richardson-tx`); only the
+ * body copy differs. Defaults to English when the locale is not "es".
+ */
+export function getAreas(locale: Locale): Area[] {
+  return locale === "es" ? AREAS_ES : AREAS;
+}
+
+export function getArea(slug: string, locale: Locale): Area | undefined {
+  return getAreas(locale).find((a) => a.slug === slug);
+}

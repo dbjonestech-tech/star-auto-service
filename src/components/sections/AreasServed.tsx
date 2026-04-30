@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { AREAS } from "@/lib/areas";
+import { getAreas } from "@/lib/areas";
 import type { Locale } from "@/lib/i18n";
 import { localizedPath } from "@/lib/i18n";
 import { UI } from "@/lib/translations/ui";
@@ -28,6 +28,7 @@ const RICHARDSON_NEIGHBORHOODS = [
  */
 export function AreasServed({ locale = "en" }: Props) {
   const copy = UI[locale].areasServedSection;
+  const areas = getAreas(locale);
 
   return (
     <section className="bg-paper py-16 md:py-24 lg:py-28 border-y border-line-subtle">
@@ -52,7 +53,7 @@ export function AreasServed({ locale = "en" }: Props) {
                   {copy.citiesLabel}
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3">
-                  {AREAS.map((a) => (
+                  {areas.map((a) => (
                     <Link
                       key={a.slug}
                       href={localizedPath(`/areas/${a.slug}`, locale)}

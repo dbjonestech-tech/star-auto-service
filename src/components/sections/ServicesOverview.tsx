@@ -5,6 +5,7 @@ import Link from "next/link";
 import * as LucideIcons from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
+import { getServices } from "@/lib/constants.es";
 import type { Locale } from "@/lib/i18n";
 import { localizedPath } from "@/lib/i18n";
 import { UI, interpolate } from "@/lib/translations/ui";
@@ -23,7 +24,7 @@ function trackPointer(e: React.MouseEvent<HTMLElement>) {
 /** Substantial 3-column service card grid. Cursor-tracking gold spotlight, hover gold-rule slide, deep-link to /services/[slug]. */
 export function ServicesOverview({ locale = "en" }: Props) {
   const copy = UI[locale].servicesOverview;
-  const featured = SERVICES.slice(0, 6);
+  const featured = getServices(locale).slice(0, 6);
 
   return (
     <section className="relative bg-paper py-16 md:py-24 lg:py-32 border-y border-line-subtle overflow-hidden">
