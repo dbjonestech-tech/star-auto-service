@@ -9,6 +9,7 @@ import { ScrollCallBar } from "@/components/ui/ScrollCallBar";
 import { PhoneCallEnhancer } from "@/components/ui/PhoneCallEnhancer";
 import { HtmlLangSync } from "@/components/ui/HtmlLangSync";
 import { CanopyBeacon } from "@/components/analytics/CanopyBeacon";
+import { CanopyErrorBeacon } from "@/components/analytics/CanopyErrorBeacon";
 import { SITE } from "@/lib/constants";
 import { generateJsonLd } from "@/lib/metadata";
 import "./globals.css";
@@ -109,6 +110,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <CanopyBeacon endpoint={process.env.NEXT_PUBLIC_CANOPY_URL!} />
         </Suspense>
+        <CanopyErrorBeacon endpoint={process.env.NEXT_PUBLIC_CANOPY_URL!} />
       </body>
     </html>
   );

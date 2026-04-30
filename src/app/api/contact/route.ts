@@ -147,6 +147,27 @@ export async function POST(request: Request) {
     );
   }
 
+  /* Fire-and-forget contact ping to Canopy. Server-to-server, so the
+   * cnp_sid cookie isn't carried; the dashboard will count this as a
+   * submission but cannot join it to a session. Future: bridge the
+   * cookie via a header or client-side ping on success. */
+  const canopyUrl = process.env.NEXT_PUBLIC_CANOPY_URL;
+  if (canopyUrl) {
+    fetch(`${canopyUrl}/api/track/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Origin: "https://www.thestarautoservice.com" },
+      body: JSON.stringify({
+        email: email || null,
+        name,
+        phone,
+        message: [service, message].filter(Boolean).join(" — ") || null,
+        sourceUrl: request.headers.get("referer") ?? null,
+      }),
+    }).catch(() => {
+      // Best-effort; never block contact form delivery on Canopy ingestion.
+    });
+  }
+
   return NextResponse.json({ success: true, message: "Message received" });
 }
 
