@@ -1,7 +1,14 @@
 /**
  * Resources / knowledge articles for /resources/[slug] pages.
  * Long-form, scannable, schema-friendly.
+ *
+ * The Spanish twin lives in `./resources.es.ts` and is keyed by the same
+ * slugs. Use `getResources(locale)` / `getResource(slug, locale)` from this
+ * file when a caller may render either locale.
  */
+
+import type { Locale } from "./i18n";
+import { RESOURCES_ES } from "./resources.es";
 
 export type ResourceSection =
   | { type: "p"; text: string }
@@ -1179,3 +1186,18 @@ export const RESOURCES: Resource[] = [
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);
+
+/**
+ * Locale-aware resource list. Slugs match across locales; only article body
+ * copy differs. Defaults to English when the locale is not "es".
+ */
+export function getResources(locale: Locale): Resource[] {
+  return locale === "es" ? RESOURCES_ES : RESOURCES;
+}
+
+export function getResource(
+  slug: string,
+  locale: Locale,
+): Resource | undefined {
+  return getResources(locale).find((r) => r.slug === slug);
+}
