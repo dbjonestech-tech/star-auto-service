@@ -98,6 +98,7 @@ export function Header({ locale: propLocale }: Props = {}) {
   }
 
   return (
+    <>
     <header
       className={`sticky top-0 z-50 bg-cream/95 backdrop-blur-md transition-shadow duration-200 ${
         scrolled ? "shadow-[0_1px_0_var(--color-line),0_8px_24px_rgba(15,15,18,0.04)]" : ""
@@ -244,13 +245,14 @@ export function Header({ locale: propLocale }: Props = {}) {
         </div>
       </div>
 
-      {open && (
+    </header>
+    {open && (
         <div
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
           aria-label={t(locale, "header.mobileNav")}
-          className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 border-t border-line bg-cream overflow-y-auto overscroll-contain"
+          className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 border-t border-line bg-cream overflow-y-auto overscroll-contain"
         >
           <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
             <MobileSection
@@ -324,7 +326,7 @@ export function Header({ locale: propLocale }: Props = {}) {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
 
