@@ -229,6 +229,78 @@ type UIStrings = {
     callCTA: string;
     altShopFront: string;
   };
+  servicesIndex: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    learnMoreAbout: string;
+  };
+  serviceDetail: {
+    metaTitleTemplate: string;
+    metaDescriptionTemplate: string;
+    notFoundTitle: string;
+    breadcrumbServices: string;
+    bookCTA: string;
+    callCTA: string;
+    whatsIncludedEyebrow: string;
+    whatsIncludedHeadline: string;
+    whenToBookEyebrow: string;
+    whenToBookHeadline: string;
+    whenToBookIntro: string;
+    whyUsEyebrow: string;
+    whyUsHeadline: string;
+    faqHeadlineTemplate: string;
+    seeAllQuestions: string;
+  };
+  areaDetail: {
+    metaTitleTemplate: string;
+    metaDescriptionTemplate: string;
+    notFoundTitle: string;
+    breadcrumbAreas: string;
+    heroEyebrow: string;
+    bookCTA: string;
+    callCTA: string;
+    howWeServeEyebrowTemplate: string;
+    howWeServeHeadlineTemplate: string;
+    whoWeSeeEyebrowTemplate: string;
+    howToFindUsEyebrow: string;
+    openInMaps: string;
+    topServicesEyebrowTemplate: string;
+    topServicesHeadlineTemplate: string;
+    seeAllServices: string;
+    findUsEyebrow: string;
+    mapTitleTemplate: string;
+    jsonLdServiceNameTemplate: string;
+    jsonLdServiceDescTemplate: string;
+    jsonLdAudienceTemplate: string;
+    jsonLdCatalogTemplate: string;
+  };
+  resourcesIndex: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    minReadTemplate: string;
+  };
+  resourceDetail: {
+    metaTitleTemplate: string;
+    notFoundTitle: string;
+    breadcrumbResources: string;
+    minReadTemplate: string;
+    needDiagnosis: string;
+    bookCTA: string;
+    callCTA: string;
+    keepReadingEyebrow: string;
+    keepReadingHeadline: string;
+    readArticle: string;
+    jsonLdAuthorJobTitle: string;
+    dateLocale: string;
+  };
 };
 
 export const UI: Record<Locale, UIStrings> = {
@@ -489,6 +561,88 @@ export const UI: Record<Locale, UIStrings> = {
       callCTA: "Call {phone}",
       altShopFront: "Front view of The Star Auto Service shop in Richardson, TX",
     },
+    servicesIndex: {
+      metaTitle: "Auto Repair Services | The Star Auto Service Richardson TX",
+      metaDescription:
+        "Auto repair services in Richardson, TX. Brakes, oil changes, engine diagnostics, transmission, AC, tires, state inspections. Call (972) 231-2886.",
+      eyebrow: "What we work on",
+      headlineLine1: "Twelve service",
+      headlineLine2: "categories.",
+      intro:
+        "Domestic and import, gas and hybrid, every common make and model. ASE-Certified technicians. NAPA Auto Care nationwide warranty. Texas state inspections walk-in.",
+      learnMoreAbout: "Learn more about {title}",
+    },
+    serviceDetail: {
+      metaTitleTemplate: "{title} in Richardson, TX | The Star Auto Service",
+      metaDescriptionTemplate:
+        "{subhead} Call (972) 231-2886 or book online, ASE-Certified, NAPA Auto Care nationwide warranty.",
+      notFoundTitle: "Service Not Found",
+      breadcrumbServices: "Services",
+      bookCTA: "Book this service",
+      callCTA: "Call {phone}",
+      whatsIncludedEyebrow: "What's included",
+      whatsIncludedHeadline: "Everything we cover.",
+      whenToBookEyebrow: "When to book",
+      whenToBookHeadline: "Signs to come in.",
+      whenToBookIntro:
+        "Any of these sound familiar? Give us a call, we'll talk through what's likely going on before you make the trip.",
+      whyUsEyebrow: "Why bring it here",
+      whyUsHeadline: "Not the cheapest. The straightest.",
+      faqHeadlineTemplate: "{title} FAQ.",
+      seeAllQuestions: "See all questions",
+    },
+    areaDetail: {
+      metaTitleTemplate: "Auto Repair in {name}, {state} | The Star Auto Service",
+      metaDescriptionTemplate:
+        "Trusted auto repair shop serving {name}, {state} drivers, {driveTime} from our shop on E Belt Line Rd in Richardson. ASE-Certified, NAPA Auto Care. Call (972) 231-2886.",
+      notFoundTitle: "Area Not Found",
+      breadcrumbAreas: "Areas served",
+      heroEyebrow: "Auto repair in",
+      bookCTA: "Book a service",
+      callCTA: "Call {phone}",
+      howWeServeEyebrowTemplate: "How we serve {name}",
+      howWeServeHeadlineTemplate:
+        "{name} drivers come to us for the straight answer.",
+      whoWeSeeEyebrowTemplate: "Who we see from {name}",
+      howToFindUsEyebrow: "How to find us",
+      openInMaps: "Open in Maps →",
+      topServicesEyebrowTemplate: "What {name} drivers book most",
+      topServicesHeadlineTemplate: "Top services for {name}.",
+      seeAllServices: "See all 12 services",
+      findUsEyebrow: "Find us",
+      mapTitleTemplate:
+        "Map showing {shopName} location relative to {name}, {state}",
+      jsonLdServiceNameTemplate: "Auto Repair in {name}, {state}",
+      jsonLdServiceDescTemplate:
+        "ASE-Certified family-owned auto repair serving {name}, {state} drivers from our Belt Line shop in Richardson. {driveTime} away. NAPA Auto Care nationwide warranty, bilingual service.",
+      jsonLdAudienceTemplate: "{name}, {state} drivers and families",
+      jsonLdCatalogTemplate: "Top auto repair services for {name} drivers",
+    },
+    resourcesIndex: {
+      metaTitle: "Auto Repair Resources & Guides | The Star Auto Service",
+      metaDescription:
+        "Plain-English guides on check engine lights, brake replacement, oil change frequency, Texas state inspections, and seasonal car care for Richardson, TX drivers.",
+      eyebrow: "Resources",
+      headlineLine1: "The straight version,",
+      headlineLine2: "in writing.",
+      intro:
+        "Plain-English guides on the questions we hear the most. Written by us, for Richardson drivers.",
+      minReadTemplate: "{minutes} min read",
+    },
+    resourceDetail: {
+      metaTitleTemplate: "{title} | The Star Auto Service",
+      notFoundTitle: "Article Not Found",
+      breadcrumbResources: "Resources",
+      minReadTemplate: "{minutes} min read",
+      needDiagnosis: "Need a real diagnosis?",
+      bookCTA: "Book a service",
+      callCTA: "Call {phone}",
+      keepReadingEyebrow: "Keep reading",
+      keepReadingHeadline: "More from the shop.",
+      readArticle: "Read article",
+      jsonLdAuthorJobTitle: "Founder, ASE-Certified Master Technician",
+      dateLocale: "en-US",
+    },
   },
   es: {
     header: {
@@ -748,6 +902,92 @@ export const UI: Record<Locale, UIStrings> = {
       bookCTA: "Agendar servicio",
       callCTA: "Llama al {phone}",
       altShopFront: "Vista frontal del taller The Star Auto Service en Richardson, TX",
+    },
+    servicesIndex: {
+      metaTitle:
+        "Servicios de reparación automotriz | The Star Auto Service Richardson TX",
+      metaDescription:
+        "Servicios de reparación automotriz en Richardson, TX. Frenos, cambios de aceite, diagnóstico de motor, transmisión, A/C, llantas, verificación estatal. Llama al (972) 231-2886.",
+      eyebrow: "En lo que trabajamos",
+      headlineLine1: "Doce categorías",
+      headlineLine2: "de servicio.",
+      intro:
+        "Nacionales e importados, gasolina e híbridos, cada marca y modelo común. Técnicos certificados ASE. Garantía nacional NAPA Auto Care. Verificación estatal de Texas, sin cita.",
+      learnMoreAbout: "Más información sobre {title}",
+    },
+    serviceDetail: {
+      metaTitleTemplate: "{title} en Richardson, TX | The Star Auto Service",
+      metaDescriptionTemplate:
+        "{subhead} Llama al (972) 231-2886 o agenda en línea. Certificación ASE, garantía nacional NAPA Auto Care.",
+      notFoundTitle: "Servicio no encontrado",
+      breadcrumbServices: "Servicios",
+      bookCTA: "Agendar este servicio",
+      callCTA: "Llama al {phone}",
+      whatsIncludedEyebrow: "Qué se incluye",
+      whatsIncludedHeadline: "Todo lo que cubrimos.",
+      whenToBookEyebrow: "Cuándo agendar",
+      whenToBookHeadline: "Señales para venir.",
+      whenToBookIntro:
+        "¿Algo de esto te suena? Llámanos, platicamos qué probablemente está pasando antes de que hagas el viaje.",
+      whyUsEyebrow: "Por qué traerlo aquí",
+      whyUsHeadline: "No el más barato. El más directo.",
+      faqHeadlineTemplate: "Preguntas frecuentes de {title}.",
+      seeAllQuestions: "Ver todas las preguntas",
+    },
+    areaDetail: {
+      metaTitleTemplate:
+        "Reparación automotriz en {name}, {state} | The Star Auto Service",
+      metaDescriptionTemplate:
+        "Taller de confianza atendiendo a conductores de {name}, {state}, a {driveTime} de nuestro taller en E Belt Line Rd en Richardson. Certificación ASE, NAPA Auto Care. Llama al (972) 231-2886.",
+      notFoundTitle: "Zona no encontrada",
+      breadcrumbAreas: "Zonas atendidas",
+      heroEyebrow: "Reparación automotriz en",
+      bookCTA: "Agendar servicio",
+      callCTA: "Llama al {phone}",
+      howWeServeEyebrowTemplate: "Cómo atendemos a {name}",
+      howWeServeHeadlineTemplate:
+        "Los conductores de {name} vienen con nosotros por la respuesta directa.",
+      whoWeSeeEyebrowTemplate: "A quién atendemos de {name}",
+      howToFindUsEyebrow: "Cómo encontrarnos",
+      openInMaps: "Abrir en Maps →",
+      topServicesEyebrowTemplate: "Lo que más agendan los conductores de {name}",
+      topServicesHeadlineTemplate: "Servicios principales para {name}.",
+      seeAllServices: "Ver los 12 servicios",
+      findUsEyebrow: "Encuéntranos",
+      mapTitleTemplate:
+        "Mapa que muestra la ubicación de {shopName} en relación con {name}, {state}",
+      jsonLdServiceNameTemplate: "Reparación automotriz en {name}, {state}",
+      jsonLdServiceDescTemplate:
+        "Taller familiar con certificación ASE atendiendo a conductores de {name}, {state} desde nuestro taller en Belt Line en Richardson. A {driveTime} de distancia. Garantía nacional NAPA Auto Care, servicio bilingüe.",
+      jsonLdAudienceTemplate: "Conductores y familias de {name}, {state}",
+      jsonLdCatalogTemplate:
+        "Servicios principales de reparación automotriz para conductores de {name}",
+    },
+    resourcesIndex: {
+      metaTitle:
+        "Recursos y guías de reparación automotriz | The Star Auto Service",
+      metaDescription:
+        "Guías claras sobre la luz de check engine, cambio de frenos, frecuencia de cambio de aceite, verificación estatal de Texas y cuidado del auto por temporada para conductores en Richardson, TX.",
+      eyebrow: "Recursos",
+      headlineLine1: "La versión directa,",
+      headlineLine2: "por escrito.",
+      intro:
+        "Guías claras sobre las preguntas que más nos hacen. Escritas por nosotros, para conductores de Richardson.",
+      minReadTemplate: "{minutes} min de lectura",
+    },
+    resourceDetail: {
+      metaTitleTemplate: "{title} | The Star Auto Service",
+      notFoundTitle: "Artículo no encontrado",
+      breadcrumbResources: "Recursos",
+      minReadTemplate: "{minutes} min de lectura",
+      needDiagnosis: "¿Necesitas un diagnóstico real?",
+      bookCTA: "Agendar servicio",
+      callCTA: "Llama al {phone}",
+      keepReadingEyebrow: "Sigue leyendo",
+      keepReadingHeadline: "Más del taller.",
+      readArticle: "Leer artículo",
+      jsonLdAuthorJobTitle: "Fundador, técnico maestro certificado ASE",
+      dateLocale: "es-MX",
     },
   },
 };

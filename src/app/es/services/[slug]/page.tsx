@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { SITE, SERVICES } from "@/lib/constants";
-import { SERVICE_CONTENT, SERVICE_PAGE_SLUGS } from "@/lib/serviceContent";
+import { notFound } from "next/navigation";
+import { SITE } from "@/lib/constants";
+import { getService } from "@/lib/constants.es";
+import { getServiceContent, SERVICE_PAGE_SLUGS } from "@/lib/serviceContent";
 import { SPANISH_ENABLED } from "@/lib/i18n";
 import { UI, interpolate } from "@/lib/translations/ui";
 import { ServiceDetailBody } from "@/components/page-bodies/ServiceDetailBody";
@@ -13,9 +15,9 @@ type Params = Promise<{ slug: string }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const service = SERVICES.find((s) => s.id === slug);
-  const content = SERVICE_CONTENT[slug];
-  const copy = UI.en.serviceDetail;
+  const service = getService(slug, "es");
+  const content = getServiceContent(slug, "es");
+  const copy = UI.es.serviceDetail;
 
   if (!service || !content) return { title: copy.notFoundTitle };
 
@@ -28,28 +30,28 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: { absolute: title },
     description,
     alternates: {
-      canonical: `${SITE.url}/services/${slug}`,
-      languages: SPANISH_ENABLED
-        ? {
-            "en-US": `${SITE.url}/services/${slug}`,
-            "es-US": `${SITE.url}/es/services/${slug}`,
-            "x-default": `${SITE.url}/services/${slug}`,
-          }
-        : undefined,
+      canonical: `${SITE.url}/es/services/${slug}`,
+      languages: {
+        "en-US": `${SITE.url}/services/${slug}`,
+        "es-US": `${SITE.url}/es/services/${slug}`,
+        "x-default": `${SITE.url}/services/${slug}`,
+      },
     },
     openGraph: {
       title,
       description,
-      url: `${SITE.url}/services/${slug}`,
+      url: `${SITE.url}/es/services/${slug}`,
       siteName: SITE.name,
-      locale: "en_US",
+      locale: "es_US",
+      alternateLocale: ["en_US"],
       type: "article",
     },
     twitter: { card: "summary_large_image", title, description },
   };
 }
 
-export default async function ServiceDetailPage({ params }: { params: Params }) {
+export default async function ServiceDetailPageEs({ params }: { params: Params }) {
+  if (!SPANISH_ENABLED) notFound();
   const { slug } = await params;
-  return <ServiceDetailBody slug={slug} locale="en" />;
+  return <ServiceDetailBody slug={slug} locale="es" />;
 }

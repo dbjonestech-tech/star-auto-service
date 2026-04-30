@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SITE } from "@/lib/constants";
-import { AREAS, AREA_SLUGS } from "@/lib/areas";
+import { getArea, AREA_SLUGS } from "@/lib/areas";
 import { SPANISH_ENABLED } from "@/lib/i18n";
 import { UI, interpolate } from "@/lib/translations/ui";
 import { AreaDetailBody } from "@/components/page-bodies/AreaDetailBody";
@@ -13,8 +14,8 @@ type Params = Promise<{ slug: string }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
-  const area = AREAS.find((a) => a.slug === slug);
-  const copy = UI.en.areaDetail;
+  const area = getArea(slug, "es");
+  const copy = UI.es.areaDetail;
 
   if (!area) return { title: copy.notFoundTitle };
 
@@ -32,28 +33,28 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: { absolute: title },
     description,
     alternates: {
-      canonical: `${SITE.url}/areas/${slug}`,
-      languages: SPANISH_ENABLED
-        ? {
-            "en-US": `${SITE.url}/areas/${slug}`,
-            "es-US": `${SITE.url}/es/areas/${slug}`,
-            "x-default": `${SITE.url}/areas/${slug}`,
-          }
-        : undefined,
+      canonical: `${SITE.url}/es/areas/${slug}`,
+      languages: {
+        "en-US": `${SITE.url}/areas/${slug}`,
+        "es-US": `${SITE.url}/es/areas/${slug}`,
+        "x-default": `${SITE.url}/areas/${slug}`,
+      },
     },
     openGraph: {
       title,
       description,
-      url: `${SITE.url}/areas/${slug}`,
+      url: `${SITE.url}/es/areas/${slug}`,
       siteName: SITE.name,
-      locale: "en_US",
+      locale: "es_US",
+      alternateLocale: ["en_US"],
       type: "article",
     },
     twitter: { card: "summary_large_image", title, description },
   };
 }
 
-export default async function AreaDetailPage({ params }: { params: Params }) {
+export default async function AreaDetailPageEs({ params }: { params: Params }) {
+  if (!SPANISH_ENABLED) notFound();
   const { slug } = await params;
-  return <AreaDetailBody slug={slug} locale="en" />;
+  return <AreaDetailBody slug={slug} locale="es" />;
 }
