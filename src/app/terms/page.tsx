@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/constants";
+import { SPANISH_ENABLED } from "@/lib/i18n";
 import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -13,7 +14,16 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/terms` },
+  alternates: {
+    canonical: `${SITE.url}/terms`,
+    languages: SPANISH_ENABLED
+      ? {
+          "en-US": `${SITE.url}/terms`,
+          "es-US": `${SITE.url}/es/terms`,
+          "x-default": `${SITE.url}/terms`,
+        }
+      : undefined,
+  },
   robots: { index: true, follow: true },
 };
 

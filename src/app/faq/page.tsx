@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import { SPANISH_ENABLED } from "@/lib/i18n";
 import { generateBreadcrumbJsonLd, FAQ_ITEMS } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -16,7 +17,16 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE.url}/faq` },
+  alternates: {
+    canonical: `${SITE.url}/faq`,
+    languages: SPANISH_ENABLED
+      ? {
+          "en-US": `${SITE.url}/faq`,
+          "es-US": `${SITE.url}/es/faq`,
+          "x-default": `${SITE.url}/faq`,
+        }
+      : undefined,
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
