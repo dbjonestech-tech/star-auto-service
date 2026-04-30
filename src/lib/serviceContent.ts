@@ -1,7 +1,14 @@
 /**
  * Per-service rich content for /services/[slug] landing pages.
  * Keys must match SERVICES[].id.
+ *
+ * The Spanish twin lives in `./serviceContent.es.ts` keyed by the same slugs.
+ * Use `getServiceContent(slug, locale)` from this file when a caller may
+ * render either locale.
  */
+
+import type { Locale } from "./i18n";
+import { SERVICE_CONTENT_ES } from "./serviceContent.es";
 
 export type ServiceContent = {
   /** Eyebrow above the page H1. */
@@ -543,3 +550,20 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
 
 /** Slugs that have a dedicated landing page. Drives generateStaticParams. */
 export const SERVICE_PAGE_SLUGS = Object.keys(SERVICE_CONTENT);
+
+/**
+ * Locale-aware service-content lookup. Slugs match across locales; only
+ * body copy differs. Defaults to English when the locale is not "es".
+ */
+export function getAllServiceContent(
+  locale: Locale,
+): Record<string, ServiceContent> {
+  return locale === "es" ? SERVICE_CONTENT_ES : SERVICE_CONTENT;
+}
+
+export function getServiceContent(
+  slug: string,
+  locale: Locale,
+): ServiceContent | undefined {
+  return getAllServiceContent(locale)[slug];
+}
