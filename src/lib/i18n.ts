@@ -13,11 +13,11 @@ export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 
 /**
- * Feature flag. Flip to `true` when the Spanish parallel tree is fully wired
- * and translated. Until then, the language toggle and auto-detect are inert
- * so users never land on a 404 or a half-translated Spanish page.
+ * Feature flag. The Spanish parallel tree is fully wired and translated as
+ * of Phase 7. The language toggle, middleware auto-detect, hreflang
+ * alternates, and locale-paired sitemap all activate when this is true.
  */
-export const SPANISH_ENABLED = false;
+export const SPANISH_ENABLED = true;
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   en: "English",
