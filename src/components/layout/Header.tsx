@@ -252,7 +252,9 @@ export function Header({ locale: propLocale }: Props = {}) {
           role="dialog"
           aria-modal="true"
           aria-label={t(locale, "header.mobileNav")}
-          className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 border-t border-line bg-cream overflow-y-auto overscroll-contain"
+          data-menu-build="2026-04-30-v2"
+          className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-40 border-t border-line bg-cream overflow-y-auto overscroll-contain"
+          style={{ position: "fixed", left: 0, right: 0, top: "4rem", bottom: 0 }}
         >
           <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
             <MobileSection
