@@ -1,31 +1,41 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { CheckCircle2, Phone, Clock, MapPin } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { SPANISH_ENABLED } from "@/lib/i18n";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-const TITLE = "Booking Received | The Star Auto Service";
+const TITLE = "Solicitud recibida | The Star Auto Service";
 const DESCRIPTION =
-  "Thanks for booking with The Star Auto Service. We'll be in touch within one business day.";
+  "Gracias por reservar con The Star Auto Service. Te llamamos en un día hábil.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: {
-    canonical: `${SITE.url}/book/confirmation`,
-    languages: SPANISH_ENABLED
-      ? {
-          "en-US": `${SITE.url}/book/confirmation`,
-          "es-US": `${SITE.url}/es/book/confirmation`,
-          "x-default": `${SITE.url}/book/confirmation`,
-        }
-      : undefined,
+    canonical: `${SITE.url}/es/book/confirmation`,
+    languages: {
+      "en-US": `${SITE.url}/book/confirmation`,
+      "es-US": `${SITE.url}/es/book/confirmation`,
+      "x-default": `${SITE.url}/book/confirmation`,
+    },
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE.url}/es/book/confirmation`,
+    siteName: SITE.name,
+    locale: "es_US",
+    alternateLocale: ["en_US"],
+    type: "website",
   },
   robots: { index: false, follow: false },
 };
 
-export default function BookConfirmationPage() {
+export default function BookConfirmationPageEs() {
+  if (!SPANISH_ENABLED) notFound();
+
   return (
     <section className="bg-cream py-16 md:py-24 lg:py-32 min-h-[70vh]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -36,12 +46,12 @@ export default function BookConfirmationPage() {
             <CheckCircle2 className="text-emerald" size={32} strokeWidth={2} aria-hidden="true" />
           </div>
 
-          <Eyebrow>Booking received</Eyebrow>
+          <Eyebrow>Solicitud recibida</Eyebrow>
           <h1 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
-            We got it. We&apos;ll call you back.
+            La recibimos. Te llamamos pronto.
           </h1>
           <p className="mt-7 text-base md:text-lg text-graphite leading-relaxed font-medium max-w-xl mx-auto">
-            Thanks for booking with The Star Auto Service. We&apos;ll review your request and call you back within one business day to confirm a time. For anything urgent, please call the shop directly.
+            Gracias por reservar con The Star Auto Service. Revisamos tu solicitud y te llamamos en un día hábil para confirmar la hora. Para algo urgente, por favor llama al taller directamente.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -50,13 +60,13 @@ export default function BookConfirmationPage() {
               className="inline-flex items-center gap-2.5 bg-ink text-cream hover:bg-royal px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
             >
               <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
-              Call {SITE.phone}
+              Llama al {SITE.phone}
             </a>
             <Link
-              href="/"
+              href="/es"
               className="inline-flex items-center gap-2.5 border-2 border-ink text-ink hover:bg-ink hover:text-cream px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
             >
-              Back to homepage
+              Volver al inicio
             </Link>
           </div>
         </div>
@@ -68,15 +78,15 @@ export default function BookConfirmationPage() {
             </span>
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                Shop hours
+                Horario del taller
               </p>
               <p className="mt-2 text-sm text-ink font-medium tabular-nums">
-                Mon–Fri {SITE.hours.weekday}
+                Lun–Vie {SITE.hours.weekday}
               </p>
               <p className="text-sm text-ink font-medium tabular-nums">
-                Saturday {SITE.hours.saturday}
+                Sábado {SITE.hours.saturday}
               </p>
-              <p className="text-sm text-ink font-medium">Sunday Closed</p>
+              <p className="text-sm text-ink font-medium">Domingo Cerrado</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
@@ -85,10 +95,10 @@ export default function BookConfirmationPage() {
             </span>
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                Walk-ins
+                Sin cita
               </p>
               <p className="mt-2 text-sm text-graphite leading-relaxed font-medium">
-                Always welcome. Same-day when we can.
+                Siempre bienvenidos. El mismo día cuando se puede.
               </p>
             </div>
           </div>
@@ -96,7 +106,7 @@ export default function BookConfirmationPage() {
             href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE.address.full)}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Open ${SITE.address.full} in Google Maps`}
+            aria-label={`Abrir ${SITE.address.full} en Google Maps`}
             className="group flex items-start gap-4 -m-2 p-2 hover:bg-paper transition-colors"
           >
             <span className="w-11 h-11 bg-royal-tint flex items-center justify-center shrink-0">
@@ -104,7 +114,7 @@ export default function BookConfirmationPage() {
             </span>
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                Visit, open in Maps
+                Visítanos, abrir en Maps
               </p>
               <p className="mt-2 text-sm text-ink font-medium leading-snug group-hover:text-royal transition-colors">
                 {SITE.address.street}

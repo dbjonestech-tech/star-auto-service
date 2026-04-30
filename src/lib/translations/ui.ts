@@ -301,6 +301,93 @@ type UIStrings = {
     jsonLdAuthorJobTitle: string;
     dateLocale: string;
   };
+  contactForm: {
+    headline: string;
+    intro: string;
+    requiredNote: string;
+    leaveEmpty: string;
+    fullName: string;
+    phoneNumber: string;
+    email: string;
+    serviceNeeded: string;
+    selectService: string;
+    somethingElse: string;
+    message: string;
+    sendMessage: string;
+    sending: string;
+    errorGeneric: string;
+    successHeading: string;
+    successBody: string;
+  };
+  bookForm: {
+    headline: string;
+    intro: string;
+    requiredNote: string;
+    leaveEmpty: string;
+    fullName: string;
+    phone: string;
+    email: string;
+    vehicleLegend: string;
+    yearPlaceholder: string;
+    makePlaceholder: string;
+    modelPlaceholder: string;
+    yearAria: string;
+    makeAria: string;
+    modelAria: string;
+    serviceNeeded: string;
+    selectService: string;
+    somethingElseBooking: string;
+    preferredWindow: string;
+    whenWorks: string;
+    windowOptions: string[];
+    whatsGoingOn: string;
+    messagePlaceholder: string;
+    requestBooking: string;
+    sending: string;
+    errorGeneric: string;
+  };
+  contactPage: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    addressLabel: string;
+    getDirections: string;
+    callLabel: string;
+    hoursLabel: string;
+    mapTitleTemplate: string;
+  };
+  bookPage: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    orCallNow: string;
+    callIntro: string;
+    shopHours: string;
+    walkIns: string;
+    walkInsBody: string;
+    visit: string;
+    openInMapsAria: string;
+  };
+  bookConfirmation: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    nextSteps: string;
+    nextStep1: string;
+    nextStep2: string;
+    nextStep3: string;
+    backToHome: string;
+    callShopCTA: string;
+  };
 };
 
 export const UI: Record<Locale, UIStrings> = {
@@ -642,6 +729,113 @@ export const UI: Record<Locale, UIStrings> = {
       readArticle: "Read article",
       jsonLdAuthorJobTitle: "Founder, ASE-Certified Master Technician",
       dateLocale: "en-US",
+    },
+    contactForm: {
+      headline: "Send us a message.",
+      intro: "We'll write back within one business day. Required fields marked with",
+      requiredNote: "*",
+      leaveEmpty: "Leave this field empty",
+      fullName: "Full name",
+      phoneNumber: "Phone number",
+      email: "Email",
+      serviceNeeded: "Service needed",
+      selectService: "Select a service…",
+      somethingElse: "Something else",
+      message: "Message",
+      sendMessage: "Send message",
+      sending: "Sending…",
+      errorGeneric: "Something went wrong",
+      successHeading: "Message sent.",
+      successBody:
+        "Thanks for reaching out, we'll write back as soon as we can. For anything urgent, please call the shop.",
+    },
+    bookForm: {
+      headline: "Book a service.",
+      intro:
+        "Tell us about the car and what you need. We'll call back within one business day. Required fields marked with",
+      requiredNote: "*",
+      leaveEmpty: "Leave this field empty",
+      fullName: "Full name",
+      phone: "Phone",
+      email: "Email",
+      vehicleLegend: "Vehicle",
+      yearPlaceholder: "Year",
+      makePlaceholder: "Make",
+      modelPlaceholder: "Model",
+      yearAria: "Vehicle year",
+      makeAria: "Vehicle make",
+      modelAria: "Vehicle model",
+      serviceNeeded: "Service needed",
+      selectService: "Select a service…",
+      somethingElseBooking: "Something else / not sure",
+      preferredWindow: "Preferred window",
+      whenWorks: "When works best?",
+      windowOptions: [
+        "As soon as possible",
+        "Today / tomorrow",
+        "This week",
+        "Next week",
+        "I'll call to schedule",
+      ],
+      whatsGoingOn: "What's going on with the car?",
+      messagePlaceholder:
+        "Symptoms, sounds, warning lights, anything you've already had looked at…",
+      requestBooking: "Request a booking",
+      sending: "Sending…",
+      errorGeneric: "Something went wrong",
+    },
+    contactPage: {
+      metaTitle: "Contact The Star Auto Service | Richardson TX Mechanic",
+      metaDescription:
+        "Contact The Star Auto Service in Richardson, TX. Call (972) 231-2886 or visit us at 900 E Belt Line Rd. Mon-Fri 8-6:30, Sat 8-4.",
+      eyebrow: "Talk to the shop",
+      headlineLine1: "Send a message",
+      headlineLine2: "or pick up the phone.",
+      intro:
+        "Calling is fastest. We'll pick up, hear what your car is doing, and get you slotted in. The form below works just as well.",
+      addressLabel: "Address",
+      getDirections: "Get directions",
+      callLabel: "Call the shop",
+      hoursLabel: "Hours",
+      mapTitleTemplate: "Map showing {name} location",
+    },
+    bookPage: {
+      metaTitle: "Book a Service | The Star Auto Service",
+      metaDescription:
+        "Schedule auto repair at The Star Auto Service in Richardson, TX. Fill out the booking form or call (972) 231-2886. ASE-Certified, NAPA Auto Care, bilingual service.",
+      eyebrow: "Book a service",
+      headlineLine1: "Tell us about",
+      headlineLine2: "the car.",
+      intro:
+        "Fill out the form and we'll call you back within one business day. Or call the shop now, fastest way to get on the schedule.",
+      orCallNow: "Or call now",
+      callIntro:
+        "We'll pick up, hear what's going on, and get you slotted in.",
+      shopHours: "Shop hours",
+      walkIns: "Walk-ins",
+      walkInsBody:
+        "Always welcome. The bays are open and we'll do our best to get you looked at the same day.",
+      visit: "Visit, open in Maps",
+      openInMapsAria: "Open {address} in Google Maps",
+    },
+    bookConfirmation: {
+      metaTitle: "Booking Received | The Star Auto Service",
+      metaDescription:
+        "Your booking request has been received. We'll call you back within one business day to confirm.",
+      eyebrow: "Booking received",
+      headlineLine1: "Got it.",
+      headlineLine2: "We'll call you back.",
+      intro:
+        "Thanks for the booking request. We'll call you back within one business day at the number you provided to confirm the time and walk through what to expect.",
+      nextSteps: "What happens next",
+      nextStep1:
+        "We review your request and check parts availability for your vehicle.",
+      nextStep2:
+        "We call you back within one business day to confirm your appointment time and answer any questions.",
+      nextStep3:
+        "Bring your vehicle in at the confirmed time. The coffee's on.",
+      backToHome: "Back to home",
+      callShopCTA: "Call (972) 231-2886",
     },
   },
   es: {
@@ -988,6 +1182,114 @@ export const UI: Record<Locale, UIStrings> = {
       readArticle: "Leer artículo",
       jsonLdAuthorJobTitle: "Fundador, técnico maestro certificado ASE",
       dateLocale: "es-MX",
+    },
+    contactForm: {
+      headline: "Mándanos un mensaje.",
+      intro: "Te contestamos en un día hábil. Los campos obligatorios están marcados con",
+      requiredNote: "*",
+      leaveEmpty: "Deja este campo vacío",
+      fullName: "Nombre completo",
+      phoneNumber: "Número de teléfono",
+      email: "Correo",
+      serviceNeeded: "Servicio que necesitas",
+      selectService: "Elige un servicio…",
+      somethingElse: "Otra cosa",
+      message: "Mensaje",
+      sendMessage: "Enviar mensaje",
+      sending: "Enviando…",
+      errorGeneric: "Algo salió mal",
+      successHeading: "Mensaje enviado.",
+      successBody:
+        "Gracias por escribirnos, te contestamos en cuanto podamos. Para algo urgente, por favor llama al taller.",
+    },
+    bookForm: {
+      headline: "Agendar servicio.",
+      intro:
+        "Cuéntanos del auto y lo que necesitas. Te llamamos en un día hábil. Los campos obligatorios están marcados con",
+      requiredNote: "*",
+      leaveEmpty: "Deja este campo vacío",
+      fullName: "Nombre completo",
+      phone: "Teléfono",
+      email: "Correo",
+      vehicleLegend: "Vehículo",
+      yearPlaceholder: "Año",
+      makePlaceholder: "Marca",
+      modelPlaceholder: "Modelo",
+      yearAria: "Año del vehículo",
+      makeAria: "Marca del vehículo",
+      modelAria: "Modelo del vehículo",
+      serviceNeeded: "Servicio que necesitas",
+      selectService: "Elige un servicio…",
+      somethingElseBooking: "Otra cosa / no estoy seguro",
+      preferredWindow: "Horario preferido",
+      whenWorks: "¿Cuándo te queda mejor?",
+      windowOptions: [
+        "Lo antes posible",
+        "Hoy o mañana",
+        "Esta semana",
+        "La próxima semana",
+        "Yo llamo para agendar",
+      ],
+      whatsGoingOn: "¿Qué le pasa al auto?",
+      messagePlaceholder:
+        "Síntomas, ruidos, focos de advertencia, lo que ya hayas mandado revisar…",
+      requestBooking: "Solicitar cita",
+      sending: "Enviando…",
+      errorGeneric: "Algo salió mal",
+    },
+    contactPage: {
+      metaTitle:
+        "Contacta a The Star Auto Service | Mecánico en Richardson TX",
+      metaDescription:
+        "Contacta a The Star Auto Service en Richardson, TX. Llama al (972) 231-2886 o visítanos en 900 E Belt Line Rd. Lun-Vie 8-6:30, Sáb 8-4.",
+      eyebrow: "Habla con el taller",
+      headlineLine1: "Mándanos un mensaje",
+      headlineLine2: "o levanta el teléfono.",
+      intro:
+        "Llamar es lo más rápido. Contestamos, escuchamos qué le pasa a tu auto y te metemos en la agenda. El formulario también funciona igual de bien.",
+      addressLabel: "Dirección",
+      getDirections: "Cómo llegar",
+      callLabel: "Llama al taller",
+      hoursLabel: "Horario",
+      mapTitleTemplate: "Mapa que muestra la ubicación de {name}",
+    },
+    bookPage: {
+      metaTitle: "Agendar servicio | The Star Auto Service",
+      metaDescription:
+        "Agenda reparación automotriz en The Star Auto Service en Richardson, TX. Llena el formulario o llama al (972) 231-2886. Certificación ASE, NAPA Auto Care, servicio bilingüe.",
+      eyebrow: "Agendar servicio",
+      headlineLine1: "Cuéntanos",
+      headlineLine2: "del auto.",
+      intro:
+        "Llena el formulario y te devolvemos la llamada en un día hábil. O llama al taller ahora mismo, es la forma más rápida de entrar en agenda.",
+      orCallNow: "O llama ahora",
+      callIntro:
+        "Contestamos, escuchamos qué pasa y te metemos en la agenda.",
+      shopHours: "Horario del taller",
+      walkIns: "Sin cita",
+      walkInsBody:
+        "Siempre bienvenidos. Las bahías están abiertas y hacemos lo posible por revisarte el mismo día.",
+      visit: "Visítanos, abrir en Maps",
+      openInMapsAria: "Abrir {address} en Google Maps",
+    },
+    bookConfirmation: {
+      metaTitle: "Solicitud recibida | The Star Auto Service",
+      metaDescription:
+        "Recibimos tu solicitud de cita. Te devolvemos la llamada en un día hábil para confirmar.",
+      eyebrow: "Solicitud recibida",
+      headlineLine1: "Listo.",
+      headlineLine2: "Te llamamos pronto.",
+      intro:
+        "Gracias por la solicitud de cita. Te devolvemos la llamada en un día hábil al número que nos dejaste para confirmar la hora y platicar qué esperar.",
+      nextSteps: "Qué sigue",
+      nextStep1:
+        "Revisamos tu solicitud y verificamos disponibilidad de refacciones para tu vehículo.",
+      nextStep2:
+        "Te devolvemos la llamada en un día hábil para confirmar la hora y resolver cualquier duda.",
+      nextStep3:
+        "Trae tu vehículo a la hora confirmada. El café está listo.",
+      backToHome: "Volver al inicio",
+      callShopCTA: "Llama al (972) 231-2886",
     },
   },
 };

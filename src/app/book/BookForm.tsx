@@ -4,7 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Calendar } from "lucide-react";
 import { track } from "@vercel/analytics";
-import { SERVICES } from "@/lib/constants";
+import { getServices } from "@/lib/constants.es";
+import type { Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/i18n";
+import { UI } from "@/lib/translations/ui";
+
+type Props = { locale?: Locale };
 
 type FormData = {
   name: string;
@@ -34,14 +39,6 @@ const INITIAL: FormData = {
   honeypot: "",
 };
 
-const PREFERRED_WINDOWS = [
-  "As soon as possible",
-  "Today / tomorrow",
-  "This week",
-  "Next week",
-  "I'll call to schedule",
-];
-
 const inputBase =
   "w-full bg-paper border border-line px-4 py-3 text-sm text-ink font-medium placeholder:text-stone focus:outline-none focus-visible:border-royal focus-visible:ring-2 focus-visible:ring-royal/40 transition-colors";
 
@@ -53,8 +50,10 @@ const selectStyle = {
     "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c5550' d='M6 8.5 1.5 4h9z'/%3E%3C/svg%3E\")",
 };
 
-/** Booking intake form. Vehicle + service + window, posts to /api/contact with formType="booking", redirects to /book/confirmation on success. */
-export function BookForm() {
+/** Booking intake form. Locale-aware. Posts to /api/contact with formType="booking", redirects on success. */
+export function BookForm({ locale = "en" }: Props) {
+  const copy = UI[locale].bookForm;
+  const services = getServices(locale);
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>(INITIAL);
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -75,19 +74,19 @@ export function BookForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, formType: "booking" }),
+        body: JSON.stringify({ ...formData, formType: "booking", locale }),
       });
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(data.error || copy.errorGeneric);
       }
 
-      track("form_submit", { form: "booking" });
-      router.push("/book/confirmation");
+      track("form_submit", { form: "booking", locale });
+      router.push(localizedPath("/book/confirmation", locale));
     } catch (err) {
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong");
+      setErrorMessage(err instanceof Error ? err.message : copy.errorGeneric);
     }
   }
 
@@ -99,15 +98,15 @@ export function BookForm() {
     >
       <div className="absolute top-0 left-7 right-7 h-0.5 bg-gold" aria-hidden="true" />
       <h2 className="font-sans font-black text-2xl md:text-3xl text-ink tracking-tight leading-none">
-        Book a service.
+        {copy.headline}
       </h2>
       <p className="mt-4 text-sm text-graphite font-medium leading-relaxed">
-        Tell us about the car and what you need. We&apos;ll call back within one business day. Required fields marked with{" "}
-        <span className="text-gold-deep font-bold">*</span>.
+        {copy.intro}{" "}
+        <span className="text-gold-deep font-bold">{copy.requiredNote}</span>.
       </p>
 
       <div aria-hidden="true" className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none">
-        <label htmlFor="honeypot">Leave this field empty</label>
+        <label htmlFor="honeypot">{copy.leaveEmpty}</label>
         <input
           type="text"
           id="honeypot"
@@ -123,7 +122,7 @@ export function BookForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label htmlFor="name" className={labelBase}>
-              Full name <span className="text-gold-deep">*</span>
+              {copy.fullName} <span className="text-gold-deep">{copy.requiredNote}</span>
             </label>
             <input
               type="text"
@@ -138,7 +137,7 @@ export function BookForm() {
           </div>
           <div>
             <label htmlFor="phone" className={labelBase}>
-              Phone <span className="text-gold-deep">*</span>
+              {copy.phone} <span className="text-gold-deep">{copy.requiredNote}</span>
             </label>
             <input
               type="tel"
@@ -155,7 +154,7 @@ export function BookForm() {
 
         <div>
           <label htmlFor="email" className={labelBase}>
-            Email
+            {copy.email}
           </label>
           <input
             type="email"
@@ -169,46 +168,46 @@ export function BookForm() {
         </div>
 
         <fieldset>
-          <legend className={labelBase}>Vehicle</legend>
+          <legend className={labelBase}>{copy.vehicleLegend}</legend>
           <div className="grid grid-cols-3 gap-3">
             <input
               type="text"
               id="vehicleYear"
               name="vehicleYear"
-              placeholder="Year"
+              placeholder={copy.yearPlaceholder}
               inputMode="numeric"
               maxLength={4}
               value={formData.vehicleYear}
               onChange={handleChange}
               className={`${inputBase} tabular-nums`}
-              aria-label="Vehicle year"
+              aria-label={copy.yearAria}
             />
             <input
               type="text"
               id="vehicleMake"
               name="vehicleMake"
-              placeholder="Make"
+              placeholder={copy.makePlaceholder}
               value={formData.vehicleMake}
               onChange={handleChange}
               className={inputBase}
-              aria-label="Vehicle make"
+              aria-label={copy.makeAria}
             />
             <input
               type="text"
               id="vehicleModel"
               name="vehicleModel"
-              placeholder="Model"
+              placeholder={copy.modelPlaceholder}
               value={formData.vehicleModel}
               onChange={handleChange}
               className={inputBase}
-              aria-label="Vehicle model"
+              aria-label={copy.modelAria}
             />
           </div>
         </fieldset>
 
         <div>
           <label htmlFor="service" className={labelBase}>
-            Service needed
+            {copy.serviceNeeded}
           </label>
           <select
             id="service"
@@ -218,19 +217,19 @@ export function BookForm() {
             className={`${inputBase} appearance-none bg-[length:1rem] bg-[right_1rem_center] bg-no-repeat`}
             style={selectStyle}
           >
-            <option value="">Select a service…</option>
-            {SERVICES.map((s) => (
+            <option value="">{copy.selectService}</option>
+            {services.map((s) => (
               <option key={s.id} value={s.id}>
                 {s.title}
               </option>
             ))}
-            <option value="other">Something else / not sure</option>
+            <option value="other">{copy.somethingElseBooking}</option>
           </select>
         </div>
 
         <div>
           <label htmlFor="preferredWindow" className={labelBase}>
-            Preferred window
+            {copy.preferredWindow}
           </label>
           <select
             id="preferredWindow"
@@ -240,8 +239,8 @@ export function BookForm() {
             className={`${inputBase} appearance-none bg-[length:1rem] bg-[right_1rem_center] bg-no-repeat`}
             style={selectStyle}
           >
-            <option value="">When works best?</option>
-            {PREFERRED_WINDOWS.map((w) => (
+            <option value="">{copy.whenWorks}</option>
+            {copy.windowOptions.map((w) => (
               <option key={w} value={w}>
                 {w}
               </option>
@@ -251,7 +250,7 @@ export function BookForm() {
 
         <div>
           <label htmlFor="message" className={labelBase}>
-            What&apos;s going on with the car?
+            {copy.whatsGoingOn}
           </label>
           <textarea
             id="message"
@@ -259,7 +258,7 @@ export function BookForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            placeholder="Symptoms, sounds, warning lights, anything you've already had looked at…"
+            placeholder={copy.messagePlaceholder}
             className={`${inputBase} resize-none`}
           />
         </div>
@@ -276,11 +275,11 @@ export function BookForm() {
           className="w-full inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft disabled:opacity-60 disabled:cursor-not-allowed px-8 py-4 text-sm font-extrabold uppercase tracking-[0.14em] transition-colors shadow-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
         >
           {status === "submitting" ? (
-            "Sending…"
+            copy.sending
           ) : (
             <>
               <Calendar size={16} strokeWidth={2.5} aria-hidden="true" />
-              Request a booking
+              {copy.requestBooking}
             </>
           )}
         </button>

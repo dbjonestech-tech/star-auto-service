@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SITE } from "@/lib/constants";
 import { SPANISH_ENABLED } from "@/lib/i18n";
 import { UI } from "@/lib/translations/ui";
-import { ContactPageBody } from "@/components/page-bodies/ContactPageBody";
+import { BookPageBody } from "@/components/page-bodies/BookPageBody";
 
-const copy = UI.en.contactPage;
+const copy = UI.es.bookPage;
 
 export const metadata: Metadata = {
   title: { absolute: copy.metaTitle },
   description: copy.metaDescription,
   alternates: {
-    canonical: `${SITE.url}/contact`,
-    languages: SPANISH_ENABLED
-      ? {
-          "en-US": `${SITE.url}/contact`,
-          "es-US": `${SITE.url}/es/contact`,
-          "x-default": `${SITE.url}/contact`,
-        }
-      : undefined,
+    canonical: `${SITE.url}/es/book`,
+    languages: {
+      "en-US": `${SITE.url}/book`,
+      "es-US": `${SITE.url}/es/book`,
+      "x-default": `${SITE.url}/book`,
+    },
   },
   openGraph: {
     title: copy.metaTitle,
     description: copy.metaDescription,
-    url: `${SITE.url}/contact`,
+    url: `${SITE.url}/es/book`,
     siteName: SITE.name,
-    locale: "en_US",
+    locale: "es_US",
+    alternateLocale: ["en_US"],
     type: "website",
   },
   twitter: {
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
-  return <ContactPageBody locale="en" />;
+export default function BookPageEs() {
+  if (!SPANISH_ENABLED) notFound();
+  return <BookPageBody locale="es" />;
 }
