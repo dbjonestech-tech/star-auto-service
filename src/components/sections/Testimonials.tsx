@@ -2,11 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, Quote, ArrowRight } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n";
+import { UI } from "@/lib/translations/ui";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 
+type Props = { locale?: Locale };
+
 /** Substantial reviews. Six cards, gold five-star ratings, premium materials feel, subtle Unsplash watermark. */
-export function Testimonials() {
+export function Testimonials({ locale = "en" }: Props) {
+  const copy = UI[locale].testimonials;
   return (
     <section className="relative bg-paper py-16 md:py-24 lg:py-32 border-y border-line-subtle overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
@@ -22,9 +27,9 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-10 md:mb-16 lg:mb-20">
           <div className="md:col-span-7">
             <Reveal>
-              <Eyebrow>From the people who keep coming back</Eyebrow>
+              <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
-                What customers say.
+                {copy.headline}
               </h2>
             </Reveal>
           </div>
@@ -49,10 +54,10 @@ export function Testimonials() {
                 </div>
                 <div className="border-l border-line pl-5">
                   <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                    Average rating
+                    {copy.ratingLabel}
                   </p>
                   <p className="mt-1 text-sm text-ink font-semibold leading-snug">
-                    Across hundreds of reviews from Richardson drivers
+                    {copy.ratingSub}
                   </p>
                 </div>
               </div>
@@ -102,7 +107,7 @@ export function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.16em] font-extrabold text-ink hover:text-royal transition-colors border-b-2 border-ink hover:border-royal pb-1"
           >
-            Read more reviews on Google
+            {copy.seeAll}
             <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
           </Link>
         </div>

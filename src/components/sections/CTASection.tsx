@@ -2,16 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Phone, Star } from "lucide-react";
 import { SITE } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/i18n";
+import { UI, interpolate } from "@/lib/translations/ui";
 import { Reveal } from "@/components/ui/Reveal";
 
+type Props = { locale?: Locale };
+
 /** Closing CTA. Royal-blue ground with photographic backdrop, bold display, gold primary CTA. */
-export function CTASection() {
+export function CTASection({ locale = "en" }: Props) {
+  const copy = UI[locale].ctaSection;
+
   return (
     <section className="relative bg-royal-deep text-cream overflow-hidden">
-      {/* Photographic backdrop, dimmed for legibility */}
       <Image
         src="/assets/shop-front.jpg"
-        alt="Front view of The Star Auto Service shop in Richardson, TX"
+        alt={copy.altShopFront}
         fill
         sizes="100vw"
         className="object-cover opacity-25"
@@ -19,7 +25,6 @@ export function CTASection() {
       <div className="absolute inset-0 bg-gradient-to-r from-royal-deep via-royal-deep/95 to-royal-deep/85" />
       <div className="absolute inset-0 bg-gradient-to-b from-royal-deep/60 via-transparent to-royal-deep" />
 
-      {/* Gold accent lines */}
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gold/60" />
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gold/60" />
 
@@ -35,36 +40,34 @@ export function CTASection() {
                 aria-hidden="true"
               />
               <span className="text-[11px] uppercase tracking-[0.22em] font-bold text-cream/85">
-                Schedule a service
+                {copy.starLabel}
               </span>
             </div>
 
             <h2 className="font-sans font-black text-display-1 leading-[0.96] tracking-[-0.025em] text-cream">
-              Let&apos;s take a look
+              {copy.headlineLine1}
               <br />
-              <span className="text-gold">at it.</span>
+              <span className="text-gold">{copy.headlineLine2}</span>
             </h2>
 
             <p className="mt-8 max-w-2xl text-lg md:text-xl text-cream/85 leading-relaxed font-medium">
-              Book online, give us a call, or stop by the shop. Walk-ins are always
-              welcome, and the coffee is on. We&apos;ll get you in, get you a straight
-              answer, and get you back on the road.
+              {copy.sub}
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/book"
+                href={localizedPath("/book", locale)}
                 className="group inline-flex items-center justify-center gap-2.5 bg-gold text-ink hover:bg-gold-soft px-9 py-4.5 text-sm font-extrabold uppercase tracking-[0.14em] transition-all shadow-gold hover:shadow-card-lg hover:-translate-y-0.5"
               >
                 <Calendar size={17} strokeWidth={2.5} aria-hidden="true" />
-                Book a Service
+                {copy.bookCTA}
               </Link>
               <a
                 href={`tel:${SITE.phoneRaw}`}
                 className="group inline-flex items-center justify-center gap-2.5 bg-transparent text-cream border-2 border-cream/70 hover:bg-cream hover:text-ink px-9 py-4.5 text-sm font-extrabold uppercase tracking-[0.14em] transition-all"
               >
                 <Phone size={17} strokeWidth={2.5} aria-hidden="true" />
-                Call {SITE.phone}
+                {interpolate(copy.callCTA, { phone: SITE.phone })}
               </a>
             </div>
           </div>

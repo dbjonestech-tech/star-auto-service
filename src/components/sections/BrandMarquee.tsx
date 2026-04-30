@@ -1,21 +1,26 @@
-const ITEMS = [
-  "12 services",
-  "28 years on Belt Line",
-  "4.8★ across 136 reviews",
-  "NAPA Auto Care Center",
-  "ASE-Certified technicians",
-  "Bilingual service",
-  "Family-owned since 1998",
-  "Texas state inspection station",
-];
+import { SITE } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n";
+import { UI, interpolate } from "@/lib/translations/ui";
+
+type Props = { locale?: Locale };
 
 /** Slim ink+gold marquee band. Pure CSS keyframes, motion-safe via globals.css. */
-export function BrandMarquee() {
-  const doubled = [...ITEMS, ...ITEMS];
+export function BrandMarquee({ locale = "en" }: Props) {
+  const copy = UI[locale].brandMarquee;
+  const years = new Date().getFullYear() - SITE.established;
+  const items = copy.items.map((tpl) =>
+    interpolate(tpl, {
+      years,
+      year: SITE.established,
+      rating: SITE.rating.value,
+      count: SITE.rating.count,
+    }),
+  );
+  const doubled = [...items, ...items];
 
   return (
     <section
-      aria-label="At a glance"
+      aria-label={copy.eyebrow}
       className="relative bg-ink text-cream border-y-2 border-gold/30 overflow-hidden py-4"
     >
       <div className="flex gap-12 whitespace-nowrap motion-safe:animate-[marquee_38s_linear_infinite]">

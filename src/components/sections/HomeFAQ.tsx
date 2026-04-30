@@ -1,16 +1,23 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { FAQ_ITEMS } from "@/lib/metadata";
+import { FAQ_ITEMS, FAQ_ITEMS_ES } from "@/lib/metadata";
+import type { Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/i18n";
+import { UI } from "@/lib/translations/ui";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+
+type Props = { locale?: Locale };
 
 /**
  * Homepage FAQ section. Renders 6 of the most-clicked FAQs from the sitewide
  * data so the FAQPage rich snippet can fire on `/` directly. Visual treatment
  * matches the /faq page accordions for consistency.
  */
-export function HomeFAQ() {
-  const featured = FAQ_ITEMS.slice(0, 6);
+export function HomeFAQ({ locale = "en" }: Props) {
+  const copy = UI[locale].homeFaq;
+  const source = locale === "es" ? FAQ_ITEMS_ES : FAQ_ITEMS;
+  const featured = source.slice(0, 6);
 
   return (
     <section className="bg-cream py-16 md:py-24 lg:py-32 border-t border-line-subtle">
@@ -18,20 +25,19 @@ export function HomeFAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-4">
             <Reveal>
-              <Eyebrow>Common questions</Eyebrow>
+              <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
-                Answers, straight up.
+                {copy.headline}
               </h2>
               <p className="mt-6 text-base md:text-lg text-graphite leading-relaxed font-medium">
-                The questions Richardson drivers ask us most, with the same
-                straight answers we give over the phone.
+                {copy.intro}
               </p>
               <div className="mt-8">
                 <Link
-                  href="/faq"
+                  href={localizedPath("/faq", locale)}
                   className="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.16em] font-extrabold text-ink hover:text-royal transition-colors border-b-2 border-ink hover:border-royal pb-1"
                 >
-                  See all questions
+                  {copy.seeAll}
                   <ArrowRight size={13} strokeWidth={2.5} aria-hidden="true" />
                 </Link>
               </div>

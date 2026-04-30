@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { AREAS } from "@/lib/areas";
+import type { Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/i18n";
+import { UI } from "@/lib/translations/ui";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+
+type Props = { locale?: Locale };
 
 const RICHARDSON_NEIGHBORHOODS = [
   "Canyon Creek",
@@ -21,36 +26,36 @@ const RICHARDSON_NEIGHBORHOODS = [
  * Surface area for long-tail "auto repair near [neighborhood]" and
  * "mechanic [city]" searches. SEO-driven layout, light treatment.
  */
-export function AreasServed() {
+export function AreasServed({ locale = "en" }: Props) {
+  const copy = UI[locale].areasServedSection;
+
   return (
     <section className="bg-paper py-16 md:py-24 lg:py-28 border-y border-line-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-4">
             <Reveal>
-              <Eyebrow>Where we serve</Eyebrow>
+              <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
-                Belt Line, and beyond.
+                {copy.headline}
               </h2>
               <p className="mt-6 text-base md:text-lg text-graphite leading-relaxed font-medium">
-                Trusted by drivers across north Dallas, plus every Richardson
-                neighborhood from Canyon Creek to Sherrill Park.
+                {copy.intro}
               </p>
             </Reveal>
           </div>
 
           <div className="lg:col-span-8 space-y-10">
-            {/* DFW cities served */}
             <Reveal delay={0.06}>
               <div>
                 <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-5">
-                  Cities served
+                  {copy.citiesLabel}
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3">
                   {AREAS.map((a) => (
                     <Link
                       key={a.slug}
-                      href={`/areas/${a.slug}`}
+                      href={localizedPath(`/areas/${a.slug}`, locale)}
                       className="group relative bg-surface border border-line px-4 py-3.5 md:px-5 md:py-4 shadow-card hover:shadow-card-lg hover:-translate-y-0.5 transition-all"
                     >
                       <div className="absolute top-0 left-4 right-4 h-0.5 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
@@ -66,11 +71,10 @@ export function AreasServed() {
               </div>
             </Reveal>
 
-            {/* Richardson neighborhoods */}
             <Reveal delay={0.12}>
               <div>
                 <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-5">
-                  Richardson neighborhoods
+                  {copy.neighborhoodsLabel}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {RICHARDSON_NEIGHBORHOODS.map((n) => (

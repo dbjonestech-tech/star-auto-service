@@ -5,8 +5,13 @@ import Link from "next/link";
 import * as LucideIcons from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
+import type { Locale } from "@/lib/i18n";
+import { localizedPath } from "@/lib/i18n";
+import { UI, interpolate } from "@/lib/translations/ui";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+
+type Props = { locale?: Locale };
 
 function trackPointer(e: React.MouseEvent<HTMLElement>) {
   const el = e.currentTarget;
@@ -16,7 +21,8 @@ function trackPointer(e: React.MouseEvent<HTMLElement>) {
 }
 
 /** Substantial 3-column service card grid. Cursor-tracking gold spotlight, hover gold-rule slide, deep-link to /services/[slug]. */
-export function ServicesOverview() {
+export function ServicesOverview({ locale = "en" }: Props) {
+  const copy = UI[locale].servicesOverview;
   const featured = SERVICES.slice(0, 6);
 
   return (
@@ -34,18 +40,16 @@ export function ServicesOverview() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-10 md:mb-16 lg:mb-20">
           <div className="md:col-span-5">
             <Reveal>
-              <Eyebrow>What we work on</Eyebrow>
+              <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h2 className="mt-5 font-sans font-black text-display-2 text-ink tracking-[-0.022em] leading-[1]">
-                From oil to overhaul.
+                {copy.headline}
               </h2>
             </Reveal>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <Reveal delay={0.08}>
               <p className="text-lg text-graphite leading-relaxed font-medium">
-                Twelve service categories, every common make and model, domestic and
-                import. If it&apos;s on your dashboard or under your hood, we&apos;ve seen
-                it before, and we know what to do about it.
+                {copy.intro}
               </p>
             </Reveal>
           </div>
@@ -61,7 +65,7 @@ export function ServicesOverview() {
                 "aria-hidden"?: string | boolean;
               }>) || LucideIcons.Wrench;
 
-            const href = `/services/${service.id}`;
+            const href = localizedPath(`/services/${service.id}`, locale);
 
             return (
               <Reveal key={service.id} delay={i * 0.06} margin="-15%">
@@ -111,7 +115,7 @@ export function ServicesOverview() {
                       {service.description}
                     </p>
                     <p className="mt-6 text-[11px] uppercase tracking-[0.18em] font-bold text-royal group-hover:text-royal-deep">
-                      Learn more
+                      {copy.learnMore}
                     </p>
                   </div>
                 </Link>
@@ -122,10 +126,10 @@ export function ServicesOverview() {
 
         <div className="mt-14 text-center">
           <Link
-            href="/services"
+            href={localizedPath("/services", locale)}
             className="inline-flex items-center gap-2.5 bg-ink text-cream hover:bg-royal px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
           >
-            See all {SERVICES.length} services
+            {interpolate(copy.seeAll, { count: SERVICES.length })}
             <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
           </Link>
         </div>

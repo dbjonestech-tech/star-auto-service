@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CallFAB } from "@/components/ui/CallFAB";
 import { ScrollCallBar } from "@/components/ui/ScrollCallBar";
 import { PhoneCallEnhancer } from "@/components/ui/PhoneCallEnhancer";
+import { HtmlLangSync } from "@/components/ui/HtmlLangSync";
 import { SITE } from "@/lib/constants";
 import { generateJsonLd } from "@/lib/metadata";
 import "./globals.css";
@@ -95,6 +96,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <HtmlLangSync />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />

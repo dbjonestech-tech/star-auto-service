@@ -215,3 +215,43 @@ export function generateBreadcrumbJsonLd(items: BreadcrumbItem[]) {
 
 /** Public so /faq-style pages or callers can render the FAQ data themselves if needed. */
 export const FAQ_ITEMS = FAQS;
+
+/**
+ * Mexican-Spanish twin of FAQ_ITEMS, same shape and same order so callers can
+ * pick by locale. Used by HomeFAQ and (future) /es/faq. Real reviewer-facing
+ * Spanish; brand names (NAPA Auto Care, ASE) stay English.
+ */
+export const FAQ_ITEMS_ES: { q: string; a: string }[] = [
+  {
+    q: "¿Hacen verificación estatal de Texas?",
+    a: "Sí. Somos una estación autorizada para inspecciones del estado. Aceptamos clientes sin cita lunes a viernes de 8:00 AM a 6:30 PM y sábados de 8:00 AM a 4:00 PM.",
+  },
+  {
+    q: "¿Hacen servicio de frenos el mismo día?",
+    a: "La mayoría de los trabajos de frenos los hacemos el mismo día, siempre que las refacciones estén en stock. Llámanos con el año, marca y modelo de tu vehículo y te confirmamos antes de que vengas.",
+  },
+  {
+    q: "¿Mi garantía es válida en otros talleres NAPA?",
+    a: "Sí. Como Centro NAPA Auto Care, nuestro trabajo está respaldado por la garantía nacional de tranquilidad de 24 meses / 24,000 millas, válida en más de 17,000 Centros NAPA Auto Care en todo el país.",
+  },
+  {
+    q: "¿Atienden a conductores de Garland, Plano, Allen y Dallas?",
+    a: "Sí. Estamos sobre E Belt Line Road en Richardson y atendemos regularmente a conductores de Garland, Plano, Allen, Murphy y todo el norte de Dallas.",
+  },
+  {
+    q: "¿Trabajan en vehículos híbridos?",
+    a: "Sí. Nuestros técnicos certificados ASE dan servicio a vehículos híbridos junto a los de gasolina convencional, tanto nacionales como importados.",
+  },
+  {
+    q: "¿Dan presupuestos sin costo?",
+    a: "Trabajamos con evaluaciones honestas y cotizaciones claras desde el principio. Llámanos, cuéntanos qué está pasando y platicamos lo que probablemente cuesta antes de que se mueva una sola herramienta.",
+  },
+  {
+    q: "¿Hablan español?",
+    a: "Sí. Servicio bilingüe en inglés y español. Hablamos español.",
+  },
+  {
+    q: "¿Aceptan clientes sin cita?",
+    a: "Siempre. Lunes a viernes de 8:00 AM a 6:30 PM, sábados de 8:00 AM a 4:00 PM.",
+  },
+];

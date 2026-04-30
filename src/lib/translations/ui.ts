@@ -1,9 +1,12 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * UI strings for header / footer / forms / common buttons.
+ * UI strings for header / footer / forms / common buttons and home-page sections.
  * Long-form page content lives in parallel data files (areas.ts → areas.es.ts, etc.).
  * Spanish is Mexican-Spanish register, plainspoken to match the English brand voice.
+ *
+ * Tokens like {year}, {years}, {count}, {name}, {address}, {phone} are interpolated
+ * by the t() helper at the bottom of this file (or read directly via UI[locale]).
  */
 
 type UIStrings = {
@@ -14,7 +17,7 @@ type UIStrings = {
     more: string;
     contact: string;
     bookService: string;
-    reviews: string; // expects "{count}"
+    reviews: string;
     hablamosEspanol: string;
     callShop: string;
     home: string;
@@ -145,6 +148,7 @@ type UIStrings = {
   };
   brandMarquee: {
     eyebrow: string;
+    items: string[];
   };
   pillars: {
     eyebrow: string;
@@ -155,6 +159,7 @@ type UIStrings = {
     eyebrow: string;
     headline: string;
     intro: string;
+    learnMore: string;
     seeAll: string;
   };
   shopStory: {
@@ -162,23 +167,42 @@ type UIStrings = {
     headline: string;
     paragraphs: string[];
     cta: string;
+    estLabel: string;
+    altShopBays: string;
+    altCheckEngineNeon: string;
   };
   shopGallery: {
     eyebrow: string;
-    headline: string;
+    headlineLine1: string;
+    headlineLine2: string;
     intro: string;
+    storefrontLabel: string;
+    storefrontCaption: string;
+    estLabel: string;
+    mapLabel: string;
+    neighborhoodLabel: string;
+    neighborhoodCaption: string;
+    fixtureLabel: string;
+    fixtureHeadline: string;
+    fixtureSub: string;
+    altStorefront: string;
+    altNeighborhoodHome: string;
+    altAerial: string;
+    mapTitle: string;
   };
   testimonials: {
     eyebrow: string;
     headline: string;
-    intro: string;
+    ratingLabel: string;
+    ratingSub: string;
     seeAll: string;
   };
   areasServedSection: {
     eyebrow: string;
     headline: string;
     intro: string;
-    seeAll: string;
+    citiesLabel: string;
+    neighborhoodsLabel: string;
   };
   homeFaq: {
     eyebrow: string;
@@ -189,20 +213,21 @@ type UIStrings = {
   mapSection: {
     eyebrow: string;
     headline: string;
-    intro: string;
     addressLabel: string;
+    callLabel: string;
     hoursLabel: string;
-    phoneLabel: string;
-    directions: string;
-    bookCTA: string;
-    callCTA: string;
+    directionsAria: string;
+    directionsCTA: string;
+    mapTitle: string;
   };
   ctaSection: {
-    eyebrow: string;
-    headline: string;
+    starLabel: string;
+    headlineLine1: string;
+    headlineLine2: string;
     sub: string;
     bookCTA: string;
     callCTA: string;
+    altShopFront: string;
   };
 };
 
@@ -350,7 +375,17 @@ export const UI: Record<Locale, UIStrings> = {
         "24-month / 24,000-mile warranty · 17,000+ shops nationwide",
     },
     brandMarquee: {
-      eyebrow: "Brands we service",
+      eyebrow: "At a glance",
+      items: [
+        "12 services",
+        "{years} years on Belt Line",
+        "{rating}★ across {count} reviews",
+        "NAPA Auto Care Center",
+        "ASE-Certified technicians",
+        "Bilingual service",
+        "Family-owned since {year}",
+        "Texas state inspection station",
+      ],
     },
     pillars: {
       eyebrow: "Why drivers choose us",
@@ -371,67 +406,88 @@ export const UI: Record<Locale, UIStrings> = {
       ],
     },
     servicesOverview: {
-      eyebrow: "Services",
-      headline: "Twelve service categories. One trusted shop.",
+      eyebrow: "What we work on",
+      headline: "From oil to overhaul.",
       intro:
-        "From a Tuesday-afternoon oil change to a head-gasket rebuild, we handle the routine and the complex with the same diagnostic rigor.",
-      seeAll: "See all 12 services →",
+        "Twelve service categories, every common make and model, domestic and import. If it's on your dashboard or under your hood, we've seen it before, and we know what to do about it.",
+      learnMore: "Learn more",
+      seeAll: "See all {count} services",
     },
     shopStory: {
-      eyebrow: "Our story",
-      headline: "Twenty-eight years on the same corner.",
+      eyebrow: "The shop",
+      headline: "A shop that has stayed honest for {years} years.",
       paragraphs: [
-        "Miguel Ibarra opened the doors at 900 E Belt Line Road in 1998. Same address, same family, same standard.",
-        "What started as one bay and a borrowed lift has grown into the auto repair shop North Texas drivers refer their neighbors to — Richardson families, Plano professionals, Garland fleets, and a steady stream of word-of-mouth from customers who've been with us for decades.",
-        "The work is the same as it was on day one: diagnose what's actually wrong, fix it the right way, and explain it in plain English (or Spanish) before you authorize a dollar of repair.",
+        "Miguel Ibarra opened The Star Auto Service in 1998 with one rule: never recommend a repair the car doesn't need. That rule has outlasted every shortcut, every chain shop down the road, and every easy excuse to cut corners.",
+        "What started as a small family-owned bay on Belt Line Road has grown into one of Richardson's most trusted auto repair facilities. ASE-Certified technicians. NAPA Auto Care nationwide warranty. Service in English or Spanish, whichever you're more comfortable with.",
+        "And the answer to “do I really need this?” is always given straight.",
       ],
-      cta: "More about the shop →",
+      cta: "Read our story",
+      estLabel: "Est.",
+      altShopBays: "Inside the bays at {name} in Richardson, Texas",
+      altCheckEngineNeon: "Check engine neon sign at the shop",
     },
     shopGallery: {
-      eyebrow: "The shop",
-      headline: "Where the work happens.",
+      eyebrow: "On Belt Line, in Richardson",
+      headlineLine1: "A fixture on the corner",
+      headlineLine2: "since 1998.",
       intro:
-        "Six bays, two-post and four-post lifts, manufacturer-spec scan tools, and a parking lot full of cars from people who keep coming back.",
+        "E Belt Line Road runs east-to-west across Richardson, and we've been on the same corner since '98. Across from the Coin Laundry, between Plano Road and Jupiter. Easy in, easy out.",
+      storefrontLabel: "Storefront · 900 E Belt Line Rd",
+      storefrontCaption: "Same corner. Same family. Twenty-eight years.",
+      estLabel: "Est.",
+      mapLabel: "Where we are · The map",
+      neighborhoodLabel: "The neighborhood",
+      neighborhoodCaption: "Richardson families since '98",
+      fixtureLabel: "A fixture on Belt Line",
+      fixtureHeadline:
+        "Richardson commuters. Plano second-opinions. Garland fleet trucks. Allen carpools.",
+      fixtureSub:
+        "Twenty-eight years on the corner means a lot of cars and a lot of drivers, and most of them came back.",
+      altStorefront: "{name} storefront on E Belt Line Road",
+      altNeighborhoodHome: "Richardson neighborhood home with palms",
+      altAerial: "Aerial view of Richardson, Texas at golden hour",
+      mapTitle: "Map of {name} on E Belt Line Road, Richardson",
     },
     testimonials: {
-      eyebrow: "Reviews",
+      eyebrow: "From the people who keep coming back",
       headline: "What customers say.",
-      intro:
-        "4.8 stars across 136 verified Google reviews. Here's a small sampling.",
-      seeAll: "Read all reviews →",
+      ratingLabel: "Average rating",
+      ratingSub: "Across hundreds of reviews from Richardson drivers",
+      seeAll: "Read more reviews on Google",
     },
     areasServedSection: {
-      eyebrow: "Areas served",
-      headline: "Belt Line, then anywhere within a short drive.",
+      eyebrow: "Where we serve",
+      headline: "Belt Line, and beyond.",
       intro:
-        "Richardson is home base. Garland, Plano, Dallas, Allen, Murphy, Wylie, Sachse, and Lake Highlands drivers make the trip because the math works — honest pricing, real diagnostics, and a NAPA warranty that travels.",
-      seeAll: "See all areas →",
+        "Trusted by drivers across north Dallas, plus every Richardson neighborhood from Canyon Creek to Sherrill Park.",
+      citiesLabel: "Cities served",
+      neighborhoodsLabel: "Richardson neighborhoods",
     },
     homeFaq: {
       eyebrow: "Common questions",
-      headline: "What people ask before booking.",
+      headline: "Answers, straight up.",
       intro:
-        "Quick answers to the questions we hear most. The full FAQ has more.",
-      seeAll: "Full FAQ →",
+        "The questions Richardson drivers ask us most, with the same straight answers we give over the phone.",
+      seeAll: "See all questions",
     },
     mapSection: {
-      eyebrow: "Find us",
-      headline: "900 E Belt Line Rd, Richardson, TX 75081.",
-      intro:
-        "Across from Coin Laundry, between Plano Road and Jupiter. Easy in, easy out, walk-ins welcome.",
+      eyebrow: "Visit the shop",
+      headline: "Belt Line Road, Richardson.",
       addressLabel: "Address",
+      callLabel: "Call the shop",
       hoursLabel: "Hours",
-      phoneLabel: "Phone",
-      directions: "Get directions",
-      bookCTA: "Book a service",
-      callCTA: "Call the shop",
+      directionsAria: "Open {address} in Google Maps",
+      directionsCTA: "Get directions",
+      mapTitle: "Map showing {name} location",
     },
     ctaSection: {
-      eyebrow: "Ready when you are",
-      headline: "Book online or call. We'll take it from there.",
-      sub: "Walk-ins welcome Mon–Fri 8 AM – 6:30 PM and Saturdays until 4. Most diagnostics same-day.",
-      bookCTA: "Book a service",
-      callCTA: "Call (972) 231-2886",
+      starLabel: "Schedule a service",
+      headlineLine1: "Let's take a look",
+      headlineLine2: "at it.",
+      sub: "Book online, give us a call, or stop by the shop. Walk-ins are always welcome, and the coffee is on. We'll get you in, get you a straight answer, and get you back on the road.",
+      bookCTA: "Book a Service",
+      callCTA: "Call {phone}",
+      altShopFront: "Front view of The Star Auto Service shop in Richardson, TX",
     },
   },
   es: {
@@ -579,7 +635,17 @@ export const UI: Record<Locale, UIStrings> = {
         "Garantía 24 meses / 24,000 millas · más de 17,000 talleres a nivel nacional",
     },
     brandMarquee: {
-      eyebrow: "Marcas que reparamos",
+      eyebrow: "De un vistazo",
+      items: [
+        "12 servicios",
+        "{years} años en Belt Line",
+        "{rating}★ en {count} reseñas",
+        "Centro NAPA Auto Care",
+        "Técnicos certificados ASE",
+        "Servicio bilingüe",
+        "Negocio familiar desde {year}",
+        "Estación de inspección estatal de Texas",
+      ],
     },
     pillars: {
       eyebrow: "Por qué los conductores nos eligen",
@@ -595,72 +661,93 @@ export const UI: Record<Locale, UIStrings> = {
         },
         {
           title: "Bilingüe y familiar",
-          body: "Inglés o español, como tú prefieras. La misma familia en la esquina de Belt Line desde 1998 — tu reparación, explicada en tu idioma.",
+          body: "Inglés o español, como tú prefieras. La misma familia en la esquina de Belt Line desde 1998. Tu reparación, explicada en tu idioma.",
         },
       ],
     },
     servicesOverview: {
-      eyebrow: "Servicios",
-      headline: "Doce categorías de servicio. Un taller de confianza.",
+      eyebrow: "En lo que trabajamos",
+      headline: "Del cambio de aceite a la reconstrucción.",
       intro:
-        "Desde un cambio de aceite el martes por la tarde hasta el rectificado de una junta de cabeza, manejamos lo rutinario y lo complejo con el mismo rigor diagnóstico.",
-      seeAll: "Ver los 12 servicios →",
+        "Doce categorías de servicio, todas las marcas y modelos comunes, nacionales e importados. Si está en tu tablero o debajo del cofre, ya lo hemos visto y sabemos qué hacer.",
+      learnMore: "Más información",
+      seeAll: "Ver los {count} servicios",
     },
     shopStory: {
-      eyebrow: "Nuestra historia",
-      headline: "Veintiocho años en la misma esquina.",
+      eyebrow: "El taller",
+      headline: "Un taller que se ha mantenido honesto durante {years} años.",
       paragraphs: [
-        "Miguel Ibarra abrió las puertas del 900 E Belt Line Road en 1998. Misma dirección, misma familia, mismo estándar.",
-        "Lo que empezó con una bahía y un elevador prestado creció hasta convertirse en el taller que los conductores del Norte de Texas le recomiendan a sus vecinos — familias de Richardson, profesionales de Plano, flotas de Garland y un flujo constante de clientes que llevan décadas con nosotros, traídos por recomendaciones.",
-        "El trabajo es el mismo desde el primer día: diagnosticar lo que realmente está mal, repararlo bien y explicártelo en español o inglés claro antes de que autorices un solo dólar de reparación.",
+        "Miguel Ibarra abrió The Star Auto Service en 1998 con una sola regla: nunca recomendar una reparación que el auto no necesite. Esa regla ha sobrevivido a cada atajo, a cada cadena que abrió calle abajo y a cada pretexto fácil para cortar camino.",
+        "Lo que empezó como una bahía familiar pequeña sobre Belt Line Road creció hasta convertirse en uno de los talleres más confiables de Richardson. Técnicos certificados ASE. Garantía nacional NAPA Auto Care. Servicio en inglés o español, como tú prefieras.",
+        "Y la respuesta a “¿de verdad necesito esto?” siempre se da directo.",
       ],
-      cta: "Más sobre el taller →",
+      cta: "Lee nuestra historia",
+      estLabel: "Est.",
+      altShopBays: "Dentro de las bahías de {name} en Richardson, Texas",
+      altCheckEngineNeon: "Letrero de neón Check Engine en el taller",
     },
     shopGallery: {
-      eyebrow: "El taller",
-      headline: "Donde se hace el trabajo.",
+      eyebrow: "En Belt Line, en Richardson",
+      headlineLine1: "Un punto fijo en la esquina",
+      headlineLine2: "desde 1998.",
       intro:
-        "Seis bahías, elevadores de dos y cuatro postes, herramientas de escaneo con especificaciones de fábrica y un estacionamiento lleno de autos de gente que sigue regresando.",
+        "E Belt Line Road cruza Richardson de oriente a poniente, y nosotros llevamos en la misma esquina desde el 98. Frente a Coin Laundry, entre Plano Road y Jupiter. Fácil entrar, fácil salir.",
+      storefrontLabel: "Fachada · 900 E Belt Line Rd",
+      storefrontCaption: "Misma esquina. Misma familia. Veintiocho años.",
+      estLabel: "Est.",
+      mapLabel: "Dónde estamos · El mapa",
+      neighborhoodLabel: "El vecindario",
+      neighborhoodCaption: "Familias de Richardson desde el 98",
+      fixtureLabel: "Un punto fijo en Belt Line",
+      fixtureHeadline:
+        "Conductores de Richardson. Segundas opiniones de Plano. Camiones de flota de Garland. Carpools de Allen.",
+      fixtureSub:
+        "Veintiocho años en la esquina significan muchos autos y muchos conductores, y la mayoría regresaron.",
+      altStorefront: "Fachada de {name} sobre E Belt Line Road",
+      altNeighborhoodHome: "Casa de vecindario en Richardson con palmeras",
+      altAerial: "Vista aérea de Richardson, Texas, al atardecer dorado",
+      mapTitle: "Mapa de {name} en E Belt Line Road, Richardson",
     },
     testimonials: {
-      eyebrow: "Reseñas",
+      eyebrow: "De la gente que sigue regresando",
       headline: "Lo que dicen nuestros clientes.",
-      intro:
-        "4.8 estrellas en 136 reseñas verificadas de Google. Aquí tienes una muestra.",
-      seeAll: "Leer todas las reseñas →",
+      ratingLabel: "Calificación promedio",
+      ratingSub: "En cientos de reseñas de conductores de Richardson",
+      seeAll: "Lee más reseñas en Google",
     },
     areasServedSection: {
-      eyebrow: "Zonas atendidas",
-      headline: "Belt Line, y todo lo que está cerca.",
+      eyebrow: "Donde atendemos",
+      headline: "Belt Line, y más allá.",
       intro:
-        "Richardson es nuestra sede. Conductores de Garland, Plano, Dallas, Allen, Murphy, Wylie, Sachse y Lake Highlands hacen el viaje porque las cuentas salen — precios honestos, diagnóstico real y una garantía NAPA que viaja contigo.",
-      seeAll: "Ver todas las zonas →",
+        "Conductores de todo el norte de Dallas confían en nosotros, además de cada vecindario de Richardson, desde Canyon Creek hasta Sherrill Park.",
+      citiesLabel: "Ciudades atendidas",
+      neighborhoodsLabel: "Vecindarios de Richardson",
     },
     homeFaq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que la gente pregunta antes de agendar.",
+      headline: "Respuestas, sin rodeos.",
       intro:
-        "Respuestas rápidas a las preguntas que más escuchamos. La sección completa tiene más.",
-      seeAll: "Preguntas frecuentes completas →",
+        "Las preguntas que más nos hacen los conductores de Richardson, con las mismas respuestas directas que damos por teléfono.",
+      seeAll: "Ver todas las preguntas",
     },
     mapSection: {
-      eyebrow: "Encuéntranos",
-      headline: "900 E Belt Line Rd, Richardson, TX 75081.",
-      intro:
-        "Frente a Coin Laundry, entre Plano Road y Jupiter. Fácil entrada, fácil salida. Aceptamos clientes sin cita.",
+      eyebrow: "Visita el taller",
+      headline: "Belt Line Road, Richardson.",
       addressLabel: "Dirección",
+      callLabel: "Llama al taller",
       hoursLabel: "Horario",
-      phoneLabel: "Teléfono",
-      directions: "Cómo llegar",
-      bookCTA: "Agendar servicio",
-      callCTA: "Llama al taller",
+      directionsAria: "Abre {address} en Google Maps",
+      directionsCTA: "Cómo llegar",
+      mapTitle: "Mapa que muestra la ubicación de {name}",
     },
     ctaSection: {
-      eyebrow: "Cuando estés listo",
-      headline: "Agenda en línea o llámanos. Nosotros nos encargamos.",
-      sub: "Atendemos sin cita lunes a viernes 8:00 AM – 6:30 PM y sábados hasta las 4:00 PM. La mayoría de los diagnósticos se hacen el mismo día.",
+      starLabel: "Agenda un servicio",
+      headlineLine1: "Le damos",
+      headlineLine2: "una revisada.",
+      sub: "Agenda en línea, llámanos o pasa por el taller. Aceptamos clientes sin cita y el café está listo. Te recibimos, te damos una respuesta directa y te ponemos de nuevo en la carretera.",
       bookCTA: "Agendar servicio",
-      callCTA: "Llama al (972) 231-2886",
+      callCTA: "Llama al {phone}",
+      altShopFront: "Vista frontal del taller The Star Auto Service en Richardson, TX",
     },
   },
 };
@@ -686,6 +773,15 @@ export function t(
     for (const [k, v] of Object.entries(vars)) {
       str = str.replace(new RegExp(`\\{${k}\\}`, "g"), String(v));
     }
+  }
+  return str;
+}
+
+/** Helper for tokens that appear in many places (years, year, count, rating, name, phone). */
+export function interpolate(template: string, vars: Record<string, string | number>): string {
+  let str = template;
+  for (const [k, v] of Object.entries(vars)) {
+    str = str.replace(new RegExp(`\\{${k}\\}`, "g"), String(v));
   }
   return str;
 }
