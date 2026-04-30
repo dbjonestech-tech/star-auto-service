@@ -2,36 +2,39 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Star, Phone, Globe, ChevronDown } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { SITE, SERVICES } from "@/lib/constants";
 import { AREAS } from "@/lib/areas";
 import { OpenNowChip } from "@/components/ui/OpenNowChip";
 import { NavDropdown, type NavDropdownItem } from "@/components/layout/NavDropdown";
+import {
+  type Locale,
+  LOCALE_SHORT,
+  localizedPath,
+  localeFromPath,
+  SPANISH_ENABLED,
+} from "@/lib/i18n";
+import { t } from "@/lib/translations/ui";
 
-/** Auto-populates from SERVICES so the dropdown always lists every service. */
-const SERVICES_DROPDOWN: NavDropdownItem[] = SERVICES.map((s) => ({
-  label: s.title,
-  href: `/services/${s.id}`,
-}));
+type Props = { locale?: Locale };
 
-/** Auto-populates from AREAS so adding a new city to the data also adds it here. */
-const AREAS_DROPDOWN: NavDropdownItem[] = AREAS.map((a) => ({
-  label: `${a.name}, ${a.state}`,
-  href: `/areas/${a.slug}`,
-  sub: a.distance === "Home base" ? "Home base" : a.distance,
-}));
+/** Prepend `/es` to an internal path when rendering the Spanish header. */
+function L(path: string, locale: Locale): string {
+  if (locale === "en") return path;
+  return path === "/" ? "/es" : `/es${path}`;
+}
 
-const RESOURCES_DROPDOWN: NavDropdownItem[] = [
-  { label: "Reviews", href: "/reviews" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Resources & guides", href: "/resources" },
-  { label: "Warranty", href: "/warranty" },
-];
-
-export function Header() {
+export function Header({ locale: propLocale }: Props = {}) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const router = useRouter();
+  // Locale is the prop if provided, otherwise inferred from URL prefix.
+  // This lets the same Header component serve both /services/* (en) and
+  // /es/services/* (es) without the root layout needing to know which tree.
+  const locale: Locale = propLocale ?? localeFromPath(pathname);
 
   useEffect(() => {
     function onScroll() {
@@ -50,6 +53,42 @@ export function Header() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
+
+  const SERVICES_DROPDOWN: NavDropdownItem[] = SERVICES.map((s) => ({
+    label: s.title,
+    href: L(`/services/${s.id}`, locale),
+  }));
+
+  const AREAS_DROPDOWN: NavDropdownItem[] = AREAS.map((a) => ({
+    label: `${a.name}, ${a.state}`,
+    href: L(`/areas/${a.slug}`, locale),
+    sub:
+      a.distance === "Home base"
+        ? t(locale, "navMenus.homeBaseLabel")
+        : a.distance,
+  }));
+
+  const RESOURCES_DROPDOWN: NavDropdownItem[] = [
+    { label: t(locale, "navMenus.reviews"), href: L("/reviews", locale) },
+    { label: t(locale, "navMenus.faq"), href: L("/faq", locale) },
+    { label: t(locale, "navMenus.resourcesGuides"), href: L("/resources", locale) },
+    { label: t(locale, "navMenus.warranty"), href: L("/warranty", locale) },
+  ];
+
+  const otherLocale: Locale = locale === "en" ? "es" : "en";
+  const togglePath = localizedPath(pathname, otherLocale);
+  const toggleAriaLabel =
+    locale === "en"
+      ? t("en", "toggle.switchToSpanish")
+      : t("es", "toggle.switchToEnglish");
+
+  function handleLocaleToggle(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    // Persist the user's explicit choice for one year. Auto-detect respects this.
+    document.cookie = `sas_locale=${otherLocale}; path=/; max-age=31536000; samesite=lax`;
+    track("locale_toggle", { from: locale, to: otherLocale });
+    router.push(togglePath);
+  }
 
   return (
     <header
@@ -75,7 +114,7 @@ export function Header() {
             href={`tel:${SITE.phoneRaw}`}
             onClick={() => track("call_click", { source: "header" })}
             className="inline-flex items-center gap-1.5 text-ink hover:text-royal transition-colors tabular-nums"
-            aria-label={`Call ${SITE.phone}`}
+            aria-label={`${t(locale, "header.callShop")} ${SITE.phone}`}
           >
             <Phone size={11} strokeWidth={2.5} aria-hidden="true" />
             {SITE.phone}
@@ -87,9 +126,9 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-x-4 lg:gap-x-6 h-16 md:h-18 lg:h-20">
           <Link
-            href="/"
+            href={L("/", locale)}
             className="brand-star-link flex items-center gap-2.5 group shrink-0"
-            aria-label={`${SITE.name} home`}
+            aria-label={`${SITE.name} ${t(locale, "header.home").toLowerCase()}`}
           >
             <Star
               className="brand-star text-gold transition-transform group-hover:scale-110 duration-300 shrink-0"
@@ -103,32 +142,44 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-5 lg:gap-8" aria-label="Primary">
+          <nav
+            className="hidden md:flex items-center gap-5 lg:gap-8"
+            aria-label={t(locale, "header.primaryNav")}
+          >
             <NavDropdown
-              label="Services"
+              label={t(locale, "header.services")}
               items={SERVICES_DROPDOWN}
-              footer={{ label: "All services overview →", href: "/services" }}
+              footer={{
+                label: `${t(locale, "header.allServicesOverview")} →`,
+                href: L("/services", locale),
+              }}
             />
-            <NavDropdown label="Areas served" items={AREAS_DROPDOWN} />
+            <NavDropdown
+              label={t(locale, "header.areasServed")}
+              items={AREAS_DROPDOWN}
+            />
             <Link
-              href="/about"
+              href={L("/about", locale)}
               className="text-xs uppercase tracking-[0.16em] font-bold text-ink/80 hover:text-royal transition-colors whitespace-nowrap"
             >
-              The Shop
+              {t(locale, "header.theShop")}
             </Link>
-            <NavDropdown label="More" items={RESOURCES_DROPDOWN} />
+            <NavDropdown
+              label={t(locale, "header.more")}
+              items={RESOURCES_DROPDOWN}
+            />
             <Link
-              href="/contact"
+              href={L("/contact", locale)}
               className="text-xs uppercase tracking-[0.16em] font-bold text-ink/80 hover:text-royal transition-colors whitespace-nowrap"
             >
-              Contact
+              {t(locale, "header.contact")}
             </Link>
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <Link
-              href="/reviews"
-              aria-label={`${SITE.rating.value} stars across ${SITE.rating.count} Google reviews. See reviews.`}
+              href={L("/reviews", locale)}
+              aria-label={`${SITE.rating.value} ${t(locale, "header.reviews", { count: SITE.rating.count })}`}
               className="brand-star-link group inline-flex items-center gap-1.5 bg-gold-tint hover:bg-gold-soft border border-gold/40 px-2 sm:px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-ink transition-colors whitespace-nowrap"
             >
               <Star
@@ -141,21 +192,41 @@ export function Header() {
               <span className="tabular-nums">{SITE.rating.value}</span>
               <span className="hidden md:inline text-graphite/70">·</span>
               <span className="hidden md:inline tabular-nums">
-                {SITE.rating.count} Reviews
+                {t(locale, "header.reviews", { count: SITE.rating.count })}
               </span>
             </Link>
+
+            {/* Language toggle: always visible, prominent in header.
+                Gated by SPANISH_ENABLED so we don't ship a toggle that 404s. */}
+            {SPANISH_ENABLED && (
+              <a
+                href={togglePath}
+                onClick={handleLocaleToggle}
+                aria-label={toggleAriaLabel}
+                hrefLang={otherLocale}
+                className="inline-flex items-center gap-1 border border-line hover:border-royal hover:text-royal text-ink px-2 sm:px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] transition-colors whitespace-nowrap"
+              >
+                <Globe size={13} strokeWidth={2.5} aria-hidden="true" />
+                <span className="tabular-nums">{LOCALE_SHORT[otherLocale]}</span>
+              </a>
+            )}
+
             <Link
-              href="/book"
+              href={L("/book", locale)}
               className="hidden md:inline-flex items-center justify-center bg-gold text-ink hover:bg-gold-deep px-4 lg:px-5 py-2.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors shadow-gold whitespace-nowrap"
             >
-              Book Service
+              {t(locale, "header.bookService")}
             </Link>
 
             <button
               type="button"
               onClick={() => setOpen(!open)}
               className="md:hidden p-2 text-ink"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={
+                open
+                  ? t(locale, "header.closeMenu")
+                  : t(locale, "header.openMenu")
+              }
               aria-expanded={open}
               aria-controls="mobile-menu"
             >
@@ -170,34 +241,48 @@ export function Header() {
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
-          aria-label="Mobile navigation"
+          aria-label={t(locale, "header.mobileNav")}
           className="md:hidden border-t border-line bg-cream max-h-[calc(100svh-4rem)] overflow-y-auto"
         >
-          <nav className="px-4 py-5" aria-label="Mobile">
-            <MobileSection title="Services" items={SERVICES_DROPDOWN} onClose={() => setOpen(false)} footerLabel="All services overview" footerHref="/services" />
-            <MobileSection title="Areas served" items={AREAS_DROPDOWN} onClose={() => setOpen(false)} />
-            <MobileSection title="More" items={RESOURCES_DROPDOWN} onClose={() => setOpen(false)} />
+          <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
+            <MobileSection
+              title={t(locale, "header.services")}
+              items={SERVICES_DROPDOWN}
+              onClose={() => setOpen(false)}
+              footerLabel={t(locale, "header.allServicesOverview")}
+              footerHref={L("/services", locale)}
+            />
+            <MobileSection
+              title={t(locale, "header.areasServed")}
+              items={AREAS_DROPDOWN}
+              onClose={() => setOpen(false)}
+            />
+            <MobileSection
+              title={t(locale, "header.more")}
+              items={RESOURCES_DROPDOWN}
+              onClose={() => setOpen(false)}
+            />
             <Link
-              href="/about"
+              href={L("/about", locale)}
               onClick={() => setOpen(false)}
               className="block py-3 mt-2 text-sm uppercase tracking-[0.16em] font-bold text-ink hover:text-royal transition-colors border-t border-line"
             >
-              The Shop
+              {t(locale, "header.theShop")}
             </Link>
             <Link
-              href="/contact"
+              href={L("/contact", locale)}
               onClick={() => setOpen(false)}
               className="block py-3 text-sm uppercase tracking-[0.16em] font-bold text-ink hover:text-royal transition-colors"
             >
-              Contact
+              {t(locale, "header.contact")}
             </Link>
 
             <Link
-              href="/book"
+              href={L("/book", locale)}
               onClick={() => setOpen(false)}
               className="mt-5 inline-flex items-center justify-center bg-gold text-ink hover:bg-gold-deep px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors w-full"
             >
-              Book Service
+              {t(locale, "header.bookService")}
             </Link>
             <a
               href={`tel:${SITE.phoneRaw}`}
@@ -210,6 +295,24 @@ export function Header() {
               <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
               {SITE.phone}
             </a>
+
+            {/* Mobile language toggle, full-width row at the bottom of the menu.
+                Same SPANISH_ENABLED gate as the desktop toggle. */}
+            {SPANISH_ENABLED && (
+              <a
+                href={togglePath}
+                onClick={(e) => {
+                  handleLocaleToggle(e);
+                  setOpen(false);
+                }}
+                aria-label={toggleAriaLabel}
+                hrefLang={otherLocale}
+                className="mt-3 inline-flex items-center justify-center gap-2 border border-line text-ink hover:border-royal hover:text-royal px-6 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] transition-colors w-full"
+              >
+                <Globe size={14} strokeWidth={2.5} aria-hidden="true" />
+                {locale === "en" ? "Cambiar a Español" : "Switch to English"}
+              </a>
+            )}
           </nav>
         </div>
       )}

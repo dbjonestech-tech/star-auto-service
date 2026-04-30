@@ -1,11 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Star, Phone, MapPin } from "lucide-react";
 import { SITE, SERVICES } from "@/lib/constants";
 import { AREAS } from "@/lib/areas";
+import { type Locale, localeFromPath } from "@/lib/i18n";
+import { t } from "@/lib/translations/ui";
+
+type Props = { locale?: Locale };
+
+function L(path: string, locale: Locale): string {
+  if (locale === "en") return path;
+  return path === "/" ? "/es" : `/es${path}`;
+}
 
 /** Footer. Ink ground, gold star + bold wordmark, royal/gold accents, substantial visit + nav blocks. */
-export function Footer() {
+export function Footer({ locale: propLocale }: Props = {}) {
+  const pathname = usePathname() ?? "/";
+  const locale: Locale = propLocale ?? localeFromPath(pathname);
   return (
     <footer className="bg-ink text-cream relative">
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gold/60" />
@@ -14,8 +28,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-4">
             <Link
-              href="/"
-              aria-label={`${SITE.name} home`}
+              href={L("/", locale)}
+              aria-label={`${SITE.name} ${t(locale, "header.home").toLowerCase()}`}
               className="brand-star-link inline-flex items-center gap-2.5 mb-5 group"
             >
               <Star
@@ -30,14 +44,13 @@ export function Footer() {
               </p>
             </Link>
             <p className="text-sm text-cream/65 leading-relaxed max-w-xs font-medium">
-              Family-owned auto repair in Richardson, Texas. Honest assessments, quality
-              repairs, and a commitment to your safety. Since 1998.
+              {t(locale, "footer.blurb")}
             </p>
 
             <div className="mt-7 inline-flex bg-cream p-2.5 shadow-card">
               <Image
                 src="/assets/napa-autocare.png"
-                alt="NAPA Auto Care Center"
+                alt={t(locale, "footer.napaAlt")}
                 width={200}
                 height={66}
                 className="h-12 w-auto object-contain"
@@ -45,17 +58,17 @@ export function Footer() {
             </div>
 
             <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2 text-[10px] uppercase tracking-[0.18em] font-bold text-cream/65">
-              <span>ASE-Certified</span>
+              <span>{t(locale, "footer.aseCertified")}</span>
               <span className="text-cream/30">/</span>
-              <span>Bilingual Service</span>
+              <span>{t(locale, "footer.bilingualService")}</span>
               <span className="text-cream/30">/</span>
-              <span>Family-Owned</span>
+              <span>{t(locale, "footer.familyOwned")}</span>
             </div>
           </div>
 
           <div className="md:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold mb-5">
-              Visit
+              {t(locale, "footer.visit")}
             </p>
             <ul className="space-y-2 text-sm text-cream/85">
               <li className="flex items-start gap-2.5">
@@ -65,7 +78,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gold transition-colors"
-                  aria-label={`Open ${SITE.address.full} in Google Maps`}
+                  aria-label={`${t(locale, "cta.getDirections")}: ${SITE.address.full}`}
                 >
                   {SITE.address.street}
                   <br />
@@ -84,67 +97,67 @@ export function Footer() {
             </ul>
 
             <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold mt-7 mb-3">
-              Hours
+              {t(locale, "footer.hours")}
             </p>
             <ul className="space-y-1 text-sm text-cream/85">
               <li>
-                <span className="text-cream/55">Mon&ndash;Fri</span>{" "}
+                <span className="text-cream/55">{t(locale, "footer.monFri")}</span>{" "}
                 <span className="ml-1 font-semibold">{SITE.hours.weekday}</span>
               </li>
               <li>
-                <span className="text-cream/55">Saturday</span>{" "}
+                <span className="text-cream/55">{t(locale, "footer.saturday")}</span>{" "}
                 <span className="ml-1 font-semibold">{SITE.hours.saturday}</span>
               </li>
               <li>
-                <span className="text-cream/55">Sunday</span>{" "}
-                <span className="ml-1 font-semibold">Closed</span>
+                <span className="text-cream/55">{t(locale, "footer.sunday")}</span>{" "}
+                <span className="ml-1 font-semibold">{t(locale, "footer.closed")}</span>
               </li>
             </ul>
           </div>
 
           <div className="md:col-span-2">
             <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold mb-5">
-              Site
+              {t(locale, "footer.site")}
             </p>
             <ul className="space-y-2.5 text-sm text-cream/85">
               <li>
-                <Link href="/services" className="hover:text-gold transition-colors font-medium">
-                  Services
+                <Link href={L("/services", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.services")}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-gold transition-colors font-medium">
-                  The Shop
+                <Link href={L("/about", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.theShopLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="hover:text-gold transition-colors font-medium">
-                  Reviews
+                <Link href={L("/reviews", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.reviewsLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="hover:text-gold transition-colors font-medium">
-                  Resources
+                <Link href={L("/resources", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.resourcesLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-gold transition-colors font-medium">
-                  FAQ
+                <Link href={L("/faq", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.faqLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/warranty" className="hover:text-gold transition-colors font-medium">
-                  Warranty
+                <Link href={L("/warranty", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.warrantyLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-gold transition-colors font-medium">
-                  Contact
+                <Link href={L("/contact", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.contactLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/book" className="hover:text-gold transition-colors font-medium">
-                  Book a service
+                <Link href={L("/book", locale)} className="hover:text-gold transition-colors font-medium">
+                  {t(locale, "footer.bookServiceLink")}
                 </Link>
               </li>
             </ul>
@@ -152,13 +165,13 @@ export function Footer() {
 
           <div className="md:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold mb-5">
-              Services
+              {t(locale, "footer.services")}
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2.5 text-sm text-cream/85">
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href={`/services/${s.id}`}
+                    href={L(`/services/${s.id}`, locale)}
                     className="hover:text-gold transition-colors font-medium"
                   >
                     {s.title}
@@ -167,10 +180,10 @@ export function Footer() {
               ))}
               <li className="pt-1">
                 <Link
-                  href="/services"
+                  href={L("/services", locale)}
                   className="text-gold hover:text-gold-soft transition-colors font-bold uppercase tracking-[0.12em] text-[11px]"
                 >
-                  All services overview →
+                  {t(locale, "footer.allServicesOverviewLink")}
                 </Link>
               </li>
             </ul>
@@ -181,12 +194,12 @@ export function Footer() {
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-cream/70">
           <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-gold whitespace-nowrap">
-            Areas served
+            {t(locale, "footer.areasServed")}
           </p>
           {AREAS.map((area) => (
             <Link
               key={area.slug}
-              href={`/areas/${area.slug}`}
+              href={L(`/areas/${area.slug}`, locale)}
               className="hover:text-gold transition-colors font-medium whitespace-nowrap"
             >
               {area.name}
@@ -198,18 +211,18 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-cream/55">
           <p>
-            &copy; {new Date().getFullYear()} The Star Auto Service. All rights reserved.
+            &copy; {new Date().getFullYear()} The Star Auto Service. {t(locale, "footer.rightsReserved")}
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy" className="hover:text-gold transition-colors font-medium">
-              Privacy
+            <Link href={L("/privacy", locale)} className="hover:text-gold transition-colors font-medium">
+              {t(locale, "footer.privacy")}
             </Link>
-            <Link href="/terms" className="hover:text-gold transition-colors font-medium">
-              Terms
+            <Link href={L("/terms", locale)} className="hover:text-gold transition-colors font-medium">
+              {t(locale, "footer.terms")}
             </Link>
             <span className="text-cream/30" aria-hidden="true">/</span>
             <p>
-              Site by{" "}
+              {t(locale, "footer.siteBy")}{" "}
               <a
                 href="https://dbjtechnologies.com"
                 target="_blank"
