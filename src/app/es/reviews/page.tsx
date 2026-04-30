@@ -1,59 +1,60 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Star, Quote, ArrowRight } from "lucide-react";
 import { SITE, TESTIMONIALS } from "@/lib/constants";
+import { SPANISH_ENABLED } from "@/lib/i18n";
 import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CountUp } from "@/components/ui/CountUp";
 import { CTASection } from "@/components/sections/CTASection";
-import { SPANISH_ENABLED } from "@/lib/i18n";
 
-const TITLE = "Customer Reviews | The Star Auto Service Richardson TX";
+const TITLE = "Reseñas de clientes | The Star Auto Service Richardson TX";
 const DESCRIPTION =
-  "Read 136+ Google reviews, 4.8★ average, from Richardson, Plano, Garland, and Dallas drivers who trust The Star Auto Service since 1998.";
+  "Más de 136 reseñas de Google, promedio de 4.8★, de conductores de Richardson, Plano, Garland y Dallas que confían en The Star Auto Service desde 1998.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: {
-    canonical: `${SITE.url}/reviews`,
-    languages: SPANISH_ENABLED
-      ? {
-          "en-US": `${SITE.url}/reviews`,
-          "es-US": `${SITE.url}/es/reviews`,
-          "x-default": `${SITE.url}/reviews`,
-        }
-      : undefined,
+    canonical: `${SITE.url}/es/reviews`,
+    languages: {
+      "en-US": `${SITE.url}/reviews`,
+      "es-US": `${SITE.url}/es/reviews`,
+      "x-default": `${SITE.url}/reviews`,
+    },
   },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: `${SITE.url}/reviews`,
+    url: `${SITE.url}/es/reviews`,
     siteName: SITE.name,
-    locale: "en_US",
+    locale: "es_US",
+    alternateLocale: ["en_US"],
     type: "website",
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
-export default function ReviewsPage() {
+export default function ReviewsPageEs() {
+  if (!SPANISH_ENABLED) notFound();
+
   const breadcrumbs = generateBreadcrumbJsonLd([
-    { name: "Home", url: SITE.url },
-    { name: "Reviews", url: `${SITE.url}/reviews` },
+    { name: "Inicio", url: `${SITE.url}/es` },
+    { name: "Reseñas", url: `${SITE.url}/es/reviews` },
   ]);
 
   return (
     <>
       <JsonLd data={breadcrumbs} />
 
-      {/* Photo hero */}
       <section className="relative bg-ink overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=1800&q=70&auto=format&fit=crop"
-          alt="Happy Richardson driver leaving The Star Auto Service after a five-star experience"
+          alt="Conductor de Richardson saliendo contento de The Star Auto Service después de un servicio cinco estrellas"
           fill
           priority
           sizes="100vw"
@@ -64,14 +65,14 @@ export default function ReviewsPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
-              <Eyebrow light>Customer reviews</Eyebrow>
+              <Eyebrow light>Reseñas de clientes</Eyebrow>
               <h1 className="mt-5 font-sans font-black text-display-1 text-cream tracking-[-0.025em] leading-[0.98]">
-                <CountUp to={136} duration={1.6} /> reviews,
+                <CountUp to={136} duration={1.6} /> reseñas,
                 <br />
                 <span className="text-gold">
-                  <CountUp to={4.8} duration={1.6} decimals={1} /> stars,
+                  <CountUp to={4.8} duration={1.6} decimals={1} /> estrellas,
                 </span>{" "}
-                <CountUp to={28} duration={1.6} /> years.
+                <CountUp to={28} duration={1.6} /> años.
               </h1>
             </div>
             <div className="lg:col-span-5">
@@ -97,7 +98,7 @@ export default function ReviewsPage() {
                   </div>
                   <div className="border-l border-line pl-5 flex-1">
                     <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-graphite">
-                      Across 136 Google reviews
+                      En 136 reseñas de Google
                     </p>
                     <p className="mt-1 text-sm text-ink font-semibold leading-snug">
                       Richardson, Plano, Garland, Dallas, Allen, Murphy
@@ -144,7 +145,7 @@ export default function ReviewsPage() {
           <div className="mt-20 text-center">
             <Reveal>
               <p className="text-base md:text-lg text-graphite font-medium max-w-xl mx-auto">
-                Read all 136 reviews on Google or leave one of your own.
+                Lee las 136 reseñas en Google o deja la tuya.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -153,7 +154,7 @@ export default function ReviewsPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 bg-ink text-cream hover:bg-royal px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
                 >
-                  Read reviews on Google
+                  Lee las reseñas en Google
                   <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" />
                 </Link>
                 <Link
@@ -162,7 +163,7 @@ export default function ReviewsPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 border-2 border-ink text-ink hover:bg-ink hover:text-cream px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors"
                 >
-                  Leave us a review
+                  Déjanos una reseña
                 </Link>
               </div>
             </Reveal>
@@ -170,7 +171,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection locale="es" />
     </>
   );
 }
