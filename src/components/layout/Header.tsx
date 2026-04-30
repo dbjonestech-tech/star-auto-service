@@ -53,7 +53,12 @@ export function Header({ locale: propLocale }: Props = {}) {
       if (e.key === "Escape") setOpen(false);
     }
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [open]);
 
   const SERVICES_DROPDOWN: NavDropdownItem[] = getServices(locale).map((s) => ({
@@ -245,7 +250,7 @@ export function Header({ locale: propLocale }: Props = {}) {
           role="dialog"
           aria-modal="true"
           aria-label={t(locale, "header.mobileNav")}
-          className="md:hidden border-t border-line bg-cream max-h-[calc(100svh-4rem)] overflow-y-auto"
+          className="md:hidden border-t border-line bg-cream h-[calc(100svh-4rem)] overflow-y-auto"
         >
           <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
             <MobileSection

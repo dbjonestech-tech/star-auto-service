@@ -12,7 +12,10 @@ type CountUpProps = {
   decimals?: number;
 };
 
-/** Animates from 0 → to when the element scrolls into view. CLS-safe via min-width based on final length. */
+/** Animates from 0 → to when the element scrolls into view. CLS-safe via min-width based on final length.
+ *  SSR renders the final value so users never see a flash of "0". If the element is already in the
+ *  viewport at hydration (common on small viewports where the bar sits near the fold), we keep the
+ *  final value. Only re-arm the count-up animation when the element starts out of view. */
 export function CountUp({
   to,
   duration = 1.4,
@@ -20,7 +23,7 @@ export function CountUp({
   suffix = "",
   decimals = 0,
 }: CountUpProps) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
   const ref = useRef<HTMLSpanElement>(null);
   const targetLen = to.toFixed(decimals).length + suffix.length;
 
@@ -28,10 +31,13 @@ export function CountUp({
     const el = ref.current;
     if (!el) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setValue(to);
-      return;
-    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const rect = el.getBoundingClientRect();
+    const viewportH = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom > 0 && rect.top < viewportH) return;
+
+    setValue(0);
 
     let triggered = false;
     const observer = new IntersectionObserver(
