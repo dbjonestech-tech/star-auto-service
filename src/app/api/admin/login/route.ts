@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Password required" }, { status: 400 });
   }
 
-  const token = authenticateAdmin(parsed.data.password);
+  const token = await authenticateAdmin(parsed.data.password);
   if (!token) {
     return NextResponse.json(
       { error: "Incorrect password." },

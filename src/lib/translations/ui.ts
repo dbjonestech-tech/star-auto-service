@@ -381,12 +381,57 @@ type UIStrings = {
     headlineLine1: string;
     headlineLine2: string;
     intro: string;
-    nextSteps: string;
-    nextStep1: string;
-    nextStep2: string;
-    nextStep3: string;
+    shopHoursLabel: string;
+    walkInsLabel: string;
+    walkInsBody: string;
+    visitLabel: string;
     backToHome: string;
     callShopCTA: string;
+    sundayClosed: string;
+  };
+  statusForm: {
+    headline: string;
+    intro: string;
+    requiredNote: string;
+    leaveEmpty: string;
+    yourName: string;
+    phoneNumber: string;
+    vehicleLabel: string;
+    vehiclePlaceholder: string;
+    roLabel: string;
+    sendCTA: string;
+    sending: string;
+    successHeading: string;
+    successBody: string;
+    errorGeneric: string;
+    messagePrefixRO: string;
+    messagePrefixVehicle: string;
+    messageBody: string;
+    serviceLabel: string;
+  };
+  trackPage: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headlineLine1: string;
+    headlineLine2: string;
+    intro: string;
+    haveLinkEyebrow: string;
+    haveLinkBody: string;
+    preferToTalkEyebrow: string;
+    preferToTalkBody: string;
+    sixStagesEyebrow: string;
+    sixStagesHeadline: string;
+    sixStagesIntro: string;
+    stages: { title: string; body: string }[];
+    promisesEyebrow: string;
+    promisesHeadline: string;
+    promises: { title: string; body: string }[];
+    closingEyebrow: string;
+    closingHeadline: string;
+    closingBody: string;
+    bookCTA: string;
+    callCTA: string;
   };
 };
 
@@ -821,21 +866,110 @@ export const UI: Record<Locale, UIStrings> = {
     bookConfirmation: {
       metaTitle: "Booking Received | The Star Auto Service",
       metaDescription:
-        "Your booking request has been received. We'll call you back within one business day to confirm.",
+        "Thanks for booking with The Star Auto Service. We'll be in touch within one business day.",
       eyebrow: "Booking received",
-      headlineLine1: "Got it.",
+      headlineLine1: "We got it.",
       headlineLine2: "We'll call you back.",
       intro:
-        "Thanks for the booking request. We'll call you back within one business day at the number you provided to confirm the time and walk through what to expect.",
-      nextSteps: "What happens next",
-      nextStep1:
-        "We review your request and check parts availability for your vehicle.",
-      nextStep2:
-        "We call you back within one business day to confirm your appointment time and answer any questions.",
-      nextStep3:
-        "Bring your vehicle in at the confirmed time. The coffee's on.",
-      backToHome: "Back to home",
-      callShopCTA: "Call (972) 231-2886",
+        "Thanks for booking with The Star Auto Service. We'll review your request and call you back within one business day to confirm a time. For anything urgent, please call the shop directly.",
+      shopHoursLabel: "Shop hours",
+      walkInsLabel: "Walk-ins",
+      walkInsBody: "Always welcome. Same-day when we can.",
+      visitLabel: "Visit, open in Maps",
+      backToHome: "Back to homepage",
+      callShopCTA: "Call {phone}",
+      sundayClosed: "Sunday Closed",
+    },
+    statusForm: {
+      headline: "Request a status update.",
+      intro:
+        "We will look up your repair and reply by phone or text, usually within the hour during business hours.",
+      requiredNote: "*",
+      leaveEmpty: "Leave this field empty",
+      yourName: "Your name",
+      phoneNumber: "Phone number",
+      vehicleLabel: "Vehicle (year, make, model)",
+      vehiclePlaceholder: "2018 Toyota Camry",
+      roLabel: "Tracking number or RO# (if you have one)",
+      sendCTA: "Request status update",
+      sending: "Sending...",
+      successHeading: "Request received.",
+      successBody:
+        "The shop has your request and will reach out by phone or text with the status of your repair, usually within an hour during business hours. For anything urgent, please call (972) 231-2886.",
+      errorGeneric: "Something went wrong",
+      messagePrefixRO: "Tracking / RO number",
+      messagePrefixVehicle: "Vehicle",
+      messageBody:
+        "Customer is requesting an update on their repair via the website.",
+      serviceLabel: "STATUS UPDATE REQUEST",
+    },
+    trackPage: {
+      metaTitle:
+        "Repair Status | Track Your Car at the Shop | The Star Auto Service",
+      metaDescription:
+        "Get an update on your repair without making a phone call. Request a status check, or use your tracking link from a recent visit. Family-owned auto repair in Richardson, TX.",
+      eyebrow: "Repair status",
+      headlineLine1: "Where is",
+      headlineLine2: "your car?",
+      intro:
+        "Skip the phone call. Request an update through the form, or follow your tracking link from a recent visit. We will reply fast.",
+      haveLinkEyebrow: "Have a tracking link?",
+      haveLinkBody:
+        "If you got a tracking link from us at drop-off, you can open it any time to see the latest status, the most recent technician note, and an estimated completion. The link is unique to your repair and does not need a login.",
+      preferToTalkEyebrow: "Prefer to talk?",
+      preferToTalkBody: "Calling is fastest. We pick up the phone.",
+      sixStagesEyebrow: "How a repair moves through the shop",
+      sixStagesHeadline: "Six stages, every time.",
+      sixStagesIntro:
+        "Every car that comes through the bay moves through the same six stages. The tracker shows you exactly where yours is.",
+      stages: [
+        {
+          title: "Vehicle received",
+          body: "Your car is checked in, your concern is documented, and a tech is assigned.",
+        },
+        {
+          title: "In diagnosis",
+          body: "Real diagnostic work, codes, freeze-frame data, road test if the symptom is intermittent.",
+        },
+        {
+          title: "Quote sent for approval",
+          body: "We call you with the findings, the proposed repair, and a firm price. Nothing happens without your authorization.",
+        },
+        {
+          title: "Repair in progress",
+          body: "Approved work is underway. ASE-Certified technicians using OEM-quality parts.",
+        },
+        {
+          title: "Awaiting parts",
+          body: "If something has to be ordered, you will see this stage with an ETA. We use NAPA's daily delivery and most parts are in by the next business day.",
+        },
+        {
+          title: "Ready for pickup",
+          body: "Repair complete, post-work road tested, invoice and warranty paperwork ready. We will call when it is time to come get it.",
+        },
+      ],
+      promisesEyebrow: "How we communicate",
+      promisesHeadline: "Three promises about your update.",
+      promises: [
+        {
+          title: "We text and call",
+          body: "Most updates go out by phone or text the moment a stage changes. The website tracker is a backup, not a replacement for talking with you.",
+        },
+        {
+          title: "Approval before any work",
+          body: "Nothing past the diagnostic happens without your authorization. If we find something while we are in there, we stop and call.",
+        },
+        {
+          title: "Honest ETAs",
+          body: "We tell you what we know. If a part is back-ordered or a job is more involved than the original estimate, we update you the same day.",
+        },
+      ],
+      closingEyebrow: "Need to bring a car in?",
+      closingHeadline: "Book the next slot.",
+      closingBody:
+        "Walk-ins always welcome. Call ahead if you want to be sure of the timing.",
+      bookCTA: "Book a service",
+      callCTA: "Call {phone}",
     },
   },
   es: {
@@ -1275,21 +1409,110 @@ export const UI: Record<Locale, UIStrings> = {
     bookConfirmation: {
       metaTitle: "Solicitud recibida | The Star Auto Service",
       metaDescription:
-        "Recibimos tu solicitud de cita. Te devolvemos la llamada en un día hábil para confirmar.",
+        "Gracias por reservar con The Star Auto Service. Te llamamos en un día hábil.",
       eyebrow: "Solicitud recibida",
-      headlineLine1: "Listo.",
+      headlineLine1: "La recibimos.",
       headlineLine2: "Te llamamos pronto.",
       intro:
-        "Gracias por la solicitud de cita. Te devolvemos la llamada en un día hábil al número que nos dejaste para confirmar la hora y platicar qué esperar.",
-      nextSteps: "Qué sigue",
-      nextStep1:
-        "Revisamos tu solicitud y verificamos disponibilidad de refacciones para tu vehículo.",
-      nextStep2:
-        "Te devolvemos la llamada en un día hábil para confirmar la hora y resolver cualquier duda.",
-      nextStep3:
-        "Trae tu vehículo a la hora confirmada. El café está listo.",
+        "Gracias por reservar con The Star Auto Service. Revisamos tu solicitud y te llamamos en un día hábil para confirmar la hora. Para algo urgente, por favor llama al taller directamente.",
+      shopHoursLabel: "Horario del taller",
+      walkInsLabel: "Sin cita",
+      walkInsBody: "Siempre bienvenidos. El mismo día cuando se puede.",
+      visitLabel: "Visítanos, abrir en Maps",
       backToHome: "Volver al inicio",
-      callShopCTA: "Llama al (972) 231-2886",
+      callShopCTA: "Llama al {phone}",
+      sundayClosed: "Domingo Cerrado",
+    },
+    statusForm: {
+      headline: "Solicita una actualización de estado.",
+      intro:
+        "Buscamos tu reparación y te respondemos por teléfono o mensaje, normalmente dentro de la hora en horario de atención.",
+      requiredNote: "*",
+      leaveEmpty: "Deja este campo vacío",
+      yourName: "Tu nombre",
+      phoneNumber: "Número de teléfono",
+      vehicleLabel: "Vehículo (año, marca, modelo)",
+      vehiclePlaceholder: "Toyota Camry 2018",
+      roLabel: "Número de seguimiento o RO# (si lo tienes)",
+      sendCTA: "Solicitar actualización",
+      sending: "Enviando...",
+      successHeading: "Solicitud recibida.",
+      successBody:
+        "El taller tiene tu solicitud y se va a contactar contigo por teléfono o mensaje con el estado de tu reparación, normalmente dentro de una hora en horario de atención. Para algo urgente, por favor llama al (972) 231-2886.",
+      errorGeneric: "Algo salió mal",
+      messagePrefixRO: "Número de seguimiento / RO",
+      messagePrefixVehicle: "Vehículo",
+      messageBody:
+        "El cliente está pidiendo una actualización de su reparación por el sitio web.",
+      serviceLabel: "STATUS UPDATE REQUEST",
+    },
+    trackPage: {
+      metaTitle:
+        "Estado de la reparación | Sigue tu auto en el taller | The Star Auto Service",
+      metaDescription:
+        "Recibe una actualización de tu reparación sin hacer una llamada. Pide una revisión de estado o usa el enlace de seguimiento de tu visita. Taller familiar de reparación automotriz en Richardson, TX.",
+      eyebrow: "Estado de la reparación",
+      headlineLine1: "¿Dónde está",
+      headlineLine2: "tu auto?",
+      intro:
+        "Sáltate la llamada. Pide una actualización por el formulario, o sigue el enlace de seguimiento de tu visita. Te respondemos rápido.",
+      haveLinkEyebrow: "¿Tienes un enlace de seguimiento?",
+      haveLinkBody:
+        "Si te dimos un enlace de seguimiento al dejar tu auto, puedes abrirlo cuando quieras para ver el estado más reciente, la última nota del técnico y un tiempo estimado de entrega. El enlace es único para tu reparación y no necesita cuenta.",
+      preferToTalkEyebrow: "¿Prefieres hablar?",
+      preferToTalkBody: "Llamar es lo más rápido. Contestamos.",
+      sixStagesEyebrow: "Cómo se mueve una reparación por el taller",
+      sixStagesHeadline: "Seis etapas, cada vez.",
+      sixStagesIntro:
+        "Cada auto que pasa por la bahía sigue las mismas seis etapas. El rastreador te muestra exactamente dónde está el tuyo.",
+      stages: [
+        {
+          title: "Vehículo recibido",
+          body: "Tu auto está registrado, anotamos tu inquietud y se asigna a un técnico.",
+        },
+        {
+          title: "En diagnóstico",
+          body: "Trabajo real de diagnóstico: códigos, datos de freeze-frame, prueba de manejo si el síntoma es intermitente.",
+        },
+        {
+          title: "Cotización enviada para aprobación",
+          body: "Te llamamos con los hallazgos, la reparación propuesta y un precio firme. Nada pasa sin tu autorización.",
+        },
+        {
+          title: "Reparación en proceso",
+          body: "El trabajo aprobado está en marcha. Técnicos certificados ASE con refacciones de calidad OEM.",
+        },
+        {
+          title: "Esperando refacciones",
+          body: "Si hay que pedir algo, vas a ver esta etapa con una hora estimada. Usamos la entrega diaria de NAPA y la mayoría de las refacciones llegan al siguiente día hábil.",
+        },
+        {
+          title: "Listo para recoger",
+          body: "Reparación terminada, prueba de manejo posterior, factura y papelería de garantía listas. Te llamamos cuando sea hora de venir por él.",
+        },
+      ],
+      promisesEyebrow: "Cómo nos comunicamos",
+      promisesHeadline: "Tres promesas sobre tu actualización.",
+      promises: [
+        {
+          title: "Llamamos y mandamos mensaje",
+          body: "La mayoría de las actualizaciones salen por teléfono o mensaje en cuanto cambia una etapa. El rastreador del sitio es respaldo, no reemplaza la conversación contigo.",
+        },
+        {
+          title: "Aprobación antes de cualquier trabajo",
+          body: "Nada después del diagnóstico pasa sin tu autorización. Si encontramos algo mientras estamos en el trabajo, paramos y te llamamos.",
+        },
+        {
+          title: "Tiempos honestos",
+          body: "Te decimos lo que sabemos. Si una refacción está en pedido o un trabajo es más complicado que la estimación original, te avisamos el mismo día.",
+        },
+      ],
+      closingEyebrow: "¿Necesitas traer un auto?",
+      closingHeadline: "Agenda el siguiente lugar.",
+      closingBody:
+        "Aceptamos clientes sin cita siempre. Llama antes si quieres asegurar el horario.",
+      bookCTA: "Agendar servicio",
+      callCTA: "Llama al {phone}",
     },
   },
 };

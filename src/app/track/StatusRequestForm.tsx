@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { Send, CheckCircle2, Search } from "lucide-react";
 import { track } from "@vercel/analytics";
+import type { Locale } from "@/lib/i18n";
+import { UI } from "@/lib/translations/ui";
+
+type Props = { locale?: Locale };
 
 type FormData = {
   name: string;
@@ -29,11 +33,12 @@ const labelBase =
   "block text-[11px] uppercase tracking-[0.18em] font-bold text-graphite mb-2";
 
 /**
- * Status update request form. Posts to the existing /api/contact endpoint
- * with a clearly-labeled "STATUS UPDATE REQUEST" service so the shop sees
- * it in inbox and replies by phone or text.
+ * Status update request form. Locale-aware. Posts to /api/contact with a
+ * clearly-labeled "STATUS UPDATE REQUEST" service so the shop sees it in
+ * inbox and replies by phone or text.
  */
-export function StatusRequestForm() {
+export function StatusRequestForm({ locale = "en" }: Props) {
+  const copy = UI[locale].statusForm;
   const [formData, setFormData] = useState<FormData>(INITIAL);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -50,9 +55,9 @@ export function StatusRequestForm() {
     setErrorMessage("");
 
     const message = [
-      formData.ro ? `Tracking / RO number: ${formData.ro}` : null,
-      formData.vehicle ? `Vehicle: ${formData.vehicle}` : null,
-      "Customer is requesting an update on their repair via the website.",
+      formData.ro ? `${copy.messagePrefixRO}: ${formData.ro}` : null,
+      formData.vehicle ? `${copy.messagePrefixVehicle}: ${formData.vehicle}` : null,
+      copy.messageBody,
     ]
       .filter(Boolean)
       .join("\n");
@@ -66,23 +71,24 @@ export function StatusRequestForm() {
           name: formData.name,
           phone: formData.phone,
           email: "",
-          service: "STATUS UPDATE REQUEST",
+          service: copy.serviceLabel,
           message,
           honeypot: formData.honeypot,
+          locale,
         }),
       });
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Something went wrong");
+        throw new Error(data.error || copy.errorGeneric);
       }
 
-      track("form_submit", { form: "status_request" });
+      track("form_submit", { form: "status_request", locale });
       setStatus("success");
       setFormData(INITIAL);
     } catch (err) {
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong");
+      setErrorMessage(err instanceof Error ? err.message : copy.errorGeneric);
     }
   }
 
@@ -99,12 +105,10 @@ export function StatusRequestForm() {
           />
         </div>
         <h2 className="font-sans font-black text-2xl md:text-3xl text-ink tracking-tight">
-          Request received.
+          {copy.successHeading}
         </h2>
         <p className="mt-4 text-base text-graphite leading-relaxed font-medium max-w-md mx-auto">
-          The shop has your request and will reach out by phone or text with the
-          status of your repair, usually within an hour during business hours.
-          For anything urgent, please call (972) 231-2886.
+          {copy.successBody}
         </p>
       </div>
     );
@@ -128,21 +132,19 @@ export function StatusRequestForm() {
         </span>
         <div>
           <h2 className="font-sans font-black text-2xl md:text-3xl text-ink tracking-tight leading-none">
-            Request a status update.
+            {copy.headline}
           </h2>
           <p className="mt-3 text-sm md:text-base text-graphite font-medium leading-relaxed">
-            We will look up your repair and reply by phone or text, usually
-            within the hour during business hours.
+            {copy.intro}
           </p>
         </div>
       </div>
 
-      {/* Honeypot */}
       <div
         aria-hidden="true"
         className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
       >
-        <label htmlFor="track-honeypot">Leave this field empty</label>
+        <label htmlFor="track-honeypot">{copy.leaveEmpty}</label>
         <input
           type="text"
           id="track-honeypot"
@@ -158,7 +160,7 @@ export function StatusRequestForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label htmlFor="name" className={labelBase}>
-              Your name <span className="text-gold-deep">*</span>
+              {copy.yourName} <span className="text-gold-deep">{copy.requiredNote}</span>
             </label>
             <input
               type="text"
@@ -173,7 +175,7 @@ export function StatusRequestForm() {
           </div>
           <div>
             <label htmlFor="phone" className={labelBase}>
-              Phone number <span className="text-gold-deep">*</span>
+              {copy.phoneNumber} <span className="text-gold-deep">{copy.requiredNote}</span>
             </label>
             <input
               type="tel"
@@ -190,13 +192,13 @@ export function StatusRequestForm() {
 
         <div>
           <label htmlFor="vehicle" className={labelBase}>
-            Vehicle (year, make, model)
+            {copy.vehicleLabel}
           </label>
           <input
             type="text"
             id="vehicle"
             name="vehicle"
-            placeholder="2018 Toyota Camry"
+            placeholder={copy.vehiclePlaceholder}
             value={formData.vehicle}
             onChange={handleChange}
             className={inputBase}
@@ -205,7 +207,7 @@ export function StatusRequestForm() {
 
         <div>
           <label htmlFor="ro" className={labelBase}>
-            Tracking number or RO# (if you have one)
+            {copy.roLabel}
           </label>
           <input
             type="text"
@@ -229,11 +231,11 @@ export function StatusRequestForm() {
           className="w-full inline-flex items-center justify-center gap-2.5 bg-ink text-cream hover:bg-royal disabled:opacity-60 disabled:cursor-not-allowed px-8 py-4 text-xs font-extrabold uppercase tracking-[0.16em] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-royal focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
         >
           {status === "submitting" ? (
-            "Sending..."
+            copy.sending
           ) : (
             <>
               <Send size={15} strokeWidth={2.5} aria-hidden="true" />
-              Request status update
+              {copy.sendCTA}
             </>
           )}
         </button>

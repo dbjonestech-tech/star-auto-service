@@ -70,3 +70,22 @@ export function localeFromPath(pathname: string): Locale {
   if (pathname === "/es" || pathname.startsWith("/es/")) return "es";
   return "en";
 }
+
+/**
+ * Returns true if the given (locale-stripped) path has a paired EN+ES route.
+ * Routes under /admin, /api, and dynamic /track/[id] are intentionally
+ * monolingual: admin is staff-only, api is non-user-facing, /track/[id] is
+ * reached via SMS link rather than a navigated locale toggle.
+ *
+ * The bare /track landing page DOES have a Spanish twin (/es/track) so it
+ * returns true. The dynamic /track/<uuid> URLs return false.
+ */
+export function pathHasLocaleTwin(pathname: string): boolean {
+  const stripped = stripLocale(pathname);
+  if (stripped.startsWith("/admin")) return false;
+  if (stripped.startsWith("/api")) return false;
+  // Bare /track has a twin; /track/<id> does not.
+  if (stripped === "/track") return true;
+  if (stripped.startsWith("/track/")) return false;
+  return true;
+}

@@ -22,7 +22,7 @@ const createSchema = z.object({
 async function requireAdmin(): Promise<NextResponse | null> {
   const cookieStore = await cookies();
   const cookie = cookieStore.get(AUTH_COOKIE)?.value;
-  if (!verifyAdminCookie(cookie)) {
+  if (!(await verifyAdminCookie(cookie))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return null;

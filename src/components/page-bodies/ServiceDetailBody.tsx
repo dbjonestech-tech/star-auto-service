@@ -15,7 +15,7 @@ import { SITE } from "@/lib/constants";
 import { getService, getTestimonials } from "@/lib/constants.es";
 import { getServiceContent } from "@/lib/serviceContent";
 import type { Locale } from "@/lib/i18n";
-import { localizedPath } from "@/lib/i18n";
+import { localizedPath, LOCALE_BCP47 } from "@/lib/i18n";
 import { UI, interpolate } from "@/lib/translations/ui";
 import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -61,6 +61,7 @@ export function ServiceDetailBody({ slug, locale }: Props) {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${SITE.url}/services/${slug}#service`,
+    inLanguage: LOCALE_BCP47[locale],
     name: service.title,
     description: service.description,
     serviceType: service.title,
@@ -93,6 +94,7 @@ export function ServiceDetailBody({ slug, locale }: Props) {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${SITE.url}/services/${slug}#faq`,
+    inLanguage: LOCALE_BCP47[locale],
     mainEntity: content.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.q,

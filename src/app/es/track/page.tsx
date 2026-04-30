@@ -3,34 +3,38 @@ import { notFound } from "next/navigation";
 import { SITE } from "@/lib/constants";
 import { SPANISH_ENABLED } from "@/lib/i18n";
 import { UI } from "@/lib/translations/ui";
-import { BookConfirmationBody } from "@/components/page-bodies/BookConfirmationBody";
+import { TrackPageBody } from "@/components/page-bodies/TrackPageBody";
 
-const copy = UI.es.bookConfirmation;
+const copy = UI.es.trackPage;
 
 export const metadata: Metadata = {
   title: { absolute: copy.metaTitle },
   description: copy.metaDescription,
   alternates: {
-    canonical: `${SITE.url}/es/book/confirmation`,
+    canonical: `${SITE.url}/es/track`,
     languages: {
-      "en-US": `${SITE.url}/book/confirmation`,
-      "es-US": `${SITE.url}/es/book/confirmation`,
-      "x-default": `${SITE.url}/book/confirmation`,
+      "en-US": `${SITE.url}/track`,
+      "es-US": `${SITE.url}/es/track`,
+      "x-default": `${SITE.url}/track`,
     },
   },
   openGraph: {
     title: copy.metaTitle,
     description: copy.metaDescription,
-    url: `${SITE.url}/es/book/confirmation`,
+    url: `${SITE.url}/es/track`,
     siteName: SITE.name,
     locale: "es_US",
     alternateLocale: ["en_US"],
     type: "website",
   },
-  robots: { index: false, follow: false },
+  twitter: {
+    card: "summary_large_image",
+    title: copy.metaTitle,
+    description: copy.metaDescription,
+  },
 };
 
-export default function BookConfirmationPageEs() {
+export default function TrackPageEs() {
   if (!SPANISH_ENABLED) notFound();
-  return <BookConfirmationBody locale="es" />;
+  return <TrackPageBody locale="es" />;
 }

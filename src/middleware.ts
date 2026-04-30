@@ -69,7 +69,7 @@ function prefersSpanish(acceptLanguage: string | null): boolean {
   return bestEs > 0 && bestEs >= bestOther;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 1. Admin auth gate.
@@ -79,7 +79,7 @@ export function middleware(request: NextRequest) {
     !pathname.startsWith("/admin/login/")
   ) {
     const cookie = request.cookies.get(AUTH_COOKIE)?.value;
-    if (!verifyAdminCookie(cookie)) {
+    if (!(await verifyAdminCookie(cookie))) {
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
       url.searchParams.set("next", pathname);

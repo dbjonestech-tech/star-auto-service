@@ -5,7 +5,7 @@ import { ArrowRight, Calendar, Phone, Clock, MapPin, Check } from "lucide-react"
 import { SITE } from "@/lib/constants";
 import { getArea } from "@/lib/areas";
 import type { Locale } from "@/lib/i18n";
-import { localizedPath } from "@/lib/i18n";
+import { localizedPath, LOCALE_BCP47 } from "@/lib/i18n";
 import { UI, interpolate } from "@/lib/translations/ui";
 import { generateBreadcrumbJsonLd } from "@/lib/metadata";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -38,6 +38,7 @@ export function AreaDetailBody({ slug, locale }: Props) {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${SITE.url}/areas/${slug}#service`,
+    inLanguage: LOCALE_BCP47[locale],
     name: interpolate(copy.jsonLdServiceNameTemplate, {
       name: area.name,
       state: area.state,

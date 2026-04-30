@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Star, Phone, Globe, ChevronDown } from "lucide-react";
 import { track } from "@vercel/analytics";
-import { SITE, SERVICES } from "@/lib/constants";
-import { AREAS } from "@/lib/areas";
+import { SITE } from "@/lib/constants";
+import { getServices } from "@/lib/constants.es";
+import { getAreas } from "@/lib/areas";
 import { OpenNowChip } from "@/components/ui/OpenNowChip";
 import { NavDropdown, type NavDropdownItem } from "@/components/layout/NavDropdown";
 import {
@@ -14,6 +15,7 @@ import {
   LOCALE_SHORT,
   localizedPath,
   localeFromPath,
+  pathHasLocaleTwin,
   SPANISH_ENABLED,
 } from "@/lib/i18n";
 import { t } from "@/lib/translations/ui";
@@ -54,16 +56,16 @@ export function Header({ locale: propLocale }: Props = {}) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const SERVICES_DROPDOWN: NavDropdownItem[] = SERVICES.map((s) => ({
+  const SERVICES_DROPDOWN: NavDropdownItem[] = getServices(locale).map((s) => ({
     label: s.title,
     href: L(`/services/${s.id}`, locale),
   }));
 
-  const AREAS_DROPDOWN: NavDropdownItem[] = AREAS.map((a) => ({
+  const AREAS_DROPDOWN: NavDropdownItem[] = getAreas(locale).map((a) => ({
     label: `${a.name}, ${a.state}`,
     href: L(`/areas/${a.slug}`, locale),
     sub:
-      a.distance === "Home base"
+      a.distance === "Home base" || a.distance === "Sede"
         ? t(locale, "navMenus.homeBaseLabel")
         : a.distance,
   }));
@@ -196,9 +198,10 @@ export function Header({ locale: propLocale }: Props = {}) {
               </span>
             </Link>
 
-            {/* Language toggle: always visible, prominent in header.
-                Gated by SPANISH_ENABLED so we don't ship a toggle that 404s. */}
-            {SPANISH_ENABLED && (
+            {/* Language toggle. Gated by SPANISH_ENABLED, and hidden on
+                routes that intentionally have no locale twin (admin, api,
+                dynamic /track/[id]) so we never link to a 404. */}
+            {SPANISH_ENABLED && pathHasLocaleTwin(pathname) && (
               <a
                 href={togglePath}
                 onClick={handleLocaleToggle}
