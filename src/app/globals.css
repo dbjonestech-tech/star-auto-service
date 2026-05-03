@@ -88,6 +88,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   background: var(--color-cream);
+  /* Disable double-tap-to-zoom while keeping pinch-zoom for accessibility.
+   * Fixes "tap hamburger → page auto-zooms in" on iOS/Android Chrome,
+   * which left the mobile menu rendered into a layout viewport that no
+   * longer matched the visual viewport. */
+  touch-action: manipulation;
 }
 
 body {
@@ -95,6 +100,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
+  touch-action: manipulation;
 }
 
 /* Display headings: Inter at black weight, tight tracking. */
