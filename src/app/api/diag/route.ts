@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     "unknown";
   // Single line per event so `vercel logs` is grep-able.
   console.log(
-    `[_diag] ${JSON.stringify({ ts: Date.now(), ip, ua, body })}`,
+    `[diag] ${JSON.stringify({ ts: Date.now(), ip, ua, body })}`,
   );
   return NextResponse.json({ ok: true });
 }

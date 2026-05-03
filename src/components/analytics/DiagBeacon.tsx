@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /* Temporary diagnostic beacon for the mobile menu bug. POSTs viewport /
- * scroll / menu-state / computed-style data to /api/_diag on:
+ * scroll / menu-state / computed-style data to /api/diag on:
  *   - mount (initial state)
  *   - any tap on the hamburger button
  *   - 250ms after hamburger tap (post-state-update snapshot)
@@ -82,9 +82,9 @@ export function DiagBeacon() {
 
       const blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
       // sendBeacon is fire-and-forget, survives navigation; falls back to fetch.
-      const sent = navigator.sendBeacon?.("/api/_diag", blob);
+      const sent = navigator.sendBeacon?.("/api/diag", blob);
       if (!sent) {
-        fetch("/api/_diag", {
+        fetch("/api/diag", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(payload),
