@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Star, Phone, Globe, ChevronDown } from "lucide-react";
@@ -31,6 +31,7 @@ function L(path: string, locale: Locale): string {
 export function Header({ locale: propLocale }: Props = {}) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname() ?? "/";
   const router = useRouter();
   // Locale is the prop if provided, otherwise inferred from URL prefix.
@@ -58,6 +59,42 @@ export function Header({ locale: propLocale }: Props = {}) {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
+
+  /* Pin the open menu to the visual viewport instead of the layout
+   * viewport. On mobile, when a user pinch-zooms out, position:fixed
+   * still anchors to the layout (device-width) viewport, so the panel
+   * shows up as a band/bar inside the larger zoomed-out visual viewport.
+   * window.visualViewport tracks the actual visible region (size,
+   * offset, scale) and lets us cover it precisely. */
+  useEffect(() => {
+    if (!open) return;
+    const el = menuRef.current;
+    const vv = typeof window !== "undefined" ? window.visualViewport : null;
+    if (!el || !vv) return;
+
+    const HEADER_PX = 64;
+    function sync() {
+      if (!el || !vv) return;
+      const headerH = Math.min(HEADER_PX, vv.height * 0.5);
+      el.style.left = `${vv.offsetLeft}px`;
+      el.style.top = `${vv.offsetTop + headerH / vv.scale}px`;
+      el.style.width = `${vv.width}px`;
+      el.style.height = `${vv.height - headerH / vv.scale}px`;
+    }
+    sync();
+    vv.addEventListener("resize", sync);
+    vv.addEventListener("scroll", sync);
+    return () => {
+      vv.removeEventListener("resize", sync);
+      vv.removeEventListener("scroll", sync);
+      if (el) {
+        el.style.left = "";
+        el.style.top = "";
+        el.style.width = "";
+        el.style.height = "";
+      }
     };
   }, [open]);
 
@@ -248,13 +285,13 @@ export function Header({ locale: propLocale }: Props = {}) {
     </header>
     {open && (
         <div
+          ref={menuRef}
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
           aria-label={t(locale, "header.mobileNav")}
-          data-menu-build="2026-04-30-v2"
+          data-menu-build="2026-05-02-vv"
           className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-40 border-t border-line bg-cream overflow-y-auto overscroll-contain"
-          style={{ position: "fixed", left: 0, right: 0, top: "4rem", bottom: 0 }}
         >
           <nav className="px-4 py-5" aria-label={t(locale, "header.mobileNav")}>
             <MobileSection
