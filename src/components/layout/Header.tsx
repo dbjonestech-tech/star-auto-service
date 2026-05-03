@@ -61,30 +61,6 @@ export function Header({ locale: propLocale }: Props = {}) {
     };
   }, [open]);
 
-  /* Force the visual viewport to match the layout viewport while the
-   * menu is open. The user reported that mobile auto-zoom (Chrome
-   * accessibility text scale, Samsung default zoom, manual pinch)
-   * leaves position:fixed anchored to the layout viewport, so the
-   * cream panel renders as a band inside the larger visual area.
-   * Locking maximum-scale=1 + user-scalable=no for the duration of
-   * the menu snaps the visual viewport back to scale 1, after which
-   * position:fixed inset works as designed. The lock is restored on
-   * close so accessibility zoom still works on the rest of the site. */
-  useEffect(() => {
-    if (!open) return;
-    const meta = document.querySelector<HTMLMetaElement>('meta[name="viewport"]');
-    if (!meta) return;
-    const original = meta.getAttribute("content") ?? "width=device-width, initial-scale=1";
-    meta.setAttribute(
-      "content",
-      "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
-    );
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    return () => {
-      meta.setAttribute("content", original);
-    };
-  }, [open]);
-
   const SERVICES_DROPDOWN: NavDropdownItem[] = getServices(locale).map((s) => ({
     label: s.title,
     href: L(`/services/${s.id}`, locale),
@@ -212,7 +188,7 @@ export function Header({ locale: propLocale }: Props = {}) {
             <Link
               href={L("/reviews", locale)}
               aria-label={`${SITE.rating.value} ${t(locale, "header.reviews", { count: SITE.rating.count })}`}
-              className="brand-star-link group inline-flex items-center gap-1.5 bg-gold-tint hover:bg-gold-soft border border-gold/40 px-2 sm:px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-ink transition-colors whitespace-nowrap"
+              className="brand-star-link group hidden sm:inline-flex items-center gap-1.5 bg-gold-tint hover:bg-gold-soft border border-gold/40 px-2 sm:px-2.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-ink transition-colors whitespace-nowrap"
             >
               <Star
                 className="brand-star text-gold shrink-0"
